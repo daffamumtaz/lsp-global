@@ -1,0 +1,70 @@
+.catalog { padding: 0 var(--page-gutter) 80px; background: var(--background); }
+.inner { max-width: 1252px; margin: auto; }
+.catalogLayout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: start; }
+.filters { border: 1px solid #dbe5e9; border-radius: 12px; background: white; }
+.filters > summary, .units > summary { padding: 16px 20px; min-height: 52px; cursor: pointer; color: #004195; font-size: 20px; font-weight: 700; }
+.filterBody { padding: 0 20px 20px; display: grid; gap: 24px; }
+.filterBody fieldset { min-width: 0; }
+.filterBody legend { font-size: 16px; font-weight: 600; padding-bottom: 8px; }
+.check { display: flex; gap: 10px; align-items: start; min-height: 44px; padding: 10px 0; cursor: pointer; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.check input { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: #004195; }
+.field, .levelRange label { display: flex; flex-direction: column; gap: 8px; min-width: 0; font-size: 14px; font-weight: 600; color: #294451; }
+.field input, .field select, .levelRange select { min-height: 48px; width: 100%; min-width: 0; border: 1px solid #91a5b2; border-radius: 8px; padding: 10px 12px; background: white; color: #203b49; font-size: 16px; font-weight: 400; }
+.field input::placeholder { color: #627581; opacity: 1; }
+.levelRange { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.categoryOptions { margin-top: 10px; max-height: 280px; overflow-y: auto; padding: 4px; }
+.helper { color: #53686f; font-size: 14px; margin: 12px 0; line-height: 1.5; }
+.primary, .secondary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 8px; border: 1px solid #004195; font-size: 16px; font-weight: 600; line-height: 1.4; text-align: center; cursor: pointer; }
+.primary { background: #004195; color: white; }
+.primary:hover { background: #003475; }
+.secondary { background: white; color: #004195; }
+.secondary:hover { background: #e1ecfa; }
+.textButton { min-height: 44px; padding: 8px 0; color: #004195; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; font-size: 14px; }
+.textButton:hover { color: #002e69; }
+.results { min-width: 0; }
+.searchForm { display: flex; align-items: end; gap: 12px; }
+.searchForm .field { flex: 1; }
+.searchForm button { min-height: 48px; }
+.resultToolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 24px 0; }
+.resultToolbar p { font-size: 16px; line-height: 1.5; }
+.resultToolbar .field { flex: 0 0 190px; }
+.activeFilters { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: -8px 0 20px; }
+.activeFilters span { padding: 6px 10px; background: #e1ecfa; border-radius: 6px; color: #004195; font-size: 14px; overflow-wrap: anywhere; max-width: 100%; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.card { overflow: hidden; border: 1px solid #dbe5e9; border-radius: 12px; background: white; display: flex; flex-direction: column; min-width: 0; }
+.thumbnail { width: 100%; height: 108px; object-fit: cover; }
+.cardBody { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+.cardBody h3 { font-size: 24px; font-weight: 650; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
+.category { font-size: 14px; line-height: 1.5; color: #53686f; margin-top: 8px; }
+.cardMeta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 20px 0; padding-left: 16px; list-style: disc; font-size: 14px; line-height: 1.5; }
+.cardBottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: auto; padding-top: 16px; border-top: 1px solid #dbe5e9; }
+.cardBottom p { font-size: 20px; line-height: 1.4; font-weight: 700; overflow-wrap: anywhere; }
+.cardBottom .primary { font-size: 14px; }
+.empty { padding: 48px 24px; border: 1px dashed #a8bcc7; border-radius: 12px; text-align: center; }
+.empty h2 { font-size: 24px; font-weight: 700; color: #004195; }
+.empty p { margin: 12px 0 24px; line-height: 1.6; }
+.pagination { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 36px; }
+.pagination a, .pagination span { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #91a5b2; border-radius: 6px; color: #004195; background: white; }
+.pagination a:hover { background: #e1ecfa; }
+.pagination a[aria-current="page"] { background: #004195; color: white; border-color: #004195; }
+.pagination span { opacity: .4; }
+.units { border: 1px solid #dbe5e9; border-radius: 12px; margin-top: 32px; }
+.units > summary span { font-size: 14px; font-weight: 400; }
+.unitBody { padding: 0 20px 24px; }
+.unitBody .field { max-width: 600px; }
+.unitGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; list-style: none; }
+.unitGrid li { display: flex; align-items: start; gap: 16px; padding: 20px; border-radius: 10px; background: white; min-width: 0; }
+.unitNumber { display: grid; place-items: center; width: 48px; min-height: 48px; flex-shrink: 0; background: #edf5fb; color: #004195; font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; border-radius: 6px; }
+.unitGrid h3 { font-size: 14px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.unitGrid p { font-size: 16px; line-height: 1.5; margin-top: 6px; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: no-preference) { .primary, .secondary, .pagination a { transition: color 150ms, background-color 150ms, border-color 150ms; } }
+@media (max-width: 1023px) { .catalogLayout { grid-template-columns: minmax(0, 1fr); } .filterBody { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  .catalog { padding: 0 20px 56px; }
+  .grid, .filterBody, .unitGrid { grid-template-columns: minmax(0, 1fr); }
+  .searchForm { flex-wrap: wrap; }
+  .searchForm .field { flex-basis: 100%; }
+  .resultToolbar { align-items: start; flex-direction: column; }
+  .resultToolbar .field { flex: auto; width: 100%; }
+  .unitGrid li { gap: 12px; padding: 16px; }
+}

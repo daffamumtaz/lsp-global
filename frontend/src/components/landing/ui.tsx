@@ -7,6 +7,12 @@ export function FigmaImage({ file, alt = "", width, height, className = "", prel
   return <Image src={`/figma/${file}`} alt={alt} width={width} height={height} className={className} preload={preload} />;
 }
 
+export function MediaImage({ src, fallback, alt, width, height, className = "" }: {
+  src: string | null; fallback: string; alt: string; width: number; height: number; className?: string;
+}) {
+  return <Image src={src ?? `/figma/${fallback}`} alt={alt} width={width} height={height} className={className} unoptimized={Boolean(src)} />;
+}
+
 export function SectionHeading({ children, subtitle, accent = false, highlight }: {
   children: ReactNode; subtitle: ReactNode; accent?: boolean; highlight?: "wide" | "short" | "partners";
 }) {
@@ -27,11 +33,14 @@ export function Contours({ section }: { section: "benefits" | "schemes" | "partn
 
 export function SearchField({ compact = false }: { compact?: boolean }) {
   return (
-    <label className={`search-field flex items-center gap-3 rounded-xl bg-white font-jakarta ${compact ? "h-[39px] w-[177px] border border-[#404040] px-3" : "h-[60px] w-full border-2 border-[#00897a] px-3 sm:w-[368px]"}`}>
+    <form action="/skema-sertifikasi" method="get" role="search" aria-label={compact ? "Pencarian skema di header" : "Pencarian skema di Beranda"} className={`search-field flex min-h-[44px] items-center gap-2 rounded-xl bg-white font-jakarta ${compact ? "w-[177px] border border-[#404040] pl-3 pr-1" : "min-h-[60px] w-full border-2 border-[#00897a] pl-3 pr-1 sm:w-[368px]"}`}>
+      <label className="flex min-w-0 flex-1 items-center gap-2">
       <FigmaImage file={compact ? "imgFrame1.svg" : "imgFrame.svg"} width={20} height={20} className="shrink-0" />
       <span className="sr-only">Cari Skema{compact ? "" : " Sertifikasi"}</span>
-      <input type="search" placeholder={compact ? "Cari Skema" : "Cari Skema Sertifikasi"} className="min-w-0 w-full bg-transparent text-base font-medium text-foreground outline-none placeholder:text-[#bdbdbd]" />
-    </label>
+      <input name="q" type="search" autoComplete="off" placeholder={compact ? "Skema…" : "Cari skema…"} className="min-w-0 w-full bg-transparent text-base font-medium text-foreground outline-none placeholder:text-[#647478]" />
+      </label>
+      <button type="submit" aria-label="Cari skema sertifikasi" className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg bg-brand-dark px-3 text-sm font-semibold text-white hover:bg-[#003475]">{compact ? "→" : "Cari"}</button>
+    </form>
   );
 }
 

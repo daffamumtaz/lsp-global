@@ -4,22 +4,13 @@ namespace App\Filament\Resources\SitePages;
 
 use App\Filament\Resources\SitePages\Pages\ListSitePageActivities;
 use App\Filament\Resources\SitePages\Pages\ManageSitePages;
-use App\Filament\Resources\UnavailableResource;
 use App\Models\SitePage;
 use BackedEnum;
-use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
 use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;
+use Illuminate\Database\Eloquent\Model;
 
-class SitePageResource extends UnavailableResource
+class SitePageResource extends Resource
 {
     protected static ?string $model = SitePage::class;
 
@@ -33,36 +24,24 @@ class SitePageResource extends UnavailableResource
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    public static function form(Schema $schema): Schema
+    public static function canCreate(): bool
     {
-        return $schema->components([
-            Select::make('kind')->label('Jenis Halaman')->options([
-                'landing' => 'Landing Page',
-                'profile' => 'Profil LSP',
-                'information' => 'Informasi',
-                'identity' => 'Identitas',
-            ])->required()->unique(ignoreRecord: true),
-            TextInput::make('title')->label('Judul')->required()->maxLength(255),
-            Textarea::make('summary')->label('Ringkasan')->rows(3),
-            Textarea::make('body')->label('Konten')->rows(8),
-        ]);
+        return false;
     }
 
-    public static function table(Table $table): Table
+    public static function canEdit(Model $record): bool
     {
-        return $table
-            ->columns([
-                TextColumn::make('title')->label('Halaman')->searchable()->sortable(),
-                TextColumn::make('kind')->label('Jenis')->badge(),
-                TextColumn::make('updated_at')->label('Diperbarui')->dateTime('d M Y H:i')->sortable(),
-            ])
-            ->headerActions([ExportAction::make()->label('Ekspor Excel')])
-            ->recordActions([
-                EditAction::make(),
-                Action::make('history')->label('Riwayat')->url(fn (SitePage $record): string => static::getUrl('activities', ['record' => $record])),
-                DeleteAction::make(),
-            ])
-            ->contextMenuActions([EditAction::make(), DeleteAction::make()]);
+        return $record instanceof SitePage && $record->kind === 'landing';
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return false;
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return false;
     }
 
     public static function getPages(): array

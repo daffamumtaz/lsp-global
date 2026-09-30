@@ -1,0 +1,10 @@
+.content { max-width: 1252px; margin: auto; padding: 0 var(--page-gutter) 80px; }
+.location { margin-top: 64px; text-align: center; }
+.location h2 { color: #004195; font-size: clamp(28px, 4vw, 36px); font-weight: 700; line-height: 1.25; }
+.location > p { color: #53686f; line-height: 1.6; margin-top: 16px; }
+.location address { font-style: normal; line-height: 1.6; margin: 12px auto 24px; max-width: 700px; }
+.map { background: #e8eff2; border: 1px solid #dbe5e9; border-radius: 12px; overflow: hidden; }
+.map iframe { display: block; width: 100%; height: 430px; border: 0; }
+.location > div:last-of-type { justify-content: center; }
+.location .mapHelp { font-size: 14px; }
+@media (max-width: 639px) { .content { padding: 0 20px 56px; } .location { margin-top: 48px; } .map iframe { height: 320px; } }

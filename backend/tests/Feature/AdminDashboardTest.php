@@ -33,10 +33,18 @@ class AdminDashboardTest extends TestCase
 
     public function test_admin_resources_and_activity_page_render(): void
     {
-        $page = SitePage::factory()->create();
+        $page = SitePage::query()->where('kind', 'landing')->firstOrFail();
         $this->actingAs(User::factory()->create());
 
-        foreach (['site-pages', 'certification-schemes', 'gallery-items', 'contact-messages', 'users', 'history', 'profile', 'information', 'identity'] as $path) {
+        $this->get('/admin/site-pages')
+            ->assertOk()
+            ->assertSee('Simpan Hero')
+            ->assertSee('Tambah Poin')
+            ->assertDontSee('Halaman dalam Pengembangan');
+
+        $this->get('/admin/profile')->assertOk()->assertSee('Struktur Organisasi')->assertSee('Simpan Tentang Kami')->assertDontSee('Halaman dalam Pengembangan');
+
+        foreach (['certification-schemes', 'gallery-items', 'contact-messages', 'users', 'history', 'information', 'identity'] as $path) {
             $this->get("/admin/{$path}")
                 ->assertOk()
                 ->assertSee('Halaman dalam Pengembangan')
@@ -45,10 +53,10 @@ class AdminDashboardTest extends TestCase
 
         $this->get("/admin/site-pages/{$page->getKey()}/activities")
             ->assertOk()
-            ->assertSee('Halaman dalam Pengembangan');
+            ->assertSee('Riwayat Landing Page');
 
         $this->assertFalse(SitePageResource::canCreate());
-        $this->assertFalse(SitePageResource::canEdit($page));
+        $this->assertTrue(SitePageResource::canEdit($page));
         $this->assertFalse(SitePageResource::canDelete($page));
     }
 }

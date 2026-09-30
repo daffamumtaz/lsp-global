@@ -1,62 +1,67 @@
-import { Divider, FigmaImage, SearchField } from "./ui";
+import Link from "next/link";
+import { FigmaImage, SearchField } from "./ui";
+import { HeaderNavigation, type HeaderPage } from "./header-navigation";
+import { contactInfo, whatsappUrl } from "@/lib/contact";
 
-const navigation = [
-  { label: "Tentang Kami", href: "#tentang-kami" },
-  { label: "Skema Sertifikasi", href: "#sertifikasi" },
-  { label: "Informasi" },
-  { label: "Galeri" },
-  { label: "Kontak", href: "#kontak" },
+export function ContactIcon({ kind }: { kind: "phone" | "email" | "location" | "whatsapp" }) {
+  return <svg className="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {kind === "email" ? <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></> : kind === "location" ? <><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></> : kind === "whatsapp" ? <><path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.5-4.6A9 9 0 1 1 21 11.5Z" /><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 1c0 2-2 3-4 2-4-1-7-5-7-8 0-1 1-2 2-2Z" /></> : <path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3a2 2 0 0 1-2 2C10 20 4 14 3 5a2 2 0 0 1 2-2Z" />}
+  </svg>;
+}
+
+export function Header({ currentPage = "home" }: { currentPage?: HeaderPage }) {
+  return <header id="beranda" className="site-header-shell">
+    <a href="#main" className="skip-link">Lewati ke konten</a>
+    <div className="site-header">
+      <Link href="/" className="header-brand" aria-label="LSP TIK Global — Beranda"><FigmaImage file="imgLogoLspTikGlobal22.png" alt="LSP TIK Global" width={115} height={60.41} preload /></Link>
+      <HeaderNavigation currentPage={currentPage} />
+      <div className="header-search"><SearchField compact /></div>
+    </div>
+  </header>;
+}
+
+const defaultSocialLinks = [
+  { name: "Facebook", icon: "facebook.png", url: null },
+  { name: "Instagram", icon: "instagram.png", url: null },
+  { name: "YouTube", icon: "youtube.png", url: null },
 ];
 
-function NavigationItems() {
-  return navigation.map(({ label, href }) => <li key={label}>{href ? <a href={href}>{label}</a> : <button type="button" disabled>{label}</button>}</li>);
-}
-
-export function Header() {
-  return (
-    <header id="beranda" className="bg-white">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Lewati ke konten</a>
-      <div className="site-header mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-5 px-[17px] py-3">
-        <a href="#beranda" aria-label="LSP TIK Global — Beranda"><FigmaImage file="imgLogoLspTikGlobal22.png" alt="LSP TIK Global" width={115} height={60.41} preload /></a>
-        <nav aria-label="Navigasi utama" className="main-navigation order-3 w-full overflow-x-auto font-inter text-sm font-medium lg:order-none lg:w-auto lg:text-xl"><ul className="flex items-center justify-between gap-[21px] whitespace-nowrap"><NavigationItems /></ul></nav>
-        <SearchField compact />
-      </div>
-    </header>
-  );
-}
-
-function ContactIcon({ file }: { file: string }) {
-  return <span className="flex size-[30px] shrink-0 items-center justify-center rounded-full bg-[#d9d9d9]"><FigmaImage file={file} width={24} height={24} /></span>;
-}
-
-export function Footer() {
-  return (
-    <footer id="kontak" className="bg-white">
-      <div className="footer-inner mx-auto max-w-[1440px] px-6 pt-11 pb-[19px] xl:px-[34px]">
-        <h2 className="text-3xl leading-tight font-bold md:text-4xl md:leading-6">Bersama Membangun Kompetensi</h2>
-        <p className="mt-[18px] text-xl leading-6 text-muted">Kami hadir untuk bersama membangun kompetensi yang terpercaya.</p>
-        <div className="mt-[21px]"><Divider file="imgLine12.svg" /></div>
-        <div className="footer-columns grid gap-10 pt-[34px] pb-[23px] md:grid-cols-2 xl:grid-cols-[1.4fr_0.7fr_1fr] xl:gap-8">
-          <div>
-            <FigmaImage file="imgLogoLspTikGlobal22.png" alt="LSP TIK Global" width={178} height={93.51} />
-            <p className="mt-[19px] max-w-[513px] text-xl leading-6"><strong>LSP TIK Global</strong> – Lembaga Sertifikasi Profesi bidang Teknologi Informasi &amp; Komunikasi berlisensi BNSP</p>
-            <p className="mt-6 text-xl leading-6 italic">Nomor Lisensi: BNSP-LSP-2150-ID</p>
+export function Footer({ socialLinks = defaultSocialLinks }: {
+  socialLinks?: { name: string; icon: string; url: string | null }[];
+} = {}) {
+  return <>
+    <footer id="kontak" className="site-footer">
+      <div className="footer-inner">
+        <div className="footer-intro"><h2>Bersama Membangun Kompetensi</h2><p>Kami hadir untuk bersama membangun kompetensi yang terpercaya.</p></div>
+        <div className="footer-columns">
+          <div className="footer-identity">
+            <Link href="/" aria-label="LSP TIK Global — Beranda"><FigmaImage file="imgLogoLspTikGlobal22.png" alt="LSP TIK Global" width={128} height={67.24} /></Link>
+            <p>Lembaga Sertifikasi Profesi bidang Teknologi Informasi &amp; Komunikasi berlisensi BNSP.</p>
+            <p className="footer-license">Nomor Lisensi: <strong>BNSP-LSP-2150-ID</strong></p>
           </div>
-          <nav aria-label="Navigasi footer"><h3 className="text-2xl leading-6 font-bold">Navigasi</h3><ul className="mt-[9px] space-y-2.5 text-base leading-6 text-muted"><li><a href="#beranda">Beranda</a></li><NavigationItems /></ul></nav>
-          <div>
-            <h3 className="text-2xl leading-6 font-bold">Kontak Kami</h3>
-            <address className="mt-2 space-y-[11px] text-xl leading-6 text-muted not-italic">
-              <div className="flex items-center gap-[11px]"><ContactIcon file="phone.png" /><span><a className="underline" href="tel:02127651353">021-27651353</a> / <a className="underline" href="tel:+6285195533360">+6285195533360</a></span></div>
-              <div className="flex items-center gap-[11px]"><ContactIcon file="email.png" /><a className="underline" href="mailto:info@lspglobal.id">info@lspglobal.id</a></div>
-              <div className="flex items-center gap-[11px]"><ContactIcon file="location.png" /><p>Jl. Lebak Bulus Raya Komplek Ruko Victory 88 No. 88 B Cilandak Jakarta Selatan</p></div>
-            </address>
-            <h4 className="mt-2 text-xl leading-6 font-bold text-black">Ikuti Kami</h4>
-            <ul className="mt-2 flex gap-3" aria-label="Media sosial">{["Facebook", "Youtube", "Instagram"].map(name => <li key={name}><button type="button" disabled aria-label={name}><ContactIcon file={`${name.toLowerCase()}.png`} /></button></li>)}</ul>
+          <nav aria-label="Navigasi footer"><h3>Jelajahi</h3><ul>
+            <li><Link href="/">Beranda</Link></li><li><Link href="/tentang-kami">Tentang Kami</Link></li>
+            <li><Link href="/skema-sertifikasi">Skema Sertifikasi</Link></li><li><Link href="/informasi">Informasi</Link></li><li><Link href="/galeri">Galeri</Link></li><li><Link href="/tentang-kami#lisensi">Lisensi &amp; Legalitas</Link></li><li><Link href="/mitra">Mitra Kami</Link></li><li><Link href="/kontak">Kontak</Link></li>
+          </ul></nav>
+          <div><h3>Hubungi Kami</h3><address>
+            <a href={contactInfo.phoneHref}><ContactIcon kind="phone" /><span>{contactInfo.phone}</span></a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><ContactIcon kind="whatsapp" /><span>{contactInfo.whatsapp} <small>WhatsApp</small></span></a>
+            <a href={`mailto:${contactInfo.email}`}><ContactIcon kind="email" /><span>{contactInfo.email}</span></a>
+            <div><ContactIcon kind="location" /><p>{contactInfo.address}</p></div>
+          </address>
+            <div className="footer-socials"><h3>Ikuti Kami</h3><ul aria-label="Media sosial">
+              {socialLinks.map(social => <li key={social.name}>{social.url ?
+                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} (tab baru)`}><FigmaImage file={social.icon} width={20} height={20} /><span>{social.name}</span></a> :
+                <span className="social-placeholder" aria-label={`${social.name} — tautan belum tersedia`} title={`${social.name} — tautan belum tersedia`}><FigmaImage file={social.icon} width={20} height={20} /><span>{social.name}</span></span>
+              }</li>)}
+            </ul></div>
           </div>
         </div>
-        <Divider file="imgLine13.svg" />
-        <p className="mt-[22px] text-center text-xs leading-6 text-muted">Copyright © 2026 LSP TIK Global. All Rights Reserved.</p>
+        <p className="footer-copyright">© 2026 LSP TIK Global. All rights reserved.</p>
       </div>
     </footer>
-  );
+    <a className="whatsapp-bubble" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Hubungi melalui WhatsApp (buka tab baru)">
+      <ContactIcon kind="whatsapp" /><span className="whatsapp-tooltip" aria-hidden="true">Hubungi melalui WhatsApp</span>
+    </a>
+  </>;
 }
