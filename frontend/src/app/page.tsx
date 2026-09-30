@@ -30,7 +30,7 @@ export default async function Home() {
             <div>
               <h1 id="hero-title" className="max-w-[628px] text-[36px] leading-[1.12] font-bold tracking-[-0.03em] sm:text-[40px] lg:text-[56px]">{content.hero.hook}</h1>
               <p className="mt-5 max-w-[628px] text-lg leading-relaxed"><BrandText text={content.hero.description} className="font-bold" /></p>
-              <div className="mt-[44px] flex flex-wrap items-center gap-[17px]"><SearchField /><Link href="/kontak" className="hero-contact flex min-h-[52px] w-[194px] items-center justify-center rounded-xl border border-white font-jakarta text-base font-bold">Hubungi Kami</Link></div>
+              <div className="mt-10 flex flex-wrap items-center gap-4"><SearchField /><Link href="/kontak" className="hero-contact flex min-h-[52px] w-[194px] items-center justify-center rounded-lg border border-white font-jakarta text-base font-bold">Hubungi Kami</Link></div>
             </div>
             {content.hero.video_url ? <video controls preload="metadata" poster={content.hero.poster_url ?? "/figma/imgRectangle374.png"} className="hero-video mt-[13px] aspect-[515/290] w-full max-w-[515px] overflow-hidden rounded-xl bg-black"><source src={content.hero.video_url} />Browser Anda tidak mendukung pemutaran video.</video> : <div className="hero-video mt-[13px] w-full max-w-[515px] overflow-hidden rounded-xl"><MediaImage src={content.hero.poster_url} fallback="imgRectangle374.png" alt="Video profil LSP TIK Global" width={515} height={290} className="aspect-[515/290] w-full object-cover" /></div>}
           </div>
@@ -39,7 +39,7 @@ export default async function Home() {
         <section id="tentang-kami" className="benefits-section relative isolate overflow-hidden px-6" aria-label="Mengapa memilih kami">
           <Contours section="benefits" />
           <SectionHeading subtitle={content.why_us.description} highlight="wide"><BrandText text={content.why_us.hook} className="text-[#022d8a]" /></SectionHeading>
-          <div className="benefits-grid relative mx-auto grid max-w-[1268px] gap-[25px] lg:grid-cols-3">{content.why_us.features.map((benefit, index) => <BenefitCard key={`${benefit.title}-${index}`} {...benefit} />)}</div>
+          <div className="benefits-grid relative mx-auto grid lg:grid-cols-3">{content.why_us.features.map((benefit, index) => <BenefitCard key={`${benefit.title}-${index}`} {...benefit} />)}</div>
         </section>
 
         <section aria-label="Statistik LSP TIK Global" className="statistics-section bg-section px-6 text-brand-dark">
@@ -52,13 +52,13 @@ export default async function Home() {
           <div className="scheme-controls relative flex flex-wrap justify-center gap-7">
             <Link href="/skema-sertifikasi" className="flex min-h-[44px] items-center justify-center rounded-lg bg-brand-dark px-5 py-3 font-semibold text-white hover:bg-[#003475]">Lihat Seluruh Sertifikasi</Link>
           </div>
-          <div className="relative mx-auto mt-[33px] grid max-w-[1290px] gap-6 lg:grid-cols-3">{sampleSchemes.slice(0, 3).map(scheme => <SchemeCard key={scheme.id} scheme={scheme} />)}</div>
+          <div className="home-card-grid relative mx-auto mt-8 grid lg:grid-cols-3">{sampleSchemes.slice(0, 3).map(scheme => <SchemeCard key={scheme.id} scheme={scheme} />)}</div>
           <p className="relative mt-[33px] text-center text-base leading-none tracking-[-0.03em] text-muted italic underline"><Link href="/kontak">Butuh informasi lanjut mengenai sertifikasi?</Link></p>
         </section>
 
         <section className="reviews-section bg-section px-6" aria-label="Review kami">
           <SectionHeading subtitle={content.reviews.description} accent>{content.reviews.hook}</SectionHeading>
-          <div className="reviews-grid mx-auto grid max-w-[1298px] gap-10 lg:grid-cols-3">{content.reviews.items.map((review, index) => <ReviewCard key={`${review.name}-${index}`} review={review} first={index === 0} />)}</div>
+          <div className="reviews-grid mx-auto grid lg:grid-cols-3">{content.reviews.items.map((review, index) => <ReviewCard key={`${review.name}-${index}`} review={review} first={index === 0} />)}</div>
         </section>
 
         <section id="mitra" className="partners-section relative isolate overflow-hidden px-6" aria-label="Mitra kami">

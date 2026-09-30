@@ -1,12 +1,12 @@
 .gallerySection { background: var(--background); padding: 0 var(--page-gutter) 80px; }
-.inner { max-width: 1252px; margin: auto; }
+.inner { max-width: var(--content-width); margin: auto; }
 .mediaTabs { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
 .mediaTabs button, .backButton, .resetButton, .empty button, .pagination button { min-height: 44px; padding: 10px 20px; border: 1px solid #004195; border-radius: 8px; color: #004195; background: white; cursor: pointer; font-weight: 600; }
 .mediaTabs button[aria-pressed="true"], .pagination button[aria-current="page"], .empty button { color: white; background: #004195; }
 .mediaTabs button:hover, .backButton:hover, .resetButton:hover, .pagination button:hover { background: #e1ecfa; }
 .mediaTabs button[aria-pressed="true"]:hover, .pagination button[aria-current="page"]:hover, .empty button:hover { background: #003475; }
 .yearHeading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
-.yearHeading h2, .albumHeading { color: #004195; font-size: clamp(24px, 3vw, 32px); font-weight: 700; line-height: 1.25; }
+.yearHeading h2, .albumHeading { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; }
 .albumHeading { margin-bottom: 28px; }
 .toolbar { display: flex; align-items: end; gap: 20px; flex-wrap: wrap; }
 .toolbar label { display: flex; flex-direction: column; gap: 8px; color: #294451; font-size: 14px; font-weight: 600; }
@@ -15,17 +15,19 @@
 .search { flex: 1; min-width: 220px; }
 .search input { width: 100%; }
 .resultCount { color: #53686f; font-size: 14px; margin: 20px 0; }
-.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
-.card { position: relative; isolation: isolate; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 12px; border: 0; color: white; background: #163d56; cursor: pointer; text-align: left; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--card-gap); }
+.card { position: relative; isolation: isolate; min-width: 0; overflow: hidden; border-radius: 12px; border: 1px solid #dbe5e9; color: white; background: #163d56; cursor: pointer; text-align: left; }
+.cardMedia { position: relative; isolation: isolate; aspect-ratio: 4 / 3; }
+.activityCard { display: flex; flex-direction: column; background: white; color: #313a3c; }
 .card:hover { box-shadow: 0 8px 24px #193c5633; }
 .card:focus-visible { outline-offset: 5px; }
 .cover { object-fit: cover; z-index: -2; }
 .cardOverlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #0016290d 0%, #001629a6 45%, #001629f2 100%); }
 .albumCard .cardOverlay { background: #00162999; }
-.cardCaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; }
-.cardCaption h3 { font-size: 20px; line-height: 1.25; font-weight: 700; margin-bottom: 8px; text-wrap: balance; }
-.cardCaption p, .cardCaption span { font-size: 13px; line-height: 1.5; }
-.cardCaption span { display: block; margin-top: 6px; }
+.cardCaption { width: 100%; padding: var(--card-padding); overflow-wrap: anywhere; }
+.cardCaption h3 { color: var(--text-heading); font-size: var(--text-subheading); line-height: 1.4; font-weight: 700; margin-bottom: 8px; text-wrap: balance; }
+.cardCaption p, .cardCaption span { color: #53686f; font-size: 14px; line-height: 1.5; }
+.cardCaption span { display: block; margin-top: 8px; }
 .albumCaption { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
 .albumCaption h3 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; font-weight: 700; }
 .albumCaption p { font-size: 16px; }
@@ -36,32 +38,31 @@
 .pagination button { min-width: 44px; padding: 8px 12px; }
 .pagination button:disabled { opacity: .45; cursor: default; }
 
-.viewer { position: fixed; inset: 0; margin: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; padding: 0; border: 0; background: #071a2b; color: white; }
-.viewer::backdrop { background: #071a2bf2; }
+.viewer { position: fixed; inset: 0; margin: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; padding: 0; border: 0; background: #111827f5; color: white; color-scheme: dark; }
+.viewer::backdrop { background: #111827e6; }
 .viewerLayout { display: grid; grid-template-rows: auto minmax(120px, 1fr) auto auto; height: 100%; overflow: auto; }
-.viewerToolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; background: #102b40; }
+.viewerToolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; }
 .viewerCount { font-size: 14px; white-space: nowrap; }
 .viewerControls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.viewerControls button, .thumbnailNavigation > button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #7694aa; border-radius: 6px; background: #193c56; color: white; cursor: pointer; }
+.viewerControls button, .thumbnailNavigation > button, .viewerStage > button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #7694aa; border-radius: 8px; background: #253247; color: white; cursor: pointer; }
 .viewerControls button:hover, .thumbnailNavigation > button:hover { background: #2c5574; }
-.viewerControls button:disabled { opacity: .4; cursor: default; }
+.viewerControls button:disabled, .viewerStage > button:disabled { opacity: .4; cursor: default; }
 .viewerControls output { min-width: 48px; text-align: center; font-size: 14px; }
-.viewerControls .closeButton { margin-left: 8px; background: white; color: #102b40; }
+.viewerControls .closeButton { margin-left: 8px; font-size: 28px; line-height: 1; }
 .viewerControls .closeButton:hover { background: #dceaf4; }
 .viewer :focus-visible { outline: 3px solid #a8d9ff; outline-offset: 3px; }
-.mediaViewport { position: relative; min-height: 0; overflow: auto; overscroll-behavior: contain; background: #030c14; }
+.viewerStage { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 20px; min-height: 0; padding: 0 24px; }
+.viewerStage > button { border-radius: 50%; font-size: 32px; line-height: 1; }
+.viewerStage > button:hover:not(:disabled) { background: #3b4d66; }
+.mediaViewport { position: relative; width: 100%; height: 100%; min-height: 0; overflow: auto; overscroll-behavior: contain; }
 .photoStage { position: relative; }
 .fullPhoto { object-fit: contain; }
 .fullVideo { width: 100%; height: 100%; object-fit: contain; }
-.viewerCaption { padding: 14px 24px; max-height: 160px; overflow: auto; line-height: 1.5; }
-.viewerCaption h2 { font-size: 20px; font-weight: 700; }
+.viewerCaption { padding: 16px 24px; max-height: 160px; overflow: auto; line-height: 1.5; text-align: center; }
+.viewerCaption h2 { max-width: 900px; margin-inline: auto; font-size: var(--text-subheading); font-weight: 700; text-wrap: balance; }
 .viewerCaption p { font-size: 14px; }
-.viewerMeta { color: #c4d9e8; margin: 4px 0 8px; }
-.viewerCaption .zoomHint { font-size: 12px; color: #c4d9e8; margin-top: 6px; }
-.thumbnailSection { padding: 12px 24px 16px; border-top: 1px solid #34516a; }
-.thumbnailHeading { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
-.thumbnailHeading h3 { font-size: 14px; font-weight: 600; }
-.thumbnailHeading span { font-size: 12px; color: #c4d9e8; }
+.viewerMeta { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 20px; color: #c4d9e8; margin-top: 6px; }
+.thumbnailSection { padding: 0 24px max(16px, env(safe-area-inset-bottom)); }
 .thumbnailNavigation { display: flex; align-items: center; gap: 12px; }
 .thumbnails { display: flex; min-width: 0; gap: 8px; overflow-x: auto; padding: 4px; flex: 1; }
 .thumbnails button { flex: 0 0 112px; padding: 2px; height: 72px; background: #193c56; border: 2px solid transparent; border-radius: 6px; cursor: pointer; overflow: hidden; }
@@ -70,20 +71,23 @@
 .thumbnails img { width: 104px; height: 64px; object-fit: cover; border-radius: 2px; }
 @media (max-width: 1023px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 639px) {
-  .gallerySection { padding: 0 20px 56px; }
-  .grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .gallerySection { padding: 0 var(--page-gutter) 56px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
   .mediaTabs { gap: 8px; }
   .mediaTabs button { padding: 10px 14px; font-size: 14px; }
   .yearHeading { align-items: start; flex-direction: column; }
   .toolbar label, .toolbar select { width: 100%; }
-  .cardCaption h3 { font-size: 24px; }
+  .cardCaption h3 { font-size: var(--text-subheading); }
   .cardCaption p, .cardCaption span { font-size: 14px; }
-  .viewerToolbar { flex-wrap: wrap; padding: 10px 12px; gap: 8px; }
+  .viewerToolbar { padding: 10px 12px; gap: 8px; }
   .viewerControls { gap: 4px; }
   .viewerControls button { padding: 8px; }
   .viewerControls .closeButton { margin-left: 0; }
   .viewerCaption { padding: 12px; max-height: 144px; }
   .thumbnailSection { padding: 10px 12px; }
-  .thumbnailHeading span { display: none; }
+  .viewerStage { position: relative; display: block; padding: 0 12px; }
+  .viewerStage > button { position: absolute; z-index: 1; top: calc(50% - 22px); }
+  .previousMedia { left: 16px; }
+  .nextMedia { right: 16px; }
   .thumbnailNavigation { gap: 6px; }
 }

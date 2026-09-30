@@ -1,5 +1,5 @@
 .directory { margin-top: 36px; overflow: hidden; border: 1px solid #e2e8e8; border-radius: 16px; background: #fff; box-shadow: 0 4px 20px #153b5705; font-size: 14px; }
-.toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; padding: 20px 24px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; padding: var(--card-padding); }
 .toolbar label, .tableFooter label { display: grid; gap: 6px; color: #53686f; font-size: 13px; font-weight: 500; }
 .toolbar select, .toolbar input, .tableFooter select { min-height: 44px; border: 1px solid #cbd8df; border-radius: 8px; padding: 8px 12px; background: #fff; color: #313a3c; font-size: 14px; font-weight: 400; }
 .toolbar select { max-width: 250px; }
@@ -19,7 +19,7 @@
 .table td { min-width: 110px; max-width: 340px; overflow-wrap: anywhere; }
 .table td:first-child { min-width: 0; color: #647478; }
 .name { color: #163b58; font-weight: 600; }
-.tableFooter { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 16px 24px; }
+.tableFooter { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 16px var(--card-padding); }
 .tableFooter p { color: #53686f; font-size: 13px; }
 .tableFooter label { display: flex; align-items: center; gap: 10px; }
 .pagination { display: flex; flex-wrap: wrap; gap: 4px; }
@@ -32,10 +32,9 @@
   .table th button:hover { color: #004195; }
 }
 @media (max-width: 767px) {
-  .toolbar { padding: 16px; gap: 12px; }
+  .toolbar { gap: 12px; }
   .toolbar label { flex: 1; min-width: 120px; }
   .toolbar select { width: 100%; max-width: none; }
   .toolbar .search { flex: 1 1 100%; max-width: none; margin-left: 0; }
   .scrollHint { display: block; }
-  .tableFooter { padding: 16px; }
 }

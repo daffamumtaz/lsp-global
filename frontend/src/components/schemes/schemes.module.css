@@ -1,9 +1,9 @@
 .catalog { padding: 0 var(--page-gutter) 80px; background: var(--background); }
-.inner { max-width: 1252px; margin: auto; }
+.inner { max-width: var(--content-width); margin: auto; }
 .catalogLayout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: start; }
 .filters { border: 1px solid #dbe5e9; border-radius: 12px; background: white; }
-.filters > summary, .units > summary { padding: 16px 20px; min-height: 52px; cursor: pointer; color: #004195; font-size: 20px; font-weight: 700; }
-.filterBody { padding: 0 20px 20px; display: grid; gap: 24px; }
+.filters > summary, .units > summary { padding: 16px var(--card-padding); min-height: 52px; cursor: pointer; color: #004195; font-size: 20px; font-weight: 700; }
+.filterBody { padding: 0 var(--card-padding) var(--card-padding); display: grid; gap: 24px; }
 .filterBody fieldset { min-width: 0; }
 .filterBody legend { font-size: 16px; font-weight: 600; padding-bottom: 8px; }
 .check { display: flex; gap: 10px; align-items: start; min-height: 44px; padding: 10px 0; cursor: pointer; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
@@ -30,14 +30,14 @@
 .resultToolbar .field { flex: 0 0 190px; }
 .activeFilters { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: -8px 0 20px; }
 .activeFilters span { padding: 6px 10px; background: #e1ecfa; border-radius: 6px; color: #004195; font-size: 14px; overflow-wrap: anywhere; max-width: 100%; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); }
 .card { overflow: hidden; border: 1px solid #dbe5e9; border-radius: 12px; background: white; display: flex; flex-direction: column; min-width: 0; }
 .thumbnail { width: 100%; height: 108px; object-fit: cover; }
-.cardBody { display: flex; flex-direction: column; flex: 1; padding: 20px; }
-.cardBody h3 { font-size: 24px; font-weight: 650; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
+.cardBody { display: flex; flex-direction: column; flex: 1; padding: var(--card-padding); }
+.cardBody h3 { color: var(--text-heading); font-size: var(--text-subheading); font-weight: 650; line-height: 1.4; text-wrap: balance; overflow-wrap: anywhere; }
 .category { font-size: 14px; line-height: 1.5; color: #53686f; margin-top: 8px; }
-.cardMeta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 20px 0; padding-left: 16px; list-style: disc; font-size: 14px; line-height: 1.5; }
-.cardBottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: auto; padding-top: 16px; border-top: 1px solid #dbe5e9; }
+.cardMeta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; margin: 24px 0; padding-left: 16px; list-style: disc; font-size: 14px; line-height: 1.5; }
+.cardBottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: auto; padding-top: 16px; border-top: 1px solid #dbe5e9; }
 .cardBottom p { font-size: 20px; line-height: 1.4; font-weight: 700; overflow-wrap: anywhere; }
 .cardBottom .primary { font-size: 14px; }
 .empty { padding: 48px 24px; border: 1px dashed #a8bcc7; border-radius: 12px; text-align: center; }
@@ -50,21 +50,21 @@
 .pagination span { opacity: .4; }
 .units { border: 1px solid #dbe5e9; border-radius: 12px; margin-top: 32px; }
 .units > summary span { font-size: 14px; font-weight: 400; }
-.unitBody { padding: 0 20px 24px; }
+.unitBody { padding: 0 var(--card-padding) var(--card-padding); }
 .unitBody .field { max-width: 600px; }
-.unitGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; list-style: none; }
-.unitGrid li { display: flex; align-items: start; gap: 16px; padding: 20px; border-radius: 10px; background: white; min-width: 0; }
+.unitGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); list-style: none; }
+.unitGrid li { display: flex; align-items: start; gap: 16px; padding: var(--card-padding); border-radius: 10px; background: white; min-width: 0; }
 .unitNumber { display: grid; place-items: center; width: 48px; min-height: 48px; flex-shrink: 0; background: #edf5fb; color: #004195; font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; border-radius: 6px; }
 .unitGrid h3 { font-size: 14px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
 .unitGrid p { font-size: 16px; line-height: 1.5; margin-top: 6px; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: no-preference) { .primary, .secondary, .pagination a { transition: color 150ms, background-color 150ms, border-color 150ms; } }
 @media (max-width: 1023px) { .catalogLayout { grid-template-columns: minmax(0, 1fr); } .filterBody { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 639px) {
-  .catalog { padding: 0 20px 56px; }
+  .catalog { padding: 0 var(--page-gutter) 56px; }
   .grid, .filterBody, .unitGrid { grid-template-columns: minmax(0, 1fr); }
   .searchForm { flex-wrap: wrap; }
   .searchForm .field { flex-basis: 100%; }
   .resultToolbar { align-items: start; flex-direction: column; }
   .resultToolbar .field { flex: auto; width: 100%; }
-  .unitGrid li { gap: 12px; padding: 16px; }
+  .unitGrid li { gap: 12px; }
 }

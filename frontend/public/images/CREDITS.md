@@ -9,3 +9,9 @@
 - License: Unsplash License — https://unsplash.com/license (checked 2026-09-30)
 - Downloaded as a 1920px WebP derivative. No generative image editing.
 - Used as decorative stock photography, not as a representation of LSP TIK Global's own office.
+
+# Site favicon
+
+- File: `src/app/favicon.ico`
+- Source: https://lspglobal.id/favicon.ico
+- Downloaded from the official LSP TIK Global website on 2026-09-30, without modification.

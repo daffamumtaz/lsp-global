@@ -1,88 +1,42 @@
-.page { overflow: hidden; }
-.profile { position: relative; min-height: 919px; padding: 69px var(--page-gutter) 100px; }
-.profile::before, .profile::after, .structure::before, .structure::after { content: ''; position: absolute; z-index: -1; pointer-events: none; width: 650px; height: 500px; background: url('/figma/contours.png') left top / contain no-repeat; opacity: .28; }
-.profile::before { top: 80px; left: -155px; }
-.profile::after { top: 40px; right: -390px; }
-.profileInner { display: grid; grid-template-columns: minmax(0, 596px) minmax(0, 646px); gap: 44px; align-items: start; max-width: 1288px; margin: 0 auto; }
-.profileVisual { padding-top: 55px; }
-.profileImage { display: block; width: 100%; height: auto; }
-.profileImage + .profileImage { margin-top: 20px; border-radius: 12px; }
-.profileTitleWrap { position: relative; }
-.profileHighlight { position: absolute; z-index: -1; top: 26px; left: -20px; width: 399px; max-width: none; height: auto; }
-.profileCopy h2 { max-width: 646px; color: #022d8a; font-size: clamp(36px, 3.33vw, 48px); font-weight: 700; line-height: 1; letter-spacing: -.03em; }
-.profileCopy h2 span { color: #313a3c; }
-.profileText { margin-top: 20px; color: #647478; font-size: 24px; line-height: 1; letter-spacing: -.03em; }
-.profileText p + p { margin-top: 24px; }
-.profileText em { color: #0165ab; }
-.sectionInner { width: min(calc(100% - 2 * var(--page-gutter)), 1288px); margin: 0 auto; }
-.sectionTitle { color: #004195; font-size: clamp(40px, 4.45vw, 64px); font-weight: 700; line-height: 1; letter-spacing: -.03em; text-align: center; }
-.vision { min-height: 1003px; padding: 114px 0 90px; background: #eaf5f8; }
-.visionCards { display: grid; gap: 74px; margin-top: 89px; }
-.quoteCard { display: grid; grid-template-columns: 101px minmax(0, 1fr); gap: 26px; min-height: 229px; padding: 47px 50px 42px 29px; border: 2px solid #e2e8e8; border-radius: 12px; background: #fff; }
-.quoteCard:nth-child(2) { min-height: 341px; }
-.quoteIcon { width: 101px; height: 77px; }
-.quoteContent h3 { padding-bottom: 24px; border-bottom: 1px solid #e2e8e8; color: #313a3c; font-size: 48px; font-weight: 700; line-height: 1; }
-.quoteContent p, .quoteContent ol { max-width: 1071px; margin-top: 25px; color: #313a3c; font-size: 24px; line-height: 1.25; }
-.quoteContent ol { padding-left: 36px; list-style-type: decimal; }
-.structure { position: relative; isolation: isolate; padding: 76px 0 88px; }
-.structure::before { top: 245px; left: -160px; }
-.structure::after { top: 204px; right: -420px; }
-.structureHeading { position: relative; max-width: 953px; margin: 0 auto; text-align: center; }
-.structureHeading h2 { color: #313a3c; font-size: clamp(40px, 4.45vw, 64px); font-weight: 700; line-height: 1; letter-spacing: -.03em; }
-.structureHeading p, .legalHeading p { margin-top: 20px; color: #647478; font-size: 24px; line-height: 1.1; letter-spacing: -.03em; }
-.structureHeading strong { color: #0165ab; }
-.structureHighlight { position: absolute; z-index: -1; top: 20px; left: 18%; width: 407px; max-width: none; height: auto; }
-.structureImageWrap { overflow: hidden; max-width: 1239px; margin: 89px auto 0; border: 2px solid #e2e8e8; border-radius: 24px; background: #fff; }
-.structureImage { display: block; width: 100%; height: auto; }
-.legal { padding: 79px 0 56px; background: #eaf5f8; }
-.legalHeading { max-width: 953px; margin: 0 auto; text-align: center; }
-.licenseCards { display: grid; gap: 53px; margin-top: 112px; }
-.licenseCard { display: grid; grid-template-columns: 266px minmax(0, 1fr); gap: 23px; align-items: center; min-height: 431px; padding: 34px 28px; overflow: hidden; border: 2px solid #e2e8e8; border-radius: 12px; background: #fff; }
-.licenseImage { display: block; width: 266px; height: 357px; object-fit: cover; }
-.licenseContent h3 { padding-bottom: 25px; border-bottom: 1px solid #e2e8e8; color: #313a3c; font-size: 48px; font-weight: 700; line-height: 1; }
-.licenseContent p { max-width: 898px; margin-top: 25px; color: #313a3c; font-size: 24px; font-weight: 500; line-height: 28px; }
+.profile { padding: 24px var(--page-gutter) var(--section-space); }
+.profileInner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 48px; align-items: start; max-width: var(--content-width); margin: auto; }
+.profileImage { display: block; width: 100%; height: auto; border-radius: 12px; }
+.profileImage + .profileImage { margin-top: 20px; }
+.profileCopy h2, .sectionTitle, .structureHeading h2 { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
+.profileText { margin-top: 20px; color: var(--text-muted); font-size: var(--text-body); line-height: 1.75; }
+.profileText p + p { margin-top: 16px; }
+.profileText em { color: var(--text-heading); }
+.sectionInner { width: min(calc(100% - 2 * var(--page-gutter)), var(--content-width)); margin: auto; }
+.sectionTitle { text-align: center; }
+.vision, .structure, .legal { padding-block: var(--section-space); }
+.vision, .legal { background: #eaf5f8; }
+.visionCards, .licenseCards { display: grid; gap: var(--card-gap); margin-top: 32px; }
+.quoteCard { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 20px; padding: var(--card-padding); border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
+.quoteIcon { width: 48px; height: auto; }
+.quoteContent h3, .licenseContent h3 { color: var(--text-heading); font-size: var(--text-subheading); font-weight: 700; line-height: 1.4; }
+.richText, .licenseContent p { margin-top: 12px; color: var(--text-muted); font-size: var(--text-body); line-height: 1.75; }
+.richText p + p, .richText li + li { margin-top: 8px; }
+.structureHeading, .legalHeading { max-width: 780px; margin: auto; text-align: center; }
+.structureHeading p, .legalHeading p { margin-top: 16px; color: var(--text-muted); font-size: var(--text-intro); line-height: 1.6; }
+.structureImageWrap { overflow: hidden; margin: 32px auto 0; border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
+.licenseCard { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; align-items: center; padding: var(--card-padding); border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
+.licenseImage { display: block; width: 180px; height: auto; object-fit: contain; }
+.licenseContent p { max-width: 70ch; }
 .richText ul, .profileText ul { padding-left: 1.5em; list-style: disc; }
-.profileText ol { padding-left: 1.5em; list-style: decimal; }
-.richText a, .profileText a { color: #0165ab; text-decoration: underline; }
+.richText ol, .profileText ol { padding-left: 1.5em; list-style: decimal; }
+.richText a, .profileText a { color: var(--text-heading); text-decoration: underline; }
 .richText, .profileText, .licenseContent { overflow-wrap: anywhere; }
-.empty { color: #647478; text-align: center; padding: 32px; }
-
-@media (max-width: 1023px) {
-  .profile { min-height: 0; padding-top: 90px; }
-  .profileInner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
-  .profileText { font-size: 18px; line-height: 1.2; }
-  .vision, .structure, .legal { min-height: 0; }
-  .quoteContent h3, .licenseContent h3 { font-size: 36px; }
-  .quoteContent p, .quoteContent ol, .licenseContent p { font-size: 20px; line-height: 1.3; }
-  .licenseCards { margin-top: 72px; }
-}
+.empty { color: var(--text-muted); text-align: center; padding: 32px; }
+@media (max-width: 1023px) { .profileInner { gap: 28px; } }
 @media (max-width: 767px) {
-  .profile { padding: 76px 20px 90px; }
   .profileInner { grid-template-columns: 1fr; }
-  .profileVisual { padding: 0; }
-  .profileImage { max-width: 596px; margin: 0 auto; }
-  .profileCopy h2 { font-size: 36px; }
-  .profileText { font-size: 18px; line-height: 1.25; }
-  .sectionInner { width: min(100% - 40px, 1288px); }
-  .vision, .structure, .legal { padding-top: 76px; padding-bottom: 80px; }
-  .visionCards { gap: 24px; margin-top: 50px; }
-  .quoteCard, .quoteCard:nth-child(2) { grid-template-columns: 50px minmax(0, 1fr); gap: 16px; min-height: 0; padding: 24px 18px; }
-  .quoteIcon { width: 50px; height: auto; }
-  .quoteContent h3 { padding-bottom: 14px; font-size: 28px; }
-  .quoteContent p, .quoteContent ol { margin-top: 14px; font-size: 16px; }
-  .quoteContent ol { padding-left: 20px; }
-  .structureHeading p, .legalHeading p { font-size: 18px; line-height: 1.3; }
-  .structureHighlight { top: 16px; left: 5%; width: 300px; }
-  .structureImageWrap { margin-top: 50px; }
-  .licenseCards { gap: 24px; margin-top: 50px; }
-  .licenseCard { grid-template-columns: 108px minmax(0, 1fr); gap: 16px; min-height: 0; padding: 18px; }
-  .licenseImage { width: 108px; height: auto; }
-  .licenseContent h3 { padding-bottom: 12px; font-size: 24px; line-height: 1.1; }
-  .licenseContent p { margin-top: 12px; font-size: 14px; line-height: 1.25; }
+  .profileImage { max-width: 596px; margin-inline: auto; }
+  .quoteCard { grid-template-columns: 32px minmax(0, 1fr); gap: 12px; }
+  .quoteIcon { width: 32px; }
+  .licenseCard { grid-template-columns: 120px minmax(0, 1fr); gap: 20px; }
+  .licenseImage { width: 120px; }
 }
 @media (max-width: 479px) {
   .licenseCard { grid-template-columns: 1fr; }
-  .licenseImage { width: 140px; height: auto; margin: 0 auto; }
-  .licenseContent h3 { font-size: 25px; }
+  .licenseImage { width: 160px; margin-inline: auto; }
 }
-

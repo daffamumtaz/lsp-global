@@ -2,10 +2,12 @@ import Link from "next/link";
 import { FigmaImage, SearchField } from "./ui";
 import { HeaderNavigation, type HeaderPage } from "./header-navigation";
 import { contactInfo, whatsappUrl } from "@/lib/contact";
+import { SocialIcon, type SocialName } from "./social-icon";
 
 export function ContactIcon({ kind }: { kind: "phone" | "email" | "location" | "whatsapp" }) {
+  if (kind === "whatsapp") return <SocialIcon name="WhatsApp" className="contact-icon" />;
   return <svg className="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    {kind === "email" ? <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></> : kind === "location" ? <><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></> : kind === "whatsapp" ? <><path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.5-4.6A9 9 0 1 1 21 11.5Z" /><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 1c0 2-2 3-4 2-4-1-7-5-7-8 0-1 1-2 2-2Z" /></> : <path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3a2 2 0 0 1-2 2C10 20 4 14 3 5a2 2 0 0 1 2-2Z" />}
+    {kind === "email" ? <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></> : kind === "location" ? <><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></> : <path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3a2 2 0 0 1-2 2C10 20 4 14 3 5a2 2 0 0 1 2-2Z" />}
   </svg>;
 }
 
@@ -20,14 +22,14 @@ export function Header({ currentPage = "home" }: { currentPage?: HeaderPage }) {
   </header>;
 }
 
-const defaultSocialLinks = [
-  { name: "Facebook", icon: "facebook.png", url: null },
-  { name: "Instagram", icon: "instagram.png", url: null },
-  { name: "YouTube", icon: "youtube.png", url: null },
+const defaultSocialLinks: { name: SocialName; url: string | null }[] = [
+  { name: "Facebook", url: null },
+  { name: "Instagram", url: null },
+  { name: "YouTube", url: null },
 ];
 
 export function Footer({ socialLinks = defaultSocialLinks }: {
-  socialLinks?: { name: string; icon: string; url: string | null }[];
+  socialLinks?: { name: SocialName; url: string | null }[];
 } = {}) {
   return <>
     <footer id="kontak" className="site-footer">
@@ -51,8 +53,8 @@ export function Footer({ socialLinks = defaultSocialLinks }: {
           </address>
             <div className="footer-socials"><h3>Ikuti Kami</h3><ul aria-label="Media sosial">
               {socialLinks.map(social => <li key={social.name}>{social.url ?
-                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} (tab baru)`}><FigmaImage file={social.icon} width={20} height={20} /><span>{social.name}</span></a> :
-                <span className="social-placeholder" aria-label={`${social.name} — tautan belum tersedia`} title={`${social.name} — tautan belum tersedia`}><FigmaImage file={social.icon} width={20} height={20} /><span>{social.name}</span></span>
+                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} (tab baru)`}><SocialIcon name={social.name} /><span>{social.name}</span></a> :
+                <span className="social-placeholder" aria-label={`${social.name} — tautan belum tersedia`} title={`${social.name} — tautan belum tersedia`}><SocialIcon name={social.name} /><span>{social.name}</span></span>
               }</li>)}
             </ul></div>
           </div>

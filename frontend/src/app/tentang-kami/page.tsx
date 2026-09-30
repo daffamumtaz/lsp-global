@@ -16,7 +16,7 @@ export default async function AboutPage() {
   return (
     <>
       <Header currentPage="about" />
-      <main id="main" className={styles.page}>
+      <main id="main">
         <InternalHero id="about-title" title="Tentang Kami">Mengenal lebih dekat perjalanan, visi, dan dedikasi <strong>LSP TIK Global</strong> dalam mencetak Sumber Daya Manusia (SDM) yang unggul di Indonesia.</InternalHero>
 
         <section className={styles.profile} aria-labelledby="profile-title">
@@ -27,10 +27,7 @@ export default async function AboutPage() {
               )) : <FigmaImage file="profile-company.png" alt="Dokumentasi kegiatan sertifikasi LSP TIK Global" width={634} height={601} className={styles.profileImage} preload />}
             </div>
             <div className={styles.profileCopy}>
-              <div className={styles.profileTitleWrap}>
-                <FigmaImage file="profile-highlight.svg" width={398.87} height={64.31} className={styles.profileHighlight} />
-                <h2 id="profile-title">{content.profile.hook}</h2>
-              </div>
+              <h2 id="profile-title">{content.profile.hook}</h2>
               <div className={styles.profileText} dangerouslySetInnerHTML={{ __html: content.profile.description }} />
             </div>
           </div>
@@ -42,11 +39,11 @@ export default async function AboutPage() {
             <div className={styles.visionCards}>
               <article className={styles.quoteCard}>
                 <FigmaImage file="quote-mark.svg" width={101} height={77} className={styles.quoteIcon} />
-                <div className={styles.quoteContent}><h3>Our Vision</h3><div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.vision }} /></div>
+                <div className={styles.quoteContent}><h3>Visi</h3><div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.vision }} /></div>
               </article>
               <article className={styles.quoteCard}>
                 <FigmaImage file="quote-mark.svg" width={101} height={77} className={styles.quoteIcon} />
-                <div className={styles.quoteContent}><h3>Our Mission</h3><div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.mission }} /></div>
+                <div className={styles.quoteContent}><h3>Misi</h3><div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.mission }} /></div>
               </article>
             </div>
           </div>
@@ -55,7 +52,6 @@ export default async function AboutPage() {
         <section id="struktur" className={styles.structure} aria-labelledby="structure-title">
           <div className={styles.sectionInner}>
             <div className={styles.structureHeading}>
-              <FigmaImage file="structure-highlight.svg" width={407.29} height={32.38} className={styles.structureHighlight} />
               <h2 id="structure-title">Struktur Perusahaan</h2>
               <p>Susunan manajemen dan pelaksana tugas <strong>LSP TIK Global</strong> dalam mewujudkan sertifikasi yang independen dan bermutu.</p>
             </div>

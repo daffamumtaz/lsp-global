@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { SearchField } from "./ui";
 
 export type HeaderPage = "home" | "about" | "information" | "gallery" | "schemes" | "contact" | "partners";
 const navigation = [
@@ -50,11 +51,12 @@ export function HeaderNavigation({ currentPage }: { currentPage: HeaderPage }) {
         Menu
       </button>
       <nav id="main-navigation" aria-label="Navigasi utama" className="main-navigation" data-open={mobileOpen}>
+        <div className="mobile-navigation-search"><SearchField compact /></div>
         <ul className="navigation-list">
           {navigation.map(item => item.sections ? <li key={item.key} className="about-navigation" onBlur={event => {
             if (!event.currentTarget.contains(event.relatedTarget)) setOpenDropdown(value => value === item.key ? null : value);
           }} onMouseEnter={() => {
-            if (window.matchMedia("(hover: hover) and (min-width: 1024px)").matches) setOpenDropdown(item.key);
+            if (window.matchMedia("(hover: hover) and (min-width: 1200px)").matches) setOpenDropdown(item.key);
           }} onMouseLeave={event => {
             if (!event.currentTarget.contains(document.activeElement)) setOpenDropdown(value => value === item.key ? null : value);
           }}>

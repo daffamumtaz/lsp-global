@@ -51,8 +51,10 @@ export function GalleryBrowser({ activities }: { activities: GalleryActivity[] }
           if (!card.activity) { update({ year: card.year, query: "", sort: "newest", page: 1 }); return; }
           setViewer({ items: yearMedia(activities, card.year, state.type), mediaId: card.cover.id, opener: event.currentTarget });
         }}>
-          <Image src={card.cover.thumbnail} alt="" fill sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 45vw, 300px" className={styles.cover} />
-          <div className={styles.cardOverlay} aria-hidden="true" />
+          <div className={styles.cardMedia}>
+            <Image src={card.cover.thumbnail} alt="" fill sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 45vw, 300px" className={styles.cover} />
+            {!card.activity && <div className={styles.cardOverlay} aria-hidden="true" />}
+          </div>
           {card.activity ? <div className={styles.cardCaption}>
             <h3>{card.title}</h3><p>{formatGalleryDate(card.activity.date)}</p><p>{card.activity.location}</p><span>{card.count} {mediaLabel}</span>
           </div> : <div className={styles.albumCaption}><h3>{card.year}</h3><p>{card.count} {mediaLabel}</p></div>}
