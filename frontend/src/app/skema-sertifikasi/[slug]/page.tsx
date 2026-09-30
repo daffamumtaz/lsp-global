@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, Header } from "@/components/landing/chrome";
-import { InternalHero } from "@/components/landing/internal-hero";
-import { UnitList } from "@/components/schemes/unit-list";
+import { SchemeDetailTabs } from "@/components/schemes/scheme-detail-tabs";
+import { contactInfo } from "@/lib/contact";
 import { sampleSchemes } from "@/lib/scheme-samples";
 import { formatSchemePrice, methodLabels, readSchemeState, registrationHref, schemeHref } from "@/lib/schemes";
 import styles from "./page.module.css";
@@ -22,21 +22,28 @@ export default async function SchemeDetailPage({ params, searchParams }: Props) 
   const query = new URLSearchParams();
   Object.entries(await searchParams).forEach(([key, value]) => { if (Array.isArray(value)) value.forEach(item => query.append(key, item)); else if (value !== undefined) query.set(key, value); });
   const backHref = schemeHref(readSchemeState(query, sampleSchemes.map(item => item.category)));
-  const registration = registrationHref(scheme.registrationUrl);
-  const whatsapp = `https://wa.me/6285195533360?text=${encodeURIComponent(`Halo LSP TIK Global, saya ingin bertanya tentang skema ${scheme.name}, persyaratan, biaya, dan jadwal sertifikasinya.`)}`;
+  const registration = registrationHref(scheme.registrationUrl) ?? `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(`Halo LSP TIK Global, saya ingin mendaftar sertifikasi skema ${scheme.name}.`)}`;
   return <><Header currentPage="schemes" /><main id="main">
     <nav className={styles.breadcrumb} aria-label="Breadcrumb"><Link href="/">Beranda</Link><span aria-hidden="true">/</span><Link href={backHref}>Skema Sertifikasi</Link><span aria-hidden="true">/</span><span aria-current="page">{scheme.name}</span></nav>
-    <InternalHero id="scheme-title" title={scheme.name}>{scheme.category}</InternalHero>
+    <section className={styles.hero} aria-labelledby="scheme-title" style={{ backgroundImage: `url(${JSON.stringify(scheme.thumbnail)})` }}>
+      <div className={styles.heroInner}>
+        <Link className={styles.backLink} href={backHref}>← Kembali ke daftar skema</Link>
+        <h1 id="scheme-title">{scheme.name}</h1>
+        <p className={styles.category}>{scheme.category}</p>
+        <dl className={styles.metadata}>
+          <div><dt>Level KKNI</dt><dd>{scheme.level}</dd></div>
+          <div><dt>Jenis skema</dt><dd>{scheme.type}</dd></div>
+          <div><dt>Metode pelaksanaan</dt><dd>{scheme.methods.map(method => methodLabels[method]).join(" & ")}</dd></div>
+          <div><dt>Unit kompetensi</dt><dd>{scheme.units.length} unit</dd></div>
+        </dl>
+        <div className={styles.actions}>
+          <p className={scheme.price === null ? styles.priceMissing : styles.price} aria-label="Biaya sertifikasi">{formatSchemePrice(scheme.price)}</p>
+          <a href={registration} target="_blank" rel="noopener noreferrer" className={shared.primary}>Daftar Sekarang <span aria-hidden="true">↗</span><span className="sr-only">{registration.startsWith("https://wa.me/") ? " melalui WhatsApp" : ""} (tab baru)</span></a>
+        </div>
+      </div>
+    </section>
     <div className={styles.content}>
-      <Link className={styles.backLink} href={backHref}>← Kembali ke daftar skema</Link>
-      <section className={styles.overview} aria-labelledby="scheme-overview"><h2 id="scheme-overview">Ringkasan skema</h2><dl>
-        <div><dt>Level KKNI</dt><dd>{scheme.level}</dd></div><div><dt>Jenis skema</dt><dd>{scheme.type}</dd></div>
-        <div><dt>Metode pelaksanaan</dt><dd>{scheme.methods.map(method => methodLabels[method]).join(" & ")}</dd></div><div><dt>Unit kompetensi</dt><dd>{scheme.units.length} unit</dd></div>
-        <div><dt>Biaya sertifikasi</dt><dd>{formatSchemePrice(scheme.price)}</dd></div>
-      </dl><div className={styles.actions}><a href={whatsapp} target="_blank" rel="noopener noreferrer" className={shared.primary}>Tanyakan skema ini <span className="sr-only">melalui WhatsApp (tab baru)</span>↗</a>{registration && <a href={registration} target="_blank" rel="noopener noreferrer" className={shared.secondary}>Daftar sekarang <span className="sr-only">(tab baru)</span>↗</a>}</div></section>
-      <h2 className="sr-only">Unit kompetensi</h2><UnitList units={scheme.units} />
-      <section className={styles.requirements} aria-labelledby="basic-requirements"><h2 id="basic-requirements">Persyaratan dasar</h2><p>Penuhi salah satu persyaratan berikut. Konfirmasikan ketentuan resmi kepada penyelenggara.</p><ul>{scheme.basicRequirements.map(item => <li key={item}>{item}</li>)}</ul></section>
-      <section className={styles.requirements} aria-labelledby="administrative-requirements"><h2 id="administrative-requirements">Persyaratan administrasi</h2><p>Siapkan semua berkas berikut sebelum mendaftar.</p><ul>{scheme.administrativeRequirements.map(item => <li key={item}>{item}</li>)}</ul></section>
+      <SchemeDetailTabs units={scheme.units} basicRequirements={scheme.basicRequirements} administrativeRequirements={scheme.administrativeRequirements} />
     </div>
   </main><Footer /></>;
 }

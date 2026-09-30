@@ -2,7 +2,7 @@
 .inner { max-width: var(--content-width); margin: auto; }
 .catalogLayout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: start; }
 .filters { border: 1px solid #dbe5e9; border-radius: 12px; background: white; }
-.filters > summary, .units > summary { padding: 16px var(--card-padding); min-height: 52px; cursor: pointer; color: #004195; font-size: 20px; font-weight: 700; }
+.filters > summary { padding: 16px var(--card-padding); min-height: 52px; cursor: pointer; color: #004195; font-size: 20px; font-weight: 700; }
 .filterBody { padding: 0 var(--card-padding) var(--card-padding); display: grid; gap: 24px; }
 .filterBody fieldset { min-width: 0; }
 .filterBody legend { font-size: 16px; font-weight: 600; padding-bottom: 8px; }
@@ -48,23 +48,35 @@
 .pagination a:hover { background: #e1ecfa; }
 .pagination a[aria-current="page"] { background: #004195; color: white; border-color: #004195; }
 .pagination span { opacity: .4; }
-.units { border: 1px solid #dbe5e9; border-radius: 12px; margin-top: 32px; }
-.units > summary span { font-size: 14px; font-weight: 400; }
-.unitBody { padding: 0 var(--card-padding) var(--card-padding); }
-.unitBody .field { max-width: 600px; }
-.unitGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); list-style: none; }
-.unitGrid li { display: flex; align-items: start; gap: 16px; padding: var(--card-padding); border-radius: 10px; background: white; min-width: 0; }
-.unitNumber { display: grid; place-items: center; width: 48px; min-height: 48px; flex-shrink: 0; background: #edf5fb; color: #004195; font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; border-radius: 6px; }
-.unitGrid h3 { font-size: 14px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
-.unitGrid p { font-size: 16px; line-height: 1.5; margin-top: 6px; overflow-wrap: anywhere; }
+.tabs { display: flex; border-bottom: 1px solid #b8cbd5; gap: 24px; }
+.tabs button { min-height: 52px; padding: 12px 4px; border-bottom: 3px solid transparent; color: #53686f; font-size: 18px; font-weight: 600; line-height: 1.4; cursor: pointer; }
+.tabs button[aria-selected="true"] { color: #004195; border-color: #004195; }
+.tabs button:hover { color: #004195; }
+.tabs button:focus-visible { outline-offset: -3px; }
+.tabPanel { padding-top: 28px; }
+.unitTable { width: 100%; table-layout: fixed; border-collapse: collapse; text-align: left; font-size: 16px; line-height: 1.6; }
+.numberColumn { width: 64px; }
+.codeColumn { width: 24%; }
+.unitTable th, .unitTable td { padding: 16px; border-bottom: 1px solid #dbe5e9; vertical-align: top; overflow-wrap: anywhere; }
+.unitTable th { background: #e1ecfa; color: #004195; font-weight: 700; }
+.unitTable td:first-child { font-variant-numeric: tabular-nums; }
+.requirements + .requirements { margin-top: 40px; }
+.requirements h2 { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; }
+.requirements p { color: #53686f; font-size: 16px; line-height: 1.6; margin-top: 12px; }
+.requirements ul { list-style: disc; padding-left: 24px; margin-top: 16px; }
+.requirements li { font-size: 16px; line-height: 1.6; margin-bottom: 12px; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: no-preference) { .primary, .secondary, .pagination a { transition: color 150ms, background-color 150ms, border-color 150ms; } }
 @media (max-width: 1023px) { .catalogLayout { grid-template-columns: minmax(0, 1fr); } .filterBody { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 639px) {
   .catalog { padding: 0 var(--page-gutter) 56px; }
-  .grid, .filterBody, .unitGrid { grid-template-columns: minmax(0, 1fr); }
+  .grid, .filterBody { grid-template-columns: minmax(0, 1fr); }
   .searchForm { flex-wrap: wrap; }
   .searchForm .field { flex-basis: 100%; }
   .resultToolbar { align-items: start; flex-direction: column; }
   .resultToolbar .field { flex: auto; width: 100%; }
-  .unitGrid li { gap: 12px; }
+  .tabs { gap: 16px; }
+  .tabs button { flex: 1; font-size: 16px; }
+  .numberColumn { width: 40px; }
+  .codeColumn { width: 30%; }
+  .unitTable th, .unitTable td { padding: 12px 8px; font-size: 14px; }
 }

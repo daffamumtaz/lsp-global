@@ -8,6 +8,8 @@
 .search button:hover, .empty a:hover { background: #003475; }
 .search > a { min-height: 44px; display: flex; align-items: center; color: #004195; text-decoration: underline; padding: 8px; }
 .count { margin: 24px 0; color: #53686f; font-size: 16px; }
+.ecosystem { position: relative; isolation: isolate; overflow: hidden; }
+.network { position: absolute; width: 180px; height: 135px; right: -48px; bottom: 0; z-index: -1; }
 .empty { text-align: center; border: 1px dashed #a8bcc7; border-radius: 12px; padding: 48px 24px; }
 .empty h3 { font-size: 24px; font-weight: 700; color: #004195; }
 .empty p { margin: 16px 0 24px; line-height: 1.6; }

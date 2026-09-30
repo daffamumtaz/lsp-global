@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readSchemeState, schemeHref, selectSchemes, selectUnits, formatSchemePrice, registrationHref } from "./schemes.ts";
+import { readSchemeState, schemeHref, selectSchemes, formatSchemePrice, registrationHref } from "./schemes.ts";
 import { sampleSchemes } from "./scheme-samples.ts";
 
 const defaults = { query: "", methods: [], minLevel: 1, maxLevel: 9, categories: [], sort: "name-asc", page: 1 };
@@ -37,13 +37,6 @@ test("pagination clamps stale pages, empty ranges are zero, sorting ties are sta
   const empty = selectSchemes(schemes, { ...defaults, query: "absent" });
   assert.equal(empty.start, 0); assert.equal(empty.end, 0); assert.equal(empty.pageCount, 0);
   assert.deepEqual(schemes, before);
-});
-
-test("unit searches preserve original numbering and match code or title", () => {
-  const units = [{ code: "DEMO-01", title: "Algoritma" }, { code: "DEMO-02", title: "Basis Data" }];
-  assert.deepEqual(selectUnits(units, " DATA "), [{ ...units[1], number: 2 }]);
-  assert.equal(selectUnits(units, "demo-01")[0].number, 1);
-  assert.deepEqual(selectUnits(units, "absent"), []);
 });
 
 test("prices and registration destinations handle missing data and unsafe URLs", () => {

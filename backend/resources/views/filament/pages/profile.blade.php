@@ -21,26 +21,9 @@
                 <form wire:submit="saveVision">{{ $this->visionForm }}<x-filament::button type="submit">Simpan Visi dan Misi</x-filament::button></form>
             </section>
             <section id="organization" class="landing-editor-card">
-                <div class="content-items-toolbar"><h2>Struktur Organisasi</h2>{{ $this->editOrganizationAction }}</div>
-                <p class="content-help">Pilih atasan dan urutan untuk mengatur bagan secara otomatis. Atasan yang disembunyikan juga menyembunyikan seluruh bawahannya di situs.</p>
-                <div class="dashboard-table-scroll">
-                    <table class="dashboard-table content-table">
-                        <caption class="sr-only">Daftar jabatan struktur organisasi</caption>
-                        <thead><tr><th scope="col">ID</th><th scope="col">Atasan</th><th scope="col">Urutan</th><th scope="col">Jabatan</th><th scope="col">Nama</th><th scope="col">Status</th><th scope="col">Aksi</th></tr></thead>
-                        <tbody>
-                            @forelse ($this->organizationRows() as $node)
-                                <tr wire:key="organization-{{ $node['id'] }}">
-                                    <td>{{ $node['id'] }}</td><td>{{ $this->organizationLabel($node['parent_id']) }}</td><td>{{ $node['order'] }}</td><td><strong>{{ $node['title'] }}</strong></td><td>{{ $node['name'] }}</td>
-                                    <td><span class="dashboard-status {{ $node['visible'] ? 'is-success' : 'is-warning' }}">{{ $node['visible'] ? 'Tampil' : 'Disembunyikan' }}</span></td>
-                                    <td><div class="content-row-actions"><x-filament::button type="button" size="sm" color="gray" wire:click="mountAction('editOrganization', { id: {{ $node['id'] }} })">Edit</x-filament::button><x-filament::button type="button" size="sm" color="danger" outlined wire:click="mountAction('deleteOrganization', { id: {{ $node['id'] }} })">Hapus</x-filament::button></div></td>
-                                </tr>
-                            @empty
-                                <tr><td colspan="7" class="dashboard-empty">Belum ada jabatan. Tambahkan jabatan pertama.</td></tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-                <div class="content-section-footer"><span>{{ count($organizationData) }} jabatan · Urutan berlaku per atasan</span><x-filament::button type="button" wire:click="saveOrganization">Simpan Struktur</x-filament::button></div>
+                <h2>Struktur Organisasi</h2>
+                <p class="content-help">Kelola jabatan, atasan, nama pejabat, gelar, dan urutan melalui halaman Struktur Organisasi.</p>
+                <a href="{{ \App\Filament\Resources\OrganizationPositions\OrganizationPositionResource::getUrl() }}">Kelola Struktur Organisasi →</a>
             </section>
             <section id="certificates" class="landing-editor-card">
                 <div class="content-items-toolbar"><h2>Sertifikat</h2>{{ $this->editCertificateAction }}</div>

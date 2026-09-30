@@ -3,6 +3,7 @@ import { FigmaImage, SearchField } from "./ui";
 import { HeaderNavigation, type HeaderPage } from "./header-navigation";
 import { contactInfo, whatsappUrl } from "@/lib/contact";
 import { SocialIcon, type SocialName } from "./social-icon";
+import { VisualMotif } from "./visual-motif";
 
 export function ContactIcon({ kind }: { kind: "phone" | "email" | "location" | "whatsapp" }) {
   if (kind === "whatsapp") return <SocialIcon name="WhatsApp" className="contact-icon" />;
@@ -34,7 +35,7 @@ export function Footer({ socialLinks = defaultSocialLinks }: {
   return <>
     <footer id="kontak" className="site-footer">
       <div className="footer-inner">
-        <div className="footer-intro"><h2>Bersama Membangun Kompetensi</h2><p>Kami hadir untuk bersama membangun kompetensi yang terpercaya.</p></div>
+        <div className="footer-intro"><VisualMotif variant="global" className="footer-network" /><h2>Bersama Membangun Kompetensi</h2><p>Kami hadir untuk bersama membangun kompetensi yang terpercaya.</p></div>
         <div className="footer-columns">
           <div className="footer-identity">
             <Link href="/" aria-label="LSP TIK Global — Beranda"><FigmaImage file="imgLogoLspTikGlobal22.png" alt="LSP TIK Global" width={128} height={67.24} /></Link>

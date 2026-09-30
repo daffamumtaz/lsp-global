@@ -1,0 +1,236 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Lewati ke konten" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e4]:
+      - link "LSP TIK Global — Beranda" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "LSP TIK Global" [ref=e6]
+      - navigation "Navigasi utama" [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Beranda" [ref=e11] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e12]:
+            - generic [ref=e13]:
+              - link "Tentang Kami" [ref=e14] [cursor=pointer]:
+                - /url: /tentang-kami
+              - button "Bagian Tentang Kami" [ref=e15] [cursor=pointer]
+          - listitem [ref=e18]:
+            - link "Skema Sertifikasi" [ref=e19] [cursor=pointer]:
+              - /url: /skema-sertifikasi
+          - listitem [ref=e20]:
+            - generic [ref=e21]:
+              - link "Informasi" [ref=e22] [cursor=pointer]:
+                - /url: /informasi
+              - button "Bagian Informasi" [ref=e23] [cursor=pointer]
+          - listitem [ref=e26]:
+            - link "Galeri" [ref=e27] [cursor=pointer]:
+              - /url: /galeri
+          - listitem [ref=e28]:
+            - link "Kontak" [ref=e29] [cursor=pointer]:
+              - /url: /kontak
+      - search "Pencarian skema di header" [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e35]: Cari skema sertifikasi
+          - searchbox "Cari skema sertifikasi" [ref=e36]
+        - button "Cari skema sertifikasi" [ref=e37] [cursor=pointer]: Cari
+  - main [ref=e38]:
+    - region [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "Wujudkan Kompetensi Profesional Anda" [level=1] [ref=e42]
+          - paragraph [ref=e43]: LSP TIK Global siap mencetak Sumber Daya Manusia (SDM) TIK yang unggul, profesional, dan kompeten untuk menghadapi tantangan industri global.
+          - generic [ref=e44]:
+            - search "Pencarian skema di Beranda" [ref=e45]:
+              - generic [ref=e46]:
+                - generic [ref=e49]: Cari skema sertifikasi
+                - searchbox "Cari skema sertifikasi" [ref=e50]
+              - button "Cari skema sertifikasi" [ref=e51] [cursor=pointer]: Cari
+            - link "Hubungi Kami" [ref=e52] [cursor=pointer]:
+              - /url: /kontak
+        - img "Video profil LSP TIK Global" [ref=e54]
+    - region "Mengapa memilih kami" [ref=e55]:
+      - generic [ref=e56]:
+        - heading "Mengapa Memilih LSP TIK Global?" [level=2] [ref=e57]
+        - paragraph [ref=e58]: Kami berkomitmen memberikan layanan sertifikasi kompetensi yang profesional, terpercaya, dan berorientasi pada kebutuhan dunia kerja.
+      - generic [ref=e59]:
+        - article [ref=e60]:
+          - heading "Sertifikat Kompetensi Diakui Secara Nasional" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Memiliki sertifikat kompetensi resmi dari BNSP RI sebagai bukti sah keterampilan Anda.
+        - article [ref=e65]:
+          - heading "Skema Sertifikasi Berbasis SKKNI" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Seluruh skema sertifikasi mengacu pada SKKNI dan peraturan ESDM terbaru serta kebutuhan industri.
+        - article [ref=e70]:
+          - heading "Jaringan TUK di Berbagai Daerah" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Memiliki jaringan Tempat Uji Kompetensi (TUK) yang luas dan tersebar di berbagai wilayah Indonesia.
+    - region "Statistik LSP TIK Global" [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - definition [ref=e78]: "39"
+          - term [ref=e79]: Skema Sertifikasi
+        - generic [ref=e80]:
+          - definition [ref=e81]: 15+
+          - term [ref=e82]: Tempat Uji Kompetensi (TUK)
+        - generic [ref=e83]:
+          - definition [ref=e84]: 72+
+          - term [ref=e85]: Asesor Kompeten
+    - region "Skema sertifikasi" [ref=e86]:
+      - generic [ref=e87]:
+        - heading "Skema Sertifikasi" [level=2] [ref=e88]
+        - paragraph [ref=e89]: Cari dan pilih skema sertifikasi yang sesuai dengan kebutuhan Anda
+      - link "Lihat Seluruh Sertifikasi" [ref=e91] [cursor=pointer]:
+        - /url: /skema-sertifikasi
+      - generic [ref=e92]:
+        - article [ref=e93]:
+          - generic [ref=e94]:
+            - heading "Junior Coder" [level=3] [ref=e95]
+            - paragraph [ref=e96]: Programming dan Pengembangan Software
+            - list [ref=e97]:
+              - listitem [ref=e98]: Level 2 KKNI
+              - listitem [ref=e99]: 8 unit kompetensi
+              - listitem [ref=e100]: Luring & Daring
+              - listitem [ref=e101]: Skema Okupasi
+            - generic [ref=e102]:
+              - paragraph [ref=e103]: Rp 1.000.000
+              - link "Lihat detail Junior Coder" [ref=e104] [cursor=pointer]:
+                - /url: /skema-sertifikasi/junior-coder
+                - text: Lihat detail →
+        - article [ref=e105]:
+          - generic [ref=e106]:
+            - heading "Web Developer" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Programming dan Pengembangan Software
+            - list [ref=e109]:
+              - listitem [ref=e110]: Level 4 KKNI
+              - listitem [ref=e111]: 4 unit kompetensi
+              - listitem [ref=e112]: Luring & Daring
+              - listitem [ref=e113]: Skema Okupasi
+            - generic [ref=e114]:
+              - paragraph [ref=e115]: Rp 1.500.000
+              - link "Lihat detail Web Developer" [ref=e116] [cursor=pointer]:
+                - /url: /skema-sertifikasi/web-developer
+                - text: Lihat detail →
+        - article [ref=e117]:
+          - generic [ref=e118]:
+            - heading "Mobile Developer" [level=3] [ref=e119]
+            - paragraph [ref=e120]: Programming dan Pengembangan Software
+            - list [ref=e121]:
+              - listitem [ref=e122]: Level 4 KKNI
+              - listitem [ref=e123]: 4 unit kompetensi
+              - listitem [ref=e124]: Luring
+              - listitem [ref=e125]: Skema Okupasi
+            - generic [ref=e126]:
+              - paragraph [ref=e127]: Rp 1.500.000
+              - link "Lihat detail Mobile Developer" [ref=e128] [cursor=pointer]:
+                - /url: /skema-sertifikasi/mobile-developer
+                - text: Lihat detail →
+      - paragraph [ref=e129]:
+        - link "Butuh informasi lanjut mengenai sertifikasi?" [ref=e130] [cursor=pointer]:
+          - /url: /kontak
+    - region "Review kami" [ref=e131]:
+      - generic [ref=e132]:
+        - heading "Review Kami" [level=2] [ref=e133]
+        - paragraph [ref=e134]: Apa kata mereka tentang LSP TIK Global?
+      - generic [ref=e135]:
+        - figure [ref=e136]:
+          - img "5 dari 5 bintang" [ref=e137]
+          - blockquote [ref=e148]: Proses pendaftaran hingga pelaksanaan Uji Kompetensi berjalan sangat lancar. Skema sertifikasinya benar-benar relevan dengan teknologi yang saya gunakan sehari-hari.
+          - generic [ref=e149]:
+            - img "Foto Daffa Naufal Mumtaz" [ref=e150]
+            - generic [ref=e151]:
+              - paragraph [ref=e152]: Daffa Naufal Mumtaz
+              - paragraph [ref=e153]: Head of XYZ Company, West Java
+        - figure [ref=e154]:
+          - img "5 dari 5 bintang" [ref=e155]
+          - blockquote [ref=e166]: Proses pendaftaran hingga pelaksanaan Uji Kompetensi berjalan sangat lancar. Skema sertifikasinya benar-benar relevan dengan teknologi yang saya gunakan sehari-hari.
+          - generic [ref=e167]:
+            - img "Foto Daffa Naufal Mumtaz" [ref=e168]
+            - generic [ref=e169]:
+              - paragraph [ref=e170]: Daffa Naufal Mumtaz
+              - paragraph [ref=e171]: Head of XYZ Company, West Java
+        - figure [ref=e172]:
+          - img "5 dari 5 bintang" [ref=e173]
+          - blockquote [ref=e184]: Proses pendaftaran hingga pelaksanaan Uji Kompetensi berjalan sangat lancar. Skema sertifikasinya benar-benar relevan dengan teknologi yang saya gunakan sehari-hari.
+          - generic [ref=e185]:
+            - img "Foto Daffa Naufal Mumtaz" [ref=e186]
+            - generic [ref=e187]:
+              - paragraph [ref=e188]: Daffa Naufal Mumtaz
+              - paragraph [ref=e189]: Head of XYZ Company, West Java
+    - region "Mitra kami" [ref=e190]:
+      - generic [ref=e191]:
+        - heading "Mitra Kami" [level=2] [ref=e192]
+        - paragraph [ref=e193]: Dipercaya oleh berbagai perusahaan dan institusi pendidikan
+      - list [ref=e195]:
+        - listitem [ref=e196]:
+          - link "Kunjungi website Jobhun (tab baru)" [ref=e197] [cursor=pointer]:
+            - /url: https://jobhun.id/
+            - img "Jobhun" [ref=e198]
+      - link "Lihat Seluruh Mitra" [ref=e200] [cursor=pointer]:
+        - /url: /mitra
+  - contentinfo [ref=e201]:
+    - generic [ref=e202]:
+      - generic [ref=e203]:
+        - heading "Bersama Membangun Kompetensi" [level=2] [ref=e204]
+        - paragraph [ref=e205]: Kami hadir untuk bersama membangun kompetensi yang terpercaya.
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - link "LSP TIK Global — Beranda" [ref=e208] [cursor=pointer]:
+            - /url: /
+            - img "LSP TIK Global" [ref=e209]
+          - paragraph [ref=e210]: Lembaga Sertifikasi Profesi bidang Teknologi Informasi & Komunikasi berlisensi BNSP.
+          - paragraph [ref=e211]:
+            - text: "Nomor Lisensi:"
+            - strong [ref=e212]: BNSP-LSP-2150-ID
+        - navigation "Navigasi footer" [ref=e213]:
+          - heading "Jelajahi" [level=3] [ref=e214]
+          - list [ref=e215]:
+            - listitem [ref=e216]:
+              - link "Beranda" [ref=e217] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e218]:
+              - link "Tentang Kami" [ref=e219] [cursor=pointer]:
+                - /url: /tentang-kami
+            - listitem [ref=e220]:
+              - link "Skema Sertifikasi" [ref=e221] [cursor=pointer]:
+                - /url: /skema-sertifikasi
+            - listitem [ref=e222]:
+              - link "Informasi" [ref=e223] [cursor=pointer]:
+                - /url: /informasi
+            - listitem [ref=e224]:
+              - link "Galeri" [ref=e225] [cursor=pointer]:
+                - /url: /galeri
+            - listitem [ref=e226]:
+              - link "Lisensi & Legalitas" [ref=e227] [cursor=pointer]:
+                - /url: /tentang-kami#lisensi
+            - listitem [ref=e228]:
+              - link "Mitra Kami" [ref=e229] [cursor=pointer]:
+                - /url: /mitra
+            - listitem [ref=e230]:
+              - link "Kontak" [ref=e231] [cursor=pointer]:
+                - /url: /kontak
+        - generic [ref=e232]:
+          - heading "Hubungi Kami" [level=3] [ref=e233]
+          - generic [ref=e234]:
+            - link "021-27651353" [ref=e235] [cursor=pointer]:
+              - /url: tel:02127651353
+            - link "+62 851-9553-3360 WhatsApp" [ref=e239] [cursor=pointer]:
+              - /url: https://wa.me/6285195533360?text=Halo%20LSP%20TIK%20Global%2C%20saya%20ingin%20bertanya%20tentang%20sertifikasi.
+              - generic [ref=e242]:
+                - text: +62 851-9553-3360
+                - generic [ref=e243]: WhatsApp
+            - link "info@lspglobal.id" [ref=e244] [cursor=pointer]:
+              - /url: mailto:info@lspglobal.id
+            - paragraph [ref=e253]: Jl. Lebak Bulus Raya Komplek Ruko Victory 88 No. 88 B, Cilandak, Jakarta Selatan
+          - generic [ref=e254]:
+            - heading "Ikuti Kami" [level=3] [ref=e255]
+            - list "Media sosial" [ref=e256]:
+              - listitem [ref=e257]:
+                - generic "Facebook — tautan belum tersedia" [ref=e258]: Facebook
+              - listitem [ref=e262]:
+                - generic "Instagram — tautan belum tersedia" [ref=e263]: Instagram
+              - listitem [ref=e267]:
+                - generic "YouTube — tautan belum tersedia" [ref=e268]: YouTube
+      - paragraph [ref=e272]: © 2026 LSP TIK Global. All rights reserved.
+  - link "Hubungi melalui WhatsApp (buka tab baru)" [ref=e273] [cursor=pointer]:
+    - /url: https://wa.me/6285195533360?text=Halo%20LSP%20TIK%20Global%2C%20saya%20ingin%20bertanya%20tentang%20sertifikasi.
+  - button "Open Next.js Dev Tools" [ref=e281] [cursor=pointer]

@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "parent_id": null,
+    "title": "Dewan Pengarah",
+    "person_name": "Jayanta",
+    "credentials": "S.kom. M.Si",
+    "order": 1,
+    "is_active": true
+  },
+  {
+    "id": 2,
+    "parent_id": 1,
+    "title": "Ketua LSP",
+    "person_name": "A. Irwan Fasih",
+    "credentials": "S.Si",
+    "order": 1,
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "parent_id": 1,
+    "title": "Komite Skema",
+    "person_name": "Hari Setiabudi Husni",
+    "credentials": "M.Si",
+    "order": 3,
+    "is_active": true
+  },
+  {
+    "id": 4,
+    "parent_id": 1,
+    "title": "Bendahara",
+    "person_name": "Yuli Yulianti",
+    "credentials": "SE.",
+    "order": 2,
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "parent_id": 2,
+    "title": "Ketua Bid. Administrasi",
+    "person_name": "Krisna Pandhana",
+    "credentials": "M.Si.",
+    "order": 1,
+    "is_active": true
+  },
+  {
+    "id": 6,
+    "parent_id": 5,
+    "title": "Sekretariat",
+    "person_name": "Trisha Arianka Mauldin",
+    "credentials": "S.Hub.Int.",
+    "order": 1,
+    "is_active": true
+  },
+  {
+    "id": 7,
+    "parent_id": 2,
+    "title": "Ketua Bid. Sertifikasi dan Standardisasi",
+    "person_name": "Ponda Suwaka Hidajat",
+    "credentials": "CISA, CISSP.",
+    "order": 2,
+    "is_active": true
+  },
+  {
+    "id": 8,
+    "parent_id": 7,
+    "title": "Anggota",
+    "person_name": "Mahmudin",
+    "credentials": "S.kom",
+    "order": 1,
+    "is_active": true
+  },
+  {
+    "id": 9,
+    "parent_id": 7,
+    "title": "Anggota",
+    "person_name": "Susana Dwi Yulianti",
+    "credentials": "M.Kom",
+    "order": 2,
+    "is_active": true
+  },
+  {
+    "id": 10,
+    "parent_id": 2,
+    "title": "Ketua Bid. Manajemen Mutu",
+    "person_name": "Muhammad",
+    "credentials": "S.Kom",
+    "order": 3,
+    "is_active": true
+  },
+  {
+    "id": 11,
+    "parent_id": 10,
+    "title": "Anggota",
+    "person_name": "Muhmmad Luthfi Hakim",
+    "credentials": "S.ST.",
+    "order": 1,
+    "is_active": true
+  },
+  {
+    "id": 12,
+    "parent_id": 2,
+    "title": "Ketua Bid. Teknologi Informasi",
+    "person_name": "Adji Ginandjar Lazuardi",
+    "credentials": "S.kom",
+    "order": 4,
+    "is_active": true
+  },
+  {
+    "id": 13,
+    "parent_id": 12,
+    "title": "Admin Sistem",
+    "person_name": "Nurul Hibatillah",
+    "credentials": "S.Pd.",
+    "order": 1,
+    "is_active": true
+  }
+]

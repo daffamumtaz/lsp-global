@@ -64,11 +64,6 @@ export function selectSchemes(schemes: Scheme[], state: SchemeState, pageSize = 
   const page = Math.max(1, Math.min(state.page, pageCount || 1)), offset = (page - 1) * size;
   return { items: items.slice(offset, offset + size), total, pageCount, page, start: total ? offset + 1 : 0, end: Math.min(offset + size, total) };
 }
-export function selectUnits(units: SchemeUnit[], query: string) {
-  const search = query.trim().toLocaleLowerCase("id");
-  return units.map((unit, index) => ({ ...unit, number: index + 1 }))
-    .filter(unit => `${unit.code} ${unit.title}`.toLocaleLowerCase("id").includes(search));
-}
 export function formatSchemePrice(price: number | null) {
   return price === null ? "Hubungi kami untuk biaya" : new Intl.NumberFormat("id-ID", {
     style: "currency", currency: "IDR", maximumFractionDigits: 0,

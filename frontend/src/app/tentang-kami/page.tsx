@@ -3,6 +3,8 @@ import { InternalHero } from "@/components/landing/internal-hero";
 import { Footer, Header } from "@/components/landing/chrome";
 import { FigmaImage, MediaImage } from "@/components/landing/ui";
 import { OrganizationChart } from "@/components/about/organization-chart";
+import { VisualMotif } from "@/components/landing/visual-motif";
+import { getOrganization } from "@/lib/organization-api";
 import { getAboutContent } from "@/lib/about";
 import styles from "./page.module.css";
 
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const content = await getAboutContent();
+  const [content, organization] = await Promise.all([getAboutContent(), getOrganization()]);
   return (
     <>
       <Header currentPage="about" />
@@ -22,6 +24,7 @@ export default async function AboutPage() {
         <section className={styles.profile} aria-labelledby="profile-title">
           <div className={styles.profileInner}>
             <div className={styles.profileVisual}>
+              <VisualMotif className={styles.profileNetwork} />
               {content.profile.photo_urls.length ? content.profile.photo_urls.map((src, index) => (
                 <MediaImage key={`${src}-${index}`} src={src} fallback="profile-company.png" alt={`Dokumentasi kegiatan LSP TIK Global ${index + 1}`} width={634} height={601} className={styles.profileImage} />
               )) : <FigmaImage file="profile-company.png" alt="Dokumentasi kegiatan sertifikasi LSP TIK Global" width={634} height={601} className={styles.profileImage} preload />}
@@ -52,11 +55,11 @@ export default async function AboutPage() {
         <section id="struktur" className={styles.structure} aria-labelledby="structure-title">
           <div className={styles.sectionInner}>
             <div className={styles.structureHeading}>
-              <h2 id="structure-title">Struktur Perusahaan</h2>
+              <h2 id="structure-title">Struktur Organisasi</h2>
               <p>Susunan manajemen dan pelaksana tugas <strong>LSP TIK Global</strong> dalam mewujudkan sertifikasi yang independen dan bermutu.</p>
             </div>
             <div className={styles.structureImageWrap}>
-              <OrganizationChart nodes={content.organization} />
+              <OrganizationChart nodes={organization.nodes} unavailable={organization.unavailable} />
             </div>
           </div>
         </section>

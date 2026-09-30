@@ -2,6 +2,8 @@
 .profileInner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 48px; align-items: start; max-width: var(--content-width); margin: auto; }
 .profileImage { display: block; width: 100%; height: auto; border-radius: 12px; }
 .profileImage + .profileImage { margin-top: 20px; }
+.profileVisual { position: relative; isolation: isolate; }
+.profileNetwork { position: absolute; width: 180px; height: 135px; right: -16px; top: -24px; z-index: -1; }
 .profileCopy h2, .sectionTitle, .structureHeading h2 { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
 .profileText { margin-top: 20px; color: var(--text-muted); font-size: var(--text-body); line-height: 1.75; }
 .profileText p + p { margin-top: 16px; }
@@ -9,7 +11,8 @@
 .sectionInner { width: min(calc(100% - 2 * var(--page-gutter)), var(--content-width)); margin: auto; }
 .sectionTitle { text-align: center; }
 .vision, .structure, .legal { padding-block: var(--section-space); }
-.vision, .legal { background: #eaf5f8; }
+.vision, .legal { background: var(--background); }
+.profile, .structure { background: #fff; }
 .visionCards, .licenseCards { display: grid; gap: var(--card-gap); margin-top: 32px; }
 .quoteCard { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 20px; padding: var(--card-padding); border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
 .quoteIcon { width: 48px; height: auto; }

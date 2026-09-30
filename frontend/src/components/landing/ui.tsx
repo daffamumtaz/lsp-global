@@ -14,22 +14,15 @@ export function MediaImage({ src, fallback, alt, width, height, className = "" }
   return <Image src={src ?? `/figma/${fallback}`} alt={alt} width={width} height={height} className={className} unoptimized={Boolean(src)} />;
 }
 
-export function SectionHeading({ children, subtitle, highlight }: {
-  children: ReactNode; subtitle: ReactNode; accent?: boolean; highlight?: "wide" | "short" | "partners";
+export function SectionHeading({ children, subtitle }: {
+  children: ReactNode; subtitle: ReactNode;
 }) {
   return (
     <div className="section-heading relative mx-auto max-w-[953px] text-center">
-      {highlight && <span className={`heading-highlight heading-highlight-${highlight}`} aria-hidden="true">
-        <FigmaImage file={highlight === "wide" ? "imgElement.svg" : highlight === "partners" ? "imgElement2.svg" : "imgElement1.svg"} width={highlight === "wide" ? 715.108 : 407.293} height={highlight === "wide" ? 39.5701 : 32.3778} />
-      </span>}
       <h2 className="relative text-[length:var(--text-section)] leading-tight font-bold tracking-[-0.025em] text-brand-dark">{children}</h2>
       <p className="relative mx-auto mt-4 max-w-[780px] text-[length:var(--text-intro)] leading-relaxed text-muted">{subtitle}</p>
     </div>
   );
-}
-
-export function Contours({ section }: { section: "benefits" | "schemes" | "partners" }) {
-  return <div aria-hidden="true" className={`contours contours-${section}`} />;
 }
 
 export function SearchField({ compact = false }: { compact?: boolean }) {
