@@ -1,9 +1,19 @@
-.profile { padding: 24px var(--page-gutter) var(--section-space); }
+.profile { padding: clamp(48px, 5vw, 72px) var(--page-gutter) var(--section-space); }
 .profileInner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 48px; align-items: start; max-width: var(--content-width); margin: auto; }
-.profileImage { display: block; width: 100%; height: auto; border-radius: 12px; }
-.profileImage + .profileImage { margin-top: 20px; }
-.profileVisual { position: relative; isolation: isolate; }
-.profileNetwork { position: absolute; width: 180px; height: 135px; right: -16px; top: -24px; z-index: -1; }
+.profileVisual { position: relative; isolation: isolate; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 2vw, 24px); aspect-ratio: 1.02; }
+.profilePhoto { position: relative; min-width: 0; min-height: 0; border-radius: clamp(14px, 2vw, 24px); overflow: hidden; background: #f5f9fb; cursor: zoom-in; }
+.profilePhoto:first-child { grid-row: 1 / 3; align-self: start; height: 76%; }
+.profilePhoto:nth-child(2) { margin-top: 14%; }
+.profileImage, .defaultPhoto { object-fit: cover; width: 100%; height: 100%; transition: transform 180ms; }
+.defaultPhoto { display: block; background-repeat: no-repeat; }
+.photoHint { position: absolute; inset: auto 0 0; padding: 12px; background: #004195e6; color: white; font-size: 14px; opacity: 0; transition: opacity 180ms; }
+.profilePhoto:focus-visible { outline: 3px solid #004195; outline-offset: 4px; }
+.profilePhoto:focus-visible .photoHint { opacity: 1; }
+@media (hover: hover) {
+  .profilePhoto:hover .profileImage, .profilePhoto:hover .defaultPhoto { transform: scale(1.04); }
+  .profilePhoto:hover .photoHint { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .profileImage, .defaultPhoto, .photoHint { transition: none; } }
 .profileCopy h2, .sectionTitle, .structureHeading h2 { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
 .profileText { margin-top: 20px; color: var(--text-muted); font-size: var(--text-body); line-height: 1.75; }
 .profileText p + p { margin-top: 16px; }
@@ -14,32 +24,37 @@
 .vision, .legal { background: var(--background); }
 .profile, .structure { background: #fff; }
 .visionCards, .licenseCards { display: grid; gap: var(--card-gap); margin-top: 32px; }
+.licenseCards { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; align-items: stretch; }
 .quoteCard { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 20px; padding: var(--card-padding); border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
 .quoteIcon { width: 48px; height: auto; }
-.quoteContent h3, .licenseContent h3 { color: var(--text-heading); font-size: var(--text-subheading); font-weight: 700; line-height: 1.4; }
+.quoteContent h3, .licenseContent h3, .licenseContent [role="heading"] { color: var(--text-heading); font-size: var(--text-subheading); font-weight: 700; line-height: 1.4; }
 .richText, .licenseContent p { margin-top: 12px; color: var(--text-muted); font-size: var(--text-body); line-height: 1.75; }
 .richText p + p, .richText li + li { margin-top: 8px; }
 .structureHeading, .legalHeading { max-width: 780px; margin: auto; text-align: center; }
 .structureHeading p, .legalHeading p { margin-top: 16px; color: var(--text-muted); font-size: var(--text-intro); line-height: 1.6; }
 .structureImageWrap { overflow: hidden; margin: 32px auto 0; border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
-.licenseCard { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; align-items: center; padding: var(--card-padding); border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
-.licenseImage { display: block; width: 180px; height: auto; object-fit: contain; }
+.licenseCard { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; align-content: start; padding: var(--card-padding); border: 1px solid #e2e8e8; border-radius: 12px; background: #fff; }
+.licenseImage { display: block; margin-inline: auto; width: 180px; height: 242px; object-fit: contain; }
 .licenseContent p { max-width: 70ch; }
+.licenseContent { color: var(--text-muted); }
+.licenseContent .licenseNumber { color: #004195; font-weight: 600; }
+.licenseContent > span { display: block; }
+.licenseContent > span:not([role="heading"]) { margin-top: 12px; font-size: var(--text-body); line-height: 1.75; }
 .richText ul, .profileText ul { padding-left: 1.5em; list-style: disc; }
 .richText ol, .profileText ol { padding-left: 1.5em; list-style: decimal; }
-.richText a, .profileText a { color: var(--text-heading); text-decoration: underline; }
+.richText a, .profileText a { color: var(--text-heading); }
 .richText, .profileText, .licenseContent { overflow-wrap: anywhere; }
 .empty { color: var(--text-muted); text-align: center; padding: 32px; }
 @media (max-width: 1023px) { .profileInner { gap: 28px; } }
 @media (max-width: 767px) {
   .profileInner { grid-template-columns: 1fr; }
-  .profileImage { max-width: 596px; margin-inline: auto; }
+  .licenseCards { grid-template-columns: 1fr; }
+  .profileVisual { width: 100%; max-width: 596px; margin-inline: auto; }
   .quoteCard { grid-template-columns: 32px minmax(0, 1fr); gap: 12px; }
   .quoteIcon { width: 32px; }
-  .licenseCard { grid-template-columns: 120px minmax(0, 1fr); gap: 20px; }
-  .licenseImage { width: 120px; }
+  .licenseImage { width: 120px; height: 162px; }
 }
 @media (max-width: 479px) {
   .licenseCard { grid-template-columns: 1fr; }
-  .licenseImage { width: 160px; margin-inline: auto; }
+  .licenseImage { width: 160px; height: 215px; margin-inline: auto; }
 }

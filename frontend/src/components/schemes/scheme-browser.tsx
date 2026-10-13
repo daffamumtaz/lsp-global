@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { methodLabels, readSchemeState, schemeHref, schemeSorts, selectSchemes, type Scheme, type SchemeMethod, type SchemeState } from "@/lib/schemes";
 import { SchemeCard } from "./scheme-card";
 import styles from "./schemes.module.css";
@@ -12,6 +12,14 @@ export function SchemeBrowser({ schemes }: { schemes: Scheme[] }) {
   const categories = [...new Set(schemes.map(scheme => scheme.category))].sort((a, b) => a.localeCompare(b, "id"));
   const state = readSchemeState(params, categories);
   const result = selectSchemes(schemes, state);
+  const resultsView = useRef<HTMLDivElement>(null);
+  const queryString = params.toString();
+  const previousQuery = useRef(queryString);
+  useEffect(() => {
+    if (previousQuery.current === queryString) return;
+    previousQuery.current = queryString;
+    resultsView.current?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  }, [queryString]);
   const [categoryQuery, setCategoryQuery] = useState("");
   const visibleCategories = categories.filter(category => category.toLocaleLowerCase("id").includes(categoryQuery.trim().toLocaleLowerCase("id")));
   const active = [
@@ -44,10 +52,10 @@ export function SchemeBrowser({ schemes }: { schemes: Scheme[] }) {
             <button className={styles.secondary} type="button" onClick={reset}>Reset filter</button>
           </div>
         </details></aside>
-        <div className={styles.results}>
+        <div ref={resultsView} className={styles.results}>
           <h2 className="sr-only">Daftar skema sertifikasi</h2>
           <form className={styles.searchForm} role="search" aria-label="Cari skema sertifikasi" onSubmit={event => { event.preventDefault(); update({ query: String(new FormData(event.currentTarget).get("q") ?? "").trim() }); }}>
-            <label className={styles.field}>Cari skema<input key={state.query} type="search" name="q" autoComplete="off" defaultValue={state.query} placeholder="Contoh: Junior Coder…" /></label><button type="submit" className={styles.primary}>Cari skema</button>
+            <label className={styles.field}><span className="sr-only">Cari skema</span><input key={state.query} type="search" name="q" autoComplete="off" defaultValue={state.query} placeholder="Contoh: Junior Coder…" /></label><button type="submit" className={styles.primary}>Cari skema</button>
           </form>
           <div className={styles.resultToolbar}><p role="status" aria-live="polite">{result.total ? <>Menampilkan <strong>{result.start}–{result.end}</strong> dari <strong>{result.total}</strong> skema</> : "Tidak ada skema yang sesuai"}</p>
             <label className={styles.field}>Urutkan<select value={state.sort} onChange={event => update({ sort: event.target.value as SchemeState["sort"] })}>{Object.entries(schemeSorts).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>

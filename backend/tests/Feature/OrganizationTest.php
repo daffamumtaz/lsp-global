@@ -34,11 +34,23 @@ class OrganizationTest extends TestCase
         $this->assertTrue($node['is_active']);
     }
 
-    public function test_seed_places_four_departments_under_ketua_lsp(): void
+    public function test_seed_places_four_departments_under_dewan_pengarah(): void
     {
         $ketua = OrganizationPosition::query()->where('title', 'Ketua LSP')->firstOrFail();
-        $this->assertSame(4, $ketua->children()->count());
-        $this->assertSame(3, $ketua->parent->children()->count());
+        $this->assertSame(0, $ketua->children()->count());
+        $this->assertSame(4, $ketua->parent->children()->where('title', 'like', 'Ketua Bid%')->count());
+    }
+
+    public function test_migration_reparents_existing_department_heads_without_moving_their_members(): void
+    {
+        $ketua = OrganizationPosition::where('title', 'Ketua LSP')->firstOrFail();
+        $heads = OrganizationPosition::where('title', 'like', 'Ketua Bid%')->get();
+        $members = OrganizationPosition::whereIn('parent_id', $heads->modelKeys())->pluck('parent_id', 'id')->all();
+        OrganizationPosition::whereIn('id', $heads->modelKeys())->update(['parent_id' => $ketua->id]);
+        $migration = require database_path('migrations/2026_10_05_091824_move_department_heads_under_advisory_board.php');
+        $migration->up();
+        $this->assertSame(4, OrganizationPosition::whereIn('id', $heads->modelKeys())->where('parent_id', $ketua->parent_id)->count());
+        $this->assertSame($members, OrganizationPosition::whereIn('id', array_keys($members))->pluck('parent_id', 'id')->all());
     }
 
     public function test_model_rejects_descendant_parent_and_parent_deletion(): void
@@ -67,19 +79,19 @@ class OrganizationTest extends TestCase
 
     public function test_cms_creates_edits_and_reorders_only_siblings(): void
     {
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(User::factory()->admin()->create());
         Filament::setCurrentPanel(Filament::getPanel('admin'));
         $root = OrganizationPosition::factory()->create();
         $first = OrganizationPosition::factory()->create(['parent_id' => $root->id, 'order' => 1]);
         $second = OrganizationPosition::factory()->create(['parent_id' => $root->id, 'order' => 2]);
 
         Livewire::test(ManageOrganizationPositions::class)->callAction('create', [
-            'title' => 'Koordinator Baru', 'person_name' => 'Nama Pejabat', 'credentials' => 'S.Kom',
+            'title' => 'Koordinator Baru', 'members' => [['person_name' => 'Nama Pejabat', 'credentials' => 'S.Kom']],
             'parent_id' => $root->id, 'order' => 3, 'is_active' => true,
         ])->assertHasNoActionErrors();
         $new = OrganizationPosition::query()->where('title', 'Koordinator Baru')->firstOrFail();
         Livewire::test(ManageOrganizationPositions::class)->callAction(TestAction::make('edit')->table($new), [
-            'title' => 'Koordinator Baru', 'person_name' => 'Nama Diubah', 'credentials' => 'M.Kom',
+            'title' => 'Koordinator Baru', 'members' => [['person_name' => 'Nama Diubah', 'credentials' => 'M.Kom']],
             'parent_id' => $root->id, 'order' => 3, 'is_active' => false,
         ])->assertHasNoActionErrors();
         $this->assertSame('Nama Diubah', $new->refresh()->person_name);
@@ -101,12 +113,12 @@ class OrganizationTest extends TestCase
 
     public function test_cms_rejects_descendant_parent_and_protects_parent_deletion(): void
     {
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(User::factory()->admin()->create());
         Filament::setCurrentPanel(Filament::getPanel('admin'));
         $root = OrganizationPosition::factory()->create();
         $child = OrganizationPosition::factory()->create(['parent_id' => $root->id]);
         Livewire::test(ManageOrganizationPositions::class)->callAction(TestAction::make('edit')->table($root), [
-            'title' => $root->title, 'person_name' => $root->person_name, 'credentials' => null,
+            'title' => $root->title, 'members' => $root->members,
             'parent_id' => $child->id, 'order' => 1, 'is_active' => true,
         ])->assertHasActionErrors(['parent_id']);
         $this->assertNull($root->refresh()->parent_id);

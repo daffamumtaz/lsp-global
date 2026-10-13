@@ -1,6 +1,7 @@
 export type GalleryMedia = {
   id: string; type: "photo" | "video"; src: string; thumbnail: string;
   alt: string; width: number; height: number;
+  crop?: { left: number; top: number; width: number; height: number };
 };
 export type GalleryActivity = {
   id: string; title: string; year: number; date: string | null;

@@ -23,7 +23,7 @@
             <section id="organization" class="landing-editor-card">
                 <h2>Struktur Organisasi</h2>
                 <p class="content-help">Kelola jabatan, atasan, nama pejabat, gelar, dan urutan melalui halaman Struktur Organisasi.</p>
-                <a href="{{ \App\Filament\Resources\OrganizationPositions\OrganizationPositionResource::getUrl() }}">Kelola Struktur Organisasi →</a>
+                <x-filament::button tag="a" :href="\App\Filament\Resources\OrganizationPositions\OrganizationPositionResource::getUrl()">Kelola Struktur Organisasi</x-filament::button>
             </section>
             <section id="certificates" class="landing-editor-card">
                 <div class="content-items-toolbar"><h2>Sertifikat</h2>{{ $this->editCertificateAction }}</div>
@@ -35,8 +35,8 @@
                             @forelse ($certificatesData as $index => $certificate)
                                 <tr wire:key="certificate-{{ $certificate['id'] }}">
                                     <td><div class="content-row-actions"><span>{{ $index + 1 }}</span><button type="button" aria-label="Naikkan sertifikat {{ $index + 1 }}" wire:click="moveCertificate({{ $index }}, -1)" @disabled($loop->first)>↑</button><button type="button" aria-label="Turunkan sertifikat {{ $index + 1 }}" wire:click="moveCertificate({{ $index }}, 1)" @disabled($loop->last)>↓</button></div></td>
-                                    <td><strong>{{ $certificate['title'] }}</strong><span class="content-item-description">{{ $certificate['description'] }}</span></td>
-                                    <td>@if (!empty($certificate['image_path']))<a href="{{ Storage::disk('public')->url($certificate['image_path']) }}" target="_blank" rel="noopener noreferrer">Lihat gambar ↗</a>@else<span class="content-help">Dokumen bawaan</span>@endif</td>
+                                    <td><strong>{{ $certificate['title'] }}</strong><span class="content-item-description">{{ $certificate['number'] ?? '' }}</span><span class="content-item-description">{{ $certificate['description'] }}</span></td>
+                                    <td>@if (!empty($certificate['image_path']))<img class="content-item-logo" src="{{ Storage::disk('public')->url($certificate['image_path']) }}" alt="{{ $certificate['title'] }}" /><x-filament::button tag="a" size="sm" color="gray" :href="Storage::disk('public')->url($certificate['image_path'])" target="_blank" rel="noopener noreferrer">Lihat gambar</x-filament::button>@else<span class="content-help">Dokumen bawaan</span>@endif</td>
                                     <td><span class="dashboard-status {{ $certificate['visible'] ? 'is-success' : 'is-warning' }}">{{ $certificate['visible'] ? 'Tampil' : 'Disembunyikan' }}</span></td>
                                     <td><div class="content-row-actions"><x-filament::button type="button" size="sm" color="gray" wire:click="mountAction('editCertificate', { index: {{ $index }} })">Edit</x-filament::button><x-filament::button type="button" size="sm" color="danger" outlined wire:click="mountAction('deleteCertificate', { index: {{ $index }} })">Hapus</x-filament::button></div></td>
                                 </tr>

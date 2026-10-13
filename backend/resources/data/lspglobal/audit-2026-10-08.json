@@ -1,0 +1,373 @@
+{
+  "checked_at": "2026-10-08",
+  "source": "https://lspglobal.id",
+  "counts": {
+    "tuks": 45,
+    "active_tuks": 44,
+    "assessors": 82,
+    "schemes": 39,
+    "scheme_units_after_correction": 359
+  },
+  "tuk_gaps": [
+    {
+      "code": "TUK-TIKGLOBAL-002",
+      "name": "TUK Saintisindo Banten",
+      "active": true,
+      "missing": [
+        "logo_path",
+        "website_url",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "code": "TUK-006/2023",
+      "name": "TUK Hijau Teknologi Digital",
+      "active": true,
+      "missing": [
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "code": "TUK-001/2022",
+      "name": "SMK Al-Quran Zaenuddin Tegal",
+      "active": false,
+      "missing": [
+        "logo_path",
+        "website_url"
+      ]
+    },
+    {
+      "code": "TUK-007/2023",
+      "name": "Arung Dunia Digital Cimahi",
+      "active": true,
+      "missing": [
+        "logo_path",
+        "website_url",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "code": "TUK-009/2023",
+      "name": "Hanipati Taliwang NTB",
+      "active": true,
+      "missing": [
+        "logo_path",
+        "website_url"
+      ]
+    },
+    {
+      "code": "TUK-020/2024",
+      "name": "Pinter Kerja",
+      "active": true,
+      "missing": [
+        "logo_path",
+        "website_url",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "code": "TUK-024/2024",
+      "name": "Ilmu Komputer",
+      "active": true,
+      "missing": [
+        "logo_path",
+        "website_url",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "code": "TUK-029/2024",
+      "name": "HARRIS Hotel",
+      "active": true,
+      "missing": [
+        "address",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "code": "TUK-050/2026",
+      "name": "Artavista",
+      "active": true,
+      "missing": [
+        "latitude",
+        "longitude"
+      ]
+    }
+  ],
+  "link_checks": [
+    {
+      "code": "TUK-049/2026",
+      "name": "Jobhun",
+      "url": "https://jobhun.id",
+      "status": 200,
+      "final_url": "https://jobhun.id"
+    },
+    {
+      "code": "TUK-TIKGLOBAL-003",
+      "name": "TUK WTI Nganjuk",
+      "url": "https://wahanatamaindonesia.com/",
+      "status": 200,
+      "final_url": "https://wahanatamaindonesia.com/"
+    },
+    {
+      "code": "TUK-TIKGLOBAL-004",
+      "name": "Aston City Kemayoran Jakarta",
+      "url": "https://www.astonhotelsinternational.com/en/hotel/view/79/aston-inn-kemayoran---jakarta",
+      "status": 403
+    },
+    {
+      "code": "TUK-TIKGLOBAL-005",
+      "name": "TUK MED Studio Jakarta",
+      "url": "https://desty.page/medstudiojakarta",
+      "status": 200,
+      "final_url": "https://desty.page/medstudiojakarta"
+    },
+    {
+      "code": "TUK-TIKGLOBAL-006",
+      "name": "TUK Yellow Star Hotel Ambarrukmo",
+      "url": "https://www.yellowstar.co.id/property/yellow-star-ambarrukmo",
+      "status": 200,
+      "final_url": "https://www.yellowstar.co.id/property/yellow-star-ambarrukmo"
+    },
+    {
+      "code": "TUK-TIKGLOBAL-007",
+      "name": "TUK Hotel Santika Mega City Bekasi",
+      "url": "https://www.mysantika.com/indonesia/bekasi/hotel-santika-mega-city-bekasi/",
+      "status": 404
+    },
+    {
+      "code": "TUK-006/2023",
+      "name": "TUK Hijau Teknologi Digital",
+      "url": "https://portofolio.onlinet.id/",
+      "status": 200,
+      "final_url": "https://portofolio.onlinet.id/"
+    },
+    {
+      "code": "TUK-008/2023",
+      "name": "TUK Lombok Raya Hotel",
+      "url": "https://lombokrayahotel.com/",
+      "status": 200,
+      "final_url": "https://lombokrayahotel.com/"
+    },
+    {
+      "code": "TUK-011/2023TUK-011/2023",
+      "name": "Grand Rocky Hotel Bukittinggi",
+      "url": "https://www.rockyhotelsgroup.com/RockyHotel/GRHB/grand-rocky-hotel-bukittinggi.html",
+      "status": 500
+    },
+    {
+      "code": "TUK-013/2023",
+      "name": "Universitas Islam Bandung",
+      "url": "https://www.unisba.ac.id/",
+      "status": 403
+    },
+    {
+      "code": "TUK-010/2023",
+      "name": "PeTIK (Pesantren Teknologi Informasi dan Komunikasi)",
+      "url": "https://petik.or.id/",
+      "status": 200,
+      "final_url": "https://petik.or.id/"
+    },
+    {
+      "code": "TUK-015/2023",
+      "name": "STTI NIIT I-TECH",
+      "url": "https://www.i-tech.ac.id/",
+      "status": 200,
+      "final_url": "https://www.i-tech.ac.id/"
+    },
+    {
+      "code": "TUK-016/2023",
+      "name": "SMK TI BAZMA",
+      "url": "https://smktibazma.sch.id/",
+      "status": 200,
+      "final_url": "https://smktibazma.sch.id/"
+    },
+    {
+      "code": "TUK-014/2023",
+      "name": "Aisyah",
+      "url": "https://lpkaisyah.com/",
+      "status": 200,
+      "final_url": "https://lpkaisyah.com/"
+    },
+    {
+      "code": "TUK-018/2024",
+      "name": "Ayola First Point Pekanbaru",
+      "url": "https://topotels.com/ayolafirstpoint/",
+      "status": 200,
+      "final_url": "https://topotels.com/ayolafirstpoint/"
+    },
+    {
+      "code": "TUK-019/2024",
+      "name": "Politeknik Statistika STIS",
+      "url": "https://stis.ac.id/",
+      "status": 200,
+      "final_url": "https://stis.ac.id/"
+    },
+    {
+      "code": "TUK-021/2024",
+      "name": "Universitas Lambung Mangkurat",
+      "url": "https://ulm.ac.id/",
+      "status": 403
+    },
+    {
+      "code": "TUK-022/2024",
+      "name": "Politeknik Negeri Jakarta",
+      "url": "https://pnj.ac.id/",
+      "status": 403
+    },
+    {
+      "code": "TUK-023/2024",
+      "name": "SMK N 59 Jakarta",
+      "url": "https://www.smkn59jkt.sch.id/",
+      "status": 200,
+      "final_url": "https://www.smkn59jkt.sch.id/"
+    },
+    {
+      "code": "TUK-025/2024",
+      "name": "Institut Pertanian Bogor",
+      "url": "https://ipb.ac.id/",
+      "status": 200,
+      "final_url": "https://www.ipb.ac.id/"
+    },
+    {
+      "code": "TUK-026/2024",
+      "name": "Geek Academy",
+      "url": "https://www.geekacademy.id/",
+      "status": 200,
+      "final_url": "https://www.geekacademy.id/"
+    },
+    {
+      "code": "TUK-027/2024",
+      "name": "Universitas Mataram",
+      "url": "https://unram.ac.id/",
+      "status": 200,
+      "final_url": "https://unram.ac.id/"
+    },
+    {
+      "code": "TUK-029/2024",
+      "name": "HARRIS Hotel",
+      "url": "https://www.discoverasr.com/en/harris",
+      "status": 403
+    },
+    {
+      "code": "TUK-030/2024",
+      "name": "Universitas Diponegoro",
+      "url": "https://undip.ac.id/",
+      "status": 200,
+      "final_url": "https://undip.ac.id/"
+    },
+    {
+      "code": "TUK-031/2024",
+      "name": "Kantor Direktorat Jenderal Pajak Jakarta",
+      "url": "https://pajak.go.id/",
+      "status": 200,
+      "final_url": "https://pajak.go.id/"
+    },
+    {
+      "code": "TUK-032/2024",
+      "name": "Universitas Pembangunan Nasional \"Veteran\" Jakarta",
+      "url": "https://upnvj.ac.id/",
+      "status": 200,
+      "final_url": "https://upnvj.ac.id/"
+    },
+    {
+      "code": "TUK-033/2024",
+      "name": "Distrik Navigasi Kelas I Tg. Priok",
+      "url": "https://hubla.dephub.go.id/disnavtanjungpriok/",
+      "error": "<urlopen error _ssl.c:1064: The handshake operation timed out>"
+    },
+    {
+      "code": "TUK-028/2024",
+      "name": "STMIK YMI TEGAL",
+      "url": "https://stmik-tegal.ac.id/",
+      "error": "<urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1082)>"
+    },
+    {
+      "code": "TUK-034/2024",
+      "name": "Bisa Artifisial Indonesia",
+      "url": "https://bisa.ai/",
+      "status": 200,
+      "final_url": "https://bisa.ai/"
+    },
+    {
+      "code": "TUK-042/2025",
+      "name": "Universitas Indonesia",
+      "url": "https://ui.ac.id/",
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "code": "TUK-044/2025",
+      "name": "RevoU",
+      "url": "https://www.revou.co/",
+      "status": 200,
+      "final_url": "https://www.revou.co/"
+    },
+    {
+      "code": "TUK-039/2025",
+      "name": "Ethic Ninja",
+      "url": "https://www.ethic.ninja/",
+      "status": 200,
+      "final_url": "https://www.ethic.ninja/"
+    },
+    {
+      "code": "TUK-041/2025",
+      "name": "DoktorTJ",
+      "url": "https://doktortj.com/",
+      "status": 200,
+      "final_url": "https://doktortj.com/"
+    },
+    {
+      "code": "TUK-050/2026",
+      "name": "Artavista",
+      "url": "https://artavista.net/",
+      "status": 200,
+      "final_url": "https://artavista.net/"
+    },
+    {
+      "code": "TUK-051/2026",
+      "name": "Cybertrend",
+      "url": "https://cybertrend-intra.com/",
+      "status": 200,
+      "final_url": "https://cybertrend-intra.com/"
+    },
+    {
+      "code": "TUK-052/2026",
+      "name": "Starcore",
+      "url": "https://starcore.co/",
+      "status": 200,
+      "final_url": "https://www.starcore.co/"
+    },
+    {
+      "code": "TUK-043/2025",
+      "name": "Intademy",
+      "url": "https://intademy.com/",
+      "status": 200,
+      "final_url": "https://intademy.com/"
+    },
+    {
+      "code": "TUK-040/2025",
+      "name": "Inixindo Amiete Mandiri",
+      "url": "https://inixindobdg.co.id/",
+      "status": 200,
+      "final_url": "https://inixindobdg.co.id/"
+    },
+    {
+      "code": "TUK-053/2026",
+      "name": "RWI",
+      "url": "https://rwi.co.id/",
+      "status": 200,
+      "final_url": "https://rwi.co.id/"
+    }
+  ],
+  "corrections": {
+    "Anang Kurnia": "MET.000.008457 2023",
+    "Bowo Witanto": "MET.000.000128 2023",
+    "CHIEF DATA SCIENTIST": "7 unit unik, judul sesuai BNSP"
+  }
+}

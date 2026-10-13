@@ -20,7 +20,8 @@ class CertificationSchemeFactory extends Factory
         return [
             'name' => fake()->jobTitle(),
             'category' => 'Teknologi Informasi',
-            'level' => 'Level 2 KKNI',
+            'level' => 2,
+            'slug' => fake()->unique()->slug(),
             'price' => 1000000,
             'is_active' => true,
         ];

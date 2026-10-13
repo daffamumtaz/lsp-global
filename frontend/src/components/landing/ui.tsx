@@ -20,30 +20,19 @@ export function SectionHeading({ children, subtitle }: {
   return (
     <div className="section-heading relative mx-auto max-w-[953px] text-center">
       <h2 className="relative text-[length:var(--text-section)] leading-tight font-bold tracking-[-0.025em] text-brand-dark">{children}</h2>
-      <p className="relative mx-auto mt-4 max-w-[780px] text-[length:var(--text-intro)] leading-relaxed text-muted">{subtitle}</p>
+      {subtitle && <p className="relative mx-auto mt-4 max-w-[780px] text-[length:var(--text-intro)] leading-relaxed text-muted">{subtitle}</p>}
     </div>
   );
 }
 
-export function SearchField({ compact = false }: { compact?: boolean }) {
+export function SearchField({ compact = false, placeholder }: { compact?: boolean; placeholder?: string }) {
   return (
     <form action="/skema-sertifikasi" method="get" role="search" aria-label={compact ? "Pencarian skema di header" : "Pencarian skema di Beranda"} className={`search-field ${compact ? "search-field-compact" : "search-field-hero"}`}>
       <label>
-      <MagnifyingGlassIcon aria-hidden="true" className="search-icon" />
       <span className="sr-only">Cari skema sertifikasi</span>
-      <input name="q" type="search" autoComplete="off" placeholder="Cari skema…" />
+      <input name="q" type="search" autoComplete="off" placeholder={placeholder ?? (compact ? "Cari skema…" : "Cari Skema, cth: Data Analyst")} />
       </label>
-      <button type="submit" aria-label="Cari skema sertifikasi">Cari</button>
+      <button type="submit" aria-label="Cari skema sertifikasi"><MagnifyingGlassIcon aria-hidden="true" className="search-icon" /></button>
     </form>
   );
-}
-
-// Only the current frame is implemented; controls without a supplied destination
-// remain disabled instead of inventing routes, video URLs, or application flows.
-export function DesignButton({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <button type="button" disabled className={`design-button ${className}`}>{children}</button>;
-}
-
-export function Divider({ file = "imgLine10.svg" }: { file?: string }) {
-  return <div className="overflow-hidden" aria-hidden="true"><FigmaImage file={file} width={file === "imgLine12.svg" || file === "imgLine13.svg" ? 1387 : 365.049} height={1} className="max-w-none" /></div>;
 }

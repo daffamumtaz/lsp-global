@@ -1,12 +1,15 @@
 export type DirectoryEntry = { id: string; name: string; [key: string]: string };
 export type DirectoryOptions = {
+  selectedIds?: string[] | null;
   query: string; filterKey: string; filter: string;
   sortKey: string; direction: "asc" | "desc"; page: number; pageSize: number;
 };
 
 export function selectDirectory(entries: DirectoryEntry[], options: DirectoryOptions) {
   const query = options.query.trim().toLocaleLowerCase("id");
+  const selected = options.selectedIds ? new Set(options.selectedIds) : null;
   const filtered = entries.filter(entry =>
+    (!selected || selected.has(entry.id)) &&
     (!options.filter || entry[options.filterKey] === options.filter) &&
     (!query || Object.entries(entry).some(([key, value]) => key !== "id" && value.toLocaleLowerCase("id").includes(query)))
   ).sort((a, b) => (a[options.sortKey] ?? "").localeCompare(b[options.sortKey] ?? "", "id", { numeric: true }) * (options.direction === "asc" ? 1 : -1));

@@ -2,23 +2,20 @@
 .toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 20px 24px; border-bottom: 1px solid #e2e8e8; }
 .toolbar strong { display: block; color: #163b58; font-size: 18px; }
 .toolbar span { color: #53686f; font-size: 14px; }
-.viewButton, .controls button { min-height: 44px; padding: 8px 14px; border: 1px solid #d6e1e8; border-radius: 8px; color: #004195; background: #fff; font-size: 14px; cursor: pointer; }
-.viewButton:hover, .controls button:hover { background: #f4f7f7; }
-.viewButton:focus-visible, .controls button:focus-visible { outline: 3px solid #1576b5; outline-offset: 3px; }
+.controls button { min-height: 44px; padding: 8px 14px; border: 1px solid #d6e1e8; border-radius: 8px; color: #004195; background: #fff; font-size: 14px; cursor: pointer; }
+.controls button:hover { background: #fff; color: #004195; border-color: #004195; }
+.controls button:focus-visible { outline: 3px solid #1576b5; outline-offset: 3px; }
 .hint { padding: 12px 24px; color: #53686f; font-size: 14px; }
-.viewport { position: relative; height: 620px; background: #fff; }
+.viewport { position: relative; height: clamp(620px, 70vw, 1040px); background: #fff; }
 .controls { position: absolute; left: 16px; bottom: 16px; z-index: 5; display: flex; gap: 8px; }
 .controls button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; }
 .controls svg { width: 18px; height: 18px; }
-.node { display: flex; flex-direction: column; justify-content: center; width: 280px; min-height: 132px; padding: 20px; border-top: 4px solid #1576b5; background: #f4f7f7; text-align: center; overflow-wrap: anywhere; }
+.node { display: flex; flex-direction: column; justify-content: center; width: 280px; min-height: 132px; padding: 20px; border-top: 4px solid #1648ee; background: #f5f5f5; text-align: center; overflow-wrap: anywhere; }
 .node h3 { color: #163b58; font-size: 17px; font-weight: 750; line-height: 1.3; text-transform: uppercase; }
-.node p { margin-top: 10px; color: #1576b5; font-size: 16px; line-height: 1.4; }
+.members { margin-top: 10px; }
+.node p { color: #1648cc; font-size: 16px; line-height: 1.4; }
 .handle { opacity: 0; pointer-events: none; }
-.list { padding: 24px; }
-.list .list { margin: 12px 0 0 16px; padding: 0 0 0 20px; border-left: 1px solid #84d3eb; }
-.list li + li { margin-top: 20px; }
-.list strong, .list span { display: block; }
-.list strong { color: #163b58; font-size: 16px; }
-.list span { margin-top: 4px; color: #53686f; overflow-wrap: anywhere; }
 .empty { padding: 48px 24px; text-align: center; color: #53686f; }
-@media (max-width: 600px) { .toolbar { padding: 16px 20px; } .hint { padding: 12px 20px; } .viewport { height: 480px; } .list { padding: 20px; } }
+@media (max-width: 600px) { .toolbar { padding: 16px 20px; } .hint { padding: 12px 20px; } .viewport { height: 480px; } }
+
+.members p + p { margin-top: 4px; }

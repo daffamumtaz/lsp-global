@@ -1,20 +1,15 @@
-# LSP Global
+# LSP TIK Global
 
-This repository contains two applications:
+Website publik dan CMS untuk profil lembaga, skema sertifikasi, TUK, asesor, galeri, dan panduan alur asesmen.
 
-- `frontend/` — Next.js website
-- `backend/` — Laravel administration and API
+| Aplikasi | Teknologi | Petunjuk |
+| --- | --- | --- |
+| `frontend/` | Next.js 16, React 19, TypeScript | [Menjalankan frontend](frontend/README.md) |
+| `backend/` | Laravel 13, Filament 5, SQLite secara default | [Menjalankan backend](backend/README.md) |
 
-## Frontend
+Frontend mengambil konten dari API backend. Admin mengelola konten melalui panel Filament. Pendaftaran dan komunikasi diteruskan ke kanal eksternal; website belum menyimpan transaksi sertifikasi peserta.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+- [Guidebook codebase untuk pemula](frontend/docs/guidebook-codebase.md): setup, istilah, peta folder, alur data, contoh perubahan, dan pengujian.
+- [Audit gap sistem dan UX](frontend/docs/audit-sistem-ux.md): kondisi saat ini, bukti temuan, prioritas, dan kriteria perbaikan.
 
-Open [http://localhost:3000](http://localhost:3000). See `frontend/README.md` for frontend details.
-
-## Backend
-
-See `backend/README.md` for backend setup and development commands.
+Jalankan perintah aplikasi dari folder masing-masing. Detail refaktor dan cleanup tercatat dalam guidebook.

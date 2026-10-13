@@ -18,7 +18,8 @@
       "description": "LSP TIK Global disahkan melalui Surat Keputusan Ketua BNSP Nomor Kep 1152/BNSP/VI/2022 tentang Lisensi Kepada Lembaga Sertifikasi Profesi Teknologi Informasi dan Komunikasi Global dengan Nomor Lisensi BNSP-LSP-2150-ID dengan masa berlaku 10 Juni 2027",
       "image_path": null,
       "fallback_image": "license-certificate.png",
-      "visible": true
+      "visible": true,
+      "number": "BNSP-LSP-2150-ID"
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
       "description": "LSP TIK Global disahkan melalui Surat Keputusan Ketua BNSP Nomor Kep 1356/BNSP/VI/2025 tentang Pelaksanaan Sertifikasi Kompetensi jarak Jauh dan Penggunaan Nirkertas (Paperless)",
       "image_path": null,
       "fallback_image": "remote-license.png",
-      "visible": true
+      "visible": true,
+      "number": "Kep 1356/BNSP/VI/2025"
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
       "description": "LSP TIK Global juga mendapatkan register BSSN sebagai Lembaga Sertifikasi Profesi Bidang Keamanan Siber, dengan Nomor: SERT.876/BSSN/D1/PB 05.03/08/2022",
       "image_path": null,
       "fallback_image": "bssn-registration.png",
-      "visible": true
+      "visible": true,
+      "number": "SERT.876/BSSN/D1/PB 05.03/08/2022"
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "title": "Alur Sertifikasi Jarak Jauh (SJJ)",
+  "slug": "asesmen-sertifikasi-jarak-jauh",
+  "description": "Kenali proses sertifikasi di LSP TIK Global, mulai dari pendaftaran, pertemuan daring dengan asesor, hingga hasil asesmen dan tindak lanjutnya.",
+  "actors": [],
+  "stages": [
+    {
+      "title": "Pendaftaran Sertifikasi",
+      "description": "Pilih skema yang sesuai dengan kompetensi Anda, lalu daftar dan ajukan sertifikasi. Lengkapi data diri, dokumen persyaratan, dan informasi tentang kompetensi Anda.\n\nSiapkan data diri dan dokumen yang diminta untuk skema pilihan Anda.",
+      "steps": []
+    },
+    {
+      "title": "Verifikasi Administrasi",
+      "description": "Admin LSP memeriksa pendaftaran dan dokumen Anda. Jika ada data yang perlu diperbaiki atau dokumen yang belum lengkap, Anda akan diminta melengkapinya sebelum lanjut ke tahap berikutnya.\n\nPeriksa kembali data Anda dan pastikan dokumen terbaca dengan jelas.",
+      "steps": []
+    },
+    {
+      "title": "Penjadwalan dan Persiapan",
+      "description": "Admin menyiapkan tautan pertemuan daring untuk pra-asesmen. Periksa informasi jadwal dan petunjuk dari LSP, lalu siapkan perangkat serta koneksi internet Anda.\n\nSimpan tautan pertemuan dan pastikan perangkat serta koneksi internet siap digunakan.",
+      "steps": []
+    },
+    {
+      "title": "Pra-Asesmen",
+      "description": "Dalam pertemuan daring, asesor memeriksa dokumen dan kesiapan Anda. Asesor menjelaskan proses asesmen serta mekanisme banding, lalu memberi rekomendasi untuk pelaksanaan asesmen.\n\nTanyakan hal yang belum jelas agar Anda memahami proses sebelum mengikuti asesmen.",
+      "steps": []
+    },
+    {
+      "title": "Pelaksanaan Asesmen",
+      "description": "Admin menyiapkan tautan pertemuan daring untuk asesmen. Ikuti instruksi asesor dan tunjukkan bukti kompetensi yang diminta, lalu isi umpan balik. Asesor meninjau proses dan memberikan rekomendasi hasil asesmen. Hasil ditetapkan sesuai prosedur LSP.\n\nJika dinyatakan kompeten, proses dilanjutkan dengan penerbitan dan penyerahan sertifikat. Jika belum kompeten, Anda mendapat penjelasan hasil asesmen dan pilihan tindak lanjut, termasuk asesmen ulang sesuai ketentuan LSP.",
+      "steps": []
+    },
+    {
+      "title": "Sertifikat dan Tindak Lanjut",
+      "description": "LSP menerbitkan dan menyerahkan sertifikat kepada asesi yang dinyatakan kompeten sesuai prosedur yang berlaku. Jika belum kompeten, Anda dapat mengikuti asesmen ulang sesuai ketentuan LSP. Tim LSP akan menjelaskan langkah selanjutnya.",
+      "steps": []
+    }
+  ],
+  "connections": []
+}

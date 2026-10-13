@@ -1,0 +1,19 @@
+.wrapper { padding: 0 var(--card-padding) 20px; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: #53686f; }
+.controls p { flex: 1 1 240px; }
+.controls button { min-height: 44px; padding: 8px 14px; border: 1px solid #cbd8df; border-radius: 8px; color: #004195; background: #fff; }
+.map { height: clamp(320px, 40vw, 480px); width: 100%; z-index: 0; border: 1px solid #cbd8df; border-radius: 8px; background: #e9eef0; }
+.cluster, .marker { display: grid; place-items: center; border-radius: 50%; background: #004195; color: #fff; border: 3px solid #fff; box-shadow: 0 2px 8px #153b5740; font: 700 16px/1 sans-serif; }
+.marker { background: #0072b8; }
+.cluster:focus-visible, .marker:focus-visible { outline: 3px solid #151b20; outline-offset: 3px; }
+.message { margin-top: 12px; color: #53686f; }
+
+.details { color: #151b20; font: 14px/1.5 sans-serif; overflow-wrap: anywhere; }
+.details strong { display: block; font-size: 16px; }
+.details p { margin: 8px 0; }
+.details a { display: inline-flex; align-items: center; min-height: 44px; color: #004195; text-decoration: underline; text-underline-offset: 3px; }
+.details a:hover, .details a:focus-visible { color: #002e6b; background: #edf5ff; }
+.map :global(.leaflet-control-zoom a) { width: 44px; height: 44px; line-height: 44px; }
+.map :global(.leaflet-popup a.leaflet-popup-close-button) { width: 44px; height: 44px; line-height: 44px; }
+.map :global(.leaflet-popup-content) { margin-right: 36px; }
+@media (hover: hover) { .marker:hover, .cluster:hover { background: #002e6b; } }

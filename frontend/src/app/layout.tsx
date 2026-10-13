@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLandingContent } from "@/lib/landing";
 import { Figtree, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -19,10 +20,17 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "LSP TIK Global",
-  description: "Lembaga Sertifikasi Profesi LSP TIK Global",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { identity } = await getLandingContent();
+  return {
+    title: identity.brand_name,
+    description: identity.footer_description,
+    icons: {
+      icon: identity.favicon_url ?? identity.icon_url ?? "/favicon.ico",
+      ...(identity.icon_url ? { apple: identity.icon_url } : {}),
+    },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -32,6 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
+      data-scroll-behavior="smooth"
       className={`${figtree.variable} ${inter.variable} ${jakarta.variable} antialiased`}
     >
       <body>{children}</body>

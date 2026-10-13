@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "parent_id": 2,
+    "parent_id": 1,
     "title": "Ketua Bid. Administrasi",
     "person_name": "Krisna Pandhana",
     "credentials": "M.Si.",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "parent_id": 2,
+    "parent_id": 1,
     "title": "Ketua Bid. Sertifikasi dan Standardisasi",
     "person_name": "Ponda Suwaka Hidajat",
     "credentials": "CISA, CISSP.",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "parent_id": 2,
+    "parent_id": 1,
     "title": "Ketua Bid. Manajemen Mutu",
     "person_name": "Muhammad",
     "credentials": "S.Kom",
@@ -100,7 +100,7 @@
   },
   {
     "id": 12,
-    "parent_id": 2,
+    "parent_id": 1,
     "title": "Ketua Bid. Teknologi Informasi",
     "person_name": "Adji Ginandjar Lazuardi",
     "credentials": "S.kom",

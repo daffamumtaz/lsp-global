@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "b95459e3-8fd7-47dd-a720-2a8d4d17f0e6": {
+      "source": "https://bnsp.go.id/lsp/unit-skema/73242",
+      "checked_at": "2026-10-08",
+      "notes": "BNSP memuat 7 unit. lspglobal.id menggandakan J.62DMI00.020.1 serta memakai beberapa judul Data Mining yang berbeda dari judul resmi Data Science.",
+      "units": [
+        {
+          "code": "J.62DMI00.001.1",
+          "title": "Menentukan Objektif Bisnis",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menentukan objektif bisnis dari proyek data science."
+        },
+        {
+          "code": "J.62DMI00.002.1",
+          "title": "Menentukan Tujuan Teknis Data Science",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menentukan tujuan teknis data science."
+        },
+        {
+          "code": "J.62DMI00.003.1",
+          "title": "Membuat Rencana Proyek Data Science",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat rencana proyek data science."
+        },
+        {
+          "code": "J.62DMI00.020.1",
+          "title": "Melakukan Review Proyek Data Science",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam melakukan review proyek yang sesuai kebutuhan organisasi."
+        },
+        {
+          "code": "J.62DMI00.021.1",
+          "title": "Melakukan Laporan Akhir Proyek Data Science",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat laporan akhir proyek data science yang sesuai kebutuhan organisasi."
+        },
+        {
+          "code": "J.62DMS00.001.1",
+          "title": "Mengidentifikasi Kebutuhan Pengelolaan Data untuk Proses Bisnis",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengidentifikasi kebutuhan data untuk proses bisnis."
+        },
+        {
+          "code": "J.620200.004.01",
+          "title": "Menyusun Roadmap Arsitektur Bisnis",
+          "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk melakukan stakeholder review secara formal dan menyusun roadmap arsitektur bisnis."
+        }
+      ]
+    }
+  }
+}

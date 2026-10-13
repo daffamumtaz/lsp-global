@@ -23,3 +23,17 @@ test('rejects orphaned nodes, duplicates, cycles and malformed API fields', () =
     assert.throws(()=>buildOrganizationTree(nodes));
   }
 });
+
+
+test('validates members and grid slots while accepting legacy nodes', () => {
+  assert.equal(buildOrganizationTree([node(1)]).length,1);
+  assert.equal(buildOrganizationTree([{...node(1),members:[{person_name:'One',credentials:null},{person_name:'Two',credentials:'SE'}],layout_row:1,layout_column:5}])[0].members.length,2);
+  for(const data of [
+    [{...node(1),members:[]}],
+    [{...node(1),members:[{person_name:'',credentials:null}]}],
+    [{...node(1),layout_row:1,layout_column:null}],
+    [{...node(1),layout_row:1,layout_column:10}],
+    [{...node(1),layout_row:1,layout_column:1},{...node(2),layout_row:1,layout_column:1}],
+    [{...node(1),layout_row:2,layout_column:1},node(2,1),{...node(3,2),layout_row:3,layout_column:3}],
+  ]) assert.throws(()=>buildOrganizationTree(data));
+});

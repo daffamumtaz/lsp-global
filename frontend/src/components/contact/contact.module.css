@@ -5,11 +5,10 @@
 .info h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
 .info address { display: grid; gap: 12px; font-style: normal; }
 .info address a { min-height: 44px; display: flex; align-items: center; gap: 12px; overflow-wrap: anywhere; }
-.info a { text-decoration: underline; text-underline-offset: 4px; }
 .info a:hover { color: #d0e9ff; }
 .info :focus-visible { outline-color: white; }
 .socials { display: flex; flex-wrap: wrap; gap: 10px; }
-.socials span { padding: 8px 12px; border: 1px solid #adcbe7; border-radius: 6px; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
+.socials > span, .socials > a { width: 44px; height: 44px; border-radius: 50%; background: #fff; display: inline-flex; align-items: center; justify-content: center; }
 .helpLight { font-size: 14px; color: #d0e9ff; }
 .form { padding: 32px; display: flex; flex-direction: column; gap: 24px; min-width: 0; }
 .form h2 { color: #004195; }
@@ -29,9 +28,9 @@
 .error { color: #b42318; font-size: 14px; line-height: 1.5; }
 .primary, .secondary { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 48px; border-radius: 8px; border: 1px solid #004195; padding: 12px 20px; font-size: 16px; font-weight: 600; line-height: 1.4; text-align: center; cursor: pointer; }
 .primary { background: #004195; color: white; }
-.primary:hover { background: #003475; }
+.primary:hover { background: #fff; color: #004195; border-color: #004195; }
 .secondary { background: white; color: #004195; }
-.secondary:hover { background: #e1ecfa; }
+.secondary:hover { background: #fff; color: #004195; border-color: #004195; }
 .form > button { align-self: start; }
 .prepared { padding: var(--card-padding); border: 1px solid #9dc3d9; border-radius: 8px; background: #edf5fb; line-height: 1.6; }
 .prepared h3 { font-size: 20px; font-weight: 700; color: #004195; margin-bottom: 8px; }

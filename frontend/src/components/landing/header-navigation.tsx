@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { SearchField } from "./ui";
 
 export type HeaderPage = "home" | "about" | "information" | "gallery" | "schemes" | "contact" | "partners";
 const navigation = [
   { key: "home", label: "Beranda", href: "/" },
   { key: "about", label: "Tentang Kami", href: "/tentang-kami", sections: [
     ["Visi & Misi", "/tentang-kami#visi-misi"], ["Struktur", "/tentang-kami#struktur"],
-    ["Lisensi", "/tentang-kami#lisensi"], ["Mitra", "/mitra"],
+    ["Lisensi", "/tentang-kami#lisensi"],
   ] },
   { key: "schemes", label: "Skema Sertifikasi", href: "/skema-sertifikasi" },
   { key: "information", label: "Informasi", href: "/informasi", sections: [
@@ -51,7 +50,6 @@ export function HeaderNavigation({ currentPage }: { currentPage: HeaderPage }) {
         Menu
       </button>
       <nav id="main-navigation" aria-label="Navigasi utama" className="main-navigation" data-open={mobileOpen}>
-        <div className="mobile-navigation-search"><SearchField compact /></div>
         <ul className="navigation-list">
           {navigation.map(item => item.sections ? <li key={item.key} className="about-navigation" onBlur={event => {
             if (!event.currentTarget.contains(event.relatedTarget)) setOpenDropdown(value => value === item.key ? null : value);
@@ -67,7 +65,7 @@ export function HeaderNavigation({ currentPage }: { currentPage: HeaderPage }) {
               </button>
             </div>
             <ul id={`${item.key}-navigation-links`} className="about-dropdown" hidden={openDropdown !== item.key}>
-              {item.sections.map(([label, href]) => <li key={href}><Link href={href} aria-current={href === "/mitra" && currentPage === "partners" ? "page" : undefined} onClick={close}>{label}</Link></li>)}
+              {item.sections.map(([label, href]) => <li key={href}><Link href={href} onClick={close}>{label}</Link></li>)}
             </ul>
           </li> : <li key={item.key}><Link href={item.href} aria-current={currentPage === item.key ? "page" : undefined} onClick={close}>{item.label}</Link></li>)}
         </ul>

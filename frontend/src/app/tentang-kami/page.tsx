@@ -1,9 +1,11 @@
+import { getLandingContent } from "@/lib/landing";
 import type { Metadata } from "next";
 import { InternalHero } from "@/components/landing/internal-hero";
 import { Footer, Header } from "@/components/landing/chrome";
-import { FigmaImage, MediaImage } from "@/components/landing/ui";
+import { FigmaImage } from "@/components/landing/ui";
+import { ProfileCollage } from "@/components/about/profile-collage";
+import { CertificateImage } from "@/components/about/certificate-image";
 import { OrganizationChart } from "@/components/about/organization-chart";
-import { VisualMotif } from "@/components/landing/visual-motif";
 import { getOrganization } from "@/lib/organization-api";
 import { getAboutContent } from "@/lib/about";
 import styles from "./page.module.css";
@@ -15,23 +17,19 @@ export const metadata: Metadata = {
 
 export default async function AboutPage() {
   const [content, organization] = await Promise.all([getAboutContent(), getOrganization()]);
+  const { sections } = await getLandingContent();
   return (
     <>
       <Header currentPage="about" />
       <main id="main">
-        <InternalHero id="about-title" title="Tentang Kami">Mengenal lebih dekat perjalanan, visi, dan dedikasi <strong>LSP TIK Global</strong> dalam mencetak Sumber Daya Manusia (SDM) yang unggul di Indonesia.</InternalHero>
+        <InternalHero white id="about-title" title={sections.about_hero.title}>{sections.about_hero.subtitle}</InternalHero>
 
         <section className={styles.profile} aria-labelledby="profile-title">
           <div className={styles.profileInner}>
-            <div className={styles.profileVisual}>
-              <VisualMotif className={styles.profileNetwork} />
-              {content.profile.photo_urls.length ? content.profile.photo_urls.map((src, index) => (
-                <MediaImage key={`${src}-${index}`} src={src} fallback="profile-company.png" alt={`Dokumentasi kegiatan LSP TIK Global ${index + 1}`} width={634} height={601} className={styles.profileImage} />
-              )) : <FigmaImage file="profile-company.png" alt="Dokumentasi kegiatan sertifikasi LSP TIK Global" width={634} height={601} className={styles.profileImage} preload />}
-            </div>
+            <ProfileCollage photos={content.profile.photo_urls} />
             <div className={styles.profileCopy}>
               <h2 id="profile-title">{content.profile.hook}</h2>
-              <div className={styles.profileText} dangerouslySetInnerHTML={{ __html: content.profile.description }} />
+              {content.profile.description && <div className={styles.profileText} dangerouslySetInnerHTML={{ __html: content.profile.description }} />}
             </div>
           </div>
         </section>
@@ -42,11 +40,11 @@ export default async function AboutPage() {
             <div className={styles.visionCards}>
               <article className={styles.quoteCard}>
                 <FigmaImage file="quote-mark.svg" width={101} height={77} className={styles.quoteIcon} />
-                <div className={styles.quoteContent}><h3>Visi</h3><div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.vision }} /></div>
+                <div className={styles.quoteContent}><h3>{sections.about_vision.title}</h3>{sections.about_vision.subtitle && <p>{sections.about_vision.subtitle}</p>}<div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.vision }} /></div>
               </article>
               <article className={styles.quoteCard}>
                 <FigmaImage file="quote-mark.svg" width={101} height={77} className={styles.quoteIcon} />
-                <div className={styles.quoteContent}><h3>Misi</h3><div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.mission }} /></div>
+                <div className={styles.quoteContent}><h3>{sections.about_mission.title}</h3>{sections.about_mission.subtitle && <p>{sections.about_mission.subtitle}</p>}<div className={styles.richText} dangerouslySetInnerHTML={{ __html: content.vision.mission }} /></div>
               </article>
             </div>
           </div>
@@ -55,8 +53,8 @@ export default async function AboutPage() {
         <section id="struktur" className={styles.structure} aria-labelledby="structure-title">
           <div className={styles.sectionInner}>
             <div className={styles.structureHeading}>
-              <h2 id="structure-title">Struktur Organisasi</h2>
-              <p>Susunan manajemen dan pelaksana tugas <strong>LSP TIK Global</strong> dalam mewujudkan sertifikasi yang independen dan bermutu.</p>
+              <h2 id="structure-title">{sections.about_structure.title}</h2>
+              <p>{sections.about_structure.subtitle}</p>
             </div>
             <div className={styles.structureImageWrap}>
               <OrganizationChart nodes={organization.nodes} unavailable={organization.unavailable} />
@@ -66,13 +64,12 @@ export default async function AboutPage() {
 
         <section id="lisensi" className={styles.legal} aria-labelledby="legal-title">
           <div className={styles.sectionInner}>
-            <div className={styles.legalHeading}><h2 id="legal-title" className={styles.sectionTitle}>Lisensi &amp; Legalitas</h2><p>Sebagai komitmen terhadap mutu dan profesionalisme, operasional <strong>LSP TIK Global</strong> telah diakui dan dilisensi secara resmi oleh negara.</p></div>
+            <div className={styles.legalHeading}><h2 id="legal-title" className={styles.sectionTitle}>{sections.about_legal.title}</h2><p>{sections.about_legal.subtitle}</p></div>
             <div className={styles.licenseCards}>
-              {content.certificates.map(({ id, title, image_url, fallback_image, description }) => (
-                <article className={styles.licenseCard} key={id}>
-                  {(image_url || fallback_image) && <MediaImage src={image_url} fallback={fallback_image ?? "license-certificate.png"} alt={title} width={266} height={357} className={styles.licenseImage} />}
-                  <div className={styles.licenseContent}><h3>{title}</h3><p>{description}</p></div>
-                </article>
+              {content.certificates.map(({ id, title, number, image_url, fallback_image, description }) => (
+                image_url || fallback_image ? <CertificateImage key={id} src={image_url ?? `/figma/${fallback_image}`} title={title} description={description} className={styles.licenseImage} cardClassName={styles.licenseCard}>
+                  <span className={styles.licenseContent}><span role="heading" aria-level={3}>{title}</span><span className={styles.licenseNumber}>{number || "Nomor belum tersedia"}</span>{description && <span>{description}</span>}</span>
+                </CertificateImage> : <article className={styles.licenseCard} key={id}><div className={styles.licenseContent}><h3>{title}</h3><p className={styles.licenseNumber}>{number || "Nomor belum tersedia"}</p>{description && <p>{description}</p>}</div></article>
               ))}
               {content.certificates.length === 0 && <p className={styles.empty}>Belum ada sertifikat yang ditampilkan.</p>}
             </div>

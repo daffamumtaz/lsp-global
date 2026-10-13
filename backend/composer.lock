@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4d659731408b6647ac1f544c919ebb1",
+    "content-hash": "244a9d5ed522ed9b4d2a675aed195b20",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2290,6 +2290,93 @@
                 }
             ],
             "time": "2026-08-24T17:13:02+00:00"
+        },
+        {
+            "name": "johnrivera7/filament-custom-dashboard-widgets",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Johnrivera7/filament-custom-dashboard-widgets.git",
+                "reference": "3edbdaa49ab867874c1935d93b8cfeadea6afaa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Johnrivera7/filament-custom-dashboard-widgets/zipball/3edbdaa49ab867874c1935d93b8cfeadea6afaa3",
+                "reference": "3edbdaa49ab867874c1935d93b8cfeadea6afaa3",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "filament/forms": "^5.0",
+                "filament/tables": "^5.0",
+                "illuminate/contracts": "^11.0|^12.0|^13.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^8.0",
+                "orchestra/testbench": "^9.0|^10.0|^11.0",
+                "pestphp/pest": "^3.7|^4.0",
+                "pestphp/pest-plugin-arch": "^3.0|^4.0",
+                "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+                "pestphp/pest-plugin-livewire": "^3.0|^4.0",
+                "rector/rector": "^2.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JohnRivera7\\FilamentWidgetGrid\\FilamentWidgetGridServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JohnRivera7\\FilamentWidgetGrid\\": "src/",
+                    "JohnRivera7\\FilamentWidgetGrid\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Rivera",
+                    "email": "johnriveragonzalez7@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Customizable Filament dashboard widgets: drag, resize, and arrange on a permission-aware collage grid with layouts and templates.",
+            "homepage": "https://github.com/Johnrivera7/filament-custom-dashboard-widgets",
+            "keywords": [
+                "custom-dashboard-widgets",
+                "customizable-dashboard-widgets",
+                "dashboard",
+                "drag-and-drop",
+                "draggable",
+                "filament",
+                "filament-custom-dashboard-widgets",
+                "filament-plugin",
+                "filamentphp",
+                "johnrivera7",
+                "laravel",
+                "widgets"
+            ],
+            "support": {
+                "issues": "https://github.com/Johnrivera7/filament-custom-dashboard-widgets/issues",
+                "source": "https://github.com/Johnrivera7/filament-custom-dashboard-widgets"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Johnrivera7",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-08-24T18:26:34+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",

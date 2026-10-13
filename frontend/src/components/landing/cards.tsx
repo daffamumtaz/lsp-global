@@ -1,16 +1,17 @@
+import Link from "next/link";
 import type { LandingFeature, LandingReview } from "@/lib/landing";
 import { TrophyIcon, ShieldCheckIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { MediaImage } from "./ui";
 
-export function BenefitCard({ title, caption, icon }: LandingFeature) {
+export function BenefitCard({ title, caption, icon, href }: LandingFeature) {
   const Icon = { award: TrophyIcon, shield: ShieldCheckIcon, network: GlobeAltIcon }[icon] ?? TrophyIcon;
   return (
-    <article className="benefit-card rounded-xl border-2 border-divider bg-white">
+    <Link href={href} className="benefit-card block rounded-xl border-2 border-divider bg-white">
       <Icon aria-hidden="true" className="size-14 text-brand-dark" />
       <h3 className="mt-4 text-[length:var(--text-subheading)] leading-snug font-semibold text-brand-dark">{title}</h3>
-      <p className="mt-3 text-base leading-relaxed text-muted">{caption}</p>
-    </article>
+      {caption && <p className="mt-3 text-base leading-relaxed text-muted">{caption}</p>}
+    </Link>
   );
 }
 

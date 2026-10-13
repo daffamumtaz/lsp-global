@@ -1,0 +1,50 @@
+.heading { max-width: 920px; margin: 0 auto; text-align: center; }
+.heading h2 { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
+.heading p { max-width: 780px; margin: 16px auto 0; color: var(--text-muted); font-size: var(--text-intro); }
+.content, .plainText { max-width: 840px; margin-top: 16px; overflow-wrap: anywhere; }
+.plainText { white-space: pre-line; }
+.content > * + * { margin-top: 16px; }
+.content ul, .content ol { padding-left: 1.5em; }
+.content ul { list-style: disc; }
+.content ol { list-style: decimal; }
+.content li + li { margin-top: 8px; }
+.content strong { font-weight: 650; }
+.content a { color: var(--text-heading); text-decoration: underline; }
+.stepper { margin-top: 32px; }
+.hint { margin-bottom: 24px; color: var(--text-muted); font-size: 15px; text-align: center; }
+.steps { display: grid; grid-template-columns: repeat(var(--stage-count), minmax(0, 1fr)); gap: 0 12px; padding: 0; margin: 0; list-style: none; }
+.step { display: contents; }
+.stepButton { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: 16px; min-width: 0; padding: 8px 4px 20px; text-align: center; border-radius: 8px; }
+.stepButton::after { z-index: -2; content: ""; position: absolute; top: 31px; left: calc(50% + 36px); width: calc(100% - 60px); height: 2px; background: #c4dce9; pointer-events: none; }
+.step:last-child .stepButton::after, .step:nth-child(6n) .stepButton::after { display: none; }
+.marker { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border: 1px solid var(--color-brand); border-radius: 50%; background: white; color: var(--text-heading); font-size: 18px; font-weight: 600; }
+.title { color: var(--text-heading); font-size: 16px; font-weight: 600; line-height: 1.4; }
+.step[data-active="true"] .marker { border: 3px solid var(--text-heading); background: var(--text-heading); color: white; font-weight: 700; }
+.step[data-active="true"] .title { font-weight: 700; }
+.stepButton:hover::before, .stepButton:focus-visible::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: #f4f9fc; pointer-events: none; }
+.panel { grid-column: 1 / -1; order: 1; padding: clamp(24px, 4vw, 40px); margin-top: 12px; border: 1px solid #c4dce9; border-radius: 8px; background: white; }
+.panel[hidden] { display: none; }
+.counter { margin-bottom: 8px; color: var(--text-muted); font-size: 14px; }
+.panel h3, .closing h3 { color: var(--text-heading); font-size: var(--text-subheading); font-weight: 700; line-height: 1.4; }
+.panel h3 { font-size: clamp(20px, 2vw, 24px); }
+.closing { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--color-divider); }
+.closing p { max-width: 780px; margin-top: 12px; color: var(--text-muted); }
+.actions { display: flex; flex-direction: column; flex-shrink: 0; gap: 12px; }
+.actions a { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 20px; border: 1px solid var(--text-heading); border-radius: 8px; color: var(--text-heading); font-weight: 600; text-align: center; }
+.actions a:first-child { background: var(--text-heading); color: white; }
+.actions a:hover { background: #edf5fb; color: var(--text-heading); }
+@media (max-width: 1023px) {
+  .steps { display: block; }
+  .step { position: relative; display: block; padding-bottom: 16px; }
+  .step:not(:last-child)::before { content: ""; position: absolute; top: 66px; bottom: 2px; left: 23px; width: 2px; background: #c4dce9; pointer-events: none; }
+  .stepButton { flex-direction: row; width: 100%; gap: 16px; padding: 8px 0; text-align: left; }
+  .stepButton::after { display: none; }
+  .panel { position: relative; margin: 12px 0 8px 64px; padding: 24px; }
+  .hint { text-align: left; }
+  .closing { align-items: flex-start; flex-direction: column; gap: 24px; }
+  .actions { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 639px) {
+  .panel { margin-left: 0; padding: 24px 20px; }
+  .actions { width: 100%; flex-direction: column; }
+}

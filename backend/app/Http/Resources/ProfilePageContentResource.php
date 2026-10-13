@@ -22,8 +22,8 @@ class ProfilePageContentResource extends JsonResource
         return [
             'profile' => [
                 'hook' => $profile['hook'],
-                'description' => Str::sanitizeHtml($profile['description']),
-                'photo_urls' => array_values(array_filter(array_map($mediaUrl, [$profile['photo_path'], $profile['photo_two_path'], $profile['photo_three_path']]))),
+                'description' => filled(trim(strip_tags($profile['description'] ?? ''))) ? Str::sanitizeHtml($profile['description']) : '',
+                'photo_urls' => array_map($mediaUrl, [$profile['photo_path'], $profile['photo_two_path'], $profile['photo_three_path']]),
             ],
             'vision' => [
                 'hook' => $content['vision']['hook'],
@@ -31,7 +31,7 @@ class ProfilePageContentResource extends JsonResource
                 'mission' => Str::sanitizeHtml($content['vision']['mission']),
             ],
             'certificates' => array_values(array_map(static fn (array $item): array => [
-                'id' => $item['id'], 'title' => $item['title'], 'description' => $item['description'],
+                'id' => $item['id'], 'title' => $item['title'], 'number' => $item['number'] ?? '', 'description' => trim($item['description'] ?? ''),
                 'image_url' => $mediaUrl($item['image_path'] ?? null), 'fallback_image' => $item['fallback_image'] ?? null,
             ], array_filter($content['certificates'], static fn (array $item): bool => $item['visible'] ?? true))),
             'updated_at' => $page->updated_at?->toIso8601String(),

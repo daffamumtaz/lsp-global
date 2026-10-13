@@ -1,16 +1,24 @@
 "use client";
 
 import Image from "next/image";
+import { MapPinIcon, CalendarDaysIcon } from "@heroicons/react/24/outline";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { formatGalleryDate, galleryHref, readGalleryState, selectGallery, yearMedia, type GalleryActivity, type GalleryState, type ViewerItem } from "@/lib/gallery";
+import { useEffect, useRef, useState } from "react";
+import { formatGalleryDate, galleryHref, readGalleryState, selectGallery, type GalleryActivity, type GalleryState, type ViewerItem } from "@/lib/gallery";
 import { GalleryViewer } from "./gallery-viewer";
 import styles from "./gallery.module.css";
 
-export function GalleryBrowser({ activities }: { activities: GalleryActivity[] }) {
+export function GalleryBrowser({ activities, heading, yearHeading }: { activities: GalleryActivity[]; heading: { title: string; subtitle: string }; yearHeading: { title: string; subtitle: string } }) {
   const params = useSearchParams();
   const state = readGalleryState(params);
   const result = selectGallery(activities, state);
+  const galleryView = useRef<HTMLElement>(null);
+  const previousPage = useRef(state.page);
+  useEffect(() => {
+    if (previousPage.current === state.page) return;
+    previousPage.current = state.page;
+    galleryView.current?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  }, [state.page]);
   const [viewer, setViewer] = useState<{ items: ViewerItem[]; mediaId: string; opener: HTMLElement } | null>(null);
   const mediaLabel = state.type === "photo" ? "foto" : "video";
 
@@ -28,7 +36,7 @@ export function GalleryBrowser({ activities }: { activities: GalleryActivity[] }
     setViewer(null);
   }
 
-  return <section className={styles.gallerySection} aria-label="Album galeri">
+  return <section ref={galleryView} className={styles.gallerySection} aria-label="Album galeri">
     <div className={styles.inner}>
       <div className={styles.mediaTabs} role="group" aria-label="Jenis galeri">
         <button type="button" aria-pressed={state.type === "photo"} onClick={() => update({ type: "photo", year: null, query: "", sort: "newest", page: 1 })}>Jelajahi Foto Kami</button>
@@ -36,8 +44,9 @@ export function GalleryBrowser({ activities }: { activities: GalleryActivity[] }
       </div>
       {state.year !== null ? <div className={styles.yearHeading}>
         <button type="button" className={styles.backButton} onClick={() => update({ year: null, query: "", sort: "newest", page: 1 })}>← Kembali ke daftar tahun</button>
-        <h2>Menampilkan Tahun: {state.year}</h2>
-      </div> : <h2 className={styles.albumHeading}>Album {mediaLabel} per tahun</h2>}
+        <h2>{yearHeading.title.replace("{year}", String(state.year))}</h2>
+      </div> : <h2 className={styles.albumHeading}>{heading.title.replace("{media}", mediaLabel)}</h2>}
+      {(state.year === null ? heading.subtitle : yearHeading.subtitle) && <p>{state.year === null ? heading.subtitle : yearHeading.subtitle}</p>}
       <div className={styles.toolbar}>
         {state.year !== null && <label>Urutkan kegiatan<select value={state.sort} onChange={event => update({ sort: event.target.value as GalleryState["sort"], page: 1 }, true)}>
           <option value="newest">Terbaru dahulu</option><option value="oldest">Terlama dahulu</option><option value="title-asc">Judul A–Z</option><option value="title-desc">Judul Z–A</option>
@@ -49,14 +58,17 @@ export function GalleryBrowser({ activities }: { activities: GalleryActivity[] }
       <div className={styles.grid}>
         {result.items.map(card => <button className={`${styles.card} ${card.activity ? styles.activityCard : styles.albumCard}`} type="button" key={card.id} aria-label={card.activity ? `Buka ${card.title}` : `Buka album ${mediaLabel} tahun ${card.year}`} onClick={event => {
           if (!card.activity) { update({ year: card.year, query: "", sort: "newest", page: 1 }); return; }
-          setViewer({ items: yearMedia(activities, card.year, state.type), mediaId: card.cover.id, opener: event.currentTarget });
+          const activity = card.activity;
+          setViewer({ items: activity.media.filter(media => media.type === state.type && media.src).map(media => ({ activity, media })), mediaId: card.cover.id, opener: event.currentTarget });
         }}>
           <div className={styles.cardMedia}>
-            <Image src={card.cover.thumbnail} alt="" fill sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 45vw, 300px" className={styles.cover} />
+            {card.cover.type === "video"
+              ? <video className={styles.cover} muted playsInline preload="metadata" src={`${card.cover.src}#t=0.1`} aria-hidden="true" />
+              : <Image unoptimized={!card.cover.thumbnail.startsWith("/")} src={card.cover.thumbnail} alt="" fill sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1023px) 45vw, 300px" className={styles.cover} />}
             {!card.activity && <div className={styles.cardOverlay} aria-hidden="true" />}
           </div>
           {card.activity ? <div className={styles.cardCaption}>
-            <h3>{card.title}</h3><p>{formatGalleryDate(card.activity.date)}</p><p>{card.activity.location}</p><span>{card.count} {mediaLabel}</span>
+            <h3>{card.title}</h3><p className={styles.metadata}><MapPinIcon aria-hidden="true" />{card.activity.location || "Lokasi belum tersedia"}</p><p className={styles.metadata}><CalendarDaysIcon aria-hidden="true" />{formatGalleryDate(card.activity.date)}</p><span>{card.count} {mediaLabel}</span>
           </div> : <div className={styles.albumCaption}><h3>{card.year}</h3><p>{card.count} {mediaLabel}</p></div>}
         </button>)}
       </div>

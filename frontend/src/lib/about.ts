@@ -2,9 +2,9 @@ import { connection } from "next/server";
 import defaults from "./about-defaults.json";
 
 export type AboutContent = {
-  profile: { hook: string; description: string; photo_urls: string[] };
+  profile: { hook: string; description: string; photo_urls: (string | null)[] };
   vision: { hook: string; vision: string; mission: string };
-  certificates: { id: number; title: string; description: string; image_url: string | null; fallback_image: string | null }[];
+  certificates: { id: number; title: string; number: string; description: string; image_url: string | null; fallback_image: string | null }[];
   updated_at: string | null;
 };
 
@@ -24,7 +24,7 @@ export async function getAboutContent(): Promise<AboutContent> {
     if (!response.ok) throw new Error(`Profile API returned ${response.status}`);
     const { data } = await response.json() as { data?: AboutContent };
     if (!data || typeof data.profile?.hook !== "string" || typeof data.profile.description !== "string" ||
-      !Array.isArray(data.profile.photo_urls) || !data.profile.photo_urls.every(src => typeof src === "string" && /^https?:\/\//.test(src)) ||
+      !Array.isArray(data.profile.photo_urls) || !data.profile.photo_urls.every(src => (src === null || (typeof src === "string" && /^https?:\/\//.test(src)))) ||
       !data.vision || ![data.vision.hook, data.vision.vision, data.vision.mission].every(value => typeof value === "string") ||
       !Array.isArray(data.certificates) ||
       !data.certificates.every(item => typeof item.title === "string" && typeof item.description === "string" &&

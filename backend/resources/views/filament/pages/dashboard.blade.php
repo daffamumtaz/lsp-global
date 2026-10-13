@@ -1,80 +1,48 @@
-<x-filament-panels::page>
-    <div class="admin-dashboard">
-        <section class="dashboard-welcome" aria-label="Profil admin">
-            <div class="dashboard-welcome-user">
-                <span class="dashboard-avatar" aria-hidden="true">{{ strtoupper(substr(auth()->user()?->name ?? 'Admin', 0, 2)) }}</span>
-                <span><strong>{{ auth()->user()?->name ?? 'Admin' }}</strong><small>Administrator</small></span>
-            </div>
-            <form method="post" action="{{ filament()->getLogoutUrl() }}">
-                @csrf
-                <button class="dashboard-signout" type="submit">Sign out</button>
-            </form>
-        </section>
-
-        <section class="dashboard-statistics" aria-label="Ringkasan statistik">
-            @foreach ($statistics as $statistic)
-                <div class="dashboard-stat">
-                    <span>{{ $statistic['label'] }}</span>
-                    <strong>{{ $statistic['value'] }}</strong>
-                </div>
-            @endforeach
-        </section>
-
-        <section class="dashboard-card dashboard-quick-actions" aria-labelledby="quick-actions-heading">
-            <h2 id="quick-actions-heading">Aksi Cepat</h2>
-            <div class="dashboard-action-list">
-                @foreach ($quickActions as $action)
-                    <a href="{{ $action['url'] }}" class="dashboard-primary-button">{{ $action['label'] }}</a>
+@php
+    $page = $schemaComponent->getLivewire();
+    $visible = $page->getVisibleWidgetGridLayout();
+    $layoutKey = md5(json_encode([$page->widgetGridLayout, $page->widgetGridEditing]));
+@endphp
+<div wire:key="dashboard-grid-{{ $layoutKey }}"
+    class="fi-wg admin-dashboard-grid"
+    x-load
+    x-load-css="[@js(\Filament\Support\Facades\FilamentAsset::getStyleHref('filament-widget-grid-styles', 'johnrivera7/filament-custom-dashboard-widgets'))]"
+    x-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('filamentWidgetGrid', 'johnrivera7/filament-custom-dashboard-widgets') }}"
+    x-data="filamentWidgetGrid(@js($page->getWidgetGridAlpineConfig()))"
+    x-on:keydown.escape.window="onEscape($event)">
+    @if ($page->widgetGridEditing)
+        <x-filament::section heading="Widget tersedia">
+            <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">Pilih widget yang ditampilkan. Seret dan ubah ukuran di desktop, atau gunakan Atur urutan dan ukuran.</p>
+            <div class="flex flex-wrap gap-4">
+                @foreach ($page->getWidgetGridCatalog() as $widget)
+                    <label class="flex min-h-11 items-center gap-2">
+                        <input type="checkbox" class="fi-checkbox-input" @checked($widget['visible'])
+                            x-on:change="toggleWidget(@js($widget['class']), $event.target.checked)">
+                        {{ $widget['title'] }}
+                    </label>
                 @endforeach
             </div>
-        </section>
-
-        <section class="dashboard-card dashboard-table-card" aria-labelledby="messages-heading">
-            <div class="dashboard-card-heading">
-                <h2 id="messages-heading">Pesan Masuk</h2>
-                <a href="{{ \App\Filament\Resources\ContactMessages\ContactMessageResource::getUrl() }}" class="dashboard-primary-button">Lihat Selengkapnya</a>
+        </x-filament::section>
+    @endif
+    <div x-ref="grid" class="grid-stack fi-wg-grid" wire:ignore.self>
+        @forelse ($visible as $item)
+            <div class="grid-stack-item fi-wg-item" wire:ignore.self
+                gs-id="{{ $item['widget'] }}" gs-x="{{ $item['x'] }}" gs-y="{{ $item['y'] }}"
+                gs-w="{{ $item['w'] }}" gs-h="{{ $item['h'] }}"
+                gs-min-w="6" gs-min-h="{{ $item['widget']::$gridMinH }}">
+                <div class="grid-stack-item-content fi-wg-item-content admin-widget-content" tabindex="0" role="region" aria-label="{{ app($item['widget'])->getTitle() }}">
+                    @if ($page->widgetGridEditing)
+                        <button type="button" class="fi-wg-remove" aria-label="Hapus {{ app($item['widget'])->getTitle() }} dari layout"
+                            x-on:click.stop="toggleWidget(@js($item['widget']), false)">×</button>
+                        <div class="fi-wg-drag-surface" aria-hidden="true"></div>
+                    @endif
+                    <div class="fi-wg-widget">
+                        @livewire($item['widget'], key('dashboard-' . $item['widget'] . '-' . $page->widgetGridUserId()))
+                    </div>
+                </div>
             </div>
-            <div class="dashboard-table-scroll">
-                <table class="dashboard-table">
-                    <thead><tr><th>Tanggal</th><th>Waktu</th><th>Pengirim</th><th>Subjek</th><th>Jenis</th><th>Aksi</th></tr></thead>
-                    <tbody>
-                        @forelse ($messages as $message)
-                            <tr>
-                                <td>{{ $message['date'] }}</td><td>{{ $message['time'] }}</td>
-                                <td>{{ $message['sender'] }}</td><td>{{ $message['subject'] }}</td>
-                                <td><span class="dashboard-status {{ $message['status'] === 'Dibaca' ? 'is-success' : 'is-warning' }}">{{ $message['status'] }}</span></td>
-                                <td></td>
-                            </tr>
-                        @empty
-                            <tr><td colspan="6" class="dashboard-empty">Belum ada pesan.</td></tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="dashboard-card dashboard-table-card" aria-labelledby="changes-heading">
-            <div class="dashboard-card-heading">
-                <h2 id="changes-heading">Perubahan Terbaru</h2>
-                <a href="{{ \App\Filament\Pages\History::getUrl() }}" class="dashboard-primary-button">Lihat Selengkapnya</a>
-            </div>
-            <div class="dashboard-table-scroll">
-                <table class="dashboard-table">
-                    <thead><tr><th>Tanggal</th><th>Waktu</th><th>Jenis</th><th>Objek</th><th>Jenis</th><th>Admin</th></tr></thead>
-                    <tbody>
-                        @forelse ($changes as $change)
-                            <tr>
-                                <td>{{ $change['date'] }}</td><td>{{ $change['time'] }}</td>
-                                <td>{{ $change['type'] }}</td><td>{{ $change['object'] }}</td>
-                                <td><span class="dashboard-status {{ $change['action'] === 'Tambah' ? 'is-success' : ($change['action'] === 'Hapus' ? 'is-danger' : 'is-warning') }}">{{ $change['action'] }}</span></td>
-                                <td>{{ $change['admin'] }}</td>
-                            </tr>
-                        @empty
-                            <tr><td colspan="6" class="dashboard-empty">Belum ada perubahan.</td></tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        @empty
+            <p>Belum ada widget pada layout ini. Gunakan Atur dashboard untuk menambahkan widget.</p>
+        @endforelse
     </div>
-</x-filament-panels::page>
+</div>

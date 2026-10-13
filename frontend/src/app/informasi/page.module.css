@@ -5,35 +5,4 @@
 .heading h2 { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
 .heading h2 span, .alternate h2 { color: #004195; }
 .heading p { max-width: 780px; margin: 16px auto 0; color: var(--text-muted); font-size: var(--text-intro); line-height: 1.6; }
-.flowFigure { max-width: 1239px; margin: 40px auto 0; }
-.flowFigure > a { display: block; overflow: hidden; border: 1px solid #d4e2eb; border-radius: 20px; }
-.flowImage { width: 100%; height: auto; }
-.flowFigure figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 16px; color: #53686f; font-size: 14px; line-height: 1.5; }
-.flowFigure figcaption a { color: #004195; text-decoration: underline; text-underline-offset: 4px; }
-.steps { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 24px; counter-reset: steps; }
-.steps li { position: relative; counter-increment: steps; padding: var(--card-padding); padding-left: calc(var(--card-padding) + 40px); }
-.steps li:not(:last-child)::after { content: ""; position: absolute; left: calc(var(--card-padding) + 13px); top: calc(var(--card-padding) + 28px); bottom: calc(-1 * var(--card-padding)); width: 1px; background: #84d3eb; }
-.steps li::before { content: counter(steps); position: absolute; left: var(--card-padding); top: var(--card-padding); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #eaf5f8; color: #004195; font-size: 14px; font-weight: 700; }
-.steps h3 { color: #163b58; font-size: 16px; font-weight: 650; line-height: 1.5; }
-.steps p { margin-top: 8px; color: #53686f; font-size: 14px; line-height: 1.6; }
-.journey { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 40px; }
-.journey li { position: relative; padding: 0 0 28px 64px; }
-.journey li:not(:last-child)::after { content: ""; position: absolute; left: 23px; top: 48px; bottom: 0; width: 1px; background: #84d3eb; }
-.journey svg { position: absolute; left: 0; top: 0; width: 48px; height: 48px; padding: 11px; border: 1px solid #84d3eb; border-radius: 12px; color: #1576b5; background: #f4f7f7; }
-.journey h3 { color: var(--text-heading); font-size: var(--text-subheading); font-weight: 650; line-height: 1.4; }
-.journey p { margin-top: 12px; color: var(--text-muted); font-size: 15px; line-height: 1.6; max-width: 65ch; }
-.stepsTitle { margin-top: 32px; color: var(--text-heading); font-size: var(--text-subheading); font-weight: 650; }
-.flowDetails { margin-top: 32px; border: 1px solid #e2e8e8; border-radius: 12px; }
-.flowDetails summary { padding: 16px 24px; min-height: 52px; cursor: pointer; color: var(--text-heading); font-weight: 600; }
-.flowDetails summary:hover { background: #f4f7f7; border-radius: 12px; }
-.flowDetails .flowFigure { margin: 8px 24px 24px; }
-@media (min-width: 1024px) {
-  .journey { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
-  .journey li { padding: 72px 0 0; }
-  .journey li:not(:last-child)::after { left: 48px; right: -32px; top: 23px; width: auto; height: 1px; bottom: auto; }
-  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-  .steps li { border-top: 1px solid #dce8ed; }
-  .steps li:not(:last-child)::after { left: 100%; right: -24px; top: -1px; bottom: auto; width: auto; height: 1px; background: #dce8ed; }
-  .steps li:nth-child(3n)::after { display: none; }
-}
-@media (max-width: 767px) { .section { padding: 48px var(--page-gutter) 56px; } .heading p { font-size: 16px; } .steps { grid-template-columns: 1fr; } .flowFigure > a { border-radius: 12px; } }
+@media (max-width: 767px) { .section { padding: 48px var(--page-gutter) 56px; } .heading p { font-size: 16px; } }

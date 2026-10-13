@@ -21,6 +21,7 @@ class GalleryItemFactory extends Factory
             'title' => fake()->sentence(3),
             'year' => (string) now()->year,
             'description' => fake()->sentence(),
+            'media_type' => 'photo',
         ];
     }
 }

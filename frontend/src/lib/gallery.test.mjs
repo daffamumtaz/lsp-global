@@ -44,7 +44,7 @@ test("paginates using actual totals, clamps stale pages, and keeps source arrays
   assert.deepEqual(activities, before);
 });
 
-test("viewer includes all photos in the year despite filters and clamps navigation/zoom", () => {
+test("year media groups album covers and clamps navigation/zoom", () => {
   assert.deepEqual(yearMedia(activities, 2025, "photo").map(item => item.media.id), ["a1", "a2", "b1"]);
   assert.deepEqual(yearMedia(activities, 2024, "video"), []);
   assert.equal(moveMediaIndex(0, -1, 3), 0);
@@ -53,4 +53,15 @@ test("viewer includes all photos in the year despite filters and clamps navigati
   assert.equal(nextZoom(100, -25), 100);
   assert.equal(nextZoom(300, 25), 300);
   assert.equal(nextZoom(100, 25), 125);
+});
+
+test("a mixed-media activity has separate photo and video cards with accurate counts", () => {
+  const mixed = [{ ...activities[0], media: [media("p1"), media("p2"), media("v1", "video"), media("v2", "video")] }];
+  for (const type of ["photo", "video"]) {
+    const cards = selectGallery(mixed, { ...defaults, type, year: 2025 }).items;
+    assert.equal(cards.length, 1);
+    assert.equal(cards[0].count, 2);
+    assert.equal(cards[0].cover.type, type);
+    assert.equal(cards[0].activity.title, "Zeta");
+  }
 });

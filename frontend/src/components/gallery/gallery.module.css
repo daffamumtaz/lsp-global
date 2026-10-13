@@ -1,10 +1,13 @@
-.gallerySection { background: var(--background); padding: 0 var(--page-gutter) 80px; }
+.gallerySection { background: #fff; padding: 0 var(--page-gutter) 80px; }
+.metadata { display: flex; align-items: flex-start; gap: 6px; }
+.metadata + .metadata { margin-top: 6px; }
+.metadata svg { width: 18px; height: 18px; flex-shrink: 0; }
 .inner { max-width: var(--content-width); margin: auto; }
 .mediaTabs { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
 .mediaTabs button, .backButton, .resetButton, .empty button, .pagination button { min-height: 44px; padding: 10px 20px; border: 1px solid #004195; border-radius: 8px; color: #004195; background: white; cursor: pointer; font-weight: 600; }
 .mediaTabs button[aria-pressed="true"], .pagination button[aria-current="page"], .empty button { color: white; background: #004195; }
-.mediaTabs button:hover, .backButton:hover, .resetButton:hover, .pagination button:hover { background: #e1ecfa; }
-.mediaTabs button[aria-pressed="true"]:hover, .pagination button[aria-current="page"]:hover, .empty button:hover { background: #003475; }
+.mediaTabs button:hover, .backButton:hover, .resetButton:hover, .pagination button:hover { background: #fff; color: #004195; border-color: #004195; }
+.mediaTabs button[aria-pressed="true"]:hover, .pagination button[aria-current="page"]:hover, .empty button:hover { background: #fff; color: #004195; border-color: #004195; }
 .yearHeading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
 .yearHeading h2, .albumHeading { color: var(--text-heading); font-size: var(--text-section); font-weight: 700; line-height: 1.25; }
 .albumHeading { margin-bottom: 28px; }
@@ -18,8 +21,19 @@
 .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--card-gap); }
 .card { position: relative; isolation: isolate; min-width: 0; overflow: hidden; border-radius: 12px; border: 1px solid #dbe5e9; color: white; background: #163d56; cursor: pointer; text-align: left; }
 .cardMedia { position: relative; isolation: isolate; aspect-ratio: 4 / 3; }
+.cardMedia > video { position: absolute; inset: 0; width: 100%; height: 100%; }
 .activityCard { display: flex; flex-direction: column; background: white; color: #313a3c; }
-.card:hover { box-shadow: 0 8px 24px #193c5633; }
+.card { transition: transform 180ms ease, border-color 180ms, box-shadow 180ms; }
+.cover { transition: transform 180ms ease; }
+.card:focus-visible { border-color: #1576b5; box-shadow: 0 0 0 3px #1576b5; }
+@media (hover: hover) {
+  .card:hover { transform: scale(1.03); border-color: #1576b5; box-shadow: 0 8px 24px #193c5633; }
+  .card:hover .cover { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .cover { transition: none; }
+  .card:hover, .card:hover .cover { transform: none; }
+}
 .card:focus-visible { outline-offset: 5px; }
 .cover { object-fit: cover; z-index: -2; }
 .cardOverlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #0016290d 0%, #001629a6 45%, #001629f2 100%); }
@@ -40,35 +54,39 @@
 
 .viewer { position: fixed; inset: 0; margin: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; padding: 0; border: 0; background: #111827f5; color: white; color-scheme: dark; }
 .viewer::backdrop { background: #111827e6; }
-.viewerLayout { display: grid; grid-template-rows: auto minmax(120px, 1fr) auto auto; height: 100%; overflow: auto; }
+.viewerLayout { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(120px, 1fr) auto auto; height: 100%; overflow: auto; }
+.viewerLayout > * { min-width: 0; }
 .viewerToolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; }
 .viewerCount { font-size: 14px; white-space: nowrap; }
-.viewerControls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.viewerControls { display: flex; align-items: center; justify-content: end; gap: 8px; flex-wrap: wrap; min-width: 0; }
 .viewerControls button, .thumbnailNavigation > button, .viewerStage > button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #7694aa; border-radius: 8px; background: #253247; color: white; cursor: pointer; }
-.viewerControls button:hover, .thumbnailNavigation > button:hover { background: #2c5574; }
+.viewerControls button:hover, .thumbnailNavigation > button:hover { background: #fff; color: #004195; border-color: #004195; }
 .viewerControls button:disabled, .viewerStage > button:disabled { opacity: .4; cursor: default; }
 .viewerControls output { min-width: 48px; text-align: center; font-size: 14px; }
 .viewerControls .closeButton { margin-left: 8px; font-size: 28px; line-height: 1; }
-.viewerControls .closeButton:hover { background: #dceaf4; }
+.viewerControls .closeButton:hover { background: #fff; color: #004195; border-color: #004195; }
 .viewer :focus-visible { outline: 3px solid #a8d9ff; outline-offset: 3px; }
 .viewerStage { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 20px; min-height: 0; padding: 0 24px; }
 .viewerStage > button { border-radius: 50%; font-size: 32px; line-height: 1; }
-.viewerStage > button:hover:not(:disabled) { background: #3b4d66; }
+.viewerStage > button:hover:not(:disabled) { background: #fff; color: #004195; border-color: #004195; }
 .mediaViewport { position: relative; width: 100%; height: 100%; min-height: 0; overflow: auto; overscroll-behavior: contain; }
-.photoStage { position: relative; }
+.photoStage { position: relative; container-type: size; display: grid; place-items: center; }
+.cropFrame { position: relative; overflow: hidden; }
 .fullPhoto { object-fit: contain; }
 .fullVideo { width: 100%; height: 100%; object-fit: contain; }
 .viewerCaption { padding: 16px 24px; max-height: 160px; overflow: auto; line-height: 1.5; text-align: center; }
-.viewerCaption h2 { max-width: 900px; margin-inline: auto; font-size: var(--text-subheading); font-weight: 700; text-wrap: balance; }
+.viewerCaption h2 { max-width: 900px; margin-inline: auto; font-size: var(--text-subheading); font-weight: 700; text-wrap: balance; overflow-wrap: anywhere; }
 .viewerCaption p { font-size: 14px; }
-.viewerMeta { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 20px; color: #c4d9e8; margin-top: 6px; }
+.viewerMeta { display: flex; align-items: center; flex-direction: column; gap: 6px; color: #c4d9e8; margin-top: 6px; }
+.viewerMeta .metadata + .metadata { margin-top: 0; }
 .thumbnailSection { padding: 0 24px max(16px, env(safe-area-inset-bottom)); }
 .thumbnailNavigation { display: flex; align-items: center; gap: 12px; }
 .thumbnails { display: flex; min-width: 0; gap: 8px; overflow-x: auto; padding: 4px; flex: 1; }
 .thumbnails button { flex: 0 0 112px; padding: 2px; height: 72px; background: #193c56; border: 2px solid transparent; border-radius: 6px; cursor: pointer; overflow: hidden; }
 .thumbnails button:hover { border-color: #7694aa; }
 .thumbnails button[aria-current="true"] { border-color: #a8d9ff; }
-.thumbnails img { width: 104px; height: 64px; object-fit: cover; border-radius: 2px; }
+.croppedThumbnail { display: block; width: 104px; height: 64px; border-radius: 2px; background-repeat: no-repeat; }
+.thumbnails img, .thumbnails video { width: 104px; height: 64px; object-fit: cover; border-radius: 2px; }
 @media (max-width: 1023px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 639px) {
   .gallerySection { padding: 0 var(--page-gutter) 56px; }

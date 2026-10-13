@@ -1,0 +1,404 @@
+{
+  "asesors": [
+    {
+      "nama": "-",
+      "noreg": "00",
+      "alamat": ""
+    },
+    {
+      "nama": "Maulana Izaki",
+      "noreg": "MET.000.000815 2022",
+      "alamat": "Lamongan, Jawa Timur"
+    },
+    {
+      "nama": "Umar Mansyuri",
+      "noreg": "MET.000.000825 2022",
+      "alamat": "Kota Serang, Banten"
+    },
+    {
+      "nama": "Hari Setiabudi Husni, S.Pt., M.Si., CDMS",
+      "noreg": "MET.000.000150 2015",
+      "alamat": "Kota Administrasi Jakarta Timur, DKI Jakarta"
+    },
+    {
+      "nama": "Dudi Mardiyansyah",
+      "noreg": "MET.000.004728 2016",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Ekky Januardi",
+      "noreg": "MET.000.000118 2023",
+      "alamat": "Bandung, Jawa Barat"
+    },
+    {
+      "nama": "Mohammad Luthfi Hakim",
+      "noreg": "MET.000.000122 2023",
+      "alamat": "Bandung, Jawa Barat"
+    },
+    {
+      "nama": "Irvan Alfa Gelvian",
+      "noreg": "MET.000.000120 2023",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Muhamad Adi Tyas Samudra",
+      "noreg": "MET.000.000123 2023",
+      "alamat": "Kota Serang, Banten"
+    },
+    {
+      "nama": "Trisha Arianka Mauldine",
+      "noreg": "MET.000.000126 2023",
+      "alamat": "Bandung, Jawa Barat"
+    },
+    {
+      "nama": "Henry Chong",
+      "noreg": "MET.000.000119 2023",
+      "alamat": "Kota Administrasi Jakarta Barat, DKI Jakarta"
+    },
+    {
+      "nama": "Ponda Suwaka Hidajat",
+      "noreg": "MET.000.000133 2023",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Sri Rahardjo",
+      "noreg": "MET.000.000135 2023",
+      "alamat": "Kota Tangerang, Banten"
+    },
+    {
+      "nama": "Verry Nanda Setiawan",
+      "noreg": "MET.000.000136 2023",
+      "alamat": "Tegal, Jawa Tengah"
+    },
+    {
+      "nama": "Anang Kurnia",
+      "noreg": "MET.000.008457 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Yenni Kurniawati",
+      "noreg": "MET.000.008455 2023",
+      "alamat": "Kota Padang, Sumatera Barat"
+    },
+    {
+      "nama": "Dodi Vionanda",
+      "noreg": "MET.000.008448 2023",
+      "alamat": "Tanah Datar, Sumatera Barat"
+    },
+    {
+      "nama": "Dr. Kusman Sadik S.Si M.Si",
+      "noreg": "MET.000.008964 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Prof. Dr. Ir. Hari Wijayanto, M.Si",
+      "noreg": "MET.000.008461 2023",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Yenni Angraini",
+      "noreg": "MET.000.008450 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Bagus Sartono",
+      "noreg": "MET.000.008464 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Prof. Dr. Ir. Anik Djuraidah, M.S.",
+      "noreg": "MET.0008465 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Erfiani",
+      "noreg": "MET.000.008458 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Anna Islamiyati",
+      "noreg": "MET.000.008466 2023",
+      "alamat": "Kota Makassar, Sulawesi Selatan"
+    },
+    {
+      "nama": "Dr. Septian Rahardiantoro, S.Stat, M.Si",
+      "noreg": "MET.000.008453 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "I Made Sumertajaya",
+      "noreg": "MET.000.008446 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Indahwati",
+      "noreg": "MET.000.008447 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Nusar Hajarisman",
+      "noreg": "MET.000.008459 2023",
+      "alamat": "Kota Bandung, Jawa Barat"
+    },
+    {
+      "nama": "Anisa",
+      "noreg": "MET.000.008449 2023",
+      "alamat": "Kota Makassar, Sulawesi Selatan"
+    },
+    {
+      "nama": "Sachnaz Desta Oktarina, M.Agr, Ph.D",
+      "noreg": "MET.000.008451 2023",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Dian Handayani",
+      "noreg": "MET.000.008452 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Krisna Pandhana",
+      "noreg": "MET.000.008462 2023",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Agus Mohamad Soleh",
+      "noreg": "MET.000.008463 2023",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "AKBAR RIZKI",
+      "noreg": "MET.000.008454 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Restu Arisanti",
+      "noreg": "MET.000.008456 2023",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Muhammad",
+      "noreg": "MET.000.008467 2023",
+      "alamat": "Kota Banjarmasin, Kalimantan Selatan"
+    },
+    {
+      "nama": "Mahmudin",
+      "noreg": "MET.000.004350 2016",
+      "alamat": "Kota Depok, Jawa Barat"
+    },
+    {
+      "nama": "Prof. Dewi Anggraini, S.Si., M.App.Sci., Ph.D.",
+      "noreg": "MET.000.002885 2024",
+      "alamat": "Kota Banjarbaru, Kalimantan Selatan"
+    },
+    {
+      "nama": "Dewi Sri Susanti, S.Si., M.Si.",
+      "noreg": "MET.000.002894 2024",
+      "alamat": "Kota Banjarbaru, Kalimantan Selatan"
+    },
+    {
+      "nama": "Selvi Annisa, S.Si., M.Si.",
+      "noreg": "MET.000.002897 2024",
+      "alamat": "Kota Banjarmasin, Kalimantan Selatan"
+    },
+    {
+      "nama": "Yeni Rahkmawati, S.Mat., M.Si",
+      "noreg": "MET.000.002886 2024",
+      "alamat": "Kota Banjarbaru, Kalimantan Selatan"
+    },
+    {
+      "nama": "Darmanto, S.Si., M.Si.",
+      "noreg": "MET.000.002887 2024",
+      "alamat": "Banyuwangi, Jawa Timur"
+    },
+    {
+      "nama": "Wisnu Manupraba, ST.",
+      "noreg": "MET.000.002888 2024",
+      "alamat": "Sleman, Daerah Istimewa Yogyakarta"
+    },
+    {
+      "nama": "Prof. Alhadi Bustamam, S.Si, M.Kom, Ph.D",
+      "noreg": "MET.000.002890 2024",
+      "alamat": "Kota Depok, Jawa Barat"
+    },
+    {
+      "nama": "Dr. Dra. Ani Budi Astuti, M.Si.",
+      "noreg": "MET.000.002898 2024",
+      "alamat": "Kota Malang, Jawa Timur"
+    },
+    {
+      "nama": "Prof. Dr. Dra. Titin Siswantining, D.E.A.",
+      "noreg": "MET.000.002896 2024",
+      "alamat": "Kota Depok, Jawa Barat"
+    },
+    {
+      "nama": "Dr.,Ir. Bagus Sumargo, M.Si.",
+      "noreg": "MET.000.002899 2024",
+      "alamat": "Kota Administrasi Jakarta Timur, DKI Jakarta"
+    },
+    {
+      "nama": "Rustam Effendi",
+      "noreg": "MET.000.004345 2017",
+      "alamat": "Kota Serang, Banten"
+    },
+    {
+      "nama": "A Irwan Fasihi",
+      "noreg": "MET.000.002531 2017",
+      "alamat": "Kota Cimahi, Jawa Barat"
+    },
+    {
+      "nama": "Rustomo",
+      "noreg": "MET.0000.03921 2016",
+      "alamat": "Nganjuk, Jawa Timur"
+    },
+    {
+      "nama": "Adji Ginandjar Lazuardi",
+      "noreg": "MET.000.001714 2025",
+      "alamat": "Kota Bekasi, Jawa Barat"
+    },
+    {
+      "nama": "Ahmad Fadhlan Rifaldi",
+      "noreg": "MET.000.001715 2025",
+      "alamat": "Kota Administrasi Jakarta Selatan, DKI Jakarta"
+    },
+    {
+      "nama": "Anif Hanifa Setianingrum M.Si",
+      "noreg": "MET.000.001716 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Aulia Rizki Firdawanti, S.Stat., M.Si.",
+      "noreg": "MET.000.001717 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Cici Suhaeni, S.Si., M.Si., Ph.D",
+      "noreg": "MET.000.001718 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Gerry Alfa Dito, M.Si.",
+      "noreg": "MET.000.001719 2025",
+      "alamat": "Kota Bandar Lampung, Lampung"
+    },
+    {
+      "nama": "Hafidlotul Fatimah Ahmad S.Kom., M.Kom.",
+      "noreg": "MET.000.001720 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Hidayatul Mayyani S.Si., M.Si.",
+      "noreg": "MET.000.001721 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Muhammad Naufal",
+      "noreg": "MET.000.001723 2025",
+      "alamat": "Indramayu, Jawa Barat"
+    },
+    {
+      "nama": "Nur Agustiani, M.Si.",
+      "noreg": "MET.000.001724 2025",
+      "alamat": "Sukabumi, Jawa Barat"
+    },
+    {
+      "nama": "Ria Arafiyah, S.Si, M.Si.",
+      "noreg": "MET.000.001725 2025",
+      "alamat": "Kota Administrasi Jakarta Timur, DKI Jakarta"
+    },
+    {
+      "nama": "Rina Trisminingsih, S.Kom., M.T., Ph.D.",
+      "noreg": "MET.000.001726 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Ruhiyat, M.Si. M.Act.Sc.",
+      "noreg": "MET.000.001727 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Prof. Dr. Sri Wahyuni, S.E., M.Si.",
+      "noreg": "MET.000.001729 2025",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Dr Yani Nurhadryani, SSi, MT.",
+      "noreg": "MET.000.001730 2025",
+      "alamat": "Kota Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Dr. Shelvie Nidya Neyman, S.Kom., M.Si.",
+      "noreg": "MET.000.001728 2025",
+      "alamat": "Bogor, Jawa Barat"
+    },
+    {
+      "nama": "Yosep kurniawan",
+      "noreg": "MET.0000.02992 2021",
+      "alamat": "Lebak, Banten"
+    },
+    {
+      "nama": "Khafit Bimo Prasetyo",
+      "noreg": "MET.000.001722 2025",
+      "alamat": "Kota Depok, Jawa Barat"
+    },
+    {
+      "nama": "Yasin Efendi",
+      "noreg": "MET.000.004734 2016",
+      "alamat": "Kota Administrasi Jakarta Selatan, DKI Jakarta"
+    },
+    {
+      "nama": "Susana Dwi Yulianti",
+      "noreg": "MET.000.004733 2016",
+      "alamat": "Kota Depok, Jawa Barat"
+    },
+    {
+      "nama": "Muhamad Untung Setiawan",
+      "noreg": "MET.000.006556 2025",
+      "alamat": "Tegal, Jawa Tengah"
+    },
+    {
+      "nama": "Nurul Hibatillah",
+      "noreg": "MET. 000.001705 2026",
+      "alamat": "Kota Bekasi, Jawa Barat"
+    },
+    {
+      "nama": "Lili Ayu Wulandhari",
+      "noreg": "MET. 000.001702 2026",
+      "alamat": "Kota Administrasi Jakarta Barat, DKI Jakarta"
+    },
+    {
+      "nama": "Carolus Dimas WIjanarko",
+      "noreg": "MET. 000.001709 2026",
+      "alamat": "Kota Cimahi, Jawa Barat"
+    },
+    {
+      "nama": "Rani Puspa Ayu",
+      "noreg": "MET. 000.001704 2026",
+      "alamat": "Bandung, Jawa Barat"
+    },
+    {
+      "nama": "Antonia Dwi Woro Wibaningrum",
+      "noreg": "MET. 000.001712 2026",
+      "alamat": "Kota Cimahi, Jawa Barat"
+    },
+    {
+      "nama": "Brigitta Sonia Wijayanti",
+      "noreg": "MET. 000.001713 2026",
+      "alamat": "Kota Cimahi, Jawa Barat"
+    },
+    {
+      "nama": "Febrido Yudharwena",
+      "noreg": "MET.000.001708 2026",
+      "alamat": "Kota Administrasi Jakarta Selatan, DKI Jakarta"
+    },
+    {
+      "nama": "Dimaz Arno Prasetio",
+      "noreg": "MET.000.001698 2026",
+      "alamat": "Kota Tangerang, Banten"
+    },
+    {
+      "nama": "Singgih yudianto",
+      "noreg": "MET.000.001697 2026",
+      "alamat": "Kota Administrasi Jakarta Barat, DKI Jakarta"
+    }
+  ]
+}

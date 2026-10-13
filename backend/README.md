@@ -1,58 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Backend LSP TIK Global
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel 13 menyediakan API konten publik; Filament 5 menyediakan panel admin. Database default adalah SQLite. PHP 8.5 dan Composer digunakan untuk verifikasi proyek ini.
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Untuk checkout baru:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+composer install
+cp .env.example .env
+php artisan key:generate
+[ -f database/database.sqlite ] || touch database/database.sqlite
+php artisan migrate
+php artisan storage:link
+npm ci
+npm run build
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Penyalinan `.env` dan pembuatan key hanya untuk setup awal. Pada lingkungan yang sudah berjalan, pertahankan `.env`, key, database, dan upload yang ada.
 
-## Contributing
+Jalankan backend:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php artisan serve --host=127.0.0.1 --port=8000
+```
 
-## Code of Conduct
+Saat mengubah tema admin, jalankan `npm run dev` di terminal terpisah. `composer run dev` juga tersedia untuk menjalankan layanan pengembangan melalui Artisan.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Buat akun admin secara interaktif, lalu berikan akses kepada akun tersebut:
 
-## Security Vulnerabilities
+```bash
+php artisan make:filament-user
+php artisan admin:grant admin@example.com
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Gunakan email akun yang benar-benar dibuat. Akun baru memiliki `is_admin=false`; pembuatan akun saja belum memberi akses panel.
 
-## License
+Pemeriksaan:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan test --compact
+vendor/bin/pint --dirty --format agent
+```
+
+API didefinisikan di [routes/api.php](routes/api.php). Panel admin dikonfigurasi di [AdminPanelProvider](app/Providers/Filament/AdminPanelProvider.php). `DatabaseSeeder` kosong; beberapa migration sudah menambahkan konten awal, sedangkan alur asesmen dapat dibuat di admin atau melalui `AssessmentProcessSeeder`.
+
+Lihat [guidebook](../frontend/docs/guidebook-codebase.md) untuk penjelasan seeder, struktur database, kontrak API, dan troubleshooting; lihat [audit sistem dan UX](../frontend/docs/audit-sistem-ux.md) untuk pekerjaan lanjutan.
+
+### Preview admin dan video profil
+
+Preview struktur organisasi, alur sertifikasi, dan TUK menggunakan iframe frontend `/admin-preview/{kind}`. Atur `FRONTEND_URL` ke origin frontend yang digunakan admin, dan `ADMIN_PREVIEW_ORIGIN` di frontend ke origin panel admin (termasuk port). Preview hanya menerima pesan dari parent dan origin tersebut. Tombol **Perbarui preview** membaca draft tanpa menyimpan; batal atau simpan memuat ulang data tersimpan.
+
+Video profil bawaan berada di `resources/media/video-profile-lfRo5LN6.webm` dan dilayani melalui `/media/profile-video` dengan dukungan Range. Sertakan file ini saat deployment. Unggahan video dari CMS tetap mengutamakan video yang diunggah. Nomor asesor baru memakai `MET.000.` + nomor + tahun Jakarta; nomor lama tetap dapat diedit.

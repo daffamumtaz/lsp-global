@@ -1,0 +1,98 @@
+{
+  "home_schemes": {
+    "title": "Skema Sertifikasi Unggulan",
+    "subtitle": "Cari dan pilih skema sertifikasi yang sesuai dengan kebutuhan Anda"
+  },
+  "about_hero": {
+    "title": "Tentang Kami",
+    "subtitle": "Mengenal lebih dekat perjalanan, visi, dan dedikasi LSP TIK Global dalam mencetak Sumber Daya Manusia (SDM) yang unggul di Indonesia."
+  },
+  "about_vision": {
+    "title": "Visi",
+    "subtitle": ""
+  },
+  "about_mission": {
+    "title": "Misi",
+    "subtitle": ""
+  },
+  "about_structure": {
+    "title": "Struktur Organisasi",
+    "subtitle": "Susunan manajemen dan pelaksana tugas LSP TIK Global dalam mewujudkan sertifikasi yang independen dan bermutu."
+  },
+  "about_legal": {
+    "title": "Lisensi & Legalitas",
+    "subtitle": "Sebagai komitmen terhadap mutu dan profesionalisme, operasional LSP TIK Global telah diakui dan dilisensi secara resmi oleh negara."
+  },
+  "schemes_hero": {
+    "title": "Skema Sertifikasi",
+    "subtitle": "Temukan skema sertifikasi kompetensi sesuai bidang dan kebutuhan profesional Anda."
+  },
+  "gallery_hero": {
+    "title": "Galeri",
+    "subtitle": "Dokumentasi momen-momen berharga dari berbagai program sertifikasi yang telah kami selenggarakan."
+  },
+  "gallery_albums": {
+    "title": "Album {media} per tahun",
+    "subtitle": ""
+  },
+  "partners_hero": {
+    "title": "Mitra Kami",
+    "subtitle": "Dipercaya oleh berbagai perusahaan dan institusi pendidikan"
+  },
+  "contact_hero": {
+    "title": "Hubungi Kami",
+    "subtitle": "Sampaikan pertanyaan tentang sertifikasi, kebutuhan informasi, atau rencana kerja sama Anda."
+  },
+  "contact_info": {
+    "title": "Mari terhubung",
+    "subtitle": "Gunakan form untuk menyiapkan pesan atau hubungi kami langsung melalui kanal berikut."
+  },
+  "contact_details": {
+    "title": "Kontak kami",
+    "subtitle": ""
+  },
+  "contact_socials": {
+    "title": "Media sosial kami",
+    "subtitle": ""
+  },
+  "contact_form": {
+    "title": "Siapkan pesan Anda",
+    "subtitle": ""
+  },
+  "contact_location": {
+    "title": "Kunjungi kami",
+    "subtitle": "Temukan kantor LSP TIK Global dan dapatkan petunjuk arah menuju lokasi kami."
+  },
+  "scheme_units": {
+    "title": "Unit Kompetensi",
+    "subtitle": ""
+  },
+  "scheme_requirements": {
+    "title": "Persyaratan",
+    "subtitle": ""
+  },
+  "scheme_basic": {
+    "title": "Persyaratan Dasar",
+    "subtitle": "Penuhi salah satu persyaratan berikut. Konfirmasikan ketentuan resmi kepada penyelenggara."
+  },
+  "scheme_administrative": {
+    "title": "Persyaratan Administrasi",
+    "subtitle": "Siapkan semua berkas berikut sebelum mendaftar."
+  },
+  "gallery_year": {
+    "title": "Menampilkan Tahun: {year}",
+    "subtitle": ""
+  },
+  "footer_explore": {
+    "title": "Jelajahi",
+    "subtitle": ""
+  },
+  "footer_contact": {
+    "title": "Hubungi Kami",
+    "subtitle": ""
+  },
+  "footer_social": {
+    "title": "Ikuti Kami",
+    "subtitle": ""
+  }
+}

@@ -1,10 +1,7 @@
-.breadcrumb { display: flex; gap: 12px; flex-wrap: wrap; width: min(calc(100% - 2 * var(--page-gutter)), var(--content-width)); margin: auto; padding-block: 24px; color: #53686f; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
-.breadcrumb a { color: #004195; text-decoration: underline; text-underline-offset: 3px; padding-block: 8px; }
-.breadcrumb a:hover { color: #002e69; }
 .hero { position: relative; isolation: isolate; background-color: #002e69; background-size: cover; background-position: center; color: white; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(0 20 48 / 80%); }
 .heroInner { width: min(calc(100% - 2 * var(--page-gutter)), var(--content-width)); margin: auto; padding-block: 40px 56px; }
-.backLink { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 16px; font-size: 16px; text-decoration: underline; text-underline-offset: 3px; }
+.backLink { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 16px; font-size: 16px; }
 .backLink:hover { color: #d9edff; }
 .hero h1 { max-width: 1000px; font-size: var(--text-title); line-height: 1.15; font-weight: 700; letter-spacing: -.03em; text-wrap: balance; overflow-wrap: anywhere; }
 .category { margin-top: 16px; font-size: var(--text-intro); line-height: 1.6; overflow-wrap: anywhere; }
@@ -13,10 +10,10 @@
 .metadata dt { color: #d9edff; font-size: 14px; line-height: 1.5; }
 .metadata dd { margin-top: 4px; font-size: 18px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
 .actions { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-top: 36px; }
-.price { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.price { font-size: clamp(22px, 2vw, 28px); font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .priceMissing { font-size: 20px; font-weight: 600; line-height: 1.5; }
 .actions a { background: white; color: #004195; border-color: white; padding: 14px 24px; }
-.actions a:hover { background: #d9edff; }
+.actions a:hover { background: #fff; color: #004195; border-color: #004195; }
 .hero :focus-visible { outline-color: white; }
 .content { width: min(calc(100% - 2 * var(--page-gutter)), var(--content-width)); margin: auto; padding-block: 40px 80px; }
 @media (max-width: 639px) {

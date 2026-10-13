@@ -30,7 +30,7 @@ class ProfilePageTest extends TestCase
 
     public function test_editor_saves_profile_and_logs_the_change_without_changing_other_sections(): void
     {
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(User::factory()->admin()->create());
         Filament::setCurrentPanel(Filament::getPanel('admin'));
 
         Livewire::test(Profile::class)->set('profileData.hook', 'Profil Baru')->call('saveProfile')->assertHasNoErrors();
@@ -41,12 +41,23 @@ class ProfilePageTest extends TestCase
 
     public function test_editor_rejects_empty_profile_title_without_publishing(): void
     {
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(User::factory()->admin()->create());
         Filament::setCurrentPanel(Filament::getPanel('admin'));
 
         Livewire::test(Profile::class)->set('profileData.hook', '')->call('saveProfile')->assertHasErrors(['profileData.hook' => 'required']);
 
         $this->getJson('/api/profile-page')->assertJsonPath('data.profile.hook', 'Lembaga Sertifikasi Profesi Teknologi Informasi dan Komunikasi Global (LSP TIK Global)');
+    }
+
+    public function test_missing_collage_slots_do_not_move_the_other_photos(): void
+    {
+        $content = SitePage::defaultProfileContent();
+        $content['profile']['photo_two_path'] = 'profile/photos/second.webp';
+        SitePage::factory()->create(['kind' => 'profile', 'content' => $content]);
+        $this->getJson('/api/profile-page')->assertJsonCount(3, 'data.profile.photo_urls')
+            ->assertJsonPath('data.profile.photo_urls.0', null)
+            ->assertJsonPath('data.profile.photo_urls.1', url('/storage/profile/photos/second.webp'))
+            ->assertJsonPath('data.profile.photo_urls.2', null);
     }
 
     public function test_hidden_certificates_are_excluded(): void
@@ -73,13 +84,13 @@ class ProfilePageTest extends TestCase
 
     public function test_certificate_edits_and_reordering_are_published(): void
     {
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(User::factory()->admin()->create());
         Filament::setCurrentPanel(Filament::getPanel('admin'));
 
         Livewire::test(Profile::class)->callAction('editCertificate', [
-            'title' => 'Lisensi Baru', 'description' => 'Deskripsi baru', 'visible' => true,
+            'title' => 'Lisensi Baru', 'number' => 'LSP-123', 'description' => 'Deskripsi baru', 'visible' => true,
         ], arguments: ['index' => 0])->assertHasNoErrors()->call('moveCertificate', 0, 1)->call('saveCertificates')->assertHasNoErrors();
 
-        $this->getJson('/api/profile-page')->assertJsonPath('data.certificates.1.title', 'Lisensi Baru');
+        $this->getJson('/api/profile-page')->assertJsonPath('data.certificates.1.title', 'Lisensi Baru')->assertJsonPath('data.certificates.1.number', 'LSP-123');
     }
 }

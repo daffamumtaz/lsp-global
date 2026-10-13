@@ -1,3 +1,5 @@
+import type { SiteIdentity } from "./landing";
+
 export const contactInfo = {
   phone: "021-27651353", phoneHref: "tel:02127651353",
   whatsapp: "+62 851-9553-3360", whatsappNumber: "6285195533360",
@@ -21,19 +23,42 @@ export function validateContact(input: ContactInput): ContactErrors {
   if (!input.message.trim() || input.message.length > 5000 || countWords(input.message) > 1000) errors.message = "Isi pesan, maksimal 1.000 kata dan 5.000 karakter.";
   return errors;
 }
-export function contactDraft(input: ContactInput) {
+export function contactDraft(input: ContactInput, destination: Pick<typeof contactInfo, "email" | "whatsappNumber"> & { whatsappContactTemplate?: string; brandName?: string } = contactInfo) {
   const body = [
     `Subjek: ${input.subject}`, `Nama: ${input.name.trim()}`, `Instansi: ${input.institution.trim()}`,
     `Email: ${input.email.trim()}`, `Telepon: ${input.phone.trim() || "Tidak dicantumkan"}`,
     `Preferensi balasan: ${input.preference}`, "", input.message.trim(),
   ].join("\n");
+  const whatsappBody = destination.whatsappContactTemplate ? renderWhatsAppTemplate(destination.whatsappContactTemplate, {
+    ...input, name: input.name.trim(), institution: input.institution.trim(), email: input.email.trim(),
+    phone: input.phone.trim() || "Tidak dicantumkan", message: input.message.trim(), brand_name: destination.brandName ?? "LSP TIK Global",
+  }) : body;
   return {
-    body,
-    email: `mailto:${contactInfo.email}?subject=${encodeURIComponent(`${input.subject} — ${input.name.trim()}`)}&body=${encodeURIComponent(body)}`,
-    whatsapp: `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(body)}`,
+    body, whatsappBody,
+    email: `mailto:${destination.email}?subject=${encodeURIComponent(`${input.subject} — ${input.name.trim()}`)}&body=${encodeURIComponent(body)}`,
+    whatsapp: `https://wa.me/${destination.whatsappNumber}?text=${encodeURIComponent(whatsappBody)}`,
   };
 }
-export const whatsappUrl = `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent("Halo LSP TIK Global, saya ingin bertanya tentang sertifikasi.")}`;
-const destination = encodeURIComponent(`LSP TIK Global, ${contactInfo.address}`);
-export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${destination}`;
-export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+export function renderWhatsAppTemplate(template: string, values: Record<string, string>): string {
+  return template.replace(/\{([a-z_]+)\}/g, (match, key: string) => values[key] ?? match);
+}
+export function getContactInfo(identity: SiteIdentity) {
+  const digits = identity.whatsapp.replace(/\D/g, "");
+  const whatsappNumber = digits.startsWith("0") ? `62${digits.slice(1)}` : digits;
+  const destination = encodeURIComponent(`${identity.brand_name}, ${identity.address}`);
+  return {
+    phone: identity.phone, phoneHref: `tel:${identity.phone.replace(/[^+\d]/g, "")}`,
+    email: identity.email, whatsapp: identity.whatsapp, whatsappNumber, address: identity.address,
+    brandName: identity.brand_name,
+    whatsappContactTemplate: identity.whatsapp_contact_message,
+    whatsappUrl: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(renderWhatsAppTemplate(identity.whatsapp_message, { brand_name: identity.brand_name }))}`,
+    mapsUrl: identity.maps_url || `https://www.google.com/maps/search/?api=1&query=${destination}`,
+    directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${destination}`,
+    mapEmbedUrl: `https://www.google.com/maps?q=${destination}&output=embed`,
+  };
+}
+
+export function getRegistrationUrl(identity: SiteIdentity, schemeName: string): string {
+  const { whatsappNumber } = getContactInfo(identity);
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(renderWhatsAppTemplate(identity.whatsapp_registration_message ?? "Halo {brand_name}, saya ingin mendaftar sertifikasi skema {scheme_name}.", { brand_name: identity.brand_name, scheme_name: schemeName }))}`;
+}

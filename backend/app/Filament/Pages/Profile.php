@@ -25,7 +25,7 @@ class Profile extends Page
 
     protected static ?string $navigationLabel = 'Profil LSP';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Edit Halaman';
+    protected static string|\UnitEnum|null $navigationGroup = 'Konten Website';
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedShoppingBag;
 
@@ -51,10 +51,10 @@ class Profile extends Page
         return $schema->components([
             TextInput::make('hook')->label('Judul Profil')->required()->maxLength(200),
             TextInput::make('slug')->label('Alamat halaman')->default('/tentang-kami')->disabled()->dehydrated(false),
-            $this->richText('description', 'Deskripsi'),
-            $this->imageUpload('photo_path', 'Foto Utama', 'profile/photos'),
-            $this->imageUpload('photo_two_path', 'Foto Kedua', 'profile/photos'),
-            $this->imageUpload('photo_three_path', 'Foto Ketiga', 'profile/photos'),
+            $this->richText('description', 'Deskripsi')->required(false),
+            $this->imageUpload('photo_path', 'Foto kiri (tinggi)', 'profile/photos'),
+            $this->imageUpload('photo_two_path', 'Foto kanan atas', 'profile/photos'),
+            $this->imageUpload('photo_three_path', 'Foto kanan bawah', 'profile/photos'),
         ])->statePath('profileData');
     }
 
@@ -78,7 +78,11 @@ class Profile extends Page
     {
         return FileUpload::make($name)->label($label)->disk('public')->visibility('public')->directory($directory)
             ->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])->maxSize(5120)->openable()
-            ->helperText('JPEG, PNG, atau WebP, maksimal 5 MB.');
+            ->helperText(match ($name) {
+                'photo_path' => '1 file JPEG, PNG, atau WebP, maksimal 5 MB. Disarankan 800 × 1200 px, rasio 2:3.',
+                'image_path' => '1 file JPEG, PNG, atau WebP, maksimal 5 MB. Disarankan minimal 1200 px pada sisi panjang; gunakan rasio dokumen asli.',
+                default => '1 file JPEG, PNG, atau WebP, maksimal 5 MB. Disarankan 1200 × 800 px, rasio 3:2.',
+            });
     }
 
     public function editCertificateAction(): Action
@@ -87,8 +91,9 @@ class Profile extends Page
             ->modalSubmitActionLabel('Terapkan')->modalDescription('Terapkan ke daftar, lalu Simpan Sertifikat untuk menerbitkan.')
             ->fillForm(fn (array $arguments): array => $this->certificatesData[$arguments['index'] ?? -1] ?? ['visible' => true])
             ->schema(fn (array $arguments): array => [
-                TextInput::make('title')->label('Judul')->required()->maxLength(160),
-                Textarea::make('description')->label('Deskripsi')->required()->rows(5)->maxLength(2000),
+                TextInput::make('title')->label('Nama')->required()->maxLength(160),
+                TextInput::make('number')->label('Nomor')->maxLength(255),
+                Textarea::make('description')->label('Deskripsi')->rows(5)->maxLength(2000),
                 $this->imageUpload('image_path', 'Gambar Sertifikat', 'profile/certificates')
                     ->required(empty($this->certificatesData[$arguments['index'] ?? -1]['fallback_image'])),
                 Toggle::make('visible')->label('Tampilkan')->default(true),
@@ -141,12 +146,14 @@ class Profile extends Page
     {
         abort_unless(auth()->user()?->canAccessPanel(Filament::getPanel('admin')), 403);
         $page = $this->profilePage();
+        // Baca ulang setelah lock agar penyimpanan satu bagian tidak menimpa bagian lain.
         DB::transaction(function () use ($page, $section, $data, $label): void {
             $page = SitePage::query()->lockForUpdate()->findOrFail($page->id);
             $content = $page->profileContent();
+            $old = $content[$section] ?? null;
             $content[$section] = $data;
             SitePage::withoutEvents(static fn () => $page->update(['content' => $content]));
-            activity()->performedOn($page)->causedBy(auth()->user())->withProperties(['section' => $section])->log('Mengubah '.$label);
+            activity()->performedOn($page)->causedBy(auth()->user())->event('updated')->withProperties(['section' => $section])->withChanges(['old' => [$section => $old], 'attributes' => [$section => $data]])->log('Mengubah '.$label);
         });
         Notification::make()->success()->title('Perubahan tersimpan dan langsung tampil di situs.')->send();
     }

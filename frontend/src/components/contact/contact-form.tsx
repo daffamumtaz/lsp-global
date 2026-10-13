@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { contactDraft, contactPreferences, contactSubjects, countWords, validateContact, type ContactErrors, type ContactInput } from "@/lib/contact";
 import styles from "./contact.module.css";
 
-export function ContactForm() {
+export function ContactForm({ destination, heading }: { destination: Parameters<typeof contactDraft>[1]; heading: { title: string; subtitle: string } }) {
   const [errors, setErrors] = useState<ContactErrors>({});
   const [message, setMessage] = useState("");
   const [preference, setPreference] = useState("Email");
@@ -33,9 +33,9 @@ export function ContactForm() {
     setErrors(nextErrors);
     const first = Object.keys(nextErrors)[0];
     if (first) { event.currentTarget.querySelector<HTMLElement>(`[name="${first}"]`)?.focus(); return; }
-    setDraft(contactDraft(input));
+    setDraft(contactDraft(input, destination));
   }}>
-    <h2>Siapkan pesan Anda</h2>
+    <h2>{heading.title}</h2>{heading.subtitle && <p>{heading.subtitle}</p>}
     <p className={styles.formIntro}>Isi form, lalu buka draf di email atau WhatsApp untuk mengirimkannya. Pesan tidak dikirim atau disimpan melalui website ini.</p>
     <p className={styles.help}>Field bertanda * wajib diisi.</p>
     <fieldset aria-describedby={errors.subject ? "subject-error" : undefined}><legend>Subjek pesan *</legend><div className={styles.radioGroup}>{contactSubjects.map((subject, index) => <label key={subject}><input type="radio" name="subject" value={subject} defaultChecked={index === 0} required />{subject}</label>)}</div>{errors.subject && <p id="subject-error" className={styles.error}>{errors.subject}</p>}</fieldset>
@@ -44,6 +44,6 @@ export function ContactForm() {
     <div className={styles.field}><label htmlFor="contact-message">Isi pesan *</label><textarea id="contact-message" name="message" autoComplete="off" rows={6} maxLength={5000} required placeholder="Contoh: Saya ingin mengetahui jadwal sertifikasi…" value={message} onChange={event => setMessage(event.target.value)} aria-invalid={Boolean(errors.message)} aria-describedby={`message-help${errors.message ? " message-error" : ""}`} /><p id="message-help" className={styles.help}>{countWords(message)} / 1.000 kata · {message.length} / 5.000 karakter</p>{errors.message && <p id="message-error" className={styles.error}>{errors.message}</p>}</div>
     {Object.keys(errors).length > 0 && <p role="alert" className={styles.error}>Periksa field yang ditandai, lalu siapkan pesan kembali.</p>}
     <button type="submit" className={styles.primary}>Siapkan draf pesan →</button>
-    {draft && <div ref={prepared} className={styles.prepared} tabIndex={-1} aria-labelledby="prepared-title"><h3 id="prepared-title">Draf pesan siap</h3><p role="status">Pesan belum dikirim. Pilih email atau WhatsApp, periksa kembali isinya, lalu kirim melalui aplikasi tersebut.</p><details><summary>Periksa isi draf</summary><pre>{draft.body}</pre></details><div className={styles.actions}><a className={styles.primary} href={draft.email} onClick={() => setDirty(false)}>Buka draf email</a><a className={styles.secondary} href={draft.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => setDirty(false)}>Buka WhatsApp ↗<span className="sr-only"> (tab baru)</span></a></div><p className={styles.help}>Jika aplikasi email tidak terbuka atau isi draf terpotong, salin teks dari “Periksa isi draf” ke aplikasi email Anda.</p></div>}
+    {draft && <div ref={prepared} className={styles.prepared} tabIndex={-1} aria-labelledby="prepared-title"><h3 id="prepared-title">Draf pesan siap</h3><p role="status">Pesan belum dikirim. Pilih email atau WhatsApp, periksa kembali isinya, lalu kirim melalui aplikasi tersebut.</p><details><summary>Periksa isi draf</summary><h4>Email</h4><pre>{draft.body}</pre><h4>WhatsApp</h4><pre>{draft.whatsappBody}</pre></details><div className={styles.actions}><a className={styles.primary} href={draft.email} onClick={() => setDirty(false)}>Buka draf email</a><a className={styles.secondary} href={draft.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => setDirty(false)}>Buka WhatsApp ↗<span className="sr-only"> (tab baru)</span></a></div><p className={styles.help}>Jika aplikasi email tidak terbuka atau isi draf terpotong, salin teks dari “Periksa isi draf” ke aplikasi email Anda.</p></div>}
   </form>;
 }

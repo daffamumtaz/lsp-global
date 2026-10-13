@@ -1,5 +1,5 @@
 export type SchemeMethod = "luring" | "jarak-jauh";
-export type SchemeUnit = { code: string; title: string };
+export type SchemeUnit = { code: string; title: string; description?: string };
 export type Scheme = {
   id: string; slug: string; name: string; category: string; level: number;
   type: string; methods: SchemeMethod[]; price: number | null; thumbnail: string;

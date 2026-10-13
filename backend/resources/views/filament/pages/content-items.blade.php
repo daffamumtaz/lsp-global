@@ -1,12 +1,11 @@
 <div class="content-items">
     <div class="content-items-toolbar">
         <p>{{ count($items) }} item · Perubahan diterbitkan setelah bagian disimpan.</p>
-        <x-filament::button type="button" wire:click="mountAction('{{ $editAction }}')">{{ $collection === 'features' ? 'Tambah Poin' : 'Tambah Partner' }}</x-filament::button>
     </div>
     <div class="dashboard-table-scroll">
         <table class="dashboard-table content-table">
             <caption class="sr-only">{{ $collection === 'features' ? 'Poin Mengapa Kami' : 'Daftar Mitra' }}</caption>
-            <thead><tr><th scope="col">Urutan</th><th scope="col">{{ $collection === 'features' ? 'Ikon' : 'Logo' }}</th><th scope="col">{{ $collection === 'features' ? 'Judul / Caption' : 'Nama / Tautan' }}</th><th scope="col">Status</th><th scope="col">Aksi</th></tr></thead>
+            <thead><tr><th scope="col">Urutan</th><th scope="col">{{ $collection === 'features' ? 'Ikon' : 'Logo' }}</th><th scope="col">{{ $collection === 'features' ? 'Judul / Caption' : 'Nama / Tautan' }}</th><th scope="col">Aksi</th></tr></thead>
             <tbody>
                 @forelse ($items as $index => $item)
                     <tr wire:key="{{ $collection }}-{{ $index }}">
@@ -20,12 +19,11 @@
                                 <span class="content-item-placeholder">—</span>
                             @endif
                         </td>
-                        <td><strong>{{ $item['title'] ?? $item['name'] }}</strong><span class="content-item-description">{{ $item['caption'] ?? $item['url'] }}</span></td>
-                        <td><span class="dashboard-status {{ ($item['visible'] ?? true) ? 'is-success' : 'is-warning' }}">{{ ($item['visible'] ?? true) ? 'Tampil' : 'Disembunyikan' }}</span></td>
+                        <td><x-filament::button type="button" color="gray" outlined wire:click="mountAction('{{ $editAction }}', { index: {{ $index }} })">{{ $item['title'] ?? $item['name'] }}</x-filament::button><span class="content-item-description">{{ $item['caption'] ?? $item['url'] }}</span></td>
                         <td><div class="content-row-actions"><x-filament::button type="button" size="sm" color="gray" wire:click="mountAction('{{ $editAction }}', { index: {{ $index }} })">Edit</x-filament::button><x-filament::button type="button" size="sm" color="danger" outlined wire:click="mountAction('removeItem', { collection: '{{ $collection }}', index: {{ $index }} })">Hapus</x-filament::button></div></td>
                     </tr>
                 @empty
-                    <tr><td colspan="5" class="dashboard-empty">Belum ada item. Tambahkan item pertama.</td></tr>
+                    <tr><td colspan="4" class="dashboard-empty">Belum ada item.</td></tr>
                 @endforelse
             </tbody>
         </table>

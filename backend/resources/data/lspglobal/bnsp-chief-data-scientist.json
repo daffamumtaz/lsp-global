@@ -1,0 +1,67 @@
+{
+  "units": [
+    {
+      "id": 1566025,
+      "idskema": 73242,
+      "idskk": 187,
+      "idunit": 6759,
+      "kodeunit": "J.620200.004.01",
+      "keterangan": "Menyusun Roadmap Arsitektur Bisnis",
+      "status": 1
+    },
+    {
+      "id": 1566024,
+      "idskema": 73242,
+      "idskk": 1245,
+      "idunit": 183632,
+      "kodeunit": "J.62DMS00.001.1",
+      "keterangan": "Mengidentifikasi Kebutuhan Pengelolaan Data untuk Proses Bisnis",
+      "status": 1
+    },
+    {
+      "id": 1566019,
+      "idskema": 73242,
+      "idskk": 1246,
+      "idunit": 183654,
+      "kodeunit": "J.62DMI00.001.1",
+      "keterangan": "Menentukan Objektif Bisnis",
+      "status": 1
+    },
+    {
+      "id": 1566020,
+      "idskema": 73242,
+      "idskk": 1246,
+      "idunit": 183655,
+      "kodeunit": "J.62DMI00.002.1",
+      "keterangan": "Menentukan Tujuan Teknis Data Science",
+      "status": 1
+    },
+    {
+      "id": 1566021,
+      "idskema": 73242,
+      "idskk": 1246,
+      "idunit": 183656,
+      "kodeunit": "J.62DMI00.003.1",
+      "keterangan": "Membuat Rencana Proyek Data Science",
+      "status": 1
+    },
+    {
+      "id": 1566022,
+      "idskema": 73242,
+      "idskk": 1246,
+      "idunit": 183673,
+      "kodeunit": "J.62DMI00.020.1",
+      "keterangan": "Melakukan Review Proyek Data Science",
+      "status": 1
+    },
+    {
+      "id": 1566023,
+      "idskema": 73242,
+      "idskk": 1246,
+      "idunit": 183674,
+      "kodeunit": "J.62DMI00.021.1",
+      "keterangan": "Melakukan Laporan Akhir Proyek Data Science",
+      "status": 1
+    }
+  ]
+}

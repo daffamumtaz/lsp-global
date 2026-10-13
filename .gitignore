@@ -44,3 +44,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local browser checks and generated AI-tool output
+.playwright-mcp/
+/frontend/artifacts/
+/.impeccable/
+/.codex/hooks.json
+/backend/.claude/
+/backend/CLAUDE.md
+/frontend/CLAUDE.md

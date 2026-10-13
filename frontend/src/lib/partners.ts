@@ -1,3 +1,4 @@
+export const PARTNERS_SUBTITLE = "Dipercaya oleh berbagai perusahaan dan institusi pendidikan";
 import type { LandingPartner } from "./landing";
 export type Partner = { name: string; url: string | null; logo_url: string | null };
 function webUrl(value: string | null) {
