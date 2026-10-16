@@ -11,7 +11,6 @@ import { Footer, Header } from "@/components/landing/chrome";
 import { MediaImage, SearchField, SectionHeading } from "@/components/landing/ui";
 import { VisualMotif } from "@/components/landing/visual-motif";
 import { getLandingContent } from "@/lib/landing";
-import { referenceReviews } from "@/lib/reference-reviews";
 
 function BrandText({ text, className = "" }: { text: string; className?: string }) {
   const marker = "LSP TIK Global";
@@ -81,10 +80,10 @@ export default async function Home() {
           <p className="relative mt-[33px] text-center text-base leading-none tracking-[-0.03em] text-muted italic"><Link href="/kontak">Butuh informasi lanjut mengenai sertifikasi?</Link></p>
         </section>
 
-        <section className="reviews-section bg-section px-6" aria-label="Review kami">
+        {content.reviews.items.length > 0 && <section className="reviews-section bg-section px-6" aria-label="Review kami">
           <SectionHeading subtitle={content.reviews.description}>{content.reviews.hook}</SectionHeading>
-          <ReviewCarousel reviews={referenceReviews} />
-        </section>
+          <ReviewCarousel reviews={content.reviews.items} />
+        </section>}
 
         <section id="mitra" className="partners-section relative isolate overflow-hidden px-6" aria-label="Mitra kami">
           <SectionHeading subtitle={content.partners_section.description}>{content.partners_section.hook}</SectionHeading>

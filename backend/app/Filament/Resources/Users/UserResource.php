@@ -15,6 +15,7 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Validation\Rules\Password;
 
 class UserResource extends Resource
 {
@@ -35,7 +36,7 @@ class UserResource extends Resource
         return $schema->components([
             TextInput::make('name')->label('Nama')->required()->maxLength(255),
             TextInput::make('email')->label('Email')->email()->required()->unique(ignoreRecord: true),
-            TextInput::make('password')->label('Kata Sandi')->password()->required(fn (string $operation): bool => $operation === 'create')->dehydrated(fn (?string $state): bool => filled($state)),
+            TextInput::make('password')->label('Kata Sandi')->password()->rule(Password::default())->required(fn (string $operation): bool => $operation === 'create')->dehydrated(fn (?string $state): bool => filled($state)),
             Toggle::make('is_admin')->label('Izinkan akses admin')->default(false)->helperText('Akun tanpa izin ini tidak dapat membuka panel.'),
         ]);
     }

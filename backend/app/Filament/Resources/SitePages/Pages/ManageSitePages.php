@@ -80,7 +80,7 @@ class ManageSitePages extends Page
         return $schema->components([
             Grid::make(2)->schema([
                 FileUpload::make('background_path')->label('Gambar Latar Hero')->disk('public')->visibility('public')->directory('landing/hero')->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])->maxSize(5120)->openable()->helperText('1 file JPEG, PNG, atau WebP, maksimal 5 MB. Disarankan 1920 × 1080 px, rasio 16:9.'),
-                FileUpload::make('video_path')->label('Video Profil')->disk('public')->visibility('public')->directory('landing/hero')->acceptedFileTypes(['video/mp4', 'video/webm'])->maxSize(102400)->openable()->helperText('1 file MP4 atau WebM, maksimal 100 MB. Disarankan 1920 × 1080 px (1080p), rasio 16:9.'),
+                FileUpload::make('video_path')->label('Video Profil')->disk('public')->visibility('public')->directory('landing/hero')->acceptedFileTypes(['video/mp4', 'video/webm'])->maxSize(fn (): int => config('filesystems.max_upload_size_kb'))->openable()->helperText(fn (): string => '1 file MP4 atau WebM, maksimal '.(config('filesystems.max_upload_size_kb') / 1024).' MB. Disarankan 1920 × 1080 px (1080p), rasio 16:9.'),
                 FileUpload::make('poster_path')->label('Gambar Sampul')->disk('public')->visibility('public')->directory('landing/hero')->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])->maxSize(5120)->openable()->helperText('1 file JPEG, PNG, atau WebP, maksimal 5 MB. Disarankan 1920 × 1080 px, rasio 16:9.'),
             ]),
         ])->statePath('videoData');

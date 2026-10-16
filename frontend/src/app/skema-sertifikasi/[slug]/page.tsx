@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, Header } from "@/components/landing/chrome";
+import { InternalHero } from "@/components/landing/internal-hero";
 import { SchemeDetailTabs } from "@/components/schemes/scheme-detail-tabs";
 import { getRegistrationUrl } from "@/lib/contact";
 import { getLandingContent } from "@/lib/landing";
@@ -13,13 +14,22 @@ import shared from "@/components/schemes/schemes.module.css";
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { schemes } = await getPublicContent();
+  const { schemes, unavailable } = await getPublicContent();
+  if (unavailable) return { title: "Skema sementara tidak tersedia | LSP TIK Global", robots: { index: false, follow: true } };
   const scheme = schemes.find(item => item.slug === slug);
-  return { title: `${scheme?.name ?? "Skema tidak ditemukan"} | LSP TIK Global`, description: scheme ? `Informasi skema ${scheme.name}, unit kompetensi, dan persyaratan sertifikasi.` : undefined };
+  if (!scheme) return { title: "Skema tidak ditemukan | LSP TIK Global", robots: { index: false, follow: true } };
+  return { title: `${scheme.name} | LSP TIK Global`, description: `Informasi skema ${scheme.name}, unit kompetensi, dan persyaratan sertifikasi.` };
 }
 export default async function SchemeDetailPage({ params, searchParams }: Props) {
   const { slug } = await params;
-  const { schemes } = await getPublicContent();
+  const { schemes, unavailable } = await getPublicContent();
+  if (unavailable) return <><Header currentPage="schemes" /><main id="main" className="bg-white">
+    <InternalHero white id="scheme-title" title="Skema sementara tidak tersedia">Informasi skema belum dapat dimuat. Silakan coba lagi beberapa saat lagi.</InternalHero>
+    <div className={`${styles.content} ${styles.recoveryActions}`}>
+      <a className={shared.primary} href={`/skema-sertifikasi/${encodeURIComponent(slug)}`}>Coba lagi</a>
+      <Link className={shared.secondary} href="/skema-sertifikasi">Kembali ke daftar skema</Link>
+    </div>
+  </main><Footer /></>;
   const scheme = schemes.find(item => item.slug === slug);
   if (!scheme) notFound();
   const query = new URLSearchParams();

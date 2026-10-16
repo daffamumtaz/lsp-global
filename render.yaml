@@ -1,0 +1,110 @@
+
+services:
+  - type: web
+    name: lsp-tik-global-backend-preview
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /up
+    autoDeployTrigger: 'off'
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: 'false'
+      - key: APP_NAME
+        value: LSP TIK Global
+      - key: RUN_MIGRATIONS
+        value: 'true'
+      - key: ADMIN_MFA_REQUIRED
+        value: 'true'
+      - key: PUBLIC_CONTENT_REQUESTS_PER_MINUTE
+        value: '600'
+      - key: CONTENT_DIRECTORY_CACHE_SECONDS
+        value: '30'
+      - key: APP_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: TRUSTED_PROXIES
+        value: '*'
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: '5432'
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSLMODE
+        value: require
+      - key: SESSION_DRIVER
+        value: database
+      - key: SESSION_SECURE_COOKIE
+        value: 'true'
+      - key: SESSION_SAME_SITE
+        value: lax
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: FILESYSTEM_DISK
+        value: local
+      - key: PUBLIC_FILESYSTEM_DRIVER
+        value: supabase
+      - key: MEDIA_MAX_UPLOAD_KB
+        value: '51200'
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: warning
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_DEFAULT_REGION
+        sync: false
+      - key: AWS_BUCKET
+        sync: false
+      - key: AWS_ENDPOINT
+        sync: false
+      - key: AWS_URL
+        sync: false
+
+  - type: web
+    name: lsp-tik-global-frontend-preview
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- --hostname 0.0.0.0
+    healthCheckPath: /
+    autoDeployTrigger: 'off'
+    envVars:
+      - key: LANDING_API_URL
+        sync: false
+      - key: NODE_VERSION
+        value: '24'
+      - key: ADMIN_PREVIEW_ORIGIN
+        sync: false
+      - key: PROFILE_API_URL
+        sync: false
+      - key: ORGANIZATION_API_URL
+        sync: false
+      - key: CONTENT_API_URL
+        sync: false
+      - key: INFORMATION_API_URL
+        sync: false
+      - key: PROCESSES_API_URL
+        sync: false
+      - key: LANDING_MEDIA_ORIGIN
+        sync: false

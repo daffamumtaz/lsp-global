@@ -50,12 +50,7 @@ export const defaultLandingContent: LandingContent = {
   reviews: {
     hook: "Review Kami",
     description: "Apa kata mereka tentang LSP TIK Global?",
-    items: Array.from({ length: 6 }, (_, index) => ({
-      name: `Placeholder Review ${index + 1}`,
-      occupation: "Nama dan profesi akan ditambahkan",
-      quote: "Placeholder — ulasan peserta sertifikasi akan ditampilkan di sini.",
-      photo_url: null,
-    })),
+    items: [],
   },
   social_links: { Facebook: "https://www.facebook.com/", Instagram: "https://www.instagram.com/lsptikglobal/", YouTube: "https://www.youtube.com/" },
   partners: [{ name: "Jobhun", url: "https://jobhun.id", logo_url: null }],
@@ -63,15 +58,30 @@ export const defaultLandingContent: LandingContent = {
   updated_at: null,
 };
 
+function isLandingReview(value: unknown): value is LandingReview {
+  if (!value || typeof value !== "object") return false;
+  const review = value as Record<string, unknown>;
+  if (![review.name, review.occupation, review.quote].every(field => typeof field === "string")) return false;
+  if (review.photo_url === null) return true;
+  if (typeof review.photo_url !== "string") return false;
+  if (review.photo_url.startsWith("/") && !review.photo_url.startsWith("//")) return true;
+  try {
+    const photo = new URL(review.photo_url);
+    return ["http:", "https:"].includes(photo.protocol) && !photo.username && !photo.password;
+  } catch {
+    return false;
+  }
+}
+
 export const getLandingContent = cache(async (): Promise<LandingContent> => {
   await connection();
   const url = process.env.LANDING_API_URL ?? "http://127.0.0.1:8000/api/landing-page";
 
   try {
-    const response = await fetch(url, { cache: "no-store" });
+    const response = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(5000) });
     if (!response.ok) throw new Error(`Landing API returned ${response.status}`);
     const payload = await response.json() as { data?: LandingContent };
-    if (!payload.data?.hero || !payload.data.why_us || !payload.data.reviews || !Array.isArray(payload.data.partners)) {
+    if (!payload.data?.hero || !payload.data.why_us || !Array.isArray(payload.data.reviews?.items) || !payload.data.reviews.items.every(isLandingReview) || !Array.isArray(payload.data.partners)) {
       throw new Error("Landing API returned an invalid payload");
     }
     return { ...payload.data, sections: Object.fromEntries(Object.entries(sectionDefaults).map(([key, value]) => [key, { ...value, ...payload.data?.sections?.[key as keyof typeof sectionDefaults] }])) as typeof sectionDefaults, partners_section: { ...defaultLandingContent.partners_section, ...payload.data.partners_section }, hero: { ...defaultLandingContent.hero, ...payload.data.hero }, about: { ...defaultLandingContent.about, ...payload.data.about }, identity: { ...defaultLandingContent.identity, ...payload.data.identity } };

@@ -14,7 +14,10 @@ return [
     |
     */
 
-    'frontend' => ['url' => env('FRONTEND_URL', 'http://localhost:3000')],
+    'frontend' => [
+        'url' => env('FRONTEND_URL', 'http://localhost:3000'),
+        'assets_path' => env('FRONTEND_ASSETS_PATH', is_dir(resource_path('frontend-public')) ? resource_path('frontend-public') : dirname(base_path()).'/frontend/public'),
+    ],
 
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),

@@ -49,9 +49,9 @@ class GalleryItemResource extends Resource
             TextInput::make('location')->label('Lokasi')->required()->maxLength(255),
             DatePicker::make('date')->label('Tanggal')->required()->minDate('1900-01-01')->maxDate('2100-12-31'),
             Textarea::make('description')->label('Deskripsi')->rows(3)->maxLength(10000),
-            SpatieMediaLibraryFileUpload::make('image')->label(fn (Get $get): string => $get('media_type') === 'video' ? 'Video' : 'Foto')->collection('gallery')->multiple()->reorderable()->acceptedFileTypes(fn (Get $get): array => GalleryItem::acceptedMimeTypes($get('media_type')))->maxSize(102400)->disk('public')->visibility('public')->required()->disabled(fn (Get $get): bool => blank($get('media_type')))->helperText(fn (Get $get): string => $get('media_type') === 'video'
-                ? 'File MP4 atau WebM, maksimal 100 MB per file. Disarankan 1920 × 1080 px (1080p), rasio 16:9.'
-                : 'File JPEG, PNG, atau WebP, maksimal 100 MB per file. Disarankan 1920 × 1080 px, rasio 16:9; foto potret juga diterima.'),
+            SpatieMediaLibraryFileUpload::make('image')->label(fn (Get $get): string => $get('media_type') === 'video' ? 'Video' : 'Foto')->collection('gallery')->multiple()->reorderable()->acceptedFileTypes(fn (Get $get): array => GalleryItem::acceptedMimeTypes($get('media_type')))->maxSize(fn (): int => config('filesystems.max_upload_size_kb'))->disk('public')->visibility('public')->required()->disabled(fn (Get $get): bool => blank($get('media_type')))->helperText(fn (Get $get): string => $get('media_type') === 'video'
+                ? 'File MP4 atau WebM, maksimal '.(config('filesystems.max_upload_size_kb') / 1024).' MB per file. Disarankan 1920 × 1080 px (1080p), rasio 16:9.'
+                : 'File JPEG, PNG, atau WebP, maksimal '.(config('filesystems.max_upload_size_kb') / 1024).' MB per file. Disarankan 1920 × 1080 px, rasio 16:9; foto potret juga diterima.'),
         ]);
     }
 

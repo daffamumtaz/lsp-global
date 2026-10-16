@@ -1,0 +1,22 @@
+  .git
+  .gitignore
+
+  **/vendor/
+  **/node_modules/
+  **/.next/
+  **/coverage/
+
+  backend/bootstrap/cache/*.php
+  backend/storage/logs/*
+  backend/storage/framework/cache/*
+  backend/storage/framework/sessions/*
+  backend/storage/framework/views/*
+
+  .env
+  .env.*
+  !.env.example
+  **/.env
+  **/.env.*
+  !**/.env.example
+
+  .DS_Store

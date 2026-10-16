@@ -122,6 +122,36 @@ class ProcessIntegrityTest extends TestCase
         DB::table('process_steps')->where('id', $step->id)->update(['actor_id' => $actor->id]);
     }
 
+    public function test_empty_reorder_groups_accept_no_ids_and_reject_foreign_ids(): void
+    {
+        $stage = ProcessStage::factory()->create();
+        $outside = ProcessStep::factory()->create(['order' => 7]);
+
+        ProcessStep::reorderGroup(['stage_id' => $stage->id, 'actor_id' => null], []);
+
+        try {
+            ProcessStep::reorderGroup(['stage_id' => $stage->id, 'actor_id' => null], [$outside->id]);
+            $this->fail('An unrelated activity was accepted for an empty group.');
+        } catch (ValidationException $error) {
+            $this->assertArrayHasKey('order', $error->errors());
+        }
+
+        $this->assertSame(7, $outside->refresh()->order);
+    }
+
+    public function test_reordering_actor_groups_preserves_other_processes(): void
+    {
+        $first = ProcessActor::factory()->create(['order' => 1]);
+        $second = ProcessActor::factory()->create(['process_id' => $first->process_id, 'order' => 2]);
+        $outside = ProcessActor::factory()->create(['order' => 8]);
+
+        ProcessActor::reorderGroup(['process_id' => $first->process_id], [$second->id, $first->id]);
+
+        $this->assertSame(1, $second->refresh()->order);
+        $this->assertSame(2, $first->refresh()->order);
+        $this->assertSame(8, $outside->refresh()->order);
+    }
+
     public function test_database_rejects_moving_a_connected_step_to_another_process(): void
     {
         $edge = ProcessConnection::factory()->create();

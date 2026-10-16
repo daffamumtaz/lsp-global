@@ -15,7 +15,7 @@ class ImportFrontendAssets extends Command
 {
     public function handle(): int
     {
-        $public = dirname(base_path()).'/frontend/public/';
+        $public = rtrim(config('services.frontend.assets_path'), '/').'/';
         DB::transaction(function () use ($public): void {
             $profile = SitePage::firstOrCreate(['kind' => 'profile'], ['title' => 'Tentang Kami', 'content' => SitePage::defaultProfileContent()]);
             $content = $profile->profileContent();

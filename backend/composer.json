@@ -13,6 +13,7 @@
         "johnrivera7/filament-custom-dashboard-widgets": "1.0.2",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "leek/filament-right-click": "^1.5",
         "martin6363/filament-sidebar-resize": "^1.0",
         "pxlrbt/filament-activity-log": "^3.1",

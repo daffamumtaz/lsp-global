@@ -41,7 +41,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->profile(EditAccount::class)
-            ->multiFactorAuthentication([AppAuthentication::make()->recoverable()], isRequired: false)
+            ->multiFactorAuthentication([AppAuthentication::make()->recoverable()], isRequired: fn (): bool => config('security.admin_mfa_required') ?? app()->isProduction())
             ->databaseTransactions()
             ->brandName(fn (): string => SitePage::identityContent()['brand_name'])
             ->brandLogo(fn (): string => filled($path = SitePage::identityContent()['logo_path']) ? Storage::disk('public')->url($path) : asset('admin-logo.png'))

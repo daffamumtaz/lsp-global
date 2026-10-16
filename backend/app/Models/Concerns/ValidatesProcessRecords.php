@@ -105,6 +105,24 @@ trait ValidatesProcessRecords
     public static function reorderGroup(array $scope, array $ids): void
     {
         DB::transaction(function () use ($scope, $ids): void {
+            $parents = Process::query();
+            if (is_a(static::class, Process::class, true)) {
+                $parents->where($scope);
+            } elseif (is_a(static::class, ProcessStep::class, true)) {
+                $stages = ProcessStage::query();
+                if (isset($scope['stage_id'])) {
+                    $stages->whereKey($scope['stage_id']);
+                } else {
+                    $stages->whereIn('id', static::query()->where($scope)->select('stage_id'));
+                }
+                $parents->whereIn('id', $stages->select('process_id'));
+            } elseif (isset($scope['process_id'])) {
+                $parents->whereKey($scope['process_id']);
+            } else {
+                $parents->whereIn('id', static::query()->where($scope)->select('process_id'));
+            }
+            $parents->orderBy('id')->lockForUpdate()->get();
+
             $records = static::query()->where($scope)->orderBy('id')->lockForUpdate()->get()->keyBy('id');
             $ids = array_map('intval', $ids);
             $expected = $records->keys()->sort()->values()->all();

@@ -16,6 +16,7 @@
 .actions a:hover { background: #fff; color: #004195; border-color: #004195; }
 .hero :focus-visible { outline-color: white; }
 .content { width: min(calc(100% - 2 * var(--page-gutter)), var(--content-width)); margin: auto; padding-block: 40px 80px; }
+.recoveryActions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
 @media (max-width: 639px) {
   .heroInner { padding-block: 24px 40px; }
   .metadata { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }

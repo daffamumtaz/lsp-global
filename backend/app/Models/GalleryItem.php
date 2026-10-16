@@ -56,7 +56,7 @@ class GalleryItem extends Model implements HasMedia
     {
         $this->addMediaCollection('gallery')->useDisk('public')
             ->acceptsMimeTypes(self::acceptedMimeTypes($this->media_type))
-            ->acceptsFile(fn (File $file): bool => in_array($file->mimeType, self::acceptedMimeTypes($this->media_type), true) && $file->size <= 104857600);
+            ->acceptsFile(fn (File $file): bool => in_array($file->mimeType, self::acceptedMimeTypes($this->media_type), true) && $file->size <= config('filesystems.max_upload_size_kb') * 1024);
     }
 
     public function getActivitylogOptions(): LogOptions

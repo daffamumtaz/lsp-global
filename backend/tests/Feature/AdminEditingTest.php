@@ -11,6 +11,7 @@ use App\Models\SitePage;
 use App\Models\User;
 use Filament\Actions\Testing\TestAction;
 use Filament\Facades\Filament;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -65,6 +66,12 @@ class AdminEditingTest extends TestCase
         Storage::fake('public');
         Storage::disk('public')->putFileAs('identity', UploadedFile::fake()->image('logo.png'), 'logo.png');
         SitePage::query()->create(['kind' => 'identity', 'title' => 'Identitas', 'content' => ['logo_path' => 'identity/logo.png']]);
-        Livewire::test(Identity::class)->assertSee('Media tersimpan')->assertSee('logo.png')->assertSee('800 × 400 px')->assertSee('rasio 2:1');
+        $editor = Livewire::test(Identity::class)->assertSee('800 × 400 px')->assertSee('rasio 2:1');
+        $field = $editor->instance()->form->getComponent(fn ($component): bool => $component instanceof FileUpload && $component->getName() === 'logo_path');
+        $files = array_values($field->getUploadedFiles());
+
+        $this->assertCount(1, $files);
+        $this->assertSame('logo.png', $files[0]['name']);
+        $this->assertSame(Storage::disk('public')->url('identity/logo.png'), $files[0]['url']);
     }
 }

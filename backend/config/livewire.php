@@ -130,7 +130,7 @@ return [
 
     'temporary_file_upload' => [
         'disk' => env('LIVEWIRE_TEMPORARY_FILE_UPLOAD_DISK'), // Example: 'local', 's3'             | Default: 'default'
-        'rules' => ['required', 'file', 'max:102400'],          // Allow the 100 MB landing page video upload.
+        'rules' => ['required', 'file', 'max:'.(int) env('MEDIA_MAX_UPLOAD_KB', env('PUBLIC_FILESYSTEM_DRIVER', 'local') === 'supabase' ? 51200 : 102400)],
         'directory' => null,                                  // Example: 'tmp'                     | Default: 'livewire-tmp'
         'middleware' => null,                                 // Example: 'throttle:5,1'            | Default: 'throttle:60,1'
         'preview_mimes' => [                                  // Supported file types for temporary pre-signed file URLs...

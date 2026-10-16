@@ -30,7 +30,7 @@ export async function Footer() {
   const { social_links, identity, sections } = await getLandingContent();
   const contactInfo = getContactInfo(identity);
   const { whatsappUrl } = contactInfo;
-  const socialLinks = Object.entries(social_links).map(([name, url]) => ({ name: name as SocialName, url: name === "Instagram" ? "https://www.instagram.com/lsptikglobal/" : url }));
+  const socialLinks = Object.entries(social_links).filter((entry): entry is [string, string] => Boolean(entry[1])).map(([name, url]) => ({ name: name as SocialName, url }));
   return <>
     <footer id="kontak" className="site-footer">
       <div className="footer-inner">
@@ -53,10 +53,9 @@ export async function Footer() {
             {identity.working_hours && <p>{identity.working_hours}</p>}
           </address>
             <div className="footer-socials"><h3>{sections.footer_social.title}</h3>{sections.footer_social.subtitle && <p>{sections.footer_social.subtitle}</p>}<ul aria-label="Media sosial">
-              {socialLinks.map(social => <li key={social.name}>{social.url ?
-                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} (tab baru)`}><SocialIcon name={social.name} /></a> :
-                <span className="social-placeholder" role="img" aria-label={`${social.name} — tautan belum tersedia`} title={`${social.name} — tautan belum tersedia`}><SocialIcon name={social.name} /></span>
-              }</li>)}
+              {socialLinks.map(social => <li key={social.name}>
+                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} (tab baru)`}><SocialIcon name={social.name} /></a>
+              </li>)}
             </ul></div>
           </div>
         </div>
