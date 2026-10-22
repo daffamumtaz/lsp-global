@@ -1,0 +1,32 @@
+/.git/
+/.agents/
+/.codex/
+/.vscode/
+/.playwright-mcp/
+**/.agents/
+**/.codex/
+**/.claude/
+**/.vscode/
+/2025/
+/2026 (1)/
+/Mitri LSP/
+/*.docx
+/*.webm
+/tatus --short
+**/node_modules/
+**/vendor/
+**/.next/
++ **/.env.example
++ **/.env.*.example
+**/.env*
+**/auth.json
+**/*.pem
+**/*.key
+**/.phpunit.result.cache
+**/database/*.sqlite*
+/backend/storage/
+/backend/bootstrap/cache/*.php
+/backend/public/storage
+/backend/public/hot
+/backend/public/build/
+/frontend/artifacts/

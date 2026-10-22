@@ -1,6 +1,6 @@
 # Backend LSP TIK Global
 
-Laravel 13 menyediakan API konten publik; Filament 5 menyediakan panel admin. Database default adalah SQLite. PHP 8.5 dan Composer digunakan untuk verifikasi proyek ini.
+Laravel 13 menyediakan API konten publik; Filament 5 menyediakan panel admin. Database default adalah MariaDB; SQLite tetap digunakan untuk pengujian terisolasi. PHP 8.5 dan Composer digunakan untuk verifikasi proyek ini.
 
 Untuk checkout baru:
 
@@ -8,7 +8,7 @@ Untuk checkout baru:
 composer install
 cp .env.example .env
 php artisan key:generate
-[ -f database/database.sqlite ] || touch database/database.sqlite
+# Isi koneksi MariaDB di .env dan buat database/akun terlebih dahulu.
 php artisan migrate
 php artisan storage:link
 npm ci

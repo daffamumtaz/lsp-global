@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Filesystem\SupabaseStorageAdapter;
 use App\Models\Assessor;
 use App\Models\CertificationScheme;
 use App\Models\GalleryItem;
@@ -11,24 +10,17 @@ use App\Models\Tuk;
 use App\Models\User;
 use App\Observers\ContentDirectoryObserver;
 use App\Observers\MediaObserver;
-use Aws\CommandInterface;
-use Aws\Middleware;
-use Aws\S3\S3Client;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Tables\Table;
 use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Filesystem\AwsS3V3Adapter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
-use League\Flysystem\Filesystem;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -47,23 +39,6 @@ class AppServiceProvider extends ServiceProvider
             $model::observe(ContentDirectoryObserver::class);
         }
 
-        Storage::extend('supabase', function (Application $app, array $config): AwsS3V3Adapter {
-            $client = new S3Client(array_merge($config, [
-                'version' => 'latest',
-                'credentials' => ['key' => $config['key'], 'secret' => $config['secret']],
-                'request_checksum_calculation' => 'when_required',
-                'response_checksum_validation' => 'when_required',
-            ]));
-            // Supabase controls visibility on buckets and does not implement object ACLs.
-            $client->getHandlerList()->appendInit(Middleware::mapCommand(function (CommandInterface $command): CommandInterface {
-                unset($command['ACL']);
-
-                return $command;
-            }), 'supabase-no-object-acl');
-            $adapter = new SupabaseStorageAdapter($client, $config['bucket'], $config['root'] ?? '');
-
-            return new AwsS3V3Adapter(new Filesystem($adapter, $config), $adapter, $config, $client);
-        });
         Table::configureUsing(fn (Table $table) => $table->modifyUngroupedRecordActionsUsing(fn (Action $action) => $action->button()));
         Repeater::configureUsing(fn (Repeater $repeater) => $repeater
             ->collapseAllAction(fn (Action $action) => $action->button())

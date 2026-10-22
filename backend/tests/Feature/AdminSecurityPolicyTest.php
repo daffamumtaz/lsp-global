@@ -55,6 +55,14 @@ class AdminSecurityPolicyTest extends TestCase
         $this->assertTrue(Hash::check('long-passphrase-123', $user->refresh()->password));
     }
 
+    public function test_staging_requires_mfa_by_default(): void
+    {
+        $this->app->instance('env', 'staging');
+        config(['security.admin_mfa_required' => null]);
+
+        $this->assertTrue(Filament::getPanel('admin')->isMultiFactorAuthenticationRequired());
+    }
+
     public function test_production_requires_mfa_unless_explicitly_overridden(): void
     {
         $this->app->instance('env', 'production');
