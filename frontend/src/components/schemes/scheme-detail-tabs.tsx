@@ -7,7 +7,7 @@ import styles from "./schemes.module.css";
 
 
 export function SchemeDetailTabs({ units, basicRequirements, administrativeRequirements, headings }: Pick<Scheme, "units" | "basicRequirements" | "administrativeRequirements"> & { headings: LandingContent["sections"] }) {
-  const labels = [headings.scheme_units.title, headings.scheme_requirements.title];
+  const labels = [headings.scheme_requirements.title, headings.scheme_units.title];
   const [active, setActive] = useState(0);
   const [pageSize, setPageSize] = useState(5);
   const table = useRef<HTMLTableElement>(null);
@@ -40,6 +40,11 @@ export function SchemeDetailTabs({ units, basicRequirements, administrativeRequi
       }}>{label}</button>)}
     </div>
     <div className={styles.tabPanel} role="tabpanel" id={`${id}-panel-0`} aria-labelledby={`${id}-tab-0`} tabIndex={0} hidden={active !== 0}>
+      {headings.scheme_requirements.subtitle && <p>{headings.scheme_requirements.subtitle}</p>}
+      <section className={styles.requirements} aria-labelledby={`${id}-basic`}><h2 id={`${id}-basic`}>{headings.scheme_basic.title}</h2><p>{headings.scheme_basic.subtitle}</p><ul>{basicRequirements.map(item => <li key={item}>{item}</li>)}</ul></section>
+      <section className={styles.requirements} aria-labelledby={`${id}-administrative`}><h2 id={`${id}-administrative`}>{headings.scheme_administrative.title}</h2><p>{headings.scheme_administrative.subtitle}</p><ul>{administrativeRequirements.map(item => <li key={item}>{item}</li>)}</ul></section>
+    </div>
+    <div className={styles.tabPanel} role="tabpanel" id={`${id}-panel-1`} aria-labelledby={`${id}-tab-1`} tabIndex={0} hidden={active !== 1}>
       {headings.scheme_units.subtitle && <p>{headings.scheme_units.subtitle}</p>}
       <table ref={table} className={styles.unitTable}>
         <caption className="sr-only">Unit kompetensi untuk skema sertifikasi</caption>
@@ -52,11 +57,6 @@ export function SchemeDetailTabs({ units, basicRequirements, administrativeRequi
         <nav aria-label="Halaman unit kompetensi"><button type="button" className={styles.secondary} disabled={currentPage === 1} onClick={() => goToPage(currentPage - 1)}>Sebelumnya</button><span>{currentPage} / {pageCount}</span><button type="button" className={styles.secondary} disabled={currentPage === pageCount} onClick={() => goToPage(currentPage + 1)}>Berikutnya</button></nav>
       </div>
       {!units.length && <p className={styles.helper}>Unit kompetensi belum tersedia.</p>}
-    </div>
-    <div className={styles.tabPanel} role="tabpanel" id={`${id}-panel-1`} aria-labelledby={`${id}-tab-1`} tabIndex={0} hidden={active !== 1}>
-      {headings.scheme_requirements.subtitle && <p>{headings.scheme_requirements.subtitle}</p>}
-      <section className={styles.requirements} aria-labelledby={`${id}-basic`}><h2 id={`${id}-basic`}>{headings.scheme_basic.title}</h2><p>{headings.scheme_basic.subtitle}</p><ul>{basicRequirements.map(item => <li key={item}>{item}</li>)}</ul></section>
-      <section className={styles.requirements} aria-labelledby={`${id}-administrative`}><h2 id={`${id}-administrative`}>{headings.scheme_administrative.title}</h2><p>{headings.scheme_administrative.subtitle}</p><ul>{administrativeRequirements.map(item => <li key={item}>{item}</li>)}</ul></section>
     </div>
   </>;
 }

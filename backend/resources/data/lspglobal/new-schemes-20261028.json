@@ -1,0 +1,1469 @@
+{
+  "batch": "new-schemes-20261028",
+  "source": "New Skema.md",
+  "source_sha256": "de4414772dfb984df7ac2c51807f0ee54eb1821d8d1ab32c49026c6999012ac7",
+  "decisions": [
+    "Jenis kosong source_index 12 dan 13 diisi Okupasi karena berbasis jabatan; sumber asli tetap tercatat.",
+    "Chief Data Scientist diganti Lead Data Scientist: kepala ilmuwan data, lima dari tujuh kode unit sama.",
+    "Supervisor Mobile ditambah terpisah dari Senior Mobile Programmer."
+  ],
+  "baseline_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "entries": [
+    {
+      "source_index": 1,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "MANAJER ARSITEKTUR PERUSAHAAN (ENTERPRISE ARCHITECTURE MANAGER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620200.001.01",
+            "title": "Menentukan Metode Pemodelan Arsitektur Bisnis dan Business Building Block yang Diperlukan"
+          },
+          {
+            "code": "J.620200.002.01",
+            "title": "Menetapkan Matriks, Diagram, dan Jenis Kebutuhan (Requirements) yang Diperlukan pada Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.003.01",
+            "title": "Menetapkan Baseline dan Target Arsitektur Bisnis, serta Kesenjangan antara Baseline dan Target Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.004.01",
+            "title": "Menyusun Roadmap Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.005.01",
+            "title": "Mengevaluasi Artefak Arsitektur dalam Architecture Landscape yang Terkait Dengan Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.006.01",
+            "title": "Memfinalisasikan Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.007.01",
+            "title": "Menentukan Metode Pemodelan, Sudut Pandang dan Perangkat Bantu untuk Merancang Arsitektur Data"
+          },
+          {
+            "code": "J.620200.008.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Data"
+          }
+        ],
+        "basic_requirements": [
+          "Fotokopi Kartu Hasil Studi/Transkrip Nilai mahasiswa program magister/ magister terapan program studi sesuai dengan bidang Teknologi Informasi dan Komunikasi, yang tercantum mata kuliah mencakup seluruh unit kompetensi pada okupasi Manajer Arsitektur Perusahaan (Enterprise Architecture Manager) dan Fotokopi Surat Keterangan/Sertifikat praktek industri/ magang pada Area Fungsi Tata Kelola Teknologi Informasi (IT Governance) / minimal 2 (dua) rekaman hasil Proyek sesuai Dengan jabatan Manajer Arsitektur Perusahaan (Enterprise Architecture Manager) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Fotokopi Sertifikat pelatihan berbasis kompetensi okupasi Manajer Arsitektur Perusahaan (Enterprise Architecture Manager) yang diterbitkan oleh Lembaga Pelatihan Vokasi; atau",
+          "Fotokopi Surat Keterangan/SK pengangkatan/Kontrak kerja jabatan Manajer Arsitektur Perusahaan (Enterprise Architecture Manager)/ Surat Tugas yang relevan dengan jabatan Manajer Arsitektur Perusahaan (Enterprise Architecture Manager); atau",
+          "Fotokopi Surat Keterangan pengalaman kerja pada jabatan Manajer Arsitektur Perusahaan (Enterprise Architecture Manager) minimal 6 bulan dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/6803529.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "6803529.webp",
+      "photo_sha256": "49a109213ecac472e87f56f3c6a7664c18b00b8267ee8605fd463a7cfd295e10"
+    },
+    {
+      "source_index": 2,
+      "target_id": 13,
+      "before": {
+        "id": 13,
+        "name": "MANAGER AUDIT TEKNOLOGI INFORMASI - IT AUDIT MANAGER",
+        "category": "IT SECURITY AND COMPLIANCE",
+        "level": "7",
+        "price": 3000000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "manager-audit-teknologi-informasi-it-audit-manager",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/6285130.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "M.702000.001.01",
+            "title": "Menganalisis Risiko Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam menganalisis risiko audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.002.01",
+            "title": "Menyusun Rencana Prosedur Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam menyusun rencana prosedur audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.003.01",
+            "title": "Mengalokasikan Sumber Daya Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengalokasikan sumber daya audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.010.01",
+            "title": "Mengawasi Kelayakan Pelaksanaan Prosedur Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengawasi kelayakan pelaksanaan prosedur audit sistem informasi."
+          },
+          {
+            "code": "M.702000.011.01",
+            "title": "Mengawasi Kelayakan Dokumentasi Hasil Pelaksanaan Prosedur Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengawasi kelayakan dokumentasihasil pelaksanaan prosedur audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.012.01",
+            "title": "Menyusun Hasil Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam menyusun hasil audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.013.01",
+            "title": "Menyusun Rekomendasi Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam menyusun rekomendasi audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.014.01",
+            "title": "Mengidentifikasi Tindak Lanjut Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengidentifikasi tindak lanjut audit teknologi informasi."
+          },
+          {
+            "code": "M.702000.015.01",
+            "title": "Memverifikasi Kelayakan Tindak Lanjut Audit Teknologi Informasi",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam memverifikasi kelayakan tindak lanjut audit teknologi informasi."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah S1 Jurusan Informatika yang dilegalisir oleh Perguruan Tinggi yang bersangkutan disertai surat pengalaman kerja di bidang Auditor Teknologi Informasi minimal selama 3 (tiga) tahun secara berkelanjutan",
+          "Copy Sertifikat Kompetensi Auditor Madya Teknologi Informasi disertai surat pengalaman kerja sebagai Auditor Teknologi Informasi minimal selama 1 (satu) tahun secara berkelanjutan",
+          "Copy sertifikat pelatihan berbasis kompetensi Manager Audit Teknologi Informasi (Information Technology Audit Manager) yang telah diikuti",
+          "Surat Pengalaman Kerja pada jabatan Manager Audit Teknologi Informasi (Information Technology Audit Manager) minimal 2 (dua) tahun secara berkelanjutan"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "MANAJER AUDIT TI (IT AUDIT MANAGER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "M.70ATI00.001.1",
+            "title": "Menentukan Cakupan Audit Teknologi Informasi"
+          },
+          {
+            "code": "M.70ATI00.004.2",
+            "title": "Mengalokasikan Sumber Daya Audit Teknologi Informasi"
+          },
+          {
+            "code": "M.70ATI00.016.1",
+            "title": "Menyajikan Laporan Audit Teknologi Informasi"
+          },
+          {
+            "code": "M.70ATI00.003.2",
+            "title": "Menyusun Rencana Audit Teknologi Informasi"
+          },
+          {
+            "code": "K.64AUD00.001.2",
+            "title": "Merencanakan Audit Tahunan"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Magister/ Magister Terapan program studi sesuai dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Manajer Audit TI (IT Audit Manager) dan telah menyelesaikan Magang pada Area Fungsi Tata Kelola Teknologi Informasi (IT Governance) / telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Manajer Audit TI (IT Audit Manager) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Manajer Audit TI (IT Audit Manager) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Manajer Audit TI (IT Audit Manager) atau mendapatkan tugas yang relevan dengan jabatan Manajer Audit TI (IT Audit Manager); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Manajer Audit TI (IT Audit Manager) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/6285130.webp"
+      },
+      "photo_file": "6285130.webp",
+      "photo_sha256": "bd8f2e303a40cb4c2c94ac8f9355c5d0574be7bcd28b57ba76f17f992d2aab58"
+    },
+    {
+      "source_index": 3,
+      "target_id": 9,
+      "before": {
+        "id": 9,
+        "name": "ENTERPRISE ARCHITECT",
+        "category": "IT ENTERISE ARCHITECTURE",
+        "level": "6",
+        "price": 2000000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "enterprise-architect",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/7433898.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.620200.001.01",
+            "title": "Menentukan Metode Pemodelan Arsitektur Bisnis dan Business Building Block yang Diperlukan",
+            "description": "Unit kompetensi ini berhubungan dengan kemampuan untuk menentukan metode pemodelan arsitektur bisnis, mengidentifikasi perangkat bantu dan teknik pemodelan, serta mengidentifikasi layanan kegiatan yang dibutuhkan, sebagai acuan dalam menyusun enterprise architecture."
+          },
+          {
+            "code": "J.620200.002.01",
+            "title": "Menetapkan Matriks, Diagram, dan Jenis Kebutuhan (Requirements) yang Diperlukan pada Arsitektur Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan tentang standar acuan praktik terbaik terkait dengan matriks, diagram, dan jenis kebutuhan (requirements) yang diperlukan pada arsitektur bisnis."
+          },
+          {
+            "code": "J.620200.003.01",
+            "title": "Menetapkan Baseline dan Target Arsitektur Bisnis, serta Kesenjangan antara Baseline dan Target Arsitektur Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan tentang penetapan baseline arsitektur bisnis yang sesuai dengan target, menetapkan target arsitektur bisnis yang sesuai dengan visi organisasi, dan menentukan kesenjangan antara baseline dan target arsitektur bisnis."
+          },
+          {
+            "code": "J.620200.004.01",
+            "title": "Menyusun Roadmap Arsitektur Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk melakukan stakeholder review secara formal dan menyusun roadmap arsitektur bisnis."
+          },
+          {
+            "code": "J.620200.005.01",
+            "title": "Mengevaluasi Artefak Arsitektur dalam Architecture Landscape yang Terkait dengan Arsitektur Bisnis",
+            "description": "Unit kompetensi iniberhubungan dengan pengetahuan dan keterampilan untuk dapat mengidentifikasi dan menguji artefak arsitektur dalam architecture landscape yang terkait dengan arsitektur bisnis."
+          },
+          {
+            "code": "J.620200.006.01",
+            "title": "Memfinalisasikan Arsitektur Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menentukan standar building block dan metode pemodelan arsitektur bisnis serta menghasilkan dokumen arsitektur bisnis."
+          },
+          {
+            "code": "J.620200.007.01",
+            "title": "Menentukan Metode Pemodelan, Sudut Pandang dan Perangkat Bantu untuk Merancang Arsitektur Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk memilih metode pemodelan arsitektur data dan mengidentifikasi perangkat bantu dan teknik untuk memodelkan arsitektur data."
+          },
+          {
+            "code": "J.620200.008.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menetapkan baseline dan menyusun roadmap arsitektur data, serta mengevaluasi artefak arsitektur yang terkait dengan arsitektur data."
+          },
+          {
+            "code": "J.620200.009.01",
+            "title": "Memfinalisasikan Arsitektur Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menentukan standar building block dan metode pemodelan arsitektur data serta menghasilkan dokumen arsitektur data."
+          },
+          {
+            "code": "J.620200.010.01",
+            "title": "Menentukan Metode Pemodelan, Sudut Pandang dan Perangkat Bantu untuk Merancang Arsitektur Aplikasi",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk memilih metode pemodelan arsitektur aplikasi dan mengidentifikasi perangkat bantu dan teknik untuk memodelkan arsitektur aplikasi."
+          },
+          {
+            "code": "J.620200.011.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Aplikasi",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menetapkan baseline dan menyusun roadmap arsitektur aplikasi serta mengevaluasi artefak arsitektur yang terkait dengan arsitektur aplikasi."
+          },
+          {
+            "code": "J.620200.012.01",
+            "title": "Memfinalisasikan Arsitektur Aplikasi",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menentukan standar building block dan metode pemodelan arsitektur aplikasi serta menyusun dokumen arsitektur aplikasi."
+          },
+          {
+            "code": "J.620200.013.01",
+            "title": "Menentukan Metode Pemodelan Arsitektur Teknologi dan Technology Building Block yang Diperlukan",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk memilih metode pemodelan arsitektur teknologi dan mengidentifikasi perangkat bantu dan teknik untuk memodelkan arsitektur teknologi."
+          },
+          {
+            "code": "J.620200.014.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Teknologi",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menetapkan baseline dan menyusun roadmap arsitektur teknologi, serta mengidentifikasi dan memeriksa artefak arsitektur yang terkait dengan arsitektur teknologi."
+          },
+          {
+            "code": "J.620200.015.01",
+            "title": "Memfinalisasikan Arsitektur Teknologi",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk menentukan standar building block dan metode pemodelan arsitektur teknologi serta menghasilkan dokumen arsitektur teknologi."
+          }
+        ],
+        "basic_requirements": [
+          "Copy sertifikat pelatihan berbasis kompetensi Enterprise Architect yang telah diikuti; atau",
+          "Surat Pengalaman Kerja pada jabatan Enterprise Architect minimal 2 (dua) tahun secara berkelanjutan"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ARSITEK PERUSAHAAN (ENTERPRISE ARCHITECT)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620200.001.01",
+            "title": "Menentukan Metode Pemodelan Arsitektur Bisnis dan Business Building Block yang Diperlukan"
+          },
+          {
+            "code": "J.620200.004.01",
+            "title": "Menyusun Roadmap Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.005.01",
+            "title": "Mengevaluasi Artefak Arsitektur dalam Architecture Landscape yang Terkait dengan Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.006.01",
+            "title": "Memfinalisasikan Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.007.01",
+            "title": "Menentukan Metode Pemodelan, Sudut Pandang dan Perangkat Bantu untuk Merancang Arsitektur Data"
+          },
+          {
+            "code": "J.620200.008.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Data"
+          },
+          {
+            "code": "J.620200.009.01",
+            "title": "Memfinalisasikan Arsitektur Data"
+          },
+          {
+            "code": "J.620200.010.01",
+            "title": "Menentukan Metode Pemodelan, Sudut Pandang dan Perangkat Bantu untuk Merancang Arsitektur Aplikasi"
+          },
+          {
+            "code": "J.620200.011.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Aplikasi"
+          },
+          {
+            "code": "J.620200.013.01",
+            "title": "Menentukan Metode Pemodelan Arsitektur Teknologi dan Technology Building Block yang Diperlukan"
+          },
+          {
+            "code": "J.620200.014.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Teknologi"
+          },
+          {
+            "code": "J.620200.015.01",
+            "title": "Memfinalisasikan Arsitektur Teknologi"
+          },
+          {
+            "code": "J.620200.002.01",
+            "title": "Menetapkan Matriks, Diagram, dan Jenis Kebutuhan (Requirements) yang Diperlukan pada Arsitektur Bisnis"
+          },
+          {
+            "code": "J.620200.003.01",
+            "title": "Menetapkan Baseline dan Target Arsitektur Bisnis, serta Kesenjangan antara Baseline dan Target Arsitektur Bisnis"
+          }
+        ],
+        "basic_requirements": [
+          "Fotokopi Kartu Hasil Studi/Transkrip Nilai mahasiswa Diploma /Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang tercantum mata kuliah mencakup seluruh unit kompetensi pada okupasi Arsitek Perusahaan (Enterprise Architect) dan Fotokopi Surat Keterangan/Sertifikat praktek industri/ magang pada Area Fungsi Tata Kelola Teknologi Informasi (IT Governance) / minimal 2 (dua) rekaman hasil Proyek sesuai Dengan jabatan Arsitek Perusahaan (Enterprise Architect) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Fotokopi Sertifikat pelatihan berbasis kompetensi okupasi Arsitek Perusahaan (Enterprise Architect) yang diterbitkan oleh Lembaga Pelatihan Vokasi; atau",
+          "Fotokopi Surat Keterangan/SK pengangkatan/Kontrak kerja jabatan Arsitek Perusahaan (Enterprise Architect)/ Surat Tugas yang relevan dengan jabatan Arsitek Perusahaan (Enterprise Architect); atau",
+          "Fotokopi Surat Keterangan pengalaman kerja pada jabatan Arsitek Perusahaan (Enterprise Architect) minimal 6 bulan dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/7433898.webp"
+      },
+      "photo_file": "7433898.webp",
+      "photo_sha256": "1c2a07f82168847fdde716e85657344fa1ec6b0f852566fddf1289854e55dbb5"
+    },
+    {
+      "source_index": 4,
+      "target_id": 1,
+      "before": {
+        "id": 1,
+        "name": "Pemimpin Teknologi (Chief Technology Officer)",
+        "category": "PENGEMBANGAN PRODUK DIGITAL",
+        "level": "9",
+        "price": 0,
+        "is_active": true,
+        "created_at": "2026-10-01T03:27:19.000000Z",
+        "updated_at": "2026-10-23T09:04:39.000000Z",
+        "slug": "junior-coder",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/7988086.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring"
+        ],
+        "units": [
+          {
+            "code": "BSBREL701A",
+            "title": "Mengembangkan dan Membina Kemitraan  dan Hubungan Kolaboratif",
+            "description": null
+          },
+          {
+            "code": "ICAICT701A",
+            "title": "Memimpin Penelitian Dalam Mengidentifikasi  Peluang Pasar Baru",
+            "description": null
+          },
+          {
+            "code": "ICAICT706A",
+            "title": "Memimpin Layanan ICT Yang Dialihdayakan",
+            "description": null
+          },
+          {
+            "code": "ICAPMG501A",
+            "title": "Mengelola Proyek TI",
+            "description": null
+          },
+          {
+            "code": "BSBMGT608C",
+            "title": "Mengelola Inovasi dan Peningkatan  Berkelanjutan",
+            "description": null
+          },
+          {
+            "code": "BSBINN801",
+            "title": "Memimpin Pemikiran dan Praktik Inovatif",
+            "description": null
+          },
+          {
+            "code": "BSBSUS501A",
+            "title": "Mengembangkan Kebijakan dan Prosedur di  Tempat Kerja untuk Keberlanjutan",
+            "description": null
+          },
+          {
+            "code": "J.620200.008.01",
+            "title": "Menyusun Roadmap dan Komponen  Arsitektur Data",
+            "description": null
+          },
+          {
+            "code": "J.620200.011.01",
+            "title": "Menyusun Roadmap dan Komponen  Arsitektur Aplikasi",
+            "description": null
+          },
+          {
+            "code": "J.620200.014.01",
+            "title": "Menyusun Roadmap dan Komponen  Arsitektur Teknologi",
+            "description": null
+          }
+        ],
+        "basic_requirements": [
+          "Fotokopi Ijazah pada program doktor/ doktor terapan program studi relevan pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) ; atau",
+          "Fotokopi Sertifikat pelatihan berbasis kompetensi okupasi Pemimpin Teknologi (Chief Technology Officer) yang yang diterbitkan oleh Lembaga Pelatihan Vokasi; atau",
+          "Fotokopi Surat Keterangan/SK pengangkatan/Kontrak kerja jabatan Pemimpin Teknologi (Chief Technology Officer)/ Surat Tugas yang relevan dengan Jabatan Pemimpin Teknologi (Chief Technology Officer); atau",
+          "Fotokopi Surat Keterangan pengalaman kerja pada jabatan Pemimpin Teknologi (Chief Technology Officer) minimal 6 bulan dalam 2 tahun terakhir."
+        ],
+        "administrative_requirements": [
+          "KTP (WNI)/ Paspor dan Kartu Izin Tinggal Terbatas (Kitas) (WNA)",
+          "Pas Photo 3x4 background merah"
+        ]
+      },
+      "attributes": {
+        "name": "PEMIMPIN TEKNOLOGI (CHIEF TECHNOLOGY OFFICER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "BSBREL701A",
+            "title": "Mengembangkan dan Membina Kemitraan dan Hubungan Kolaboratif"
+          },
+          {
+            "code": "ICAICT701A",
+            "title": "Memimpin Penelitian Dalam Mengidentifikasi Peluang Pasar Baru"
+          },
+          {
+            "code": "ICAICT706A",
+            "title": "Memimpin Layanan ICT Yang Dialihdayakan"
+          },
+          {
+            "code": "ICAPMG501A",
+            "title": "Mengelola Proyek TI"
+          },
+          {
+            "code": "BSBMGT608C",
+            "title": "Mengelola Inovasi dan Peningkatan Berkelanjutan"
+          },
+          {
+            "code": "BSBINN801",
+            "title": "Memimpin Pemikiran dan Praktik Inovatif"
+          },
+          {
+            "code": "BSBSUS501A",
+            "title": "Mengembangkan Kebijakan dan Prosedur di Tempat Kerja untuk Keberlanjutan"
+          },
+          {
+            "code": "J.620200.008.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Data"
+          },
+          {
+            "code": "J.620200.011.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Aplikasi"
+          },
+          {
+            "code": "J.620200.014.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Teknologi"
+          }
+        ],
+        "basic_requirements": [
+          "Minimal memiliki Ijazah pada program doktor/ doktor terapan program studi sesuai pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Pemimpin Teknologi (Chief Technology Officer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Pemimpin Teknologi (Chief Technology Officer) atau mendapatkan tugas yang relevan dengan Jabatan Pemimpin Teknologi (Chief Technology Officer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Pemimpin Teknologi (Chief Technology Officer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/3184287.webp"
+      },
+      "photo_file": "3184287.webp",
+      "photo_sha256": "d35ce1aee8f0a2aef36e3631941bc14ce0277dca1b0d7417feffb43d4088a047"
+    },
+    {
+      "source_index": 5,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "MANAJER REKAYASA PERANGKAT LUNAK (SOFTWARE ENGINEERING MANAGER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "BSBINN601B",
+            "title": "Mengelola Perubahan Organisasi"
+          },
+          {
+            "code": "BSBMGT608C",
+            "title": "Mengelola Inovasi dan Peningkatan Berkelanjutan"
+          },
+          {
+            "code": "ICAICT401A",
+            "title": "Menentukan dan Konfirmasikan Persyaratan Bisnis Klien"
+          },
+          {
+            "code": "BSBIPR301A",
+            "title": "Mematuhi Persyaratan Organisasi untuk Perlindungan dan Penggunaan Kekayaan Intelektual"
+          },
+          {
+            "code": "ICAPMG603A",
+            "title": "Mengelola Perencanaan Proyek TI"
+          },
+          {
+            "code": "J.62SAD00.011.1",
+            "title": "Merancang Struktur Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.012.1",
+            "title": "Merancang Komponen Perangkat Lunak"
+          },
+          {
+            "code": "J.62SQA00.011.1",
+            "title": "Menyusun Rekomendasi Penjaminan Kualitas Perangkat Lunak bagi Stakeholder"
+          },
+          {
+            "code": "J.62SQA00.012.1",
+            "title": "Mengevaluasi Pelaksanaan Penjaminan Kualitas Perangkat Lunak"
+          },
+          {
+            "code": "ICAICT402A",
+            "title": "Menentukan Spesifikasi Proyek dan Mengamankan Perjanjian Klien"
+          },
+          {
+            "code": "ICAICT410A",
+            "title": "Melakukan Evaluasi Sistem TI Pasca- Implementasi"
+          },
+          {
+            "code": "BSBSUS501A",
+            "title": "Mengembangkan Kebijakan dan Prosedur di Tempat Kerja untuk Keberlanjutan"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Magister/Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Manajer Rekayasa Perangkat Lunak (Software Engineering Manager) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Manajer Rekayasa Perangkat Lunak (Software Engineering Manager) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Manajer Rekayasa Perangkat Lunak (Software Engineering Manager) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Manajer Rekayasa Perangkat Lunak (Software Engineering Manager) atau mendapatkan tugas yang relevan dengan Jabatan Manajer Rekayasa Perangkat Lunak (Software Engineering Manager); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Manajer Rekayasa Perangkat Lunak (Software Engineering Manager) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/6803529.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "6803529.webp",
+      "photo_sha256": "49a109213ecac472e87f56f3c6a7664c18b00b8267ee8605fd463a7cfd295e10"
+    },
+    {
+      "source_index": 6,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "INSINYUR PERANGKAT LUNAK (SOFTWARE ENGINEER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62SAD00.002.1",
+            "title": "Melakukan Identifikasi Sumber Kebutuhan Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.004.1",
+            "title": "Melakukan Klasifikasi dan Alokasi Kebutuhan Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.006.1",
+            "title": "Membuat Kebutuhan Dokumentasi Spesifikasi Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.008.1",
+            "title": "Membuat Spesifikasi Kebutuhan Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.011.1",
+            "title": "Merancang Struktur Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.012.1",
+            "title": "Merancang Komponen Perangkat Lunak"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Magister/ Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Insinyur Perangkat Lunak (Software Engineer) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Insinyur Perangkat Lunak (Software Engineer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Insinyur Perangkat Lunak (Software Engineer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Insinyur Perangkat Lunak (Software Engineer) atau mendapatkan tugas yang relevan dengan Jabatan Insinyur Perangkat Lunak (Software Engineer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Insinyur Perangkat Lunak (Software Engineer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/9553905.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "9553905.webp",
+      "photo_sha256": "b0919923174ca8c9edd071da606a2abcd2ff397a45cd5e98015e49175503c393"
+    },
+    {
+      "source_index": 7,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "ANALIS PROGRAM (PROGRAM ANALYST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620100.021.02",
+            "title": "Menerapkan Akses Basis Data"
+          },
+          {
+            "code": "J.620100.033.02",
+            "title": "Melaksanakan Pengujian Unit Program"
+          },
+          {
+            "code": "J.620100.022.02",
+            "title": "Mengimplementasikan Algoritma Pemrograman"
+          },
+          {
+            "code": "J.620100.034.02",
+            "title": "Melaksanakan Pengujian Integrasi Program"
+          },
+          {
+            "code": "J.620100.025.02",
+            "title": "Melakukan Debugging"
+          },
+          {
+            "code": "J.620100.031.01",
+            "title": "Melakukan Profiling Program"
+          },
+          {
+            "code": "J.620100.023.02",
+            "title": "Membuat Dokumen Kode Program"
+          },
+          {
+            "code": "J.620100.032.01",
+            "title": "Menerapkan Code Review"
+          },
+          {
+            "code": "J.620100.002.01",
+            "title": "Menganalisis Skalabilitas Perangkat Lunak"
+          },
+          {
+            "code": "J.620100.020.02",
+            "title": "Menggunakan SQL"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Diploma/Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Analis Program (Program Analyst) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Analis Program (Program Analyst) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Analis Program (Program Analyst) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Analis Program (Program Analyst) atau mendapatkan tugas yang relevan dengan jabatan Analis Program (Program Analyst); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Analis Program (Program Analyst) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/14553706.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "14553706.webp",
+      "photo_sha256": "0dee0ff08c808652319cfa0f7b6701226614e68f8183185ecbd8d09c6712c74d"
+    },
+    {
+      "source_index": 8,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "PENGEMBANG FRONTEND (FRONTEND DEVELOPER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620100.019.02",
+            "title": "Menggunakan Library atau Komponen Pre- Existing"
+          },
+          {
+            "code": "J.620100.010.02",
+            "title": "Menerapkan Perintah Eksekusi Bahasa Pemrograman Berbasis Teks, Grafik, dan Multimedia"
+          },
+          {
+            "code": "J.620100.006.01",
+            "title": "Merancang User Experience"
+          },
+          {
+            "code": "J.620100.005.01",
+            "title": "Mengimplementasikan User Interface"
+          },
+          {
+            "code": "J.620100.025.02",
+            "title": "Melakukan Debugging"
+          },
+          {
+            "code": "J.620100.033.02",
+            "title": "Melaksanakan Pengujian Unit Program"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Diploma/Sarjana S-1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Pengembang Frontend (Frontend Developer) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Pengembang Frontend (Frontend Developer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Pengembang Frontend (Frontend Developer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Pengembang Frontend (Frontend Developer) atau mendapatkan tugas yang relevan dengan Jabatan Pengembang Frontend (Frontend Developer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Pengembang Frontend (Frontend Developer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/29459444.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "29459444.webp",
+      "photo_sha256": "04ba7f1715df355ae059410dab90c272c4265827bd165627db91dcf08b55403c"
+    },
+    {
+      "source_index": 9,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "SUPERVISOR PEMROGRAM MOBILE (MOBILE PROGRAMMER SUPERVISOR)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620100.009.01",
+            "title": "Menggunakan Spesifikasi Program"
+          },
+          {
+            "code": "J.620100.016.01",
+            "title": "Menulis Kode Dengan Prinsip Aktif Guidelines dan Best Practices"
+          },
+          {
+            "code": "J.620100.018.02",
+            "title": "Mengimplementasikan Pemrograman Berorientasi Objek"
+          },
+          {
+            "code": "J.620100.019.02",
+            "title": "Menggunakan Library atau Komponen Pre- Existing"
+          },
+          {
+            "code": "J.620100.021.02",
+            "title": "Menerapkan Akses Basis Data"
+          },
+          {
+            "code": "J.620100.023.02",
+            "title": "Membuat Dokumen Kode Program"
+          },
+          {
+            "code": "J.620100.025.02",
+            "title": "Melakukan Debugging"
+          },
+          {
+            "code": "J.620100.033.02",
+            "title": "Melaksanakan Pengujian Unit Program"
+          },
+          {
+            "code": "J.612000.017.01",
+            "title": "Membuat Mobile Digital Media"
+          },
+          {
+            "code": "J.620100.039.02",
+            "title": "Memberikan Petunjuk Teknis Kepada Pelanggan"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Diploma/Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Supervisor Pemrograman Mobile (Mobile Programmer Supervisor) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Supervisor Pemrograman Mobile (Mobile Programmer Supervisor) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Supervisor Pemrograman Mobile (Mobile Programmer Supervisor) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Supervisor Pemrograman Mobile (Mobile Programmer Supervisor) atau mendapatkan tugas yang relevan dengan Jabatan Supervisor Pemrograman Mobile (Mobile Programmer Supervisor); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Supervisor Pemrograman Mobile (Mobile Programmer Supervisor) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/5926389.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "5926389.webp",
+      "photo_sha256": "f75f3ef3282ab11428b2869a5845a8ddc88e50fa1243d0a17849ef5e02def3af"
+    },
+    {
+      "source_index": 10,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "ANALIS SISTEM (SYSTEM ANALYST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62SAD00.005.1",
+            "title": "Melakukan Negosiasi Kebutuhan Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.006.1",
+            "title": "Membuat Kebutuhan Dokumentasi Spesifikasi Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.007.1",
+            "title": "Membuat Spesifikasi Kebutuhan Software Environment"
+          },
+          {
+            "code": "J.62SAD00.008.1",
+            "title": "Membuat Spesifikasi Kebutuhan Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.009.1",
+            "title": "Meninjau Ulang (Review) Kebutuhan Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.010.1",
+            "title": "Melakukan validasi model dan uji penerimaan pengguna"
+          },
+          {
+            "code": "J.62SAD00.011.1",
+            "title": "Merancang Struktur Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.012.1",
+            "title": "Merancang Komponen Perangkat Lunak"
+          },
+          {
+            "code": "J.62SAD00.013.1",
+            "title": "Merancang User Interface (UI)"
+          },
+          {
+            "code": "J.62SAD00.014.1",
+            "title": "Merancang User Experience (UX)"
+          },
+          {
+            "code": "J.63HOS00.009.1",
+            "title": "Mengimplementasikan Kebutuhan Organisasi pada Layanan Cloud"
+          },
+          {
+            "code": "J.62KAM00.001.2",
+            "title": "Mengklasifikasikan informasi yang bersifat rahasia"
+          },
+          {
+            "code": "J.62KAM00.002.1",
+            "title": "Melaksanakan pengamanan informasi yang bersifat rahasia"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Diploma/Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Analis Sistem (System Analyst) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Analis Sistem (System Analyst) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Analis Sistem (System Analyst) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Analis Sistem (System Analyst) atau mendapatkan tugas yang relevan dengan Jabatan Analis Sistem (System Analyst); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Analis Sistem (System Analyst) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/3184287.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "3184287.webp",
+      "photo_sha256": "d35ce1aee8f0a2aef36e3631941bc14ce0277dca1b0d7417feffb43d4088a047"
+    },
+    {
+      "source_index": 11,
+      "target_id": 3,
+      "before": {
+        "id": 3,
+        "name": "PEMROGRAM MOBIL PRATAMA  (JUNIOR MOBILE PROGRAMMER)",
+        "category": "PROGRAMMING DAN PENGEMBANGAN SOFTWARE",
+        "level": "4",
+        "price": 1250000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "pemrogram-mobil-pratama-junior-mobile-programmer",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/1181244.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.612000.001.01",
+            "title": "Menunjukkan platform operating system dan bahasa pemrograman di dalam perangkat lunak",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam menunjukkan sistem operasi dan bahasa pemrograman berdasarkan platform dan device yang digunakan oleh user."
+          },
+          {
+            "code": "J.612000.003.01",
+            "title": "Merancang database dan data persistence pada mobile data",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam penyimpanan data pada aplikasi mobile dengan menggunakan internal atau eksternal storage dan sqlite database serta penyimpanan data pada layer terpisah dari perangkat mobile."
+          },
+          {
+            "code": "J.612000.006.01",
+            "title": "Menyusun mobile location based service, GPS dan mobile navigation",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam menyusun rencana prosedur penggunaan LBS, GPS dan navigasi pada perangkat bergerak."
+          },
+          {
+            "code": "J.612000.007.01",
+            "title": "Merancang mobile interface",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam merancang Interface yang menarik sehingga aplikasi berbasis mobile dapat digunakan dengan baik, serta dapat mengidentifikasi ketertarikan user terhadap aplikasi berbasis mobile yang dikembangkan."
+          },
+          {
+            "code": "J.612000.008.01",
+            "title": "Menjelaskan dasar-dasar mobile security",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengukur pemahaman mengenai dasar-dasar Mobile Communication Security."
+          },
+          {
+            "code": "J.612000.022.01",
+            "title": "Menjelaskan mobile sensor dan spesifikasi teknisnya untuk mobile computing",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja dalam menunjukkan sensor-sensor yang terdapat pada mobile computing."
+          },
+          {
+            "code": "J.612000.025.01",
+            "title": "Menentukan mobile seluler network",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengidentifikasikan mobile celular network untuk melakukan data komunikasi bagi mobile user."
+          }
+        ],
+        "basic_requirements": [
+          "Copy ijazah SMK jurusan Rekayasa Perangkat Lunak yang dilegalisir SMK yang bersangkutan",
+          "Copy Ijazah terakhir minimal D1 bidang Informatika yang dilegalisir oleh Perguruan Tinggi yang bersangkutan",
+          "Copy sertifikat pelatihan berbasis kompetensi Pemrogram Mobil Pratama (Junior Mobile Programmer) yang telah diikuti",
+          "Surat Pengalaman Kerja pada jabatan Pemrogram Mobil Pratama (Junior Mobile Programmer) minimal 1 (satu) tahun secara berkelanjutan"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "PEMROGRAM MOBILE MUDA (ASSOCIATE MOBILE PROGRAMMER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.612000.001.01",
+            "title": "Menunjukkan Platform Operating System dan Bahasa Pemrograman di dalam Perangkat Lunak"
+          },
+          {
+            "code": "J.612000.003.01",
+            "title": "Merancang Database dan Data Persistence pada Mobile Data"
+          },
+          {
+            "code": "J.612000.006.01",
+            "title": "Menjelaskan Mobile Location Based Service, GPS dan Mobile Navigation"
+          },
+          {
+            "code": "J.612000.007.01",
+            "title": "Merancang Mobile Interface"
+          },
+          {
+            "code": "J.612000.008.01",
+            "title": "Menjelaskan Dasar-Dasar Mobile Communication Security"
+          },
+          {
+            "code": "J.612000.022.01",
+            "title": "Menunjukkan Mobile Sensor dan Spesifikasi Teknis Untuk Mobile Computing"
+          },
+          {
+            "code": "J.612000.025.01",
+            "title": "Menentukan Mobile Cellular Network"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Diploma/Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Pemrogram Mobile Muda (Associate Mobile Programmer) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Pemrogram Mobile Muda (Associate Mobile Programmer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Pemrogram Mobile Muda (Associate Mobile Programmer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Pemrogram Mobile Muda (Associate Mobile Programmer) atau mendapatkan tugas yang relevan dengan Jabatan Pemrogram Mobile Muda (Associate Mobile Programmer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Pemrogram Mobile Muda (Associate Mobile Programmer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/1181244.webp"
+      },
+      "photo_file": "1181244.webp",
+      "photo_sha256": "9d40d3c46ca43e4a8029b002cbff587e574897282a992c5bd77204afb951c20a"
+    },
+    {
+      "source_index": 12,
+      "target_id": 2,
+      "before": {
+        "id": 2,
+        "name": "PENGEMBANG WEB PRATAMA  (JUNIOR WEB DEVELOPER)",
+        "category": "PROGRAMMING DAN PENGEMBANGAN SOFTWARE",
+        "level": "4",
+        "price": 1250000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "pengembang-web-pratama-junior-web-developer",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/14553707.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.620100.005.02",
+            "title": "Mengimplementasikan user interface",
+            "description": "Unit ini menentukan kompetensi, pengetahuan dan Sikap kerja yang diperlukan dalam membuat rancangan antar muka program."
+          },
+          {
+            "code": "J.620100.010.01",
+            "title": "Menerapkan perintah eksekusi bahasa pemrograman berbasis teks, grafik, dan multimedia",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan untuk dapat menjalankan code yang dibuat pada lingkungan tools pemrograman tertentu."
+          },
+          {
+            "code": "J.620100.015.01",
+            "title": "Menyusun fungsi, file atau sumber daya pemrograman yang lain dalam organisasi yang rapi",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan dalam mengorganisasikan sumber daya hasil pemrogramannya seperti source code, file referensi, dokumentasi, dll dalam organisasi yang rapi sehingga memudahkan diri sendiri maupun orang lain dalam mengakses dan menggunakan sumber daya tersebut."
+          },
+          {
+            "code": "J.620100.016.01",
+            "title": "Menulis kode dengan prinsip sesuai guidelines dan best practices",
+            "description": "Unit ini menentukan kompetensi, pengetahuan dan Sikap kerja yang diperlukan dalam menerapkan prinsip penulisan kode yang baik agar kode tersebut dapat dirawat (maintainability)."
+          },
+          {
+            "code": "J.620100.017.02",
+            "title": "Mengimplementasikan pemrograman terstruktur",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan untuk membuat program terstruktur atau prosedural."
+          },
+          {
+            "code": "J.620100.019.02",
+            "title": "Menggunakan library atau komponen pre-existing",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang diperlukan untuk menggunakan komponen-komponen reuse (yang dapat dipergunakan secara berulang) untuk mendukung pengembangan aplikasi yang efisien."
+          }
+        ],
+        "basic_requirements": [
+          "Copy ijazah SMK jurusan Rekayasa Perangkat Lunak yang dilegalisir SMK yang bersangkutan; atau",
+          "Copy Ijazah terakhir minimal D1 bidang Informatika yang dilegalisir oleh Perguruan Tinggi yang bersangkutan; atau",
+          "Copy sertifikat pelatihan berbasis kompetensi Pengembang Web Pratama (Junior Web Developer) yang telah diikuti; atau",
+          "Surat Pengalaman Kerja pada jabatan Pengembang Web Pratama (Junior Web Developer) minimal 1 (satu) tahun secara berkelanjutan;"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ASISTEN PENGEMBANG WEB (ASSISTANT WEB DEVELOPER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620100.005.01",
+            "title": "Mengimplementasikan User Interface"
+          },
+          {
+            "code": "J.620100.010.02",
+            "title": "Menerapkan Perintah Eksekusi Bahasa Pemrograman Berbasis Teks, Grafik, dan Multimedia"
+          },
+          {
+            "code": "J.620100.015.01",
+            "title": "Menyusun Fungsi, File atau Sumber Daya Pemrograman yang Lain dalam Organisasi yang Rapi"
+          },
+          {
+            "code": "J.620100.016.01",
+            "title": "Menulis Kode Dengan Prinsip Aktif Guidelines dan Best Practices"
+          },
+          {
+            "code": "J.620100.017.02",
+            "title": "Mengimplementasikan Pemrograman Terstruktur"
+          },
+          {
+            "code": "J.620100.019.02",
+            "title": "Menggunakan Library atau Komponen Pre- Existing"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa pada program Diploma/Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Asisten Pengembang Web (Assistant Web Developer) dan telah menyelesaikan Magang pada Area Fungsi Pengembangan Produk Digital (Digital Product Development) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Asisten Pengembang Web (Assistant Web Developer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Asisten Pengembang Web (Assistant Web Developer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Asisten Pengembang Web (Assistant Web Developer) atau mendapatkan tugas yang relevan dengan Jabatan Asisten Pengembang Web (Assistant Web Developer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Asisten Pengembang Web (Assistant Web Developer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/14553707.webp"
+      },
+      "photo_file": "14553707.webp",
+      "photo_sha256": "e62cef6226aaa506b2c8a5ccc37ab6d2b630ae410bd6b513794b9ceb449b6108"
+    },
+    {
+      "source_index": 13,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "PEMIMPIN DATA (CHIEF DATA OFFICER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "BSBINN801",
+            "title": "Memimpin Pemikiran dan Praktik Inovatif"
+          },
+          {
+            "code": "BSBMGT608C",
+            "title": "Mengelola Inovasi dan Peningkatan Berkelanjutan"
+          },
+          {
+            "code": "M.70BDA00.001.1",
+            "title": "Menganalisis Informasi Terkait Daftar Permasalahan Organisasi"
+          },
+          {
+            "code": "J.62DMS00.001.1",
+            "title": "Mengidentifikasi Kebutuhan Pengelolaan Data untuk Proses Bisnis"
+          },
+          {
+            "code": "J.62DMI00.020.1",
+            "title": "Melakukan Review Proyek Data Science"
+          },
+          {
+            "code": "BSBREL701A",
+            "title": "Mengembangkan dan Membina Kemitraan dan Hubungan Kolaboratif"
+          },
+          {
+            "code": "J.620200.008.01",
+            "title": "Menyusun Roadmap dan Komponen Arsitektur Data"
+          },
+          {
+            "code": "J.63HOS00.012.2",
+            "title": "Menyiapkan Adaptasi untuk Deployment di Sistem Cloud"
+          },
+          {
+            "code": "J.63HOS00.014.2",
+            "title": "Menentukan Kebutuhan Pengguna akan Solusi berbasis Cloud"
+          }
+        ],
+        "basic_requirements": [
+          "Minimal memiliki Ijazah pada program doktor/ doktor terapan program studi sesuai pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence) atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Pemimpin Data (Chief Data Officer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Pemimpin Data (Chief Data Officer) atau mendapatkan tugas yang relevan dengan Pemimpin Data (Chief Data Officer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Pemimpin Data (Chief Data Officer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/6248987.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "6248987.webp",
+      "photo_sha256": "ccfd23927813a7ab91b53c9da0a8e56b18ffe8b09f336f9c9c12a8a5e477d046"
+    },
+    {
+      "source_index": 14,
+      "target_id": 26,
+      "before": {
+        "id": 26,
+        "name": "CHIEF DATA SCIENTIST",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "8",
+        "price": 3000000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:36:10.000000Z",
+        "slug": "chief-data-scientist",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/7173026.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMI00.001.1",
+            "title": "Menentukan Objektif Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menentukan objektif bisnis dari proyek data science."
+          },
+          {
+            "code": "J.62DMI00.002.1",
+            "title": "Menentukan Tujuan Teknis Data Science",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menentukan tujuan teknis data science."
+          },
+          {
+            "code": "J.62DMI00.003.1",
+            "title": "Membuat Rencana Proyek Data Science",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat rencana proyek data science."
+          },
+          {
+            "code": "J.62DMI00.020.1",
+            "title": "Melakukan Review Proyek Data Science",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam melakukan review proyek yang sesuai kebutuhan organisasi."
+          },
+          {
+            "code": "J.62DMI00.021.1",
+            "title": "Melakukan Laporan Akhir Proyek Data Science",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat laporan akhir proyek data science yang sesuai kebutuhan organisasi."
+          },
+          {
+            "code": "J.62DMS00.001.1",
+            "title": "Mengidentifikasi Kebutuhan Pengelolaan Data untuk Proses Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengidentifikasi kebutuhan data untuk proses bisnis."
+          },
+          {
+            "code": "J.620200.004.01",
+            "title": "Menyusun Roadmap Arsitektur Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan dan keterampilan untuk melakukan stakeholder review secara formal dan menyusun roadmap arsitektur bisnis."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah minimal Sarjana S1 Program Studi statistika/Sains Data /Computer Sains/Informatika/yang serumpun dengan Copy surat Pengalaman Kerja minimal 3 (tiga) tahun di bidang Chief Data Scientist secara berkelanjutan; atau",
+          "Copy Sertifikat Kompetensi Data Scientist dan Surat pengalaman",
+          "Copy Surat pengalaman kerja sebagai Chief Data Scientist minimal 2 (dua) Tahun secara berkelanjutan dan Copy sertifikat pelatihan berbasis kompetensi bidang Chief Data Scientist.",
+          "Copy Transkrip nilai Semester 1-2 Mahasiswa Program Studi Magister statistika/Sains Data /Computer Sains/Informatika/yang serumpun, dan Copy Sertifikat pelatihan di Bidang Chief Data Scientist; atau"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "KEPALA ILMUWAN DATA (LEAD DATA SCIENTIST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.001.1",
+            "title": "Menentukan Objektif Bisnis"
+          },
+          {
+            "code": "J.62DMI00.002.1",
+            "title": "Menentukan Tujuan Teknis Data Science"
+          },
+          {
+            "code": "J.62DMI00.003.1",
+            "title": "Membuat Rencana Proyek Data Science"
+          },
+          {
+            "code": "J.62DMI00.015.1",
+            "title": "Melakukan Proses Review Pemodelan"
+          },
+          {
+            "code": "J.62DMI00.020.1",
+            "title": "Melakukan Review Proyek Data Science"
+          },
+          {
+            "code": "J.62DMI00.021.1",
+            "title": "Membuat Laporan Akhir Proyek Data Science"
+          },
+          {
+            "code": "C.222930.017.01",
+            "title": "Mengelola Tim Kerja"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program doktor/ doktor terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Kepala Ilmuwan Data (Lead Data Scientist) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science- Artificial Intelligence)/ telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Kepala Ilmuwan Data (Lead Data Scientist) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Kepala Ilmuwan Data (Lead Data Scientist) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Kepala Ilmuwan Data (Lead Data Scientist) atau mendapatkan tugas yang relevan dengan jabatan Kepala Ilmuwan Data (Lead Data Scientist); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Kepala Ilmuwan Data (Lead Data Scientist) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/7173026.webp"
+      },
+      "photo_file": "7173026.webp",
+      "photo_sha256": "7a59bd7db2fc398f4c5e1abca74201fdcda81c98eac4d5db71b9cb50258b0c5a"
+    },
+    {
+      "source_index": 15,
+      "target_id": 24,
+      "before": {
+        "id": 24,
+        "name": "ILMUWAN DATA (DATA SCIENTIST)",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "7",
+        "price": 2500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "ilmuwan-data-data-scientist",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/5833758.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMI00.001.1",
+            "title": "Menentukan Objektif Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menentukan objektif bisnis dari proyek data science."
+          },
+          {
+            "code": "J.62DMI00.002.1",
+            "title": "Menentukan Tujuan Teknis Data Science",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menentukan tujuan teknis data science."
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menelaah data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memvalidasi data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memilah dan memilih data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membersihkan data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.62DMI00.009.1",
+            "title": "Mengkonstruksi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengkonstruksi data untuk proyek data science."
+          },
+          {
+            "code": "J.62DMI00.012.1",
+            "title": "Membangun Skenario Model",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membangun skenario model."
+          },
+          {
+            "code": "J.62DMI00.013.1",
+            "title": "Membangun Model",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membangun model."
+          },
+          {
+            "code": "J.62DMI00.014.1",
+            "title": "Mengevaluasi Hasil Pemodelan",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengevaluasi hasil pemodelan."
+          },
+          {
+            "code": "J.62DMI00.015.1",
+            "title": "Melakukan Proses Review Pemodelan",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam melakukan proses review pemodelan."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah S1 Program Studi statistika/Sains Data /Computer Sains/Informatika/yang serumpun dengan Pengalaman Kerja minimal 1 (satu) tahun di bidang Ilmuwan Data (Data Scientist) secara berkelanjutan",
+          "Copy Surat pengalaman kerja sebagai Ilmuwan Data (Data Scientist)/Management Data minimal 2 (dua) Tahun secara berkelanjutan atau Copy Surat pengalaman sebagai Data Engineer minimal 1 (satu) tahun secara berkelanjutan atau Copy sertifikat pelatihan berbasis kompetensi Ilmuwan Data (Data Scientist)/Management Data/Data Engginer.",
+          "Copy transkrip nilai semester 1-2 Mahasiswa Program Studi Magister statistika/Sains Data /Computer Sains/Informatika/yang serumpun dan copy serifikat pelatihan bidang Ilmuwan Data (Data Scientist)"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ILMUWAN DATA (DATA SCIENTIST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.001.1",
+            "title": "Menentukan Objektif Bisnis"
+          },
+          {
+            "code": "J.62DMI00.002.1",
+            "title": "Menentukan Tujuan Teknis Data Science"
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data"
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data"
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data"
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data"
+          },
+          {
+            "code": "J.62DMI00.009.1",
+            "title": "Mengkonstruksi Data"
+          },
+          {
+            "code": "J.62DMI00.012.1",
+            "title": "Membangun Skenario Model"
+          },
+          {
+            "code": "J.62DMI00.013.1",
+            "title": "Membangun Model"
+          },
+          {
+            "code": "J.62DMI00.014.1",
+            "title": "Mengevaluasi Hasil Pemodelan"
+          },
+          {
+            "code": "J.62DMI00.015.1",
+            "title": "Melakukan Proses Review Pemodelan"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Magister/ Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Ilmuwan Data (Data Scientist) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Ilmuwan Data (Data Scientist) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Ilmuwan Data (Data Scientist) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Ilmuwan Data (Data Scientist) atau mendapatkan tugas yang relevan dengan jabatan Ilmuwan Data (Data Scientist); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Ilmuwan Data (Data Scientist) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/5833758.webp"
+      },
+      "photo_file": "5833758.webp",
+      "photo_sha256": "412370441b4ad252b537641cc5c07bc3420a4ddbde451eea74a4c8b78a8c336b"
+    }
+  ]
+}

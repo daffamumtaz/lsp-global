@@ -48,7 +48,7 @@ export function selectSchemes(schemes: Scheme[], state: SchemeState, pageSize = 
     (!query || `${scheme.name} ${scheme.category}`.toLocaleLowerCase("id").includes(query)) &&
     (!state.methods.length || state.methods.some(method => scheme.methods.includes(method))) &&
     (!state.categories.length || state.categories.includes(scheme.category)) &&
-    scheme.level >= state.minLevel && scheme.level <= state.maxLevel
+    (scheme.level > 0 ? scheme.level >= state.minLevel && scheme.level <= state.maxLevel : state.minLevel === 1 && state.maxLevel === 9)
   ).sort((a, b) => {
     const direction = state.sort.endsWith("desc") ? -1 : 1;
     const name = a.name.localeCompare(b.name, "id", { numeric: true }) || a.id.localeCompare(b.id);
@@ -56,7 +56,10 @@ export function selectSchemes(schemes: Scheme[], state: SchemeState, pageSize = 
       if (a.price === null || b.price === null) return a.price === b.price ? name : a.price === null ? 1 : -1;
       return (a.price - b.price) * direction || name;
     }
-    if (state.sort.startsWith("level")) return (a.level - b.level) * direction || name;
+    if (state.sort.startsWith("level")) {
+      if (!a.level || !b.level) return a.level === b.level ? name : !a.level ? 1 : -1;
+      return (a.level - b.level) * direction || name;
+    }
     return name * direction;
   });
   const size = Math.max(1, Math.floor(pageSize));

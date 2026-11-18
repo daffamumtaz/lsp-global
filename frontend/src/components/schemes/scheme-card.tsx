@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/public-image";
 import Link from "next/link";
 import { AcademicCapIcon, BuildingOfficeIcon, ClipboardDocumentListIcon, TrophyIcon } from "@heroicons/react/24/outline";
 import { formatSchemePrice, methodLabels, type Scheme } from "@/lib/schemes";
@@ -10,8 +10,8 @@ export function SchemeCard({ scheme, href }: { scheme: Scheme; href?: string }) 
     <div className={styles.cardBody}>
       <div className={styles.cardHeading}><h3>{scheme.name}</h3><p className={styles.category}>{scheme.category}</p></div>
       <ul className={styles.cardMeta}>
-        <li><TrophyIcon aria-hidden="true" /><span>Level {scheme.level} KKNI</span></li>
-        <li><BuildingOfficeIcon aria-hidden="true" /><span>{scheme.methods.map(method => methodLabels[method]).join(" & ")}</span></li>
+        <li><TrophyIcon aria-hidden="true" /><span>{scheme.level ? `Level ${scheme.level} KKNI` : "Level belum ditetapkan"}</span></li>
+        <li><BuildingOfficeIcon aria-hidden="true" /><span>{scheme.methods.map(method => methodLabels[method]).join(" & ") || "Metode belum ditetapkan"}</span></li>
         <li><ClipboardDocumentListIcon aria-hidden="true" /><span>{scheme.units.length} Unit</span></li>
         <li><AcademicCapIcon aria-hidden="true" /><span>Skema {scheme.type}</span></li>
       </ul>

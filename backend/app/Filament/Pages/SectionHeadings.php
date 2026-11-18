@@ -22,7 +22,7 @@ class SectionHeadings extends Page
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedPencilSquare;
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 3;
 
     public ?array $data = [];
 
@@ -35,11 +35,12 @@ class SectionHeadings extends Page
     public function form(Schema $schema): Schema
     {
         $labels = ['home_schemes' => 'Beranda — Skema Unggulan', 'about_hero' => 'Tentang Kami — Hero', 'about_vision' => 'Tentang Kami — Visi', 'about_mission' => 'Tentang Kami — Misi', 'about_structure' => 'Tentang Kami — Struktur Organisasi', 'about_legal' => 'Tentang Kami — Lisensi', 'schemes_hero' => 'Skema Sertifikasi — Hero', 'gallery_hero' => 'Galeri — Hero', 'gallery_albums' => 'Galeri — Album', 'gallery_year' => 'Galeri — Tahun', 'footer_explore' => 'Footer — Jelajahi', 'footer_contact' => 'Footer — Kontak', 'footer_social' => 'Footer — Media Sosial', 'partners_hero' => 'Seluruh Mitra — Hero', 'contact_hero' => 'Kontak — Hero', 'contact_info' => 'Kontak — Pengantar', 'contact_details' => 'Kontak — Detail', 'contact_socials' => 'Kontak — Media Sosial', 'contact_form' => 'Kontak — Form', 'contact_location' => 'Kontak — Lokasi', 'scheme_units' => 'Detail Skema — Unit', 'scheme_requirements' => 'Detail Skema — Persyaratan', 'scheme_basic' => 'Detail Skema — Persyaratan Dasar', 'scheme_administrative' => 'Detail Skema — Persyaratan Administrasi'];
+        $defaults = json_decode(file_get_contents(resource_path('data/section-headings.json')), true, 512, JSON_THROW_ON_ERROR);
         $sections = [];
         foreach ($labels as $key => $label) {
             $sections[] = Section::make($label)->schema([
                 TextInput::make($key.'.title')->label('Judul')->required()->maxLength(255)->helperText($key === 'gallery_albums' ? 'Gunakan {media} untuk jenis foto atau video.' : ($key === 'gallery_year' ? 'Gunakan {year} untuk tahun album.' : null)),
-                Textarea::make($key.'.subtitle')->label('Subjudul')->maxLength(2000)->rows(2),
+                ...($defaults[$key]['subtitle'] !== '' ? [Textarea::make($key.'.subtitle')->label('Subjudul')->maxLength(2000)->rows(2)] : []),
             ])->columns(2)->collapsible()->collapsed();
         }
 

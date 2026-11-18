@@ -10,6 +10,7 @@ use App\Models\Assessor;
 use App\Models\CertificationScheme;
 use App\Models\GalleryItem;
 use App\Models\Process;
+use App\Models\SchemeCategory;
 use App\Models\Tuk;
 use App\Models\User;
 use Filament\Actions\Testing\TestAction;
@@ -35,20 +36,20 @@ class ContentDirectoryTest extends TestCase
 
     public function test_admin_pages_are_available_and_guests_are_rejected(): void
     {
-        foreach (['tuks', 'assessors', 'certification-schemes', 'gallery-items', 'information'] as $path) {
+        foreach (['tuks', 'assessors', 'certification-schemes', 'gallery-items'] as $path) {
             $this->get('/admin/'.$path)->assertOk()->assertDontSee('Halaman dalam Pengembangan');
         }
-        $this->get('/admin/information')->assertSee('TUK')->assertSee('Asesor')->assertSee('Edit alur asesmen daring');
+        $this->get('/admin/information')->assertNotFound();
         auth()->logout();
-        foreach (['tuks', 'assessors', 'certification-schemes', 'gallery-items', 'information'] as $path) {
+        foreach (['tuks', 'assessors', 'certification-schemes', 'gallery-items'] as $path) {
             $this->get('/admin/'.$path)->assertRedirect('/admin/login');
         }
     }
 
-    public function test_information_links_directly_to_the_existing_assessment_editor(): void
+    public function test_assessment_editor_remains_directly_accessible(): void
     {
         $process = Process::factory()->create(['slug' => 'asesmen-sertifikasi-jarak-jauh']);
-        $this->get('/admin/information')->assertSee('/admin/processes/'.$process->id.'/edit');
+        $this->get('/admin/processes/'.$process->id.'/edit')->assertOk();
     }
 
     public function test_tuk_modal_crud_updates_both_public_directories(): void
@@ -132,7 +133,8 @@ class ContentDirectoryTest extends TestCase
 
     public function test_scheme_modal_preserves_details_and_generates_unique_slug(): void
     {
-        $data = ['name' => 'Skema Uji', 'slug' => 'skema-uji', 'category' => 'TIK', 'type' => 'Okupasi', 'level' => 3, 'price' => null, 'methods' => ['luring', 'jarak-jauh'], 'units' => [['code' => 'U.001', 'title' => 'Unit Uji']], 'basic_requirements' => 'Pendidikan TIK', 'administrative_requirements' => 'KTP', 'is_active' => true];
+        SchemeCategory::factory()->create(['name' => 'TIK']);
+        $data = ['name' => 'Skema Uji', 'slug' => 'skema-uji', 'category' => 'TIK', 'type' => 'Okupasi', 'level' => 3, 'price' => null, 'methods' => ['luring', 'jarak-jauh'], 'units' => [['code' => 'U.001', 'title' => 'Unit Uji']], 'basic_requirements' => [['requirement' => 'Pendidikan TIK']], 'administrative_requirements' => [['requirement' => 'KTP']], 'is_active' => true];
         Livewire::test(ManageCertificationSchemes::class)->callAction('create', $data)->assertHasNoActionErrors();
         $scheme = CertificationScheme::query()->firstOrFail();
         $this->getJson('/api/content-directory')->assertJsonPath('data.schemes.0.units.0.code', 'U.001')->assertJsonPath('data.schemes.0.price', null);
@@ -149,11 +151,15 @@ class ContentDirectoryTest extends TestCase
 
     public function test_scheme_creation_loads_default_text_and_can_add_a_category(): void
     {
-        $component = Livewire::test(ManageCertificationSchemes::class)->mountAction('create')
-            ->assertActionDataSet([
-                'basic_requirements' => "Copy Kartu Pelajar atau Copy Buku Raport terakhir SMK jurusan Rekayasa Perangkat Lunak\nCopy sertifikat pelatihan berbasis kompetensi Pemrograman Komputer yang telah diikuti\nSurat Pengalaman Kerja pada jabatan Pemrogram Junior (Junior Coder) minimal 1 (satu) tahun secara berkelanjutan\nCopy Ijazah terakhir minimal D1 bidang Informatika yang dilegalisir oleh Perguruan Tinggi yang bersangkutan",
-                'administrative_requirements' => "Pasfoto 3 × 4 dengan latar merah.\nSalinan KTP.",
-            ]);
+        $component = Livewire::test(ManageCertificationSchemes::class)->mountAction('create');
+        $state = $component->get('mountedActions.0.data');
+        $this->assertSame([
+            'Copy Kartu Pelajar atau Copy Buku Raport terakhir SMK jurusan Rekayasa Perangkat Lunak',
+            'Copy sertifikat pelatihan berbasis kompetensi Pemrograman Komputer yang telah diikuti',
+            'Surat Pengalaman Kerja pada jabatan Pemrogram Junior (Junior Coder) minimal 1 (satu) tahun secara berkelanjutan',
+            'Copy Ijazah terakhir minimal D1 bidang Informatika yang dilegalisir oleh Perguruan Tinggi yang bersangkutan',
+        ], array_column($state['basic_requirements'], 'requirement'));
+        $this->assertSame(['KTP (WNI)/ Paspor dan Kartu Izin Tinggal Terbatas (Kitas) (WNA)', 'Pas Photo 3x4 background merah'], array_column($state['administrative_requirements'], 'requirement'));
         $component->callAction(TestAction::make('createOption')->schemaComponent('category', 'mountedActionSchema0'), ['name' => 'Kategori Baru'])
             ->assertHasNoActionErrors()->assertActionDataSet(['category' => 'Kategori Baru']);
         $component->callAction(TestAction::make('createOption')->schemaComponent('type', 'mountedActionSchema0'), ['name' => 'Jenis Baru'])
@@ -166,9 +172,9 @@ class ContentDirectoryTest extends TestCase
         $this->assertSame('Kategori Baru', $scheme->category);
         $this->assertCount(4, $scheme->basic_requirements);
         $this->assertSame('Jenis Baru', $scheme->type);
-        $this->assertSame(['Pasfoto 3 × 4 dengan latar merah.', 'Salinan KTP.'], $scheme->administrative_requirements);
-        Livewire::test(ManageCertificationSchemes::class)->mountAction(TestAction::make('edit')->table($scheme))
-            ->assertActionDataSet(['administrative_requirements' => "Pasfoto 3 × 4 dengan latar merah.\nSalinan KTP."]);
+        $this->assertSame(['KTP (WNI)/ Paspor dan Kartu Izin Tinggal Terbatas (Kitas) (WNA)', 'Pas Photo 3x4 background merah'], $scheme->administrative_requirements);
+        $edit = Livewire::test(ManageCertificationSchemes::class)->mountAction(TestAction::make('edit')->table($scheme));
+        $this->assertSame(['KTP (WNI)/ Paspor dan Kartu Izin Tinggal Terbatas (Kitas) (WNA)', 'Pas Photo 3x4 background merah'], array_column($edit->get('mountedActions.0.data.administrative_requirements'), 'requirement'));
     }
 
     public function test_gallery_modal_stores_uploaded_media(): void

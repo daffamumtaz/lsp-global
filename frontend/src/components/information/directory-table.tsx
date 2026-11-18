@@ -2,7 +2,7 @@
 
 import { Component, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import Image from "@/components/public-image";
 import { type Tuk } from "@/lib/tuks";
 import { selectDirectory, type DirectoryEntry } from "@/lib/directory";
 import { registrationHref } from "@/lib/schemes";

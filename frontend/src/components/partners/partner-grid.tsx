@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/public-image";
 import type { Partner } from "@/lib/partners";
 import styles from "./partners.module.css";
 

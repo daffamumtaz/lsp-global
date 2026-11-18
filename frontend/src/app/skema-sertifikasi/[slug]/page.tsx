@@ -1,3 +1,4 @@
+import { frontendPath, publicAsset } from "@/lib/deployment-paths";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -26,7 +27,7 @@ export default async function SchemeDetailPage({ params, searchParams }: Props) 
   if (unavailable) return <><Header currentPage="schemes" /><main id="main" className="bg-white">
     <InternalHero white id="scheme-title" title="Skema sementara tidak tersedia">Informasi skema belum dapat dimuat. Silakan coba lagi beberapa saat lagi.</InternalHero>
     <div className={`${styles.content} ${styles.recoveryActions}`}>
-      <a className={shared.primary} href={`/skema-sertifikasi/${encodeURIComponent(slug)}`}>Coba lagi</a>
+      <a className={shared.primary} href={frontendPath(`/skema-sertifikasi/${encodeURIComponent(slug)}`)}>Coba lagi</a>
       <Link className={shared.secondary} href="/skema-sertifikasi">Kembali ke daftar skema</Link>
     </div>
   </main><Footer /></>;
@@ -34,19 +35,20 @@ export default async function SchemeDetailPage({ params, searchParams }: Props) 
   if (!scheme) notFound();
   const query = new URLSearchParams();
   Object.entries(await searchParams).forEach(([key, value]) => { if (Array.isArray(value)) value.forEach(item => query.append(key, item)); else if (value !== undefined) query.set(key, value); });
-  const backHref = schemeHref(readSchemeState(query, schemes.map(item => item.category)));
+  const listHref = schemeHref(readSchemeState(query, schemes.map(item => item.category)));
+  const backHref = query.get("tampilan") === "semua" ? `${listHref}${listHref.includes("?") ? "&" : "?"}tampilan=semua` : listHref;
   const { identity, sections } = await getLandingContent();
   const registration = getRegistrationUrl(identity, scheme.name);
   return <><Header currentPage="schemes" /><main id="main" className="bg-white">
-    <section className={styles.hero} style={{ backgroundImage: `url(${JSON.stringify(scheme.thumbnail)})` }} aria-labelledby="scheme-title">
+    <section className={styles.hero} style={{ backgroundImage: `url(${JSON.stringify(publicAsset(scheme.thumbnail))})` }} aria-labelledby="scheme-title">
       <div className={styles.heroInner}>
         <Link className={styles.backLink} href={backHref}>← Kembali ke daftar skema</Link>
         <h1 id="scheme-title">{scheme.name}</h1>
         <p className={styles.category}>{scheme.category}</p>
         <dl className={styles.metadata}>
-          <div><dt>Level KKNI</dt><dd>{scheme.level}</dd></div>
+          <div><dt>Level KKNI</dt><dd>{scheme.level || "Belum ditetapkan"}</dd></div>
           <div><dt>Jenis skema</dt><dd>{scheme.type}</dd></div>
-          <div><dt>Metode pelaksanaan</dt><dd>{scheme.methods.map(method => methodLabels[method]).join(" & ")}</dd></div>
+          <div><dt>Metode pelaksanaan</dt><dd>{scheme.methods.map(method => methodLabels[method]).join(" & ") || "Belum ditetapkan"}</dd></div>
           <div><dt>Unit kompetensi</dt><dd>{scheme.units.length} unit</dd></div>
         </dl>
         <div className={styles.actions}>

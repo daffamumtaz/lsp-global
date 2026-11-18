@@ -6,6 +6,7 @@ use App\Models\Assessor;
 use App\Models\CertificationScheme;
 use App\Models\GalleryItem;
 use App\Models\Media;
+use App\Models\SchemeCategory;
 use App\Models\Tuk;
 use App\Models\User;
 use App\Observers\ContentDirectoryObserver;
@@ -35,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Password::defaults(fn (): Password => Password::min(12));
         RateLimiter::for('public-content', fn (Request $request): Limit => Limit::perMinute(max(1, (int) config('security.public_content_requests_per_minute')))->by($request->ip()));
-        foreach ([Tuk::class, Assessor::class, CertificationScheme::class, GalleryItem::class, Media::class] as $model) {
+        foreach ([Tuk::class, Assessor::class, CertificationScheme::class, SchemeCategory::class, GalleryItem::class, Media::class] as $model) {
             $model::observe(ContentDirectoryObserver::class);
         }
 

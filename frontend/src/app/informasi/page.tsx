@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Footer, Header } from "@/components/landing/chrome";
-import { InternalHero } from "@/components/landing/internal-hero";
 import { DirectoryTable } from "@/components/information/directory-table";
 import { getPublicContent } from "@/lib/content-api";
 import { AssessmentProcessView } from "@/components/information/assessment-process-view";
@@ -18,7 +17,7 @@ export default async function InformationPage() {
   return <>
     <Header currentPage="information" />
     <main id="main">
-      <InternalHero white id="information-title" title={copy.hero.title}>{copy.hero.description}</InternalHero>
+      <h1 className="sr-only">{copy.hero.title}</h1>
       <section id="tuk" className={styles.section} aria-labelledby="tuk-title">
         <div className={styles.inner}>
           <div className={styles.heading}><h2 id="tuk-title">{copy.tuk.title}</h2>{copy.tuk.description && <p>{copy.tuk.description}</p>}</div>

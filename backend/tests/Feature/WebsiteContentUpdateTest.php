@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Filament\Pages\Information;
 use App\Filament\Pages\Profile;
 use App\Filament\Resources\GalleryItems\Pages\ManageGalleryItems;
 use App\Filament\Resources\Processes\ProcessResource;
@@ -32,14 +31,12 @@ class WebsiteContentUpdateTest extends TestCase
         $this->getJson('/api/information-page')->assertJsonPath('data.hero.title', 'Informasi Baru')->assertJsonPath('data.directory.results', '{total} peserta')->assertJsonPath('data.tuk.title', 'Tempat Uji Kompetensi (TUK)');
     }
 
-    public function test_information_editor_saves_copy_and_refuses_non_admins(): void
+    public function test_information_editor_is_unavailable_for_admins_and_non_admins(): void
     {
-        Filament::setCurrentPanel(Filament::getPanel('admin'));
         $this->actingAs(User::factory()->admin()->create());
-        Livewire::test(Information::class)->fillForm(['hero.title' => 'Dari Admin'], 'form')->call('save')->assertHasNoFormErrors();
-        $this->getJson('/api/information-page')->assertJsonPath('data.hero.title', 'Dari Admin')->assertJsonPath('data.directory.results', SitePage::defaultInformationContent()['directory']['results']);
+        $this->get('/admin/information')->assertNotFound();
         $this->actingAs(User::factory()->create());
-        $this->get('/admin/information')->assertForbidden();
+        $this->get('/admin/information')->assertNotFound();
     }
 
     public function test_scheme_slug_is_generated_unique_and_stable(): void

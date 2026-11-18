@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { frontendPath } from "@/lib/deployment-paths";
+import Image from "@/components/public-image";
 import type { ReactNode } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
@@ -27,7 +28,7 @@ export function SectionHeading({ children, subtitle }: {
 
 export function SearchField({ compact = false, placeholder }: { compact?: boolean; placeholder?: string }) {
   return (
-    <form action="/skema-sertifikasi" method="get" role="search" aria-label={compact ? "Pencarian skema di header" : "Pencarian skema di Beranda"} className={`search-field ${compact ? "search-field-compact" : "search-field-hero"}`}>
+    <form action={frontendPath("/skema-sertifikasi")} method="get" role="search" aria-label={compact ? "Pencarian skema di header" : "Pencarian skema di Beranda"} className={`search-field ${compact ? "search-field-compact" : "search-field-hero"}`}>
       <label>
       <span className="sr-only">Cari skema sertifikasi</span>
       <input name="q" type="search" autoComplete="off" placeholder={placeholder ?? (compact ? "Cari skema…" : "Cari Skema, cth: Data Analyst")} />

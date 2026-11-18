@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/public-image";
 import { useState, type ReactNode } from "react";
 import { GalleryViewer } from "@/components/gallery/gallery-viewer";
 import type { ViewerItem } from "@/lib/gallery";

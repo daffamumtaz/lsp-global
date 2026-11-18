@@ -193,16 +193,16 @@ class LandingPageTest extends TestCase
         $this->getJson('/api/landing-page')->assertJsonPath('data.partners_section.hook', 'Jaringan Mitra');
     }
 
-    public function test_editor_selects_five_highlights_in_order_and_rejects_inactive_or_excess_schemes(): void
+    public function test_editor_selects_up_to_six_highlights_in_order_and_rejects_inactive_or_excess_schemes(): void
     {
         $this->actingAs(User::factory()->admin()->create());
         Filament::setCurrentPanel(Filament::getPanel('admin'));
-        $schemes = CertificationScheme::factory()->count(6)->create();
-        $ids = [$schemes[2]->id, $schemes[0]->id, $schemes[1]->id, $schemes[4]->id, $schemes[3]->id];
+        $schemes = CertificationScheme::factory()->count(7)->create();
+        $ids = [$schemes[2]->id, $schemes[0]->id, $schemes[1]->id, $schemes[4]->id, $schemes[3]->id, $schemes[5]->id];
         $editor = Livewire::test(ManageSitePages::class)->fillForm(['ids' => $ids], 'highlightsForm')->call('saveHighlights')->assertHasNoErrors();
         $this->getJson('/api/landing-page')->assertJsonPath('data.highlighted_scheme_ids', array_map('strval', $ids));
         $editor->fillForm(['ids' => $schemes->pluck('id')->all()], 'highlightsForm')->call('saveHighlights')->assertHasErrors();
-        $editor->fillForm(['ids' => [$ids[0], $ids[1]]], 'highlightsForm')->call('saveHighlights')->assertHasErrors();
+        $editor->fillForm(['ids' => [$ids[0], $ids[1]]], 'highlightsForm')->call('saveHighlights')->assertHasNoErrors();
         $editor->fillForm(['ids' => []], 'highlightsForm')->call('saveHighlights')->assertHasErrors();
         $inactive = CertificationScheme::factory()->create(['is_active' => false]);
         $editor->fillForm(['ids' => [$ids[0], $ids[1], $inactive->id]], 'highlightsForm')->call('saveHighlights')->assertHasErrors();

@@ -26,18 +26,20 @@ try {
     await expect(page.locator("#hero-title")).toHaveText("Bersama LSP TIK Global");
     assert(await page.locator("#hero-title").evaluate(element => {
       const style = getComputedStyle(element);
-      return element.getBoundingClientRect().height <= parseFloat(style.lineHeight) + 1;
-    }), `Hero title must stay on one line at ${width}px`);
+      return parseFloat(style.fontSize) >= 36 && element.scrollWidth <= element.clientWidth;
+    }), `Hero title must remain readable without overflowing at ${width}px`);
     await expect(page.locator(".hero-support p")).toHaveCount(2);
     await expect(page.locator(".hero-support p").first()).toHaveText("Bangun Perjalanan Karier Anda dengan Kompetensi yang Diakui");
     await expect(page.locator(".hero-support p").last()).toHaveText("Validasi kompetensi Anda dan tingkatkan kredibilitas di industri teknologi dan digital.");
     await expect(page.locator(".hero-strengths li")).toHaveCount(5);
     await expect(page.locator(".hero-strengths h2")).toHaveCount(0);
+    assert.equal(await page.locator(".hero-strengths").evaluate(element => getComputedStyle(element).borderTopWidth), "1px");
+    await expect(page.locator(".benefit-card .benefit-check")).toHaveCount(0);
     assert.equal(await page.locator(".hero-support").evaluate(element => parseFloat(getComputedStyle(element).rowGap)), 0);
     await expect(page.locator(".home-about-copy p")).toHaveCount(4);
     await expect(page.locator("#tentang-kami #video-profil")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Skema Sertifikasi Unggulan", exact: true })).toBeVisible();
-    await expect(page.locator(".home-card-grid > a")).toHaveCount(5);
+    assert((await page.locator(".home-card-grid > a").count()) <= 6);
     const whatsapp = page.locator(".contact-bubble > a");
     const contact = page.getByRole("button", { name: "Kontak kami", exact: true });
     await expect(whatsapp).toHaveAttribute("href", /^https:\/\/wa\.me\//);

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\CertificationSchemes;
 use App\Filament\Exports\ContentExport;
 use App\Filament\Resources\CertificationSchemes\Pages\ManageCertificationSchemes;
 use App\Models\CertificationScheme;
+use App\Models\SchemeCategory;
 use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
@@ -17,6 +18,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Livewire;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
@@ -50,10 +52,16 @@ class CertificationSchemeResource extends Resource
         return $schema->components([
             Section::make('Identitas')->columns(2)->columnSpanFull()->schema([
                 TextInput::make('name')->label('Nama Skema')->required()->maxLength(255),
-                Select::make('category')->label('Kategori')->required()->searchable()->rules(['string', 'max:255'])
-                    ->options(fn (Get $get): array => CertificationScheme::query()->distinct()->orderBy('category')->pluck('category', 'category')->all() + (filled($get('category')) ? [$get('category') => $get('category')] : []))
-                    ->createOptionForm([TextInput::make('name')->label('Kategori Baru')->required()->maxLength(255)])
-                    ->createOptionUsing(fn (array $data): string => trim($data['name'])),
+                Select::make('category')->label('Kategori')->placeholder('Tanpa kategori')->searchable()->rules(['nullable', 'string', 'max:255', 'exists:scheme_categories,name'])
+                    ->options(fn (): array => SchemeCategory::query()->orderBy('name')->pluck('name', 'name')->all())
+                    ->belowContent(Action::make('manageCategories')->label('Atur Kategori')->link()->authorize('manage-admin')
+                        ->modalHeading('Kategori Skema Sertifikasi')->modalWidth('4xl')
+                        ->schema([Livewire::make(CategoryTable::class)->key('scheme-categories-field')])
+                        ->modalSubmitAction(false)->modalCancelActionLabel('Tutup'))
+                    ->createOptionForm([TextInput::make('name')->label('Kategori Baru')->required()->maxLength(255)
+                        ->mutateStateForValidationUsing(fn (?string $state): string => trim($state ?? ''))
+                        ->unique(table: SchemeCategory::class, column: 'name')])
+                    ->createOptionUsing(fn (array $data): string => SchemeCategory::query()->create(['name' => $data['name']])->name),
             ]),
             Section::make('Pelaksanaan & Biaya')->columns(2)->columnSpanFull()->schema([
                 Select::make('level')->label('Level KKNI')->options(array_combine(range(1, 9), range(1, 9)))->required()->in(range(1, 9)),
@@ -73,14 +81,14 @@ class CertificationSchemeResource extends Resource
                 Repeater::make('units')->label('Unit Kompetensi')->schema([TextInput::make('code')->label('Kode')->required()->maxLength(255), TextInput::make('title')->label('Judul')->required()->maxLength(1000), Textarea::make('description')->label('Deskripsi Unit')->maxLength(10000)->columnSpanFull()])->reorderableWithButtons()->columns(2)->columnSpanFull(),
             ]),
             Section::make('Persyaratan')->columnSpanFull()->schema([
-                Textarea::make('basic_requirements')->label('Persyaratan Dasar')->rows(4)->maxLength(20000)->default(fn (): string => implode("\n", CertificationScheme::defaultBasicRequirements()))
-                    ->formatStateUsing(fn ($state): string => is_array($state) ? implode("\n", $state) : ($state ?? ''))
-                    ->dehydrateStateUsing(fn (?string $state): array => array_values(array_filter(array_map('trim', preg_split('/\R/', $state ?? '')), fn (string $line): bool => $line !== '')))
-                    ->helperText('Satu persyaratan per baris. Teks bawaan dapat diubah.')->columnSpanFull(),
-                Textarea::make('administrative_requirements')->label('Persyaratan Administratif')->rows(4)->maxLength(20000)->default("Pasfoto 3 × 4 dengan latar merah.\nSalinan KTP.")
-                    ->formatStateUsing(fn ($state): string => is_array($state) ? implode("\n", $state) : ($state ?? ''))
-                    ->dehydrateStateUsing(fn (?string $state): array => array_values(array_filter(array_map('trim', preg_split('/\R/', $state ?? '')), fn (string $line): bool => $line !== '')))
-                    ->helperText('Satu persyaratan per baris. Teks bawaan dapat diubah.')->columnSpanFull(),
+                Repeater::make('basic_requirements')->label('Persyaratan Dasar')
+                    ->simple(Textarea::make('requirement')->label('Poin persyaratan')->required()->rows(2)->maxLength(2000))
+                    ->default(fn (): array => CertificationScheme::defaultBasicRequirements())
+                    ->addActionLabel('Tambah Persyaratan Dasar')->reorderableWithButtons()->columnSpanFull(),
+                Repeater::make('administrative_requirements')->label('Persyaratan Administrasi')
+                    ->simple(Textarea::make('requirement')->label('Poin persyaratan')->required()->rows(2)->maxLength(2000))
+                    ->default(['KTP (WNI)/ Paspor dan Kartu Izin Tinggal Terbatas (Kitas) (WNA)', 'Pas Photo 3x4 background merah'])
+                    ->addActionLabel('Tambah Persyaratan Administrasi')->reorderableWithButtons()->columnSpanFull(),
                 Toggle::make('is_active')->label('Aktif')->default(true),
             ]),
         ]);

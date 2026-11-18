@@ -1,0 +1,420 @@
+{
+  "entries": [
+    {
+      "source_index": 1,
+      "name": "MANAJER ARSITEKTUR PERUSAHAAN (ENTERPRISE ARCHITECTURE MANAGER)",
+      "file": "6803529.webp",
+      "sha256": "49a109213ecac472e87f56f3c6a7664c18b00b8267ee8605fd463a7cfd295e10",
+      "source": "https://www.pexels.com/photo/men-in-an-office-sitting-at-a-meeting-and-looking-at-a-whiteboard-6803529/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 2,
+      "name": "MANAJER AUDIT TI (IT AUDIT MANAGER)",
+      "file": "6285130.webp",
+      "sha256": "bd8f2e303a40cb4c2c94ac8f9355c5d0574be7bcd28b57ba76f17f992d2aab58",
+      "source": "https://www.pexels.com/photo/6285130/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 3,
+      "name": "ARSITEK PERUSAHAAN (ENTERPRISE ARCHITECT)",
+      "file": "7433898.webp",
+      "sha256": "1c2a07f82168847fdde716e85657344fa1ec6b0f852566fddf1289854e55dbb5",
+      "source": "https://www.pexels.com/photo/7433898/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 4,
+      "name": "PEMIMPIN TEKNOLOGI (CHIEF TECHNOLOGY OFFICER)",
+      "file": "3184287.webp",
+      "sha256": "d35ce1aee8f0a2aef36e3631941bc14ce0277dca1b0d7417feffb43d4088a047",
+      "source": "https://www.pexels.com/photo/professionals-having-a-meeting-3184287/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 5,
+      "name": "MANAJER REKAYASA PERANGKAT LUNAK (SOFTWARE ENGINEERING MANAGER)",
+      "file": "6803529.webp",
+      "sha256": "49a109213ecac472e87f56f3c6a7664c18b00b8267ee8605fd463a7cfd295e10",
+      "source": "https://www.pexels.com/photo/men-in-an-office-sitting-at-a-meeting-and-looking-at-a-whiteboard-6803529/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 6,
+      "name": "INSINYUR PERANGKAT LUNAK (SOFTWARE ENGINEER)",
+      "file": "9553905.webp",
+      "sha256": "b0919923174ca8c9edd071da606a2abcd2ff397a45cd5e98015e49175503c393",
+      "source": "https://www.pexels.com/photo/man-writing-a-code-on-a-computer-and-laptop-9553905/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 7,
+      "name": "ANALIS PROGRAM (PROGRAM ANALYST)",
+      "file": "14553706.webp",
+      "sha256": "0dee0ff08c808652319cfa0f7b6701226614e68f8183185ecbd8d09c6712c74d",
+      "source": "https://www.pexels.com/photo/programming-data-in-a-computer-14553706/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 8,
+      "name": "PENGEMBANG FRONTEND (FRONTEND DEVELOPER)",
+      "file": "29459444.webp",
+      "sha256": "04ba7f1715df355ae059410dab90c272c4265827bd165627db91dcf08b55403c",
+      "source": "https://www.pexels.com/photo/colorful-code-on-computer-screen-for-web-development-29459444/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 9,
+      "name": "SUPERVISOR PEMROGRAM MOBILE (MOBILE PROGRAMMER SUPERVISOR)",
+      "file": "5926389.webp",
+      "sha256": "f75f3ef3282ab11428b2869a5845a8ddc88e50fa1243d0a17849ef5e02def3af",
+      "source": "https://www.pexels.com/photo/crop-unrecognizable-developer-using-laptop-and-smartphone-5926389/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 10,
+      "name": "ANALIS SISTEM (SYSTEM ANALYST)",
+      "file": "3184287.webp",
+      "sha256": "d35ce1aee8f0a2aef36e3631941bc14ce0277dca1b0d7417feffb43d4088a047",
+      "source": "https://www.pexels.com/photo/professionals-having-a-meeting-3184287/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 11,
+      "name": "PEMROGRAM MOBILE MUDA (ASSOCIATE MOBILE PROGRAMMER)",
+      "file": "1181244.webp",
+      "sha256": "9d40d3c46ca43e4a8029b002cbff587e574897282a992c5bd77204afb951c20a",
+      "source": "https://www.pexels.com/photo/person-holding-smartphone-while-using-laptop-1181244/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 12,
+      "name": "ASISTEN PENGEMBANG WEB (ASSISTANT WEB DEVELOPER)",
+      "file": "14553707.webp",
+      "sha256": "e62cef6226aaa506b2c8a5ccc37ab6d2b630ae410bd6b513794b9ceb449b6108",
+      "source": "https://www.pexels.com/photo/programming-data-on-a-computer-14553707/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 13,
+      "name": "PEMIMPIN DATA (CHIEF DATA OFFICER)",
+      "file": "6248987.webp",
+      "sha256": "ccfd23927813a7ab91b53c9da0a8e56b18ffe8b09f336f9c9c12a8a5e477d046",
+      "source": "https://www.pexels.com/photo/photograph-of-people-s-hands-pointing-to-a-laptop-with-charts-6248987/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 14,
+      "name": "KEPALA ILMUWAN DATA (LEAD DATA SCIENTIST)",
+      "file": "7173026.webp",
+      "sha256": "7a59bd7db2fc398f4c5e1abca74201fdcda81c98eac4d5db71b9cb50258b0c5a",
+      "source": "https://www.pexels.com/photo/woman-in-a-beige-jacket-analyzing-the-graph-on-her-laptop-7173026/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 15,
+      "name": "ILMUWAN DATA (DATA SCIENTIST)",
+      "file": "5833758.webp",
+      "sha256": "412370441b4ad252b537641cc5c07bc3420a4ddbde451eea74a4c8b78a8c336b",
+      "source": "https://www.pexels.com/photo/man-working-on-a-computer-with-three-monitors-5833758/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 16,
+      "name": "INSINYUR DATA (DATA ENGINEER)",
+      "file": "16129728.webp",
+      "sha256": "08923ac4926bdd8f731694b14cd0cbdfcccf893691576642feea9d97d9b0fed9",
+      "source": "https://www.pexels.com/photo/16129728/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 17,
+      "name": "INSINYUR PEMBELAJARAN MESIN (MACHINE LEARNING ENGINEER)",
+      "file": "34804005.webp",
+      "sha256": "ccd85f3772c3557e980421ef20a4470158eebb0502447a2dd0aa0f898ec1f919",
+      "source": "https://www.pexels.com/photo/laptop-displaying-coding-and-data-analysis-interface-34804005/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 18,
+      "name": "INSINYUR KECERDASAN ARTIFISIAL (AI ENGINEER)",
+      "file": "12899188.webp",
+      "sha256": "ae88ee65978d6eca17f53a148c4499986dcc8141e475f4e5779b8a498a848fbb",
+      "source": "https://www.pexels.com/photo/close-up-of-a-man-pointing-code-on-a-laptop-screen-12899188/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 19,
+      "name": "SUPERVISOR ILMUWAN DATA (DATA SCIENTIST SUPERVISOR)",
+      "file": "5922669.webp",
+      "sha256": "076155198e1b3d54cb70212d2462488a77ade246047294916438209174666935",
+      "source": "https://www.pexels.com/photo/focused-professional-looking-at-a-data-5922669/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 20,
+      "name": "ANALIS DATA (DATA ANALYST)",
+      "file": "3861957.webp",
+      "sha256": "e7d51588ee7d36ce521edbf3993eb84d368aae754931e84e29e81ce34197e97f",
+      "source": "https://www.pexels.com/photo/graph-on-laptop-screen-3861957/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 21,
+      "name": "ADMINISTRATOR BASIS DATA (DATABASE ADMINISTRATOR)",
+      "file": "5480781.webp",
+      "sha256": "a6e6df816feb8f34bdd4362ae75883d0a812af0e8b7b30e1c70a60d6bfc3938f",
+      "source": "https://www.pexels.com/photo/server-racks-on-data-center-5480781/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 22,
+      "name": "ANALIS INTELIJEN BISNIS (BUSINESS INTELLIGENCE ANALYST)",
+      "file": "6248987.webp",
+      "sha256": "ccfd23927813a7ab91b53c9da0a8e56b18ffe8b09f336f9c9c12a8a5e477d046",
+      "source": "https://www.pexels.com/photo/photograph-of-people-s-hands-pointing-to-a-laptop-with-charts-6248987/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 23,
+      "name": "ILMUWAN DATA MUDA (ASSOCIATE DATA SCIENTIST)",
+      "file": "30535628.webp",
+      "sha256": "fba06e19a96b629dafbeb2fc2d82008ad09d7ec49249be86a4d13bbeb53d708e",
+      "source": "https://www.pexels.com/photo/professional-analyzing-data-on-computer-screen-30535628/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 24,
+      "name": "ANALIS DATA MUDA (ASSOCIATE DATA ANALYST)",
+      "file": "7567486.webp",
+      "sha256": "b79c6aa90716fb91e709bfa0b7add75834615f45302a81712241ad03cb4a545c",
+      "source": "https://www.pexels.com/photo/graph-displayed-on-laptop-screen-7567486/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 25,
+      "name": "INSINYUR DATA MUDA (ASSOCIATE DATA ENGINEER)",
+      "file": "9553905.webp",
+      "sha256": "b0919923174ca8c9edd071da606a2abcd2ff397a45cd5e98015e49175503c393",
+      "source": "https://www.pexels.com/photo/man-writing-a-code-on-a-computer-and-laptop-9553905/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 26,
+      "name": "TEKNISI MANAJEMEN DATA (DATA MANAGEMENT TECHNICIAN)",
+      "file": "6120209.webp",
+      "sha256": "a43ff2fed3827f697afc95d6e3ea06c91af80117c670596b47a4406404585372",
+      "source": "https://www.pexels.com/photo/a-notebook-beside-a-laptop-with-graphs-6120209/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 27,
+      "name": "MANAJER KEAMANAN INFORMASI (INFORMATION SECURITY MANAGER)",
+      "file": "5380597.webp",
+      "sha256": "d044c547e593ce98c03beefca12e6c354597c0ec943653db531330af33e1080e",
+      "source": "https://www.pexels.com/photo/people-using-computers-5380597/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 28,
+      "name": "PENGUJI KEAMANAN SIBER MADYA (SENIOR PENETRATION TESTER)",
+      "file": "5380601.webp",
+      "sha256": "a749faceb8235d3fb04b5e3d8c3f4623a4af8e18d78e159f9df2104dd1ad0f7a",
+      "source": "https://www.pexels.com/photo/man-in-black-hoodie-using-computer-5380601/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 29,
+      "name": "PEJABAT KESADARAN KEAMANAN SIBER (CYBERSECURITY AWARENESS OFFICER)",
+      "file": "5716054.webp",
+      "sha256": "e36e3f36b012815f3f86a5c621164f8ebe1eaaafb65fda2f220403fa3a2f1855",
+      "source": "https://www.pexels.com/photo/colleagues-reading-statistical-reports-5716054/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 30,
+      "name": "AUDITOR KEAMANAN INFORMASI (INFORMATION SECURITY AUDITOR)",
+      "file": "5473302.webp",
+      "sha256": "4e5ae35888ad53033afc91651b9823447bad4e7e5292ca977142176782ccf376",
+      "source": "https://www.pexels.com/photo/woman-using-a-computer-5473302/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 31,
+      "name": "PENYELENGGARA PROGRAM KESADARAN KEAMANAN INFORMASI (INFORMATION SECURITY AWARENESS PROGRAM OFFICER)",
+      "file": "6803529.webp",
+      "sha256": "49a109213ecac472e87f56f3c6a7664c18b00b8267ee8605fd463a7cfd295e10",
+      "source": "https://www.pexels.com/photo/men-in-an-office-sitting-at-a-meeting-and-looking-at-a-whiteboard-6803529/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 32,
+      "name": "ANALIS KEAMANAN INFORMASI (INFORMATION SECURITY ANALYST)",
+      "file": "5380597.webp",
+      "sha256": "d044c547e593ce98c03beefca12e6c354597c0ec943653db531330af33e1080e",
+      "source": "https://www.pexels.com/photo/people-using-computers-5380597/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 33,
+      "name": "PENGUJI KEAMANAN SIBER (PENETRATION TESTER)",
+      "file": "5380647.webp",
+      "sha256": "a932a4d45143bae6695b50a2984cbf72202399b87f7ed2f5284ad465ed8554cb",
+      "source": "https://www.pexels.com/photo/person-in-black-hoodie-hacking-a-computer-system-5380647/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 34,
+      "name": "ASISTEN AUDITOR KEAMANAN INFORMASI (ASSISTANT INFORMATION SECURITY AUDITOR)",
+      "file": "3183185.webp",
+      "sha256": "a25198832cc1f80228b303ec8ff96537a1cfe800edaa50330bbe974d33f41168",
+      "source": "https://www.pexels.com/photo/3183185/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 35,
+      "name": "PELAKSANA KEAMANAN INFORMASI (JUNIOR INFORMATION SECURITY)",
+      "file": "5380582.webp",
+      "sha256": "80c828a3349dc00a43e6626a6e738349fff54a56c083f795a825eea024c3bc2d",
+      "source": "https://www.pexels.com/photo/two-people-sitting-on-chairs-using-computers-5380582/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 36,
+      "name": "PENGUJI KEAMANAN SIBER PERTAMA (JUNIOR PENETRATION TESTER)",
+      "file": "5380601.webp",
+      "sha256": "a749faceb8235d3fb04b5e3d8c3f4623a4af8e18d78e159f9df2104dd1ad0f7a",
+      "source": "https://www.pexels.com/photo/man-in-black-hoodie-using-computer-5380601/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 37,
+      "name": "INSINYUR JARINGAN SENIOR (SENIOR NETWORK ENGINEER)",
+      "file": "4508751.webp",
+      "sha256": "2ad3ef0832b9211471e200edd48223ba3cb8ca299ba4b29031cfb0e99bb3d7aa",
+      "source": "https://www.pexels.com/photo/server-racks-on-data-center-4508751/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 38,
+      "name": "INSINYUR SISTEM (SYSTEM ENGINEER)",
+      "file": "17489163.webp",
+      "sha256": "f22eed9bbab4a0881b413cd540606591f02447bfe07900c0c9591b812141f42e",
+      "source": "https://www.pexels.com/photo/computer-server-in-data-center-room-17489163/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 39,
+      "name": "MANAJER PUSAT DATA (DATA CENTER MANAGER)",
+      "file": "37605911.webp",
+      "sha256": "ce5fef338246033ab259b0539ed976d23f3c47e49ead36dce12e633ef15e4797",
+      "source": "https://www.pexels.com/photo/it-technician-working-in-data-center-server-room-37605911/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 40,
+      "name": "ADMINISTRATOR JARINGAN (NETWORK ADMINISTRATOR)",
+      "file": "4508751.webp",
+      "sha256": "2ad3ef0832b9211471e200edd48223ba3cb8ca299ba4b29031cfb0e99bb3d7aa",
+      "source": "https://www.pexels.com/photo/server-racks-on-data-center-4508751/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 41,
+      "name": "ADMINISTRATOR SISTEM (SYSTEM ADMINISTRATOR)",
+      "file": "5480781.webp",
+      "sha256": "a6e6df816feb8f34bdd4362ae75883d0a812af0e8b7b30e1c70a60d6bfc3938f",
+      "source": "https://www.pexels.com/photo/server-racks-on-data-center-5480781/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 42,
+      "name": "TEKNISI PUSAT DATA MUDA (ASSOCIATE DATA CENTER TECHNICIAN)",
+      "file": "37730212.webp",
+      "sha256": "3982973d9dc0a9a6cf5ce6aa3c6340f3dd8faea42b4a7d02eeed0de78cabb676",
+      "source": "https://www.pexels.com/photo/data-center-server-racks-with-active-equipment-37730212/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 43,
+      "name": "ASISTEN ADMINISTRATOR JARINGAN (ASSISTANT NETWORK ADMINISTRATOR)",
+      "file": "4508751.webp",
+      "sha256": "2ad3ef0832b9211471e200edd48223ba3cb8ca299ba4b29031cfb0e99bb3d7aa",
+      "source": "https://www.pexels.com/photo/server-racks-on-data-center-4508751/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 44,
+      "name": "ASISTEN TEKNISI JARINGAN KOMPUTER (ASSISTANT COMPUTER NETWORK TECHNICIAN)",
+      "file": "37730212.webp",
+      "sha256": "3982973d9dc0a9a6cf5ce6aa3c6340f3dd8faea42b4a7d02eeed0de78cabb676",
+      "source": "https://www.pexels.com/photo/data-center-server-racks-with-active-equipment-37730212/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 45,
+      "name": "ASISTEN TEKNISI PUSAT DATA (ASSISTANT DATA CENTER TECHNICIAN)",
+      "file": "17489163.webp",
+      "sha256": "f22eed9bbab4a0881b413cd540606591f02447bfe07900c0c9591b812141f42e",
+      "source": "https://www.pexels.com/photo/computer-server-in-data-center-room-17489163/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 46,
+      "name": "KEPALA MANAJEMEN LAYANAN TI (LEAD IT SERVICES MANAGEMENT)",
+      "file": "7433898.webp",
+      "sha256": "1c2a07f82168847fdde716e85657344fa1ec6b0f852566fddf1289854e55dbb5",
+      "source": "https://www.pexels.com/photo/7433898/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 47,
+      "name": "MANAJER LAYANAN TI (IT SERVICE MANAGER)",
+      "file": "6285130.webp",
+      "sha256": "bd8f2e303a40cb4c2c94ac8f9355c5d0574be7bcd28b57ba76f17f992d2aab58",
+      "source": "https://www.pexels.com/photo/6285130/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 48,
+      "name": "SUPERVISOR LAYANAN TI (IT SERVICE SUPERVISOR)",
+      "file": "5453805.webp",
+      "sha256": "3cf9bffa414f261ea5d23676caa14f00d328b178329757b4ce88cdde81a5dac2",
+      "source": "https://www.pexels.com/photo/focused-employee-in-front-of-a-computer-5453805/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 49,
+      "name": "ANALIS WEB (WEB ANALYST)",
+      "file": "29459444.webp",
+      "sha256": "04ba7f1715df355ae059410dab90c272c4265827bd165627db91dcf08b55403c",
+      "source": "https://www.pexels.com/photo/colorful-code-on-computer-screen-for-web-development-29459444/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 50,
+      "name": "PENGELOLA LAYANAN TI MUDA (ASSOCIATE IT SERVICE OPERATOR)",
+      "file": "37605911.webp",
+      "sha256": "ce5fef338246033ab259b0539ed976d23f3c47e49ead36dce12e633ef15e4797",
+      "source": "https://www.pexels.com/photo/it-technician-working-in-data-center-server-room-37605911/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 51,
+      "name": "TEKNISI OPERATOR KOMPUTER (COMPUTER OPERATOR TECHNICIAN)",
+      "file": "12912227.webp",
+      "sha256": "c6712b4c6ea15e2c69a8226cab5fd24bf67244703efb403f3eb775f47b78ebe5",
+      "source": "https://www.pexels.com/photo/woman-working-on-computer-in-office-12912227/",
+      "license": "https://www.pexels.com/license/"
+    },
+    {
+      "source_index": 52,
+      "name": "STAF OPERATOR PERKANTORAN (COMPUTER OPERATOR STAFF)",
+      "file": "5058917.webp",
+      "sha256": "08fdaf4f96a903fcca31fc04cdb480a23c102a4d76c2f2e1e8c83fe1d06e8925",
+      "source": "https://www.pexels.com/photo/man-typing-on-a-computer-5058917/",
+      "license": "https://www.pexels.com/license/"
+    }
+  ]
+}

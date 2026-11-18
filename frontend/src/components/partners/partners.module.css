@@ -10,7 +10,7 @@
 .grid li { transition: transform 180ms ease, background-color 180ms, border-color 180ms; }
 .grid li:focus-within { background: #edf5ff; }
 @media (hover: hover) { .grid li:has(a):hover { transform: scale(1.03); background: #edf5ff; border-color: #1576b5; } }
-@media (prefers-reduced-motion: reduce) { .grid li { transition: none; } .grid li:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { :global(html:not([data-motion="full"])) .grid li { transition: none; } :global(html:not([data-motion="full"])) .grid li:hover { transform: none; } }
 
 .caption { position: absolute; bottom: 0; inset-inline: 0; color: #004195; font-size: 12px; line-height: 1.3; overflow-wrap: anywhere; visibility: hidden; }
 .missingCaption { visibility: visible; }

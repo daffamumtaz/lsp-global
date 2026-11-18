@@ -1,6 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import { publicAsset } from "@/lib/deployment-paths";
+
+import Image from "@/components/public-image";
 import { MapPinIcon, CalendarDaysIcon } from "@heroicons/react/24/outline";
 import { useEffect, useRef, useState } from "react";
 import { formatGalleryDate, moveMediaIndex, nextZoom, type ViewerItem } from "@/lib/gallery";
@@ -78,7 +80,7 @@ export function GalleryViewer({ items, initialMediaId, opener, onClose, showMeta
           <button type="button" aria-label="Geser thumbnail ke kiri" onClick={() => thumbnails.current?.scrollBy({ left: -300, behavior: "auto" })}>←</button>
           <div ref={thumbnails} className={styles.thumbnails} role="group" aria-label={"Pilih media"}>
             {items.map((item, position) => <button key={item.media.id} type="button" aria-current={position === index ? "true" : undefined} aria-label={`${item.activity.title}, media ${position + 1}`} onClick={() => select(position)}>
-              {item.media.type === "video" ? <video muted playsInline preload="metadata" src={`${item.media.src}#t=0.1`} aria-hidden="true" /> : item.media.crop ? <span className={styles.croppedThumbnail} style={{ backgroundImage: `url(${item.media.src})`, backgroundSize: `${item.media.width / item.media.crop.width * 100}% ${item.media.height / item.media.crop.height * 100}%`, backgroundPosition: `${item.media.crop.left / (item.media.width - item.media.crop.width) * 100}% ${item.media.crop.top / (item.media.height - item.media.crop.height) * 100}%` }} /> : <Image unoptimized={!item.media.thumbnail.startsWith("/")} src={item.media.thumbnail} alt="" width={104} height={64} sizes="104px" />}
+              {item.media.type === "video" ? <video muted playsInline preload="metadata" src={`${item.media.src}#t=0.1`} aria-hidden="true" /> : item.media.crop ? <span className={styles.croppedThumbnail} style={{ backgroundImage: `url(${publicAsset(item.media.src)})`, backgroundSize: `${item.media.width / item.media.crop.width * 100}% ${item.media.height / item.media.crop.height * 100}%`, backgroundPosition: `${item.media.crop.left / (item.media.width - item.media.crop.width) * 100}% ${item.media.crop.top / (item.media.height - item.media.crop.height) * 100}%` }} /> : <Image unoptimized={!item.media.thumbnail.startsWith("/")} src={item.media.thumbnail} alt="" width={104} height={64} sizes="104px" />}
             </button>)}
           </div>
           <button type="button" aria-label="Geser thumbnail ke kanan" onClick={() => thumbnails.current?.scrollBy({ left: 300, behavior: "auto" })}>→</button>

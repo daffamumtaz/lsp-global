@@ -7,6 +7,7 @@ if (!["http:", "https:"].includes(adminOrigin.protocol) || adminOrigin.username 
 }
 
 const nextConfig: NextConfig = {
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   devIndicators: false,
   async headers() {
     return [{

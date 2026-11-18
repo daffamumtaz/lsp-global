@@ -46,7 +46,7 @@ class ContentDirectoryController extends Controller
                 'id' => (string) $scheme->id,
                 'slug' => $scheme->slug,
                 'name' => $scheme->name,
-                'category' => $scheme->category,
+                'category' => $scheme->category ?? '',
                 'level' => (int) $scheme->level,
                 'type' => $scheme->type,
                 'methods' => $scheme->methods ?? [],

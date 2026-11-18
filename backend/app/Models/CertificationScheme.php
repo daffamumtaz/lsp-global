@@ -22,6 +22,7 @@ class CertificationScheme extends Model
     protected static function booted(): void
     {
         static::saving(function (self $scheme): void {
+            $scheme->category = filled($scheme->category) ? trim($scheme->category) : null;
             if ($scheme->exists) {
                 $scheme->slug = $scheme->getOriginal('slug');
 
@@ -38,6 +39,14 @@ class CertificationScheme extends Model
                 $scheme->slug = $base.'-'.$suffix++;
             }
         });
+
+        $registerCategory = function (self $scheme): void {
+            if (filled($scheme->category)) {
+                SchemeCategory::query()->firstOrCreate(['name' => $scheme->category]);
+            }
+        };
+        static::creating($registerCategory);
+        static::updating($registerCategory);
     }
 
     public static function defaultBasicRequirements(): array
@@ -54,7 +63,7 @@ class CertificationScheme extends Model
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'category' => ['required', 'string', 'max:255'],
+            'category' => ['nullable', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/', Rule::unique('certification_schemes', 'slug')->ignore($this->id)],
             'level' => ['nullable', 'integer', 'between:1,9'],
             'price' => ['nullable', 'integer', 'min:0', 'max:4294967295'],

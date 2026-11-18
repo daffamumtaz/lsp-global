@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Assessor;
 use App\Models\CertificationScheme;
 use App\Models\GalleryItem;
+use App\Models\SchemeCategory;
 use App\Models\Tuk;
 use App\Observers\ContentDirectoryObserver;
 use Illuminate\Foundation\Testing\RefreshDatabaseState;
@@ -82,6 +83,19 @@ class PublicContentProtectionTest extends TestCase
         $this->getJson('/api/content-directory')->assertJsonFragment([$field => 'Updated directory record'])->assertJsonMissing([$field => 'Initial directory record']);
         $record->delete();
         $this->getJson('/api/content-directory')->assertJsonMissing([$field => 'Updated directory record']);
+    }
+
+    public function test_category_changes_invalidate_cached_scheme_names_and_empty_categories(): void
+    {
+        CertificationScheme::factory()->create(['category' => 'Nama Awal']);
+        $category = SchemeCategory::query()->where('name', 'Nama Awal')->firstOrFail();
+        $this->getJson('/api/content-directory')->assertJsonPath('data.schemes.0.category', 'Nama Awal');
+
+        $category->update(['name' => 'Nama Baru']);
+        $this->getJson('/api/content-directory')->assertJsonPath('data.schemes.0.category', 'Nama Baru');
+
+        $category->delete();
+        $this->getJson('/api/content-directory')->assertJsonPath('data.schemes.0.category', '');
     }
 
     public function test_transactions_bypass_shared_cache_and_rollback_does_not_publish_dirty_data(): void

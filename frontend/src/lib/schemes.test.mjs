@@ -57,3 +57,14 @@ test("sample catalogue has distinct records and units, covers multiple pages and
   const invalid = readSchemeState(new URLSearchParams("kategori=not-a-real-category"), sampleSchemes.map(scheme => scheme.category));
   assert.equal(selectSchemes(sampleSchemes, invalid).total, 9);
 });
+
+test("schemes without a KKNI level remain discoverable until a level range is selected", () => {
+  const pending = { ...schemes[0], id: "pending", name: "Frontend Developer", level: 0, category: "", methods: [], price: null };
+  const all = [...schemes, pending];
+  assert.equal(selectSchemes(all, defaults).total, 5);
+  assert.deepEqual(selectSchemes(all, { ...defaults, query: "Frontend" }).items.map(s => s.id), ["pending"]);
+  assert.equal(selectSchemes(all, { ...defaults, minLevel: 2 }).total, 4);
+  assert.equal(selectSchemes(all, { ...defaults, maxLevel: 5 }).total, 4);
+  assert.equal(selectSchemes(all, { ...defaults, sort: "level-asc" }).items.at(-1).id, "pending");
+  assert.equal(selectSchemes(all, { ...defaults, sort: "level-desc" }).items.at(-1).id, "pending");
+});

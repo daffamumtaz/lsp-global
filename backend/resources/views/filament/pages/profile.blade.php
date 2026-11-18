@@ -6,7 +6,6 @@
             <a href="#vision">Visi dan Misi</a>
             <a href="#organization">Struktur Organisasi</a>
             <a href="#certificates">Sertifikat</a>
-            <span>Perubahan diterbitkan setiap kali bagian disimpan.</span>
         </nav>
         <div class="landing-editor-sections">
             @if ($errors->any())

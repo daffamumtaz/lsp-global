@@ -1,0 +1,97 @@
+import assert from 'node:assert/strict';
+import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { execFileSync, spawn } from 'node:child_process';
+import { chromium, expect } from '@playwright/test';
+
+const backend = fileURLToPath(new URL('../../backend', import.meta.url));
+const temporary = await mkdtemp(path.join(tmpdir(), 'scheme-categories-'));
+const database = path.join(temporary, 'database.sqlite');
+await writeFile(database, '');
+const origin = 'http://127.0.0.1:18087';
+const env = { ...process.env, APP_ENV: 'testing', APP_URL: origin, APP_CONFIG_CACHE: path.join(temporary, 'config.php'), DB_CONNECTION: 'sqlite', DB_DATABASE: database, CACHE_STORE: 'array', SESSION_DRIVER: 'file', SESSION_SECURE_COOKIE: 'false' };
+const php = code => execFileSync('php', ['-r', `require 'vendor/autoload.php'; $app = require 'bootstrap/app.php'; $app->make(Illuminate\\Contracts\\Console\\Kernel::class)->bootstrap(); ${code}`], { cwd: backend, env, encoding: 'utf8' });
+let server, browser;
+try {
+  execFileSync('php', ['artisan', 'migrate', '--force', '--no-interaction'], { cwd: backend, env, stdio: 'pipe' });
+  php('App\\Models\\User::factory()->admin()->create(["email"=>"categories@example.test","password"=>"category-test-password"]); App\\Models\\CertificationScheme::factory()->create(["name"=>"Skema Browser", "category"=>"Kategori Lama", "methods"=>["luring"], "basic_requirements"=>["Poin dasar lama"], "administrative_requirements"=>["Poin administrasi lama"]]);');
+  server = spawn('php', ['artisan', 'serve', '--host=127.0.0.1', '--port=18087'], { cwd: backend, env, stdio: 'ignore', detached: true });
+  for (let attempt = 0; attempt < 40; attempt++) {
+    try { if ((await fetch(`${origin}/admin/login`)).ok) break; } catch {}
+    if (attempt === 39) throw new Error('Admin server failed to start');
+    await new Promise(resolve => setTimeout(resolve, 250));
+  }
+  browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.setDefaultTimeout(15000);
+  await page.goto(`${origin}/admin/login`);
+  await page.locator('input[type="email"]').fill('categories@example.test');
+  await page.locator('input[type="password"]').fill('category-test-password');
+  await page.locator('button[type="submit"]').click();
+  await expect(page).not.toHaveURL(/login/);
+  await page.goto(`${origin}/admin/certification-schemes`);
+  const topModal = () => page.locator('.fi-modal-window:visible').last();
+  await page.getByRole('button', { name: 'Kelola Kategori', exact: true }).click();
+  await expect(topModal().getByRole('cell', { name: 'Kategori Lama', exact: true })).toBeVisible();
+  await topModal().getByRole('button', { name: 'Tambah Kategori', exact: true }).click();
+  await topModal().getByLabel('Nama Kategori').fill('Kategori Baru');
+  await topModal().getByRole('button', { name: 'Buat', exact: true }).click();
+  await expect(topModal().getByRole('cell', { name: 'Kategori Baru', exact: true })).toBeVisible();
+  await topModal().getByRole('row').filter({ hasText: 'Kategori Lama' }).getByRole('button', { name: 'Edit', exact: true }).click();
+  await topModal().getByLabel('Nama Kategori').fill('Kategori Diubah');
+  await topModal().getByRole('button', { name: 'Simpan', exact: true }).click();
+  await expect(topModal().getByRole('cell', { name: 'Kategori Diubah', exact: true })).toBeVisible();
+  const directory = async () => (await (await page.request.get(`${origin}/api/content-directory`)).json()).data;
+  assert.equal((await directory()).schemes[0].category, 'Kategori Diubah');
+  await page.screenshot({ path: '/tmp/scheme-categories-desktop.png', fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(topModal().getByRole('cell', { name: 'Kategori Diubah', exact: true })).toBeVisible();
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  const deleteButton = topModal().getByRole('row').filter({ hasText: 'Kategori Diubah' }).getByRole('button', { name: 'Hapus', exact: true });
+  const bounds = await deleteButton.boundingBox();
+  const modalBounds = await topModal().boundingBox();
+  assert.ok(bounds.x + bounds.width <= modalBounds.x + modalBounds.width, 'Category actions must fit inside the mobile modal');
+  await page.screenshot({ path: '/tmp/scheme-categories-mobile.png', fullPage: true });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await topModal().getByRole('row').filter({ hasText: 'Kategori Diubah' }).getByRole('button', { name: 'Hapus', exact: true }).click();
+  await expect(topModal()).toContainText('kategori pada 1 skema akan dikosongkan');
+  await topModal().getByRole('button', { name: 'Hapus', exact: true }).click();
+  await expect(topModal().getByRole('button', { name: 'Tambah Kategori', exact: true })).toBeVisible();
+  await expect(topModal().getByRole('cell', { name: 'Kategori Diubah', exact: true })).toHaveCount(0);
+  assert.equal((await directory()).schemes[0].category, '');
+  await topModal().getByRole('button', { name: 'Tutup', exact: true }).last().click();
+  await page.getByRole('cell', { name: 'Skema Browser', exact: true }).click();
+  await expect(topModal().locator('textarea[id*=".basic_requirements."]')).toHaveValue('Poin dasar lama');
+  await topModal().locator('textarea[id*=".basic_requirements."]').fill('Poin dasar diperbarui');
+  await topModal().getByRole('button', { name: 'Tambah Persyaratan Administrasi', exact: true }).click();
+  const administration = topModal().locator('textarea[id*=".administrative_requirements."]');
+  await expect(administration).toHaveCount(2);
+  await administration.nth(1).fill('Poin administrasi tambahan');
+  await page.screenshot({ path: '/tmp/scheme-requirements-desktop.png', fullPage: true });
+  await topModal().getByRole('button', { name: 'Simpan', exact: true }).click();
+  await expect(page.locator('.fi-modal-window:visible')).toHaveCount(0);
+  assert.deepEqual((await directory()).schemes[0].basicRequirements, ['Poin dasar diperbarui']);
+  assert.deepEqual((await directory()).schemes[0].administrativeRequirements, ['Poin administrasi lama', 'Poin administrasi tambahan']);
+  await page.getByRole('button', { name: 'Tambah', exact: true }).first().click();
+  const defaults = topModal().locator('textarea[id*=".administrative_requirements."]');
+  await expect(defaults).toHaveCount(2);
+  await expect(defaults.nth(0)).toHaveValue('KTP (WNI)/ Paspor dan Kartu Izin Tinggal Terbatas (Kitas) (WNA)');
+  await expect(defaults.nth(1)).toHaveValue('Pas Photo 3x4 background merah');
+  await topModal().locator('input[id$=".name"]').fill('Skema belum disimpan');
+  const manageCategory = topModal().getByRole('button', { name: 'Atur Kategori', exact: true });
+  await expect(manageCategory).toBeVisible();
+  await manageCategory.click();
+  await expect(topModal().getByRole('button', { name: 'Tambah Kategori', exact: true })).toBeVisible();
+  await topModal().getByRole('button', { name: 'Tutup', exact: true }).last().click();
+  await expect(topModal().locator('input[id$=".name"]')).toHaveValue('Skema belum disimpan');
+  assert.deepEqual(errors, []);
+  console.log('PASS: category modal create/rename/delete, public data, separate requirements, defaults, desktop/mobile, no JavaScript errors');
+} finally {
+  await browser?.close();
+  if (server?.pid) { try { process.kill(-server.pid, 'SIGTERM'); } catch {} }
+  await rm(temporary, { recursive: true, force: true });
+}

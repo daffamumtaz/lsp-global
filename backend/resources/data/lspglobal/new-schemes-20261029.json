@@ -1,0 +1,1223 @@
+{
+  "batch": "new-schemes-20261029",
+  "source": "New Skema.md",
+  "source_sha256": "b7d638fdd45a4d3efe68edab9df9602da98a9d8faa5f670786b147e2d83f0cee",
+  "checkpoint": "INSINYUR DATA (DATA ENGINEER), inklusif, source_index 16–27",
+  "decisions": [
+    "Instruksi eksplisit pengguna: Jenis skema yang kosong defaultnya Okupasi.",
+    "Data Management Staff ID 36 diperbarui menjadi Data Management Technician; delapan kode sama dan tiga revisi versi.",
+    "Data Scientist Supervisor ditambah terpisah dari Associate Data Scientist ID 21.",
+    "Information Security Manager ditambah terpisah dari Chief Cyber Security Officer ID 14.",
+    "Variasi judul unit dan tanda baca dari dokumen dipertahankan; hanya whitespace dan <br> dinormalisasi."
+  ],
+  "baseline_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "entries": [
+    {
+      "source_index": 16,
+      "target_id": 25,
+      "before": {
+        "id": 25,
+        "name": "INSINYUR DATA (DATA ENGINEER)",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "6",
+        "price": 2500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "insinyur-data-data-engineer",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/16129728.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMS00.001.1",
+            "title": "Memahami Kebutuhan Bisnis Akan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengidentifikasi kebutuhan data untuk proses bisnis."
+          },
+          {
+            "code": "J.62DMS00.002.1",
+            "title": "Merencanakan Manajemen Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat rencana manajemen data."
+          },
+          {
+            "code": "J.62DMS00.003.1",
+            "title": "Merencanakan Arsitektur Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam merencanakan arsitektur data."
+          },
+          {
+            "code": "J.62DMS00.004.1",
+            "title": "Merencanakan Integrasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam merencanakan integrasi data dari berbagai sumber data."
+          },
+          {
+            "code": "J.62DMS00.005.1",
+            "title": "Merencanakan Media Penyimpanan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam merencanakan media penyimpanan data."
+          },
+          {
+            "code": "J.62DMS00.007.1",
+            "title": "Merancangbangun Big Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam merancangbangun big data untuk manajemen data."
+          },
+          {
+            "code": "J.62DMS00.008.1",
+            "title": "Mengelola Reference and Master Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengelola reference and master data yang berada dalam cakupan manajemen data untuk mengurangi redundancy dan memastikan data quality yang lebih baik melalui pendefinisian data yang terstandardisasi."
+          },
+          {
+            "code": "J.62DMS00.009.1",
+            "title": "Mengelola Metadata",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengelola metadata pada suatu manajemen data."
+          },
+          {
+            "code": "J.62DMS00.012.1",
+            "title": "Mengelola Kualitas Data",
+            "description": "Unit ini menentukan kompetensi, pengetahuan dan sikap kerja yang diperlukan untuk mengelola kualitas data sesuai kebutuhan pengguna."
+          },
+          {
+            "code": "J.62DMS00.014.1",
+            "title": "Membuat Data Warehouse",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengintegrasikan dan membuat data warehouse untuk manajemen data."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah S1 Program Studi statistika/Sains Data /Computer Sains/Informatika/yang serumpun dengan Pengalaman Kerja minimal 1 (satu) tahun di bidang Insinyur Data (Data Engineer) secara berkelanjutan;",
+          "Copy Surat pengalaman kerja sebagai Insinyur Data (Data Engineer)/Management Data minimal 2 (dua) Tahun secara berkelanjutan atau Copy Surat pengalaman sebagai Data Engineer minimal 1 (satu) tahun secara berkelanjutan atau Copy sertifikat pelatihan berbasis kompetensi Insinyur Data (Data Engineer)/Management Data/Data Engginer.",
+          "Copy transkrip nilai semester 1-2 Mahasiswa Program Studi Magister statistika/Sains Data /Computer Sains/Informatika/yang serumpun, dan copy serifikat pelatihan bidang Insinyur Data (Data Engineer)"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "INSINYUR DATA (DATA ENGINEER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMS00.001.1",
+            "title": "Mengidentifikasi kebutuhan pengelolaan data untuk proses bisnis"
+          },
+          {
+            "code": "J.62DMS00.002.1",
+            "title": "Merencanakan Manajemen Data"
+          },
+          {
+            "code": "J.62DMS00.003.1",
+            "title": "Merencanakan Arsitektur Data"
+          },
+          {
+            "code": "J.62DMS00.004.1",
+            "title": "Merencanakan Integrasi Data"
+          },
+          {
+            "code": "J.62DMS00.005.1",
+            "title": "Merencanakan Media Penyimpanan Data"
+          },
+          {
+            "code": "J.62DMS00.007.1",
+            "title": "Merancangbangun Big Data"
+          },
+          {
+            "code": "J.62DMS00.008.1",
+            "title": "Mengelola Reference and Master Data"
+          },
+          {
+            "code": "J.62DMS00.009.1",
+            "title": "Mengelola Metadata"
+          },
+          {
+            "code": "J.62DMS00.012.1",
+            "title": "Mengelola kualitas data"
+          },
+          {
+            "code": "J.62DMS00.014.1",
+            "title": "Membuat Data Warehouse"
+          },
+          {
+            "code": "J.62PDP00.011.1",
+            "title": "Menerapkan Program Kerja Pelindungan Data Pribadi"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Magister/ Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Insinyur Data (Data Engineer) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Insinyur Data (Data Engineer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Insinyur Data (Data Engineer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Insinyur Data (Data Engineer) atau mendapatkan tugas yang relevan dengan jabatan Insinyur Data (Data Engineer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Insinyur Data (Data Engineer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/16129728.webp"
+      },
+      "photo_file": "16129728.webp",
+      "photo_sha256": "08923ac4926bdd8f731694b14cd0cbdfcccf893691576642feea9d97d9b0fed9"
+    },
+    {
+      "source_index": 17,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "INSINYUR PEMBELAJARAN MESIN (MACHINE LEARNING ENGINEER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.002.1",
+            "title": "Menentukan Tujuan Teknis Data Science"
+          },
+          {
+            "code": "J.62DMI00.003.1",
+            "title": "Membuat Rencana Proyek Data Science"
+          },
+          {
+            "code": "J.62DMI00.013.1",
+            "title": "Membangun Model"
+          },
+          {
+            "code": "J.62DMI00.014.1",
+            "title": "Mengevaluasi Hasil Pemodelan"
+          },
+          {
+            "code": "J.62DMI00.017.1",
+            "title": "Melakukan Deployment Model"
+          },
+          {
+            "code": "J.62DMI00.019.1",
+            "title": "Melakukan Pemeliharaan Model"
+          },
+          {
+            "code": "J.62PDP00.011.1",
+            "title": "Menerapkan Program Kerja Perlindungan DataPribadi"
+          },
+          {
+            "code": "J.62DMI00.021.1",
+            "title": "Melakukan Laporan Akhir Proyek Data Science"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Magister/ Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Insinyur Pembelajaran Mesin (Machine Learning Engineer) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Insinyur Pembelajaran Mesin (Machine Learning Engineer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Insinyur Pembelajaran Mesin (Machine Learning Engineer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Insinyur Pembelajaran Mesin (Machine Learning Engineer) atau mendapatkan tugas yang relevan dengan jabatan Insinyur Pembelajaran Mesin (Machine Learning Engineer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Insinyur Pembelajaran Mesin (Machine Learning Engineer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/34804005.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "34804005.webp",
+      "photo_sha256": "ccd85f3772c3557e980421ef20a4470158eebb0502447a2dd0aa0f898ec1f919"
+    },
+    {
+      "source_index": 18,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "INSINYUR KECERDASAN ARTIFISIAL (AI ENGINEER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62AIN00.002.1",
+            "title": "Menentukan Sasaran Teknis Solusi Artificial Intelligence (AI)"
+          },
+          {
+            "code": "J.62AIN00.004.1",
+            "title": "Membuat Rencana Proyek Solusi Artificial Intelligence (AI)"
+          },
+          {
+            "code": "J.62DMI00.015.1",
+            "title": "Melakukan Proses Review Pemodelan"
+          },
+          {
+            "code": "J.62DMI00.020.1",
+            "title": "Melakukan Review Proyek Data Science"
+          },
+          {
+            "code": "J.62AIN00.015.1",
+            "title": "Memasang Solusi Artificial Intelligence (AI)"
+          },
+          {
+            "code": "J.62AIN00.017.1",
+            "title": "Merawat Solusi Artificial Intelligence (AI)"
+          },
+          {
+            "code": "J.62PDP00.011.1",
+            "title": "Menerapkan Program Kerja Pelindungan Data Pribadi"
+          },
+          {
+            "code": "J.62DMI00.021.1",
+            "title": "Membuat Laporan Akhir Proyek Data Science"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Magister/ Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Insinyur Kecerdasan Artifisial (AI Engineer) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Insinyur Kecerdasan Artifisial (AI Engineer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Insinyur Kecerdasan Artifisial (AI Engineer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Insinyur Kecerdasan Artifisial (AI Engineer) atau mendapatkan tugas yang relevan dengan jabatan Insinyur Kecerdasan Artifisial (AI Engineer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Insinyur Kecerdasan Artifisial (AI Engineer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/12899188.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "12899188.webp",
+      "photo_sha256": "ae88ee65978d6eca17f53a148c4499986dcc8141e475f4e5779b8a498a848fbb"
+    },
+    {
+      "source_index": 19,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "SUPERVISOR ILMUWAN DATA (DATA SCIENTIST SUPERVISOR)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data"
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data"
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data"
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data"
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data"
+          },
+          {
+            "code": "J.62DMI00.009.1",
+            "title": "Mengkonstruksi Data"
+          },
+          {
+            "code": "J.62DMI00.010.1",
+            "title": "Menentukan Label Data"
+          },
+          {
+            "code": "J.62DMI00.013.1",
+            "title": "Membangun Model"
+          },
+          {
+            "code": "J.62DMI00.014.1",
+            "title": "Mengevaluasi Hasil Pemodelan"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Supervisor Ilmuwan Data (Data Scientist Supervisor) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Supervisor Ilmuwan Data (Data Scientist Supervisor) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Supervisor Ilmuwan Data (Data Scientist Supervisor) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Supervisor Ilmuwan Data (Data Scientist Supervisor) atau mendapatkan tugas yang relevan dengan jabatan Supervisor Ilmuwan Data (Data Scientist Supervisor); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Supervisor Ilmuwan Data (Data Scientist Supervisor) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/5922669.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "5922669.webp",
+      "photo_sha256": "076155198e1b3d54cb70212d2462488a77ade246047294916438209174666935"
+    },
+    {
+      "source_index": 20,
+      "target_id": 17,
+      "before": {
+        "id": 17,
+        "name": "DATA ANALYST",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "6",
+        "price": 1500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "data-analyst",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/3861957.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMS00.001.1",
+            "title": "Mengidentifikasi Kebutuhan Pengelolaan Data untuk Proses Bisnis",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengidentifikasi kebutuhan data untuk proses bisnis."
+          },
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengumpulkan data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menelaah data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memvalidasi data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memilah dan memilih data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.62DMS00.015.1",
+            "title": "Membuat Business Intelligence",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengintegrasikan dan membuat business intelligence untuk manajemen data."
+          },
+          {
+            "code": "M.70BDA00.013.1",
+            "title": "Menyusun Laporan Hasil Analisis",
+            "description": "Unit ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam mengidentifkasi kebutuhan laporan data hasil analisis, mengkomunikasikan kebutuhan pelaporan kepada pemangku kepentingan, menyusun dokumentasi data analisis, dan merangkum hasil analisis dalam laporan hasil analisis."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah S1 Jurusan Statistika/Matematika/sederajat yang dilegalisir oleh Perguruan Tinggi yang bersangkutan disertai surat pengalaman kerja di bidang analis data minimal selama 1 (satu) tahun secara berkelanjutan; atau",
+          "Copy sertifikat kompetensi Associate Data Analyst disertai surat dengan pengalaman kerja di bidang analis data minimal selama 1 (satu) tahun secara berkelanjutan; atau",
+          "Surat Pengalaman Kerja pada jabatan Data Analyst minimal selama 2 (dua) tahun secara berkelanjutan;"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ANALIS DATA (DATA ANALYST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMS00.001.1",
+            "title": "Mengidentifikasi kebutuhan pengelolaan data untuk proses bisnis"
+          },
+          {
+            "code": "J.62DMS00.004.1",
+            "title": "Merencanakan Integrasi Data"
+          },
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data"
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data"
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data"
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data"
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data"
+          },
+          {
+            "code": "J.62DMS00.015.1",
+            "title": "Membuat Business Intelligence"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Analis Data (Data Analyst) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Analis Data (Data Analyst) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Analis Data (Data Analyst) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Analis Data (Data Analyst) atau mendapatkan tugas yang relevan dengan jabatan Analis Data (Data Analyst); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Analis Data (Data Analyst) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/3861957.webp"
+      },
+      "photo_file": "3861957.webp",
+      "photo_sha256": "e7d51588ee7d36ce521edbf3993eb84d368aae754931e84e29e81ce34197e97f"
+    },
+    {
+      "source_index": 21,
+      "target_id": 23,
+      "before": {
+        "id": 23,
+        "name": "DATABASE ADMINISTRATOR",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "6",
+        "price": 1500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "database-administrator",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/5480781.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMS00.006.1",
+            "title": "Mendesain basis data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang diperlukan untuk merancang basis data yang memenuhi kebutuhan tersebut."
+          },
+          {
+            "code": "J.62DMS00.010.1",
+            "title": "Membuat basis data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang diperlukan untuk membuat basis data yang sesuai dengan Kebutuhan organisasi."
+          },
+          {
+            "code": "J.62DMS00.011.1",
+            "title": "Membuat integrasi data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat integrasi data dari berbagai sumber data."
+          },
+          {
+            "code": "J.62DMS00.012.1",
+            "title": "Mengelola kualitas data",
+            "description": "Unit ini menentukan kompetensi, pengetahuan dan sikap kerja yang diperlukan untuk mengelola kualitas data sesuai kebutuhan pengguna."
+          },
+          {
+            "code": "J.62DMS00.016.1",
+            "title": "Mengelola dokumen dan konten",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang diperlukan dalam merencanakan dan mengelola siklus dokumen serta menyebarkan konten dalam bentuk atau medium apapun."
+          },
+          {
+            "code": "J.620100.020.02",
+            "title": "Menggunakan SQL",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan untuk menggunakan perangkat aplikasi berbasis data deskripsi atau SQL (Structured Query Language) pada aspek DML-Data Manipulation Language."
+          },
+          {
+            "code": "J.620100.021.02",
+            "title": "Menerapkan akses basis data",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan untuk membuat program yang mengakses basis data suatu sistem manajemen basis data."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah minimum diploma 3 program Sarjana/Sarjana Terapan Program studi statistika/Sains Data/ComputerSains/Informatika/program studi serumpun dan Copy sertifikat pelatihan berbasis kompetensi bidang Database Administrator",
+          "Copy Surat Pengalaman Kerja sebagai Database Administrator dengan pengalaman minimal 3 Tahun di jabatan tersebut",
+          "Copy Transkrip nilai semester 1-6 Mahasiswa program Sarjana/Sarjana Terapan Program studi statistika/Sains Data/Computer Sains/Informatika/program studi serumpun, yang telah menyelesaikan minimum 110 sks dan Copy Sertifikat pelatihan bidang Database Administrator atau Copy Sertifikat PKL/Magang Industri pada bidang Database Administrator"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ADMINISTRATOR BASIS DATA (DATABASE ADMINISTRATOR)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMS00.006.1",
+            "title": "Merancang Basis Data"
+          },
+          {
+            "code": "J.62DMS00.010.1",
+            "title": "Membuat Basis Data"
+          },
+          {
+            "code": "J.62DMS00.012.1",
+            "title": "Mengelola kualitas data"
+          },
+          {
+            "code": "J.62DMS00.016.1",
+            "title": "Mengelola dokumen dan konten"
+          },
+          {
+            "code": "J.620100.020.02",
+            "title": "Menggunakan SQL"
+          },
+          {
+            "code": "J.620100.021.02",
+            "title": "Menerapkan Akses Basis Data"
+          },
+          {
+            "code": "J.62DMS00.017.1",
+            "title": "Mengadministrasi Basis Data"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Administrator Basis Data (Database Administrator) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Administrator Basis Data (Database Administrator) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Administrator Basis Data (Database Administrator) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Administrator Basis Data (Database Administrator) atau mendapatkan tugas yang relevan dengan jabatan Administrator Basis Data (Database Administrator); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Administrator Basis Data (Database Administrator) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/5480781.webp"
+      },
+      "photo_file": "5480781.webp",
+      "photo_sha256": "a6e6df816feb8f34bdd4362ae75883d0a812af0e8b7b30e1c70a60d6bfc3938f"
+    },
+    {
+      "source_index": 22,
+      "target_id": 22,
+      "before": {
+        "id": 22,
+        "name": "BUSINESS INTELLIGENCE ANALYST",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "6",
+        "price": 1500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "business-intelligence-analyst",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/6248987.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengumpulkan data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menelaah data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memvalidasi data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.007. 1",
+            "title": "Menentukan Objek Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memilah dan memilih data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.62DMI00.009.1",
+            "title": "Mengkonstruksi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengkonstruksi data untuk proyek data science."
+          },
+          {
+            "code": "J.62DMI00.011.1",
+            "title": "Mengintegrasikan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam integrasi data untuk pemodelan data science."
+          },
+          {
+            "code": "J.62DMS00.015.1",
+            "title": "Membuat Business Intelligence",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengintegrasikan dan membuat business intelligence untuk manajemen data."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah D3 semua jurusan dan Surat Pengalaman Kerja pada jabatan Data Scientist/Business Intelligence Analyst minimal 1 (satu) tahun dan Copy Sertifikat Pelatihan berbasis kompetensi bidang Data Science/Data Analytics/Business Intelligence Analyst",
+          "Copy Ijazah minimum S1 program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi Copy Ijazah minimum S1 program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun dan Copy sertifikat pelatihan berbasis kompetensi bidang Business Intelligence Analyst",
+          "Copy surat pengalaman kerja sebagai Business Intelligence Analyst/ sains data selama 1 (satu) tahun dan Copy sertifkat pelatihan berbasis Kompetensi pada bidang Business Intelligence Analyst.",
+          "Copy Transkrip nilai Semester 1 – 7, Mahasiswa program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/ program studi serumpun, yang telah menyelesaikan minimum 135 sks dan Copy Sertifikat pelatihan bidang Business Intelligence Analyst atau Copy Sertifikat PKL/Magang Industri pada bidang Business Intelligence Analyst"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ANALIS INTELIJEN BISNIS (BUSINESS INTELLIGENCE ANALYST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data"
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data"
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data"
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data"
+          },
+          {
+            "code": "J.62DMI00.009.1",
+            "title": "Mengkonstruksi Data"
+          },
+          {
+            "code": "J.62DMI00.011.1",
+            "title": "Mengintegrasikan Data"
+          },
+          {
+            "code": "J.62DMS00.015.1",
+            "title": "Membuat Business Intelligence"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Analis Intelijen Bisnis (Business Intelligence Analyst) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence)/ telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Analis Intelijen Bisnis (Business Intelligence Analyst) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Analis Intelijen Bisnis (Business Intelligence Analyst) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Analis Intelijen Bisnis (Business Intelligence Analyst) atau mendapatkan tugas yang relevan dengan jabatan Analis Intelijen Bisnis (Business Intelligence Analyst); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Analis Intelijen Bisnis (Business Intelligence Analyst) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/6248987.webp"
+      },
+      "photo_file": "6248987.webp",
+      "photo_sha256": "ccfd23927813a7ab91b53c9da0a8e56b18ffe8b09f336f9c9c12a8a5e477d046"
+    },
+    {
+      "source_index": 23,
+      "target_id": 21,
+      "before": {
+        "id": 21,
+        "name": "JUNIOR/ASSOCIATE DATA SCIENTIST",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "6",
+        "price": 1500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "juniorassociate-data-scientist",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/30535628.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengumpulkan data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menelaah data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memvalidasi data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memilah dan memilih data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membersihkan data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.62DMI00.009.1",
+            "title": "Mengkonstruksi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengkonstruksi data untuk proyek data science."
+          },
+          {
+            "code": "J.62DMI00.010.1",
+            "title": "Menentukan Label data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan untuk menentukan label data untuk pembangunan model data science."
+          },
+          {
+            "code": "J.62DMI00.013.1",
+            "title": "Membangun Model",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membangun model."
+          },
+          {
+            "code": "J.62DMI00.014.1",
+            "title": "Mengevaluasi Hasil Pemodelan",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengevaluasi hasil pemodelan."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah minimum S1 program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun dan Copy sertifikat pelatihan berbasis kompetensi bidang Associate Data Scientist",
+          "Copy Surat Pengalaman Kerja sebagai Associate Data Scientist atau Associate data Analyst dengan pengalaman minimal 3 (tiga) Tahun di jabatan tersebut",
+          "Copy Transkrip nilai Semester 1 – 7 Mahasiswa program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun yang telah menyelesaikan minimum 135 sks, program dan Ccopy sertifikat pelatihan bidang Associate Data Scientist atau copy sertifikat PKL/Magang Industri pada bidang Associate Data Scientist; atau"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ILMUWAN DATA MUDA (ASSOCIATE DATA SCIENTIST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data"
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data"
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data"
+          },
+          {
+            "code": "J.62DMI00.010.1",
+            "title": "Menentukan Label Data"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Ilmuwan Data Muda (Associate Data Scientist) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Ilmuwan Data Muda (Associate Data Scientist) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Ilmuwan Data Muda (Associate Data Scientist) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Ilmuwan Data Muda (Associate Data Scientist) atau mendapatkan tugas yang relevan dengan jabatan Ilmuwan Data Muda (Associate Data Scientist); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Ilmuwan Data Muda (Associate Data Scientist) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/30535628.webp"
+      },
+      "photo_file": "30535628.webp",
+      "photo_sha256": "fba06e19a96b629dafbeb2fc2d82008ad09d7ec49249be86a4d13bbeb53d708e"
+    },
+    {
+      "source_index": 24,
+      "target_id": 19,
+      "before": {
+        "id": 19,
+        "name": "ASSOCIATE DATA ANALYST",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "5",
+        "price": 1000000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "associate-data-analyst",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/7567486.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengumpulkan data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menelaah data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.006.1",
+            "title": "Memvalidasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memvalidasi data untuk data science."
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam memilah dan memilih data yang sesuai permintaan atau kebutuhan."
+          },
+          {
+            "code": "J.620100.021.02",
+            "title": "Menerapkan Akses Basis Data",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan untuk membuat program yang mengakses basis data suatu sistem manajemen basis data."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah minimal diploma 3 program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun dan copy sertifikat pelatihan berbasis kompetensi pada bidang associate data analyst/data manajemen",
+          "Copy Surat Pengalaman Kerja sebagai Associate Data Analyst dengan pengalaman minimal 3 Tahun di jabatan tersebut",
+          "Copy Transkrip nilai semester 1-6, Mahasiswa program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun, yang telah menyelesaikan minimum 110 sks dan copy sertifikat pelatihan bidang Associate Data Analyst atau copy sertifikat PKL/Magang Industri pada bidang Associate Data Analyst"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "ANALIS DATA MUDA (ASSOCIATE DATA ANALYST)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62DMI00.004.1",
+            "title": "Mengumpulkan Data"
+          },
+          {
+            "code": "J.62DMI00.005.1",
+            "title": "Menelaah Data"
+          },
+          {
+            "code": "J.62DMI00.007.1",
+            "title": "Menentukan Objek Data"
+          },
+          {
+            "code": "J.62DMI00.008.1",
+            "title": "Membersihkan Data"
+          },
+          {
+            "code": "J.620100.020.02",
+            "title": "Menggunakan SQL"
+          },
+          {
+            "code": "J.62DMS00.019.1",
+            "title": "Menggunakan Data"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Analis Data Muda (Associate Data Analyst) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Analis Data Muda (Associate Data Analyst) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Analis Data Muda (Associate Data Analyst) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Analis Data Muda (Associate Data Analyst) atau mendapatkan tugas yang relevan dengan jabatan Analis Data Muda (Associate Data Analyst); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Analis Data Muda (Associate Data Analyst) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/7567486.webp"
+      },
+      "photo_file": "7567486.webp",
+      "photo_sha256": "b79c6aa90716fb91e709bfa0b7add75834615f45302a81712241ad03cb4a545c"
+    },
+    {
+      "source_index": 25,
+      "target_id": 20,
+      "before": {
+        "id": 20,
+        "name": "JUNIOR/ASSOCIATE DATA ENGINEER",
+        "category": "DATA MANAGEMENT SYSTEM",
+        "level": "6",
+        "price": 1500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "juniorassociate-data-engineer",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/9553905.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring",
+          "jarak-jauh"
+        ],
+        "units": [
+          {
+            "code": "J.62DMS00.006.1",
+            "title": "Merancang Basis Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang diperlukan untuk merancang basis data yang memenuhi kebutuhan tersebut."
+          },
+          {
+            "code": "J.62DMS00.008.1",
+            "title": "Mengelola Reference and Master Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengelola reference and master data yang berada dalam cakupan manajemen data untuk mengurangi redundancy dan memastikan data quality yang lebih baik melalui pendefinisian data yang terstandardisasi."
+          },
+          {
+            "code": "J.62DMS00.009.1",
+            "title": "Mengelola Metadata",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam mengelola metadata pada suatu manajemen data."
+          },
+          {
+            "code": "J.620100.020.02",
+            "title": "Menggunakan SQL",
+            "description": "Unit kompetensi ini berhubungan dengan sikap, pengetahuan, dan keterampilan yang dibutuhkan untuk menggunakan perangkat aplikasi berbasis data deskripsi atau SQL (Structured Query Language) pada aspek DML-Data Manipulation Language."
+          },
+          {
+            "code": "J.62DMS00.010.1",
+            "title": "Membuat Basis Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan dan sikap kerja yang diperlukan untuk membuat basis data yang sesuai dengan Kebutuhan organisasi."
+          },
+          {
+            "code": "J.62DMS00.011.1",
+            "title": "Membuat Integrasi Data",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam membuat integrasi data dari berbagai sumber data."
+          },
+          {
+            "code": "J.62DMS00.019.1",
+            "title": "Menggunakan Data",
+            "description": "Unit ini menentukan kompetensi, pengetahuan dan sikap kerja yang diperlukan untuk menggunakan data yang diperlukan sesuai dengan kebutuhan organisasi."
+          }
+        ],
+        "basic_requirements": [
+          "Copy Ijazah minimum S1 program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun dan Copy sertifikat pelatihan berbasis kompetensi bidang Associate Data Engineer",
+          "Copy surat pengalaman kerja sebagai Associate Data Engineer minimal selama 1 (satu) tahun dan Copy Sertifikat sertifkat pelatihan berbasis Kompetensi Associate Data Engineer",
+          "Copy Transkrip nilai Semester 1 – 7, Mahasiswa program Sarjana/Sarjana Terapan Program studi statistika/Sains Data /Computer Sains/Informatika/program studi serumpun, yang telah menyelesaikan minimum 135 sks dan Copy Sertifikat pelatihan bidang Associate Data Engineer atau Copy Sertifikat PKL/Magang Industri pada bidang Associate Data Engineer"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "INSINYUR DATA MUDA (ASSOCIATE DATA ENGINEER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.620100.020.02",
+            "title": "Menggunakan SQL"
+          },
+          {
+            "code": "J.62DMS00.010.1",
+            "title": "Membuat basis data"
+          },
+          {
+            "code": "J.62DMS00.011.1",
+            "title": "Membuat integrasi data"
+          },
+          {
+            "code": "J.62DMS00.019.1",
+            "title": "Menggunakan Data"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Insinyur Data Muda (Associate Data Engineer) dan telah menyelesaikan Magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence) / telah menghasilkan minimal 2 proyek sesuai Dengan jabatan Insinyur Data Muda (Associate Data Engineer) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Insinyur Data Muda (Associate Data Engineer) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Insinyur Data Muda (Associate Data Engineer) atau mendapatkan tugas yang relevan dengan jabatan Insinyur Data Muda (Associate Data Engineer); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Insinyur Data Muda (Associate Data Engineer) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/9553905.webp"
+      },
+      "photo_file": "9553905.webp",
+      "photo_sha256": "b0919923174ca8c9edd071da606a2abcd2ff397a45cd5e98015e49175503c393"
+    },
+    {
+      "source_index": 26,
+      "target_id": 36,
+      "before": {
+        "id": 36,
+        "name": "DATA MANAGEMENT STAFF",
+        "category": "Okupasi",
+        "level": "3",
+        "price": 1500000,
+        "is_active": true,
+        "created_at": "2026-10-05T11:04:10.000000Z",
+        "updated_at": "2026-10-08T06:03:08.000000Z",
+        "slug": "data-management-staff",
+        "type": "Okupasi",
+        "thumbnail": "schemes/stock/6120209.webp",
+        "registration_url": "https://wa.me/6285195533360?text=Selamat%20pagi%2C%20saya%20ingin%20bertanya%20tentang%20skema%20sertifikasi%20kompetensi%20di%20LSP%20TIK%20Global.",
+        "methods": [
+          "luring"
+        ],
+        "units": [
+          {
+            "code": "J.63OPR00.001.2",
+            "title": "Menggunakan perangkat komputer",
+            "description": "Unit kompetensi ini berkaitan dengan pengetahuan keterampilan dan sikap kerja yang dibutuhkan untuk menggunakan perangkat komputer dalam kondisi normal."
+          },
+          {
+            "code": "J.63OPR00.002.2",
+            "title": "Menggunakan sistem operasi",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan untuk menggunakan sistem operasi pada perangkat komputer dalam kondisi normal."
+          },
+          {
+            "code": "J.63OPR00.003.2",
+            "title": "Menggunakan peralatan peripheral",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menggunakan peralatan peripheral."
+          },
+          {
+            "code": "J.63OPR00.006.2",
+            "title": "Menggunakan perangkat lunak presentasi - tingkat dasar",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap yang dibutuhkan untuk menggunakan perangkat lunak presentasi tingkat dasar."
+          },
+          {
+            "code": "J.63OPR00.007.2",
+            "title": "Menggunakan penelusur situs web (web browser)",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam penggunaan penelusur situs web pada perangkat komputer sesuai dengan petunjuk penggunaan (user manual)."
+          },
+          {
+            "code": "J.63OPR00.008.2",
+            "title": "Menggunakan perangkat lunak pengakses surat elektronik (e-mail client)",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan untuk mengakses surat elektronik (e- mail client) pada perangkat komputer sesuai dengan petunjuk penggunaan (user manual)."
+          },
+          {
+            "code": "J.63OPR00.010.1",
+            "title": "Menggunakan aplikasi media sosial",
+            "description": ""
+          },
+          {
+            "code": "J.63OPR00.011.2",
+            "title": "Menggunakan perangkat lunak pengolah kata – tingkat lanjut",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan untuk pengolah kata tingkat lanjut pada perangkat komputer pada kondisi normal sesuai dengan Petunjuk Penggunaan (user manual)."
+          },
+          {
+            "code": "J.63OPR00.012.2",
+            "title": "Menggunakan perangkat lunak lembar kerja – tingkat lanjut",
+            "description": "Unit kompetensi ini berhubungan dengan pengetahuan, keterampilan, dan sikap kerja yang dibutuhkan dalam menggunakan perangkat lunak lembar kerja tingkat lanjut pada perangkat komputer pada kondisi normal sesuai dengan Petunjuk penggunaan (user manual)."
+          },
+          {
+            "code": "J.63OPR00.014.1",
+            "title": "Melakukan pemasukan data",
+            "description": ""
+          },
+          {
+            "code": "J.63OPR00.016.1",
+            "title": "Mengidentifikasi aspek keamanan informasi pengguna",
+            "description": ""
+          }
+        ],
+        "basic_requirements": [
+          "Copy ijazah D1 semua jurusan dan Copy sertifikat pelatihan berbasis kompetensi sebagai Data Management Staff",
+          "Copy ijazah SMA/SMK sederajat dan Copy sertifikat pelatihan berbasis kompetensi sebagai Data Management Staff",
+          "Copy Surat Pengalaman Kerja/Magang dengan jabatan sebagai Data Management Staff minimal selama 1 Tahun berkelanjutan"
+        ],
+        "administrative_requirements": [
+          "Pas foto 3x4 (Background Merah)",
+          "Copy KTP"
+        ]
+      },
+      "attributes": {
+        "name": "TEKNISI MANAJEMEN DATA (DATA MANAGEMENT TECHNICIAN)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.63OPR00.001.2",
+            "title": "Menggunakan Perangkat Komputer"
+          },
+          {
+            "code": "J.63OPR00.002.2",
+            "title": "Menggunakan Sistem Operasi"
+          },
+          {
+            "code": "J.63OPR00.003.2",
+            "title": "Menggunakan Peralatan Peripheral"
+          },
+          {
+            "code": "J.63OPR00.006.2",
+            "title": "Menggunakan Perangkat Lunak Presentasi Tingkat Dasar"
+          },
+          {
+            "code": "J.63OPR00.007.2",
+            "title": "Menggunakan Penelusur Situs Web (Web Browser)"
+          },
+          {
+            "code": "J.63OPR00.008.2",
+            "title": "Menggunakan Perangkat Lunak Pengakses Surat Elektronik (E-mail Client)"
+          },
+          {
+            "code": "J.63OPR00.010.2",
+            "title": "Menggunakan Aplikasi Media Sosial"
+          },
+          {
+            "code": "J.63OPR00.011.2",
+            "title": "Menggunakan Perangkat Lunak Pengolah Kata Tingkat Lanjut"
+          },
+          {
+            "code": "J.63OPR00.012.2",
+            "title": "Menggunakan Perangkat Lunak Lembar Kerja Tingkat Lanjut"
+          },
+          {
+            "code": "J.63OPR00.014.2",
+            "title": "Melakukan Pemasukan Data"
+          },
+          {
+            "code": "J.63OPR00.016.2",
+            "title": "Mengidentifikasi Aspek Keamanan Informasi Pengguna"
+          }
+        ],
+        "basic_requirements": [
+          "Fotokopi Kartu Hasil Studi/Transkrip Nilai mahasiswa Diploma/ Strata 1 sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang tercantum mata kuliah mencakup seluruh unit kompetensi pada okupasi Teknisi Manajemen Data (Data Management Technician) dan Fotokopi Surat Keterangan/ Sertifikat praktek industri/ magang pada Area Fungsi Sains Data-Kecerdasan Artifisial (Data Science-Artificial Intelligence) / minimal 2 (dua) rekaman hasil Proyek sesuai Dengan jabatan Teknisi Manajemen Data (Data Management Technician) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Fotokopi Sertifikat pelatihan berbasis kompetensi okupasi Teknisi Manajemen Data (Data Management Technician) yang diterbitkan oleh Lembaga Pelatihan Vokasi; atau",
+          "Fotokopi Surat Keterangan/SK pengangkatan/ Kontrak kerja jabatan Teknisi Manajemen Data (Data Management Technician)/ Surat Tugas yang relevan dengan jabatan Teknisi Manajemen Data (Data Management Technician); atau:",
+          "Fotokopi Surat Keterangan pengalaman kerja pada jabatan Teknisi Manajemen Data (Data Management Technician) minimal 6 bulan dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/6120209.webp"
+      },
+      "photo_file": "6120209.webp",
+      "photo_sha256": "a43ff2fed3827f697afc95d6e3ea06c91af80117c670596b47a4406404585372"
+    },
+    {
+      "source_index": 27,
+      "target_id": null,
+      "before": null,
+      "attributes": {
+        "name": "MANAJER KEAMANAN INFORMASI (INFORMATION SECURITY MANAGER)",
+        "type": "Okupasi",
+        "units": [
+          {
+            "code": "J.62KAM00.017.2",
+            "title": "Menyusun Rencana Penerapan Aspek Keamanan Informasi pada Pemutakhiran Teknologi Informasi"
+          },
+          {
+            "code": "J.62KAM00.018.2",
+            "title": "Menyusun Rencana Penerapan Kebijakan Keamanan Informasi"
+          },
+          {
+            "code": "J.62KAM00.019.2",
+            "title": "Melaksanakan Pemantauan Penerapan Kebijakan Keamanan Informasi"
+          },
+          {
+            "code": "J.62AKI00.021.1",
+            "title": "Mengevaluasi Bukti Pelaksanaan Tindak Lanjut Rekomendasi Audit Keamanan Informasi (AKI)"
+          },
+          {
+            "code": "J.61KRP00.015.1",
+            "title": "Menyusun Rekomendasi Berdasarkan Hasil Pengujian"
+          }
+        ],
+        "basic_requirements": [
+          "Mahasiswa perguruan tinggi pada program Magister/ Magister Terapan program studi sesuai Dengan bidang Teknologi Informasi dan Komunikasi, yang telah mengikuti mata kuliah yang relevan mencakup seluruh unit kompetensi pada okupasi Manajer Keamanan Informasi (Information Security Manager) dan telah menyelesaikan Magang pada Area Fungsi Keamanan Informasi dan Siber (Information and Cyber Security)/ telah menghasilkan minimal 2 proyek yang relevan Dengan jabatan Manajer Keamanan Informasi (Information Security Manager) yang telah mendapatkan validasi dari pihak ketiga relevan dan kredibel; atau",
+          "Telah Lulus pelatihan berbasis kompetensi okupasi Manajer Keamanan Informasi (Information Security Manager) dari lembaga pelatihan vokasi; atau",
+          "Tenaga kerja di industri yang sedang menduduki jabatan Manajer Keamanan Informasi (Information Security Manager) atau mendapatkan tugas yang relevan dengan jabatan Manajer Keamanan Informasi (Information Security Manager); atau",
+          "Memiliki pengalaman kerja minimal 6 bulan pada jabatan Manajer Keamanan Informasi (Information Security Manager) dalam 2 tahun terakhir."
+        ],
+        "thumbnail": "schemes/stock/5380597.webp",
+        "category": null,
+        "level": null,
+        "price": null,
+        "registration_url": null,
+        "methods": [],
+        "administrative_requirements": [],
+        "is_active": true
+      },
+      "photo_file": "5380597.webp",
+      "photo_sha256": "d044c547e593ce98c03beefca12e6c354597c0ec943653db531330af33e1080e"
+    }
+  ]
+}

@@ -9,11 +9,15 @@
   --card-gap: 24px;
   --text-heading: #004195;
   --text-muted: #53686f;
-  --text-title: clamp(2rem, 4vw, 3rem);
-  --text-section: clamp(1.5rem, 3vw, 2rem);
-  --text-subheading: clamp(1.125rem, 2vw, 1.25rem);
-  --text-body: 1rem;
-  --text-intro: clamp(1rem, 1.5vw, 1.125rem);
+  --text-display: clamp(2.5rem, 5vw, 4.5rem);
+  --text-title: clamp(2.25rem, 4.5vw, 4rem);
+  --text-section: clamp(2rem, 3.5vw, 3rem);
+  --text-subheading: clamp(1.25rem, 1.8vw, 1.5rem);
+  --text-body: 1.125rem;
+  --text-meta: 1rem;
+  --text-code: .875rem;
+  --font-technical: ui-monospace, "Cascadia Code", "Source Code Pro", Consolas, monospace;
+  --text-intro: clamp(1.125rem, 1.8vw, 1.375rem);
   --section-space: clamp(48px, 6vw, 80px);
 }
 
@@ -28,11 +32,12 @@
   --color-muted: #53686f;
   --color-divider: #e2e8e8;
   --font-sans: var(--font-figtree);
-  --font-inter: var(--font-inter);
-  --font-jakarta: var(--font-jakarta);
 }
 
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-figtree), Arial, sans-serif; font-size: var(--text-body); line-height: 1.6; }
+h1, h2, h3 { text-wrap: balance; }
+button, input, select, textarea { font-family: inherit; }
+code, kbd, samp { font-family: var(--font-technical); font-size: .875em; }
 button:not(:disabled), select { cursor: pointer; }
 button:disabled { cursor: default; }
 a, button, input, select { -webkit-tap-highlight-color: transparent; }
@@ -57,16 +62,24 @@ a, button { text-decoration: none; }
 section, footer, main { scroll-margin-top: 96px; }
 
 .hero-content { min-height: clamp(560px, 65svh, 720px); padding-block: clamp(72px, 8vw, 112px); }
-.hero-copy { min-width: 0; container-type: inline-size; }
-.hero-title { font-size: min(48px, 8cqi); }
-.hero-support, .hero-strengths { font-size: 16px; line-height: 1.65; }
+.hero-copy { min-width: 0; }
+.hero-title { max-width: 16ch; font-size: var(--text-display); text-wrap: balance; }
+.hero-support { max-width: 56ch; font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65; color: #e2eef8; }
+.hero-support p + p { margin-top: 12px; }
+.hero-strengths { padding: clamp(24px, 3vw, 36px); border: 1px solid #ffffff30; border-radius: 16px; background: #102f50cc; font-size: 1rem; line-height: 1.6; }
+.hero-strengths li + li { padding-top: 16px; border-top: 1px solid #ffffff24; }
+.hero-strengths svg { color: #84d3eb; }
+.home-page .section-heading h2, .home-page #about-title { text-wrap: balance; line-height: 1.25; }
+.home-page .section-heading p { max-width: 65ch; text-wrap: pretty; }
+.home-about-copy p { max-width: 65ch; line-height: 1.75; }
 .search-field-hero { width: 100%; max-width: 540px; min-height: 56px; }
 .search-field-hero input { font-size: 16px; }
 .search-field-hero { padding: 4px 4px 4px 16px; }
 .site-footer .contact-icon.social-icon-whatsapp { color: #53686f; }
 .home-about-section, .benefits-section, .schemes-section, .reviews-section, .partners-section { padding-block: var(--section-space); }
 .benefits-grid { margin-top: 32px; }
-.benefit-card { transition: transform 180ms, background-color 180ms, border-color 180ms, box-shadow 180ms; }
+.benefit-card { display: flex; align-items: flex-start; gap: 16px; transition: transform 180ms ease, background-color 180ms, border-color 180ms; }
+.benefit-check { margin-top: 4px; }
 .statistics-section { padding-block: clamp(40px, 5vw, 64px); }
 .scheme-controls { margin-top: 33px; }
 .reviews-grid { margin-top: 32px; }
@@ -81,8 +94,8 @@ section, footer, main { scroll-margin-top: 96px; }
 .statistics-panel::before { content: ""; position: absolute; top: 12px; right: 12px; width: 48px; height: 36px; background: radial-gradient(circle, #1576b5 1px, transparent 1.5px) 0 0 / 12px 12px; opacity: .12; pointer-events: none; z-index: -1; }
 .statistics-panel > div { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 24px; gap: 12px; text-align: center; }
 .statistics-panel > div + div { border-left: 1px solid var(--color-divider); }
-.statistics-panel dd { order: -1; font-size: clamp(40px, 5vw, 64px); font-weight: 400; line-height: 1.1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-.statistics-panel dt { white-space: pre-line; color: var(--text-muted); font-size: 18px; font-weight: 400; line-height: 1.4; }
+.statistics-panel dd { order: -1; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -.025em; font-variant-numeric: tabular-nums; }
+.statistics-panel dt { white-space: pre-line; color: var(--text-muted); font-size: var(--text-body); font-weight: 500; line-height: 1.5; }
 ::selection { background: #84d3eb; color: #163b58; }
 input, textarea { caret-color: #1576b5; }
 
@@ -103,14 +116,14 @@ input, textarea { caret-color: #1576b5; }
 @media (max-width: 639px) {
   :root { --card-padding: 20px; --card-gap: 16px; }
   .hero-content { padding-top: 72px; padding-bottom: 72px; }
-  .section-heading h2 { line-height: 1.1; }
+  .section-heading h2 { line-height: 1.25; }
   .partner-grid { row-gap: 16px; }
   .partner-arrows { margin-bottom: 16px; }
   .statistics-section { padding-inline: 16px; }
   .statistics-panel { grid-template-columns: 1fr; padding: 8px 20px; }
   .statistics-panel > div { flex-direction: row; justify-content: flex-start; gap: 24px; padding: 20px 0; text-align: left; }
   .statistics-panel > div + div { border-left: 0; border-top: 1px solid var(--color-divider); }
-  .statistics-panel dd { flex: 0 0 88px; font-size: 40px; }
+  .statistics-panel dd { flex: 0 0 88px; font-size: 2rem; }
   .statistics-panel dt { font-size: 16px; white-space: normal; }
 }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
@@ -168,7 +181,7 @@ a, button:not(:disabled), select { transition: color 150ms, background-color 150
 @media (hover: hover) {
   .main-navigation a:hover, .main-navigation button:hover, .mobile-menu-toggle:hover { background: #eaf5f8; color: #004195; }
   .site-footer a:hover { color: #004195; }
-  .benefit-card:hover { transform: scale(1.03); background: #edf5ff; border-color: #1576b5; box-shadow: 0 8px 24px #00419518; }
+  .benefit-card:hover { transform: scale(1.03); background: #edf5ff; border-color: #1576b5; }
 }
 a:active, button:not(:disabled):active { filter: brightness(.85); }
 .main-navigation a:active, .main-navigation button:active, .mobile-menu-toggle:active { background: #d4e8f5; }
@@ -201,8 +214,8 @@ a:active, button:not(:disabled):active { filter: brightness(.85); }
   .hero-overlay { background: linear-gradient(180deg, #052c50e8 0%, #06416dbd 55%, #06355588 100%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  a, button, select, .benefit-card { transition: none; }
-  .benefit-card:hover { transform: none; }
+  html:not([data-motion="full"]) :is(a, button, select, .benefit-card) { transition: none; }
+  html:not([data-motion="full"]) .benefit-card:hover { transform: none; }
 }
 
 .footer-socials { margin-top: 24px; }
@@ -231,6 +244,9 @@ a:active, button:not(:disabled):active { filter: brightness(.85); }
 @media (prefers-reduced-motion: no-preference) {
   main { animation: page-entry 500ms ease-out; }
 }
+.motion-control { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; margin-top: 12px; font-size: var(--text-meta); }
+.motion-control button { min-height: 44px; padding: 8px 12px; border: 1px solid var(--color-divider); border-radius: 8px; color: var(--text-heading); font-weight: 600; }
+.motion-control button:hover { background: #edf5ff; }
 
 .certificate-preview { width: 100%; text-align: left; cursor: zoom-in; transition: transform 180ms ease, border-color 180ms, background-color 180ms; }
 .certificate-media { position: relative; justify-self: center; overflow: hidden; border-radius: 4px; }
@@ -284,3 +300,9 @@ a:active, button:not(:disabled):active { filter: brightness(.85); }
 @media (hover: hover) {
   .contact-bubble-trigger:hover .contact-bubble-label { opacity: 1; visibility: visible; }
 }
+
+/* Readable supporting copy across desktop and mobile. */
+.hero-support p { font-size: var(--text-intro); line-height: 1.65; }
+.hero-strengths, .home-about-copy, .benefit-card p, .review-card blockquote { font-size: var(--text-body); line-height: 1.7; }
+.review-card figcaption p, .main-navigation, .site-footer, .carousel-pause { font-size: 1rem; }
+.benefit-card { display: block; }

@@ -19,7 +19,9 @@ class AdminNavigationTest extends TestCase
     public function test_navigation_preserves_organization_and_includes_identity(): void
     {
         $this->actingAs(User::factory()->admin()->create());
-        $html = $this->get('/admin/information');
+        $html = $this->get('/admin/identity');
+        $html->assertDontSee('/admin/information');
+        $this->get('/admin/information')->assertNotFound();
         $html->assertSee('Konten Website')->assertSee('Data Sertifikasi')->assertSee('Administrasi')->assertSee('Struktur Organisasi');
         $html->assertSee('Identitas');
         $this->get('/admin/identity')->assertOk()->assertSee('Simpan Identitas');

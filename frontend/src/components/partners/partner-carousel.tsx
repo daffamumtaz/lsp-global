@@ -5,6 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import type { Partner } from "@/lib/partners";
 import { PartnerGrid } from "./partner-grid";
 import styles from "./partners.module.css";
+import { shouldPauseCarousel, shouldReduceMotion } from "@/lib/motion";
 
 export function PartnerCarousel({ partners }: { partners: Partner[] }) {
   const id = useId();
@@ -26,7 +27,7 @@ export function PartnerCarousel({ partners }: { partners: Partner[] }) {
     if (paused || partners.length < 2) return;
     const timer = setInterval(() => {
       const element = viewport.current;
-      if (!element || document.hidden || matchMedia("(prefers-reduced-motion: reduce)").matches || root.current?.matches(":hover, :focus-within")) return;
+      if (!element || document.hidden || shouldPauseCarousel(root.current)) return;
       const end = element.scrollLeft + element.clientWidth >= element.scrollWidth - 1;
       element.scrollTo({ left: end ? 0 : element.scrollLeft + element.clientWidth, behavior: "smooth" });
     }, 3000);
@@ -34,7 +35,7 @@ export function PartnerCarousel({ partners }: { partners: Partner[] }) {
   }, [paused, partners.length]);
   function move(direction: number) {
     const element = viewport.current!;
-    element.scrollBy({ left: direction * element.clientWidth, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    element.scrollBy({ left: direction * element.clientWidth, behavior: shouldReduceMotion() ? "instant" : "smooth" });
   }
   if (!partners.length) return <p className={styles.empty}>Logo mitra belum tersedia.</p>;
   return <div ref={root} className={styles.carousel}>

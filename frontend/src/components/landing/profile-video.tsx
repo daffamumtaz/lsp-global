@@ -1,5 +1,7 @@
 "use client";
 
+import { publicAsset } from "@/lib/deployment-paths";
+
 import { useCallback, useRef, useState } from "react";
 
 export function ProfileVideo({ src, poster }: { src: string; poster: string }) {
@@ -17,7 +19,7 @@ export function ProfileVideo({ src, poster }: { src: string; poster: string }) {
         controls
         playsInline
         preload="metadata"
-        poster={poster}
+        poster={publicAsset(poster)}
         src={src}
         aria-label="Video profil LSP TIK Global"
         ref={checkInitialError}

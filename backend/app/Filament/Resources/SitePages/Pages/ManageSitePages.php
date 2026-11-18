@@ -118,8 +118,8 @@ class ManageSitePages extends Page
             Select::make('ids')->label('Skema Highlight')->multiple()->searchable()->reorderable()
                 ->required(fn (): bool => CertificationScheme::query()->where('is_active', true)->whereNotNull('slug')->exists())
                 ->options(fn (): array => CertificationScheme::query()->where('is_active', true)->whereNotNull('slug')->orderBy('name')->pluck('name', 'id')->all())
-                ->minItems(fn (): int => min(5, CertificationScheme::query()->where('is_active', true)->whereNotNull('slug')->count()))->maxItems(5)
-                ->helperText('Pilih 5 skema aktif. Urutan pilihan menentukan urutan showcase; jika data belum mencapai 5 skema, pilih seluruh skema yang tersedia.'),
+                ->minItems(1)->maxItems(6)
+                ->helperText('Pilih maksimal 6 skema aktif. Urutan pilihan menentukan urutan tampilan.'),
         ])->statePath('highlightsData');
     }
 

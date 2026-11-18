@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { frontendPath } from "@/lib/deployment-paths";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { methodLabels, readSchemeState, schemeHref, schemeSorts, selectSchemes, type Scheme, type SchemeMethod, type SchemeState } from "@/lib/schemes";
@@ -9,9 +10,15 @@ import styles from "./schemes.module.css";
 
 export function SchemeBrowser({ schemes }: { schemes: Scheme[] }) {
   const params = useSearchParams();
-  const categories = [...new Set(schemes.map(scheme => scheme.category))].sort((a, b) => a.localeCompare(b, "id"));
+  const categories = [...new Set(schemes.map(scheme => scheme.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, "id"));
   const state = readSchemeState(params, categories);
-  const result = selectSchemes(schemes, state);
+  const showAll = params.get("tampilan") === "semua";
+  const result = selectSchemes(schemes, showAll ? { ...state, page: 1 } : state, showAll ? Math.max(1, schemes.length) : 6);
+  const pageCount = Math.ceil(result.total / 6);
+  function pageHref(page: number | "all", slug?: string) {
+    const href = schemeHref({ ...state, page: page === "all" ? 1 : page }, slug);
+    return page === "all" ? `${href}${href.includes("?") ? "&" : "?"}tampilan=semua` : href;
+  }
   const resultsView = useRef<HTMLDivElement>(null);
   const queryString = params.toString();
   const previousQuery = useRef(queryString);
@@ -29,9 +36,10 @@ export function SchemeBrowser({ schemes }: { schemes: Scheme[] }) {
   function update(patch: Partial<SchemeState>) {
     const current = readSchemeState(new URLSearchParams(window.location.search), categories);
     const next = readSchemeState(new URL(schemeHref({ ...current, ...patch, page: 1 }), window.location.origin).searchParams, categories);
-    window.history.pushState(null, "", schemeHref(next));
+    const href = schemeHref(next);
+    window.history.pushState(null, "", frontendPath(showAll ? `${href}${href.includes("?") ? "&" : "?"}tampilan=semua` : href));
   }
-  function reset() { setCategoryQuery(""); window.history.pushState(null, "", "/skema-sertifikasi"); }
+  function reset() { setCategoryQuery(""); window.history.pushState(null, "", frontendPath("/skema-sertifikasi")); }
 
   return <section className={styles.catalog} aria-label="Katalog skema sertifikasi">
     <div className={styles.inner}>
@@ -61,12 +69,11 @@ export function SchemeBrowser({ schemes }: { schemes: Scheme[] }) {
             <label className={styles.field}>Urutkan<select value={state.sort} onChange={event => update({ sort: event.target.value as SchemeState["sort"] })}>{Object.entries(schemeSorts).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
           </div>
           {active.length > 0 && <div className={styles.activeFilters} aria-label="Filter aktif">{active.map((label, index) => <span key={`${label}-${index}`}>{label}</span>)}<button className={styles.textButton} type="button" onClick={reset}>Hapus semua</button></div>}
-          <div className={styles.grid}>{result.items.map(scheme => <SchemeCard key={scheme.id} scheme={scheme} href={schemeHref({ ...state, page: result.page }, scheme.slug)} />)}</div>
+          <div className={styles.grid}>{result.items.map(scheme => <SchemeCard key={scheme.id} scheme={scheme} href={pageHref(showAll ? "all" : result.page, scheme.slug)} />)}</div>
           {!result.total && <div className={styles.empty}><h2>Skema tidak ditemukan</h2><p>Coba kata kunci lain atau hapus filter untuk melihat seluruh skema.</p><button type="button" className={styles.primary} onClick={reset}>Lihat semua skema</button></div>}
-          {result.pageCount > 1 && <nav className={styles.pagination} aria-label="Halaman skema">
-            {result.page > 1 ? <Link href={schemeHref({ ...state, page: result.page - 1 })} scroll={false} aria-label="Halaman sebelumnya">←</Link> : <span aria-disabled="true">←</span>}
-            {Array.from({ length: result.pageCount }, (_, i) => i + 1).map(page => <Link key={page} href={schemeHref({ ...state, page })} scroll={false} aria-current={page === result.page ? "page" : undefined} aria-label={`Halaman ${page}`}>{page}</Link>)}
-            {result.page < result.pageCount ? <Link href={schemeHref({ ...state, page: result.page + 1 })} scroll={false} aria-label="Halaman berikutnya">→</Link> : <span aria-disabled="true">→</span>}
+          {pageCount > 1 && <nav className={styles.pagination} aria-label="Halaman skema">
+            {Array.from({ length: pageCount }, (_, index) => index + 1).map(page => <Link key={page} href={pageHref(page)} scroll={false} aria-current={!showAll && page === result.page ? "page" : undefined} aria-label={`Halaman ${page}`}>{page}</Link>)}
+            <Link href={pageHref("all")} scroll={false} aria-current={showAll ? "page" : undefined}>Semua</Link>
           </nav>}
         </div>
       </div>

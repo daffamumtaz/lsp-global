@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Andi Pratama",
+    "occupation": "Pengembang Web",
+    "quote": "Informasi persyaratan mudah ditemukan dan membantu saya menyiapkan dokumen sebelum mendaftar.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Siti Rahmawati",
+    "occupation": "Analis Data",
+    "quote": "Daftar unit kompetensi membantu saya memahami kemampuan yang perlu disiapkan untuk asesmen.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Budi Santoso",
+    "occupation": "Administrator Jaringan",
+    "quote": "Penjelasan tahapan sertifikasi tersusun jelas sehingga persiapan terasa lebih terarah.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Dewi Lestari",
+    "occupation": "Desainer Grafis",
+    "quote": "Pilihan skema dan rincian persyaratannya mudah dibaca melalui ponsel.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Rizky Saputra",
+    "occupation": "Teknisi Komputer",
+    "quote": "Informasi lokasi TUK memudahkan saya mencari tempat asesmen yang sesuai.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Maya Permata",
+    "occupation": "Staf Keamanan Informasi",
+    "quote": "Rincian kompetensi memberikan gambaran materi yang perlu saya pelajari kembali.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Agus Setiawan",
+    "occupation": "Dosen",
+    "quote": "Informasi sertifikasi membantu saya mengenalkan pengakuan kompetensi kepada mahasiswa.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Nadia Putri",
+    "occupation": "Mahasiswa Informatika",
+    "quote": "Alur asesmen membantu saya memahami langkah dari pendaftaran sampai hasil penilaian.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Hendra Wijaya",
+    "occupation": "Manajer TI",
+    "quote": "Kategori skema memudahkan saya meninjau pilihan sertifikasi untuk kebutuhan tim.",
+    "photo_path": null,
+    "visible": true
+  },
+  {
+    "name": "Fitri Handayani",
+    "occupation": "Pengelola Pelatihan",
+    "quote": "Kanal kontak yang tersedia memudahkan saya menyiapkan pertanyaan tentang sertifikasi.",
+    "photo_path": null,
+    "visible": true
+  }
+]

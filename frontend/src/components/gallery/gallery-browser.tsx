@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/public-image";
 import { MapPinIcon, CalendarDaysIcon } from "@heroicons/react/24/outline";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";

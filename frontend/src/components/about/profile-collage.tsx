@@ -1,6 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import { publicAsset } from "@/lib/deployment-paths";
+
+import Image from "@/components/public-image";
 import { useState } from "react";
 import { GalleryViewer } from "@/components/gallery/gallery-viewer";
 import type { ViewerItem } from "@/lib/gallery";
@@ -24,7 +26,7 @@ export function ProfileCollage({ photos }: { photos: (string | null)[] }) {
   });
   return <div className={styles.profileVisual}>
     {items.map(({ media }) => <button key={media.id} type="button" className={styles.profilePhoto} aria-label={`Lihat ${media.alt} fullscreen`} onClick={event => setOpened({ id: media.id, opener: event.currentTarget })}>
-      {media.crop ? <span className={styles.defaultPhoto} style={{ backgroundImage: `url(${media.src})`, backgroundSize: `${634 / media.crop.width * 100}% ${601 / media.crop.height * 100}%`, backgroundPosition: `${media.crop.left / (634 - media.crop.width) * 100}% ${media.crop.top / (601 - media.crop.height) * 100}%` }} role="img" aria-label={media.alt} /> : <Image src={media.src} alt={media.alt} fill unoptimized={!media.src.startsWith("/")} sizes="(max-width: 767px) 45vw, 25vw" className={styles.profileImage} />}
+      {media.crop ? <span className={styles.defaultPhoto} style={{ backgroundImage: `url(${publicAsset(media.src)})`, backgroundSize: `${634 / media.crop.width * 100}% ${601 / media.crop.height * 100}%`, backgroundPosition: `${media.crop.left / (634 - media.crop.width) * 100}% ${media.crop.top / (601 - media.crop.height) * 100}%` }} role="img" aria-label={media.alt} /> : <Image src={media.src} alt={media.alt} fill unoptimized={!media.src.startsWith("/")} sizes="(max-width: 767px) 45vw, 25vw" className={styles.profileImage} />}
       <span className={styles.photoHint} aria-hidden="true">Lihat foto ↗</span>
     </button>)}
     {opened && <GalleryViewer items={items} initialMediaId={opened.id} opener={opened.opener} onClose={() => setOpened(null)} showMetadata={false} />}

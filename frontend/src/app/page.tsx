@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/public-image";
 import Link from "next/link";
 import { BenefitCard } from "@/components/landing/cards";
 import { ReviewCarousel } from "@/components/landing/review-carousel";
@@ -22,8 +22,8 @@ function BrandText({ text, className = "" }: { text: string; className?: string 
 export default async function Home() {
   const [content, directory] = await Promise.all([getLandingContent(), getPublicContent()]);
   const highlights = content.highlighted_scheme_ids.length
-    ? content.highlighted_scheme_ids.map(id => directory.schemes.find(scheme => scheme.id === id)).filter(scheme => scheme !== undefined).slice(0, 5)
-    : directory.schemes.slice(0, 5);
+    ? content.highlighted_scheme_ids.map(id => directory.schemes.find(scheme => scheme.id === id)).filter(scheme => scheme !== undefined).slice(0, 6)
+    : directory.schemes.slice(0, 6);
   const partners = normalizePartners(content.partners).filter(partner => partner.logo_url);
 
   return (

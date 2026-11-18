@@ -23,7 +23,7 @@ class Profile extends Page
 
     protected static ?string $title = 'Edit Halaman > Tentang Kami';
 
-    protected static ?string $navigationLabel = 'Profil LSP';
+    protected static ?string $navigationLabel = 'Tentang Kami';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Konten Website';
 
